@@ -1,0 +1,132 @@
+{
+  "files.trimTrailingWhitespace": true,
+  "editor.formatOnSave": true,
+  "scss.lint.boxModel": "warning",
+  "editor.tabSize": 2,
+  "html.format.enable": true,
+  "importSorter.sortConfiguration.customOrderingRules.rules": [
+    {
+      "regex": "^@angular",
+      "orderLevel": 0,
+      "numberOfEmptyLinesAfterGroup": 1,
+      "type": "path"
+    },
+    {
+      "regex": "^(?!@(test|core|shared|infrastructure|applications|application-configurations|auth|chart-xpress|dashboard|devices|ews|hubs|server-settings|networks|neuron-settings|profile-configuration|profiles|support|vitals-plus|vitals-stream))[@]",
+      "orderLevel": 10,
+      "numberOfEmptyLinesAfterGroup": 1
+    },
+    {
+      "regex": "^@test",
+      "orderLevel": 30,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@core",
+      "orderLevel": 40,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@shared",
+      "orderLevel": 50,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@infrastructure",
+      "orderLevel": 55,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@applications",
+      "orderLevel": 58,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@application-configurations",
+      "orderLevel": 59,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@auth",
+      "orderLevel": 60,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@chart-xpress",
+      "orderLevel": 65,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@dashboard",
+      "orderLevel": 70,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@devices",
+      "orderLevel": 80,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@ews",
+      "orderLevel": 85,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@hubs",
+      "orderLevel": 90,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@server-settings",
+      "orderLevel": 100,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@medical-devices",
+      "orderLevel": 102,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@networks",
+      "orderLevel": 105,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@neuron-settings",
+      "orderLevel": 110,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@profile-configuration",
+      "orderLevel": 120,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@profiles",
+      "orderLevel": 121,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@support",
+      "orderLevel": 130,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@vitals-plus",
+      "orderLevel": 160,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^@vitals-stream",
+      "orderLevel": 170,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^[.]",
+      "orderLevel": 200
+    }
+  ],
+  "importSorter.generalConfiguration.exclude": ["polyfills.ts"],
+  "importSorter.generalConfiguration.sortOnBeforeSave": true,
+  "search.usePCRE2": true
+}
