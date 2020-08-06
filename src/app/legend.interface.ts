@@ -71,9 +71,7 @@ interface DualLegendForm {
   captainAbility: string;
   captainAbilityAfterLimitBreakPlus: string;
   captainAbilityAdditionnalInformation: string;
-  ownSpecialWithStages: SpecialWithStage[];
   ownSpecial: string;
-  ownSpecialTurns: SpecialTurns;
   picture: Picture;
 }
 

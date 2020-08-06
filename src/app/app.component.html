@@ -57,7 +57,9 @@
       <tr>
         <td>Histoire</td>
         <td>
-          <b style="color: #f0c300;">{{ legend.name }}</b>
+          <b [ngStyle]="color(legend.singleCharacterData.type)">{{
+            legend.name
+          }}</b>
           : {{ legend.singleCharacterData.story }}<br />
         </td>
       </tr>
@@ -66,11 +68,9 @@
         <td>
           <b></b>
           <p>
-            <b
-              ><font color="#F0C300">{{
-                legend.singleCharacterData.type
-              }}</font></b
-            >
+            <b [ngStyle]="color(legend.singleCharacterData.type)">{{
+              legend.singleCharacterData.type
+            }}</b>
           </p>
           <b><b></b></b>
         </td>
@@ -387,11 +387,11 @@
       <tr>
         <td>Histoire</td>
         <td>
-          <b style="color: #f0c300;">{{
+          <b [ngStyle]="color(legend.dualCharacterData.firstForm.type)">{{
             legend.dualCharacterData.firstForm.name
           }}</b>
           : {{ legend.dualCharacterData.firstForm.story }}<br />
-          <b style="color: blue;">{{
+          <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
             legend.dualCharacterData.secondForm.name
           }}</b>
           : {{ legend.dualCharacterData.secondForm.story }}<br />
@@ -404,14 +404,13 @@
         <td>
           <b></b>
           <p>
-            <b
-              ><font color="#F0C300">{{
-                legend.dualCharacterData.firstForm.type
-              }}</font>
-              ({{ legend.dualCharacterData.firstForm.name }}) /
-              <font color="blue">{{
+            <b [ngStyle]="color(legend.dualCharacterData.firstForm.type)"
+              >{{ legend.dualCharacterData.firstForm.type }} ({{
+                legend.dualCharacterData.firstForm.name
+              }}) /
+              <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
                 legend.dualCharacterData.secondForm.type
-              }}</font>
+              }}</b>
               ({{ legend.dualCharacterData.secondForm.name }})</b
             >
           </p>
@@ -421,17 +420,13 @@
       <tr>
         <td>Classe 1</td>
         <td>
-          <b
-            ><font color="#F0C300">{{
-              legend.dualCharacterData.firstForm.name
-            }}</font></b
-          >
+          <b [ngStyle]="color(legend.dualCharacterData.firstForm.type)">{{
+            legend.dualCharacterData.firstForm.name
+          }}</b>
           : {{ legend.dualCharacterData.firstForm.classes[0] }}<br />
-          <b
-            ><font color="blue">{{
-              legend.dualCharacterData.secondForm.name
-            }}</font></b
-          >
+          <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
+            legend.dualCharacterData.secondForm.name
+          }}</b>
           : {{ legend.dualCharacterData.secondForm.classes[0] }}<br />
           <b>{{ legend.dualCharacterData.firstForm.name }}</b>
           : {{ legend.dualCharacterData.finalForm.classes[0] }}
@@ -440,23 +435,17 @@
       <tr>
         <td>Classe 2</td>
         <td>
-          <b
-            ><font color="#F0C300">{{
-              legend.dualCharacterData.firstForm.name
-            }}</font></b
-          >
+          <b [ngStyle]="color(legend.dualCharacterData.firstForm.type)">{{
+            legend.dualCharacterData.firstForm.name
+          }}</b>
           : {{ legend.dualCharacterData.firstForm.classes[1] }}<br />
-          <b
-            ><font color="blue">{{
-              legend.dualCharacterData.secondForm.name
-            }}</font></b
-          >
+          <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
+            legend.dualCharacterData.secondForm.name
+          }}</b>
           : {{ legend.dualCharacterData.secondForm.classes[1] }}<br />
-          <b
-            ><font color="blue">{{
-              legend.dualCharacterData.finalForm.name
-            }}</font></b
-          >
+          <b [ngStyle]="color(legend.dualCharacterData.finalForm.type)">{{
+            legend.dualCharacterData.finalForm.name
+          }}</b>
           : {{ legend.dualCharacterData.finalForm.classes[1] }}
         </td>
       </tr>
@@ -467,23 +456,17 @@
       <tr>
         <td>Combo</td>
         <td>
-          <b
-            ><font color="#F0C300">{{
-              legend.dualCharacterData.firstForm.name
-            }}</font></b
-          >
+          <b [ngStyle]="color(legend.dualCharacterData.firstForm.type)">{{
+            legend.dualCharacterData.firstForm.name
+          }}</b>
           : {{ legend.dualCharacterData.firstForm.combo }}<br />
-          <b
-            ><font color="blue">{{
-              legend.dualCharacterData.secondForm.name
-            }}</font></b
-          >
+          <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
+            legend.dualCharacterData.secondForm.name
+          }}</b>
           : {{ legend.dualCharacterData.secondForm.combo }}<br />
-          <b
-            ><font color="blue">{{
-              legend.dualCharacterData.finalForm.name
-            }}</font></b
-          >
+          <b [ngStyle]="color(legend.dualCharacterData.finalForm.type)">{{
+            legend.dualCharacterData.finalForm.name
+          }}</b>
           : {{ legend.dualCharacterData.finalForm.combo }}
         </td>
       </tr>
@@ -501,21 +484,17 @@
       <tr>
         <td>HP</td>
         <td>
-          <b
-            ><font color="#F0C300">{{
-              legend.dualCharacterData.firstForm.name
-            }}</font></b
-          >
+          <b [ngStyle]="color(legend.dualCharacterData.firstForm.type)">{{
+            legend.dualCharacterData.firstForm.name
+          }}</b>
           : {{ legend.dualCharacterData.firstForm.hp.initial }} puis
           {{ legend.dualCharacterData.firstForm.hp.afterLimitBreak }} après le
           dépassement de limites puis
           {{ legend.dualCharacterData.firstForm.hp.afterLimitBreakPlus }} après
           l'extension du dépassement de limites<br />
-          <b
-            ><font color="blue">{{
-              legend.dualCharacterData.secondForm.name
-            }}</font></b
-          >
+          <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
+            legend.dualCharacterData.secondForm.name
+          }}</b>
           : {{ legend.dualCharacterData.secondForm.hp.initial }} puis
           {{ legend.dualCharacterData.secondForm.hp.afterLimitBreak }} après le
           dépassement de limites puis
@@ -532,21 +511,17 @@
       <tr>
         <td>ATK</td>
         <td>
-          <b
-            ><font color="#F0C300">{{
-              legend.dualCharacterData.firstForm.name
-            }}</font></b
-          >
+          <b [ngStyle]="color(legend.dualCharacterData.firstForm.type)">{{
+            legend.dualCharacterData.firstForm.name
+          }}</b>
           : {{ legend.dualCharacterData.firstForm.atk.initial }} puis
           {{ legend.dualCharacterData.firstForm.atk.afterLimitBreak }} après le
           dépassement de limites puis
           {{ legend.dualCharacterData.firstForm.atk.afterLimitBreakPlus }} après
           l'extension du dépassement de limites<br />
-          <b
-            ><font color="blue">{{
-              legend.dualCharacterData.secondForm.name
-            }}</font></b
-          >
+          <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
+            legend.dualCharacterData.secondForm.name
+          }}</b>
           : {{ legend.dualCharacterData.secondForm.atk.initial }} puis
           {{ legend.dualCharacterData.secondForm.atk.afterLimitBreak }} après le
           dépassement de limites puis
@@ -563,21 +538,17 @@
       <tr>
         <td>RCV</td>
         <td>
-          <b
-            ><font color="#F0C300">{{
-              legend.dualCharacterData.firstForm.name
-            }}</font></b
-          >
+          <b [ngStyle]="color(legend.dualCharacterData.firstForm.type)">{{
+            legend.dualCharacterData.firstForm.name
+          }}</b>
           : {{ legend.dualCharacterData.firstForm.rcv.initial }} puis
           {{ legend.dualCharacterData.firstForm.rcv.afterLimitBreak }} après le
           dépassement de limites puis
           {{ legend.dualCharacterData.firstForm.rcv.afterLimitBreakPlus }} après
           l'extension du dépassement de limites<br />
-          <b
-            ><font color="blue">{{
-              legend.dualCharacterData.secondForm.name
-            }}</font></b
-          >
+          <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
+            legend.dualCharacterData.secondForm.name
+          }}</b>
           : {{ legend.dualCharacterData.secondForm.rcv.initial }} puis
           {{ legend.dualCharacterData.secondForm.rcv.afterLimitBreak }} après le
           dépassement de limites puis
@@ -601,23 +572,17 @@
       <tr>
         <td>Captain Ability</td>
         <td>
-          <b
-            ><font color="#F0C300">{{
-              legend.dualCharacterData.firstForm.name
-            }}</font></b
-          >
+          <b [ngStyle]="color(legend.dualCharacterData.firstForm.type)">{{
+            legend.dualCharacterData.firstForm.name
+          }}</b>
           : {{ legend.dualCharacterData.firstForm.captainAbility }}<br />
-          <b
-            ><font color="blue">{{
-              legend.dualCharacterData.secondForm.name
-            }}</font></b
-          >
+          <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
+            legend.dualCharacterData.secondForm.name
+          }}</b>
           : {{ legend.dualCharacterData.secondForm.captainAbility }}<br />
-          <b
-            ><font color="blue">{{
-              legend.dualCharacterData.finalForm.name
-            }}</font></b
-          >
+          <b [ngStyle]="color(legend.dualCharacterData.finalForm.type)">{{
+            legend.dualCharacterData.finalForm.name
+          }}</b>
           : {{ legend.dualCharacterData.finalForm.captainAbility }}<br />
           <small>{{
             legend.dualCharacterData.finalForm
@@ -625,14 +590,50 @@
           }}</small>
         </td>
       </tr>
-      <tr>
+      <tr *ngIf="legend.dualCharacterData.hasOnlyOneSpecial">
         <td>
           Special ({{ legend.dualCharacterData.specialTurns.initial }}→{{
             legend.dualCharacterData.specialTurns.max
-          }})
+          }}
+          <span
+            *ngIf="legend.dualCharacterData.specialTurns.gainWithLimitBreak"
+          >
+            puis
+            {{
+              legend.dualCharacterData.specialTurns.max -
+                legend.dualCharacterData.specialTurns.gainWithLimitBreak
+            }}</span
+          >)
         </td>
+
         <td>
           {{ legend.dualCharacterData.special }}
+        </td>
+      </tr>
+      <tr *ngIf="!legend.dualCharacterData.hasOnlyOneSpecial">
+        <td>
+          Special ({{ legend.dualCharacterData.specialTurns.initial }}→{{
+            legend.dualCharacterData.specialTurns.max
+          }}
+          <span
+            *ngIf="legend.dualCharacterData.specialTurns.gainWithLimitBreak"
+          >
+            puis
+            {{
+              legend.dualCharacterData.specialTurns.max -
+                legend.dualCharacterData.specialTurns.gainWithLimitBreak
+            }}</span
+          >)
+        </td>
+        <td>
+          <b [ngStyle]="color(legend.dualCharacterData.firstForm.type)">{{
+            legend.dualCharacterData.firstForm.name
+          }}</b>
+          : {{ legend.dualCharacterData.firstForm.ownSpecial }}<br />
+          <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
+            legend.dualCharacterData.secondForm.name
+          }}</b>
+          : {{ legend.dualCharacterData.secondForm.ownSpecial }}<br />
         </td>
       </tr>
       <tr>
