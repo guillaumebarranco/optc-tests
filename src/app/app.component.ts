@@ -8,7 +8,7 @@ import { jsonLegends } from './legends';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public legend = jsonLegends[3] || JSON.parse(localStorage.getItem('legend'));
+  public legend = JSON.parse(localStorage.getItem('legend')) || jsonLegends[3];
 
   public color(type: string) {
     switch (type) {
