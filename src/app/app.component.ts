@@ -8,7 +8,9 @@ import { jsonLegends } from './legends';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public legend = JSON.parse(localStorage.getItem('legend')) || jsonLegends[1];
+  public legends = jsonLegends;
+
+  public legend = this.legends[0];
 
   public getColorFromType(type: string): string {
     switch (type) {
@@ -39,5 +41,9 @@ export class AppComponent {
         type1
       )}, ${this.getColorFromType(type2)})`,
     };
+  }
+
+  public selectLegend(legendName: string): void {
+    this.legend = this.legends.find((l) => l.name === legendName);
   }
 }

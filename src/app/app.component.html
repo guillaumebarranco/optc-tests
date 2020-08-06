@@ -1,3 +1,22 @@
+<br />
+<ul class="legends-list">
+  <li *ngFor="let l of legends" (click)="selectLegend(l.name)">
+    <img
+      *ngIf="l.isDual"
+      [src]="l.dualCharacterData.finalForm.picture.sixStarsPicture"
+      width="70"
+    />
+    <img
+      *ngIf="!l.isDual"
+      [src]="
+        l.singleCharacterData.picture.sixStarsPicture ||
+        l.singleCharacterData.picture.sixPlusStarsPicture
+      "
+      width="70"
+    />
+  </li>
+</ul>
+
 <section *ngIf="!legend.isDual" name="singleCharacter">
   <div style="text-align: center;">
     <h1>
