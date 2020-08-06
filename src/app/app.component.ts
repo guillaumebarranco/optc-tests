@@ -1,16 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 
-import { jsonLegends } from './legends';
+import { dualLegends } from './data/dual-legends';
+import { singleLegends } from './data/single-legends';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  public legends = jsonLegends;
+export class AppComponent implements OnInit {
+  public legends = singleLegends.concat(dualLegends);
+  public legend$: Subject<any> = new Subject();
+  public selectedLegendName = null;
 
-  public legend = this.legends[0];
+  public ngOnInit() {
+    const currentLegend =
+      localStorage.getItem('selectLegendName') !== null
+        ? this.legends.find(
+            (l) => l.name === localStorage.getItem('selectLegendName')
+          )
+        : this.legends[0];
+
+    setTimeout(() => {
+      this.legend$.next(currentLegend);
+    }, 100);
+
+    this.selectedLegendName = currentLegend.name;
+  }
 
   public getColorFromType(type: string): string {
     switch (type) {
@@ -21,7 +38,7 @@ export class AppComponent {
       case 'DEX':
         return 'green';
       case 'PSY':
-        return 'yellow';
+        return 'rgb(240, 195, 0)';
       case 'INT':
         return 'purple';
       default:
@@ -44,6 +61,12 @@ export class AppComponent {
   }
 
   public selectLegend(legendName: string): void {
-    this.legend = this.legends.find((l) => l.name === legendName);
+    console.log('this.selectedLegendName', this.selectedLegendName);
+    console.log('legendName', legendName);
+    if (this.selectedLegendName !== legendName) {
+      this.legend$.next(this.legends.find((l) => l.name === legendName));
+      this.selectedLegendName = legendName;
+      localStorage.setItem('selectLegendName', legendName);
+    }
   }
 }
