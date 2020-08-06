@@ -27,18 +27,21 @@
       height="50%"
       [src]="legend.artwork.fiveStars"
       width="50%"
+      style="max-width: 640px;"
     />
     <img
       *ngIf="legend.artwork.sixStars"
       height="50%"
       [src]="legend.artwork.sixStars"
       width="50%"
+      style="max-width: 640px;"
     />
     <img
       *ngIf="legend.artwork.sixPlusStars"
       height="50%"
       [src]="legend.artwork.sixPlusStars"
       width="50%"
+      style="max-width: 640px;"
     />
   </div>
 
@@ -56,12 +59,7 @@
       </tr>
       <tr>
         <td>Histoire</td>
-        <td>
-          <b [ngStyle]="color(legend.singleCharacterData.type)">{{
-            legend.name
-          }}</b>
-          : {{ legend.singleCharacterData.story }}<br />
-        </td>
+        <td>{{ legend.singleCharacterData.story }}</td>
       </tr>
       <tr>
         <td>Type</td>
@@ -154,6 +152,13 @@
           }}</small>
         </td>
       </tr>
+
+      <tr>
+        <td>Captain Ability (après l'extension du dépassement de limites)</td>
+        <td>
+          {{ legend.singleCharacterData.captainAbilityAfterLimitBreakPlus }}
+        </td>
+      </tr>
       <tr *ngIf="legend.singleCharacterData.captainAction">
         <td>
           Action de capitaine ({{
@@ -206,9 +211,21 @@
           {{ special.special }}
         </td>
       </tr>
-      <tr>
+      <tr
+        *ngIf="!legend.singleCharacterData.crewmateAbilities[0].needLimitBreak"
+      >
         <td>Crewmate Ability 1</td>
-        <td>{{ legend.crewmateAbility1 }}</td>
+        <td>
+          {{ legend.singleCharacterData.crewmateAbilities[0].ability }}
+        </td>
+      </tr>
+      <tr
+        *ngIf="!legend.singleCharacterData.crewmateAbilities[1].needLimitBreak"
+      >
+        <td>Crewmate Ability 2</td>
+        <td>
+          {{ legend.singleCharacterData.crewmateAbilities[1].ability }}
+        </td>
       </tr>
       <tr>
         <td colspan="2">
@@ -217,10 +234,20 @@
           </div>
         </td>
       </tr>
-      <tr>
+      <tr
+        *ngIf="legend.singleCharacterData.crewmateAbilities[0].needLimitBreak"
+      >
+        <td>Crewmate Ability 1</td>
+        <td>
+          {{ legend.singleCharacterData.crewmateAbilities[0].ability }}
+        </td>
+      </tr>
+      <tr
+        *ngIf="legend.singleCharacterData.crewmateAbilities[1].needLimitBreak"
+      >
         <td>Crewmate Ability 2</td>
         <td>
-          {{ legend.crewmateAbility2 }}
+          {{ legend.singleCharacterData.crewmateAbilities[1].ability }}
         </td>
       </tr>
       <tr>
@@ -286,6 +313,31 @@
       <tr>
         <td colspan="2">
           <div style="text-align: center;">
+            <b>Effets de soutien</b>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          Personnages soutenus : <br />
+          <div
+            style="margin-left: 40px;"
+            *ngFor="
+              let supportedCharacter of legend.support.supportedCharacters
+            "
+          >
+            {{ supportedCharacter }}
+          </div>
+        </td>
+      </tr>
+      <tr *ngFor="let support of legend.support.levels">
+        <td></td>
+        <td>{{ support }}</td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div style="text-align: center;">
             <b>Évolueurs requis</b>
           </div>
         </td>
@@ -294,10 +346,30 @@
         <td colspan="2">
           <div style="text-align: center;">
             <img height="8%" [src]="legend.evolvers[0]" width="8%" />
-            <img height="8%" [src]="legend.evolvers[1]" width="8%" />
-            <img height="8%" [src]="legend.evolvers[2]" width="8%" />
-            <img height="8%" [src]="legend.evolvers[3]" width="8%" />
-            <img height="8%" [src]="legend.evolvers[4]" width="8%" />
+            <img
+              height="8%"
+              style="margin-left: 5px;"
+              [src]="legend.evolvers[1]"
+              width="8%"
+            />
+            <img
+              height="8%"
+              style="margin-left: 5px;"
+              [src]="legend.evolvers[2]"
+              width="8%"
+            />
+            <img
+              height="8%"
+              style="margin-left: 5px;"
+              [src]="legend.evolvers[3]"
+              width="8%"
+            />
+            <img
+              height="8%"
+              style="margin-left: 5px;"
+              [src]="legend.evolvers[4]"
+              width="8%"
+            />
           </div>
         </td>
       </tr>
@@ -354,24 +426,30 @@
       [src]="legend.dualCharacterData.secondForm.picture.sixPlusStarsPicture"
     />
   </div>
-  <img
-    *ngIf="legend.artwork.fiveStars"
-    height="50%"
-    [src]="legend.artwork.fiveStars"
-    width="50%"
-  />
-  <img
-    *ngIf="legend.artwork.sixStars"
-    height="50%"
-    [src]="legend.artwork.sixStars"
-    width="50%"
-  />
-  <img
-    *ngIf="legend.artwork.sixPlusStars"
-    height="50%"
-    [src]="legend.artwork.sixPlusStars"
-    width="50%"
-  />
+  <div style="text-align: center;">
+    <img
+      *ngIf="legend.artwork.fiveStars"
+      height="50%"
+      [src]="legend.artwork.fiveStars"
+      width="50%"
+      style="max-width: 640px;"
+    />
+    <img
+      *ngIf="legend.artwork.sixStars"
+      height="50%"
+      [src]="legend.artwork.sixStars"
+      width="50%"
+      style="max-width: 640px;"
+    />
+    <img
+      *ngIf="legend.artwork.sixPlusStars"
+      height="50%"
+      [src]="legend.artwork.sixPlusStars"
+      width="50%"
+      style="max-width: 640px;"
+    />
+  </div>
+
   <table>
     <tr></tr>
     <tbody>
@@ -395,26 +473,40 @@
             legend.dualCharacterData.secondForm.name
           }}</b>
           : {{ legend.dualCharacterData.secondForm.story }}<br />
-          <b>{{ legend.dualCharacterData.finalForm.name }}</b> :
+          <b
+            class="dual-name"
+            [ngStyle]="
+              gradient(
+                legend.dualCharacterData.firstForm.type,
+                legend.dualCharacterData.secondForm.type
+              )
+            "
+            >{{ legend.dualCharacterData.finalForm.name }}</b
+          >
+          :
           {{ legend.dualCharacterData.finalForm.story }}
         </td>
       </tr>
       <tr>
         <td>Type</td>
         <td>
-          <b></b>
           <p>
-            <b [ngStyle]="color(legend.dualCharacterData.firstForm.type)"
-              >{{ legend.dualCharacterData.firstForm.type }} ({{
-                legend.dualCharacterData.firstForm.name
-              }}) /
-              <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
-                legend.dualCharacterData.secondForm.type
-              }}</b>
-              ({{ legend.dualCharacterData.secondForm.name }})</b
-            >
+            <b
+              ><span
+                [ngStyle]="color(legend.dualCharacterData.firstForm.type)"
+                >{{ legend.dualCharacterData.firstForm.type }}</span
+              >
+              ({{ legend.dualCharacterData.firstForm.name }})
+            </b>
+            /
+            <b
+              ><span
+                [ngStyle]="color(legend.dualCharacterData.secondForm.type)"
+                >{{ legend.dualCharacterData.secondForm.type }}</span
+              >
+              ({{ legend.dualCharacterData.secondForm.name }})
+            </b>
           </p>
-          <b><b></b></b>
         </td>
       </tr>
       <tr>
@@ -424,11 +516,22 @@
             legend.dualCharacterData.firstForm.name
           }}</b>
           : {{ legend.dualCharacterData.firstForm.classes[0] }}<br />
+
           <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
             legend.dualCharacterData.secondForm.name
           }}</b>
           : {{ legend.dualCharacterData.secondForm.classes[0] }}<br />
-          <b>{{ legend.dualCharacterData.firstForm.name }}</b>
+
+          <b
+            class="dual-name"
+            [ngStyle]="
+              gradient(
+                legend.dualCharacterData.firstForm.type,
+                legend.dualCharacterData.secondForm.type
+              )
+            "
+            >{{ legend.dualCharacterData.finalForm.name }}</b
+          >
           : {{ legend.dualCharacterData.finalForm.classes[0] }}
         </td>
       </tr>
@@ -439,13 +542,22 @@
             legend.dualCharacterData.firstForm.name
           }}</b>
           : {{ legend.dualCharacterData.firstForm.classes[1] }}<br />
+
           <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
             legend.dualCharacterData.secondForm.name
           }}</b>
           : {{ legend.dualCharacterData.secondForm.classes[1] }}<br />
-          <b [ngStyle]="color(legend.dualCharacterData.finalForm.type)">{{
-            legend.dualCharacterData.finalForm.name
-          }}</b>
+
+          <b
+            class="dual-name"
+            [ngStyle]="
+              gradient(
+                legend.dualCharacterData.firstForm.type,
+                legend.dualCharacterData.secondForm.type
+              )
+            "
+            >{{ legend.dualCharacterData.finalForm.name }}</b
+          >
           : {{ legend.dualCharacterData.finalForm.classes[1] }}
         </td>
       </tr>
@@ -460,13 +572,22 @@
             legend.dualCharacterData.firstForm.name
           }}</b>
           : {{ legend.dualCharacterData.firstForm.combo }}<br />
+
           <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
             legend.dualCharacterData.secondForm.name
           }}</b>
           : {{ legend.dualCharacterData.secondForm.combo }}<br />
-          <b [ngStyle]="color(legend.dualCharacterData.finalForm.type)">{{
-            legend.dualCharacterData.finalForm.name
-          }}</b>
+
+          <b
+            class="dual-name"
+            [ngStyle]="
+              gradient(
+                legend.dualCharacterData.firstForm.type,
+                legend.dualCharacterData.secondForm.type
+              )
+            "
+            >{{ legend.dualCharacterData.finalForm.name }}</b
+          >
           : {{ legend.dualCharacterData.finalForm.combo }}
         </td>
       </tr>
@@ -500,7 +621,16 @@
           dépassement de limites puis
           {{ legend.dualCharacterData.secondForm.hp.afterLimitBreakPlus }} après
           l'extension du dépassement de limites<br />
-          <b>{{ legend.dualCharacterData.finalForm.name }}</b>
+          <b
+            class="dual-name"
+            [ngStyle]="
+              gradient(
+                legend.dualCharacterData.firstForm.type,
+                legend.dualCharacterData.secondForm.type
+              )
+            "
+            >{{ legend.dualCharacterData.finalForm.name }}</b
+          >
           : {{ legend.dualCharacterData.finalForm.hp.initial }} puis
           {{ legend.dualCharacterData.finalForm.hp.afterLimitBreak }} après le
           dépassement de limites puis
@@ -527,7 +657,16 @@
           dépassement de limites puis
           {{ legend.dualCharacterData.secondForm.atk.afterLimitBreakPlus }}
           après l'extension du dépassement de limites<br />
-          <b>{{ legend.dualCharacterData.finalForm.name }}</b>
+          <b
+            class="dual-name"
+            [ngStyle]="
+              gradient(
+                legend.dualCharacterData.firstForm.type,
+                legend.dualCharacterData.secondForm.type
+              )
+            "
+            >{{ legend.dualCharacterData.finalForm.name }}</b
+          >
           : {{ legend.dualCharacterData.finalForm.atk.initial }} puis
           {{ legend.dualCharacterData.finalForm.atk.afterLimitBreak }} après le
           dépassement de limites puis
@@ -554,7 +693,16 @@
           dépassement de limites puis
           {{ legend.dualCharacterData.secondForm.rcv.afterLimitBreakPlus }}
           après l'extension du dépassement de limites<br />
-          <b>{{ legend.dualCharacterData.finalForm.name }}</b>
+          <b
+            class="dual-name"
+            [ngStyle]="
+              gradient(
+                legend.dualCharacterData.firstForm.type,
+                legend.dualCharacterData.secondForm.type
+              )
+            "
+            >{{ legend.dualCharacterData.finalForm.name }}</b
+          >
           : {{ legend.dualCharacterData.finalForm.rcv.initial }} puis
           {{ legend.dualCharacterData.finalForm.rcv.afterLimitBreak }} après le
           dépassement de limites puis
@@ -580,9 +728,16 @@
             legend.dualCharacterData.secondForm.name
           }}</b>
           : {{ legend.dualCharacterData.secondForm.captainAbility }}<br />
-          <b [ngStyle]="color(legend.dualCharacterData.finalForm.type)">{{
-            legend.dualCharacterData.finalForm.name
-          }}</b>
+          <b
+            class="dual-name"
+            [ngStyle]="
+              gradient(
+                legend.dualCharacterData.firstForm.type,
+                legend.dualCharacterData.secondForm.type
+              )
+            "
+            >{{ legend.dualCharacterData.finalForm.name }}</b
+          >
           : {{ legend.dualCharacterData.finalForm.captainAbility }}<br />
           <small>{{
             legend.dualCharacterData.finalForm
@@ -636,9 +791,95 @@
           : {{ legend.dualCharacterData.secondForm.ownSpecial }}<br />
         </td>
       </tr>
-      <tr>
+      <tr
+        *ngIf="
+          !legend.dualCharacterData.hasDifferentCrewmateAbility1 &&
+          !legend.dualCharacterData.finalForm.crewmateAbilities[0]
+            .needLimitBreak
+        "
+      >
         <td>Crewmate Ability 1</td>
-        <td>{{ legend.crewmateAbility1 }}</td>
+        <td>
+          {{ legend.dualCharacterData.finalForm.crewmateAbilities[0].ability }}
+        </td>
+      </tr>
+      <tr
+        *ngIf="
+          legend.dualCharacterData.hasDifferentCrewmateAbility1 &&
+          !legend.dualCharacterData.finalForm.crewmateAbilities[0]
+            .needLimitBreak
+        "
+      >
+        <td>Crewmate Ability 1</td>
+        <td>
+          <b [ngStyle]="color(legend.dualCharacterData.firstForm.type)">{{
+            legend.dualCharacterData.firstForm.name
+          }}</b>
+          : {{ legend.dualCharacterData.firstForm.crewmateAbilities[0].ability
+          }}<br />
+          <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
+            legend.dualCharacterData.secondForm.name
+          }}</b>
+          : {{ legend.dualCharacterData.secondForm.crewmateAbilities[0].ability
+          }}<br />
+          <b
+            class="dual-name"
+            [ngStyle]="
+              gradient(
+                legend.dualCharacterData.firstForm.type,
+                legend.dualCharacterData.secondForm.type
+              )
+            "
+            >{{ legend.dualCharacterData.finalForm.name }}</b
+          >
+          :
+          {{ legend.dualCharacterData.finalForm.crewmateAbilities[0].ability }}
+        </td>
+      </tr>
+      <tr
+        *ngIf="
+          !legend.dualCharacterData.hasDifferentCrewmateAbility2 &&
+          !legend.dualCharacterData.finalForm.crewmateAbilities[1]
+            .needLimitBreak
+        "
+      >
+        <td>Crewmate Ability 2</td>
+        <td>
+          {{ legend.dualCharacterData.finalForm.crewmateAbilities[1].ability }}
+        </td>
+      </tr>
+      <tr
+        *ngIf="
+          legend.dualCharacterData.hasDifferentCrewmateAbility2 &&
+          !legend.dualCharacterData.finalForm.crewmateAbilities[1]
+            .needLimitBreak
+        "
+      >
+        <td>Crewmate Ability 2</td>
+        <td>
+          <b [ngStyle]="color(legend.dualCharacterData.firstForm.type)">{{
+            legend.dualCharacterData.firstForm.name
+          }}</b>
+          : {{ legend.dualCharacterData.firstForm.crewmateAbilities[1].ability
+          }}<br />
+          <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
+            legend.dualCharacterData.secondForm.name
+          }}</b>
+          : {{ legend.dualCharacterData.secondForm.crewmateAbilities[1].ability
+          }}<br />
+          <b
+            class="dual-name"
+            [ngStyle]="
+              gradient(
+                legend.dualCharacterData.firstForm.type,
+                legend.dualCharacterData.secondForm.type
+              )
+            "
+            >{{ legend.dualCharacterData.finalForm.name }}</b
+          >
+          :
+          {{ legend.dualCharacterData.finalForm.crewmateAbilities[1].ability }}
+        </td>
       </tr>
       <tr>
         <td>Effets du changement</td>
@@ -653,10 +894,91 @@
           </div>
         </td>
       </tr>
-      <tr>
+      <tr
+        *ngIf="
+          !legend.dualCharacterData.hasDifferentCrewmateAbility1 &&
+          legend.dualCharacterData.finalForm.crewmateAbilities[0].needLimitBreak
+        "
+      >
+        <td>Crewmate Ability 1</td>
+        <td>
+          {{ legend.dualCharacterData.finalForm.crewmateAbilities[0].ability }}
+        </td>
+      </tr>
+
+      <tr
+        *ngIf="
+          legend.dualCharacterData.hasDifferentCrewmateAbility1 &&
+          legend.dualCharacterData.finalForm.crewmateAbilities[0].needLimitBreak
+        "
+      >
+        <td>Crewmate Ability 1</td>
+        <td>
+          <b [ngStyle]="color(legend.dualCharacterData.firstForm.type)">{{
+            legend.dualCharacterData.firstForm.name
+          }}</b>
+          : {{ legend.dualCharacterData.firstForm.crewmateAbilities[0].ability
+          }}<br />
+          <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
+            legend.dualCharacterData.secondForm.name
+          }}</b>
+          : {{ legend.dualCharacterData.secondForm.crewmateAbilities[0].ability
+          }}<br />
+          <b
+            class="dual-name"
+            [ngStyle]="
+              gradient(
+                legend.dualCharacterData.firstForm.type,
+                legend.dualCharacterData.secondForm.type
+              )
+            "
+            >{{ legend.dualCharacterData.finalForm.name }}</b
+          >
+          :
+          {{ legend.dualCharacterData.finalForm.crewmateAbilities[0].ability }}
+        </td>
+      </tr>
+      <tr
+        *ngIf="
+          !legend.dualCharacterData.hasDifferentCrewmateAbility2 &&
+          legend.dualCharacterData.finalForm.crewmateAbilities[1].needLimitBreak
+        "
+      >
         <td>Crewmate Ability 2</td>
         <td>
-          {{ legend.crewmateAbility2 }}
+          {{ legend.dualCharacterData.finalForm.crewmateAbilities[1].ability }}
+        </td>
+      </tr>
+      <tr
+        *ngIf="
+          legend.dualCharacterData.hasDifferentCrewmateAbility2 &&
+          legend.dualCharacterData.finalForm.crewmateAbilities[1].needLimitBreak
+        "
+      >
+        <td>Crewmate Ability 2</td>
+        <td>
+          <b [ngStyle]="color(legend.dualCharacterData.firstForm.type)">{{
+            legend.dualCharacterData.firstForm.name
+          }}</b>
+          : {{ legend.dualCharacterData.firstForm.crewmateAbilities[1].ability
+          }}<br />
+          <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
+            legend.dualCharacterData.secondForm.name
+          }}</b>
+          : {{ legend.dualCharacterData.secondForm.crewmateAbilities[1].ability
+          }}<br />
+          <b
+            class="dual-name"
+            [ngStyle]="
+              gradient(
+                legend.dualCharacterData.firstForm.type,
+                legend.dualCharacterData.secondForm.type
+              )
+            "
+            >{{ legend.dualCharacterData.finalForm.name }}</b
+          >
+          :
+          {{ legend.dualCharacterData.finalForm.crewmateAbilities[1].ability }}
         </td>
       </tr>
       <tr>

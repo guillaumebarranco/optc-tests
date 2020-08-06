@@ -12,6 +12,8 @@ export const jsonLegends: Legend[] = [
     },
     dualCharacterData: {
       hasOnlyOneSpecial: true,
+      hasDifferentCrewmateAbility1: false,
+      hasDifferentCrewmateAbility2: false,
       special: `Enlève 20% des HP de tous les ennemis en ignorant les effets défensifs, bloque le multiplicateur de combos à 3,5 pendant 3 tours et devient "Équipage de Shanks le Roux" pendant 3 tours.`,
       specialTurns: {
         initial: 18,
@@ -46,6 +48,7 @@ export const jsonLegends: Legend[] = [
         captainAbilityAfterLimitBreakPlus: null,
         captainAbilityAdditionnalInformation: null,
         ownSpecial: null,
+        crewmateAbilities: [],
         picture: {
           fiveStarsPicture: 'https://i.imgur.com/628lFI3.png',
           sixStarsPicture: 'https://i.imgur.com/zmgMSzO.png',
@@ -77,6 +80,7 @@ export const jsonLegends: Legend[] = [
         captainAbilityAfterLimitBreakPlus: null,
         captainAbilityAdditionnalInformation: null,
         ownSpecial: null,
+        crewmateAbilities: [],
         picture: {
           fiveStarsPicture: 'https://i.imgur.com/8xl5NjD.png',
           sixStarsPicture: 'https://i.imgur.com/dwSWhXt.png',
@@ -109,6 +113,16 @@ export const jsonLegends: Legend[] = [
         `,
         captainAbilityAfterLimitBreakPlus: null,
         ownSpecial: null,
+        crewmateAbilities: [
+          {
+            ability: `Immunise le personnage contre “Lien des coups spéciaux”.`,
+            needLimitBreak: false,
+          },
+          {
+            ability: `Si le personnage est le dernier à attaquer, ajoute 250 en ATK pour le personnage.`,
+            needLimitBreak: true,
+          },
+        ],
         picture: {
           fiveStarsPicture: 'https://i.imgur.com/AwDf52O.png',
           sixStarsPicture: 'https://i.imgur.com/LxKmEaI.png',
@@ -119,8 +133,6 @@ export const jsonLegends: Legend[] = [
     singleCharacterData: null,
     sockets: 5,
     cost: 55,
-    crewmateAbility1: `Immunise le personnage contre “Lien des coups spéciaux”`,
-    crewmateAbility2: `Si le personnage est le dernier à attaquer, ajoute 250 en ATK pour le personnage.`,
     hasLimitBreak: true,
     hasLimitBreakPlus: true,
     potentialAbilities: [
@@ -216,6 +228,16 @@ export const jsonLegends: Legend[] = [
         gainWithLimitBreakPlus: 0,
       },
       specialWithStages: null,
+      crewmateAbilities: [
+        {
+          ability: `Si un autre personnage utilise son coup spécial, réduit le temps de chargement du coup spécial du personnage de 4 tours.`,
+          needLimitBreak: true,
+        },
+        {
+          ability: `Rend les cercles [TND] avantageux pour tous les personnages.`,
+          needLimitBreak: true,
+        },
+      ],
       picture: {
         fiveStarsPicture: 'https://i.imgur.com/pZfA2vh.png',
         sixStarsPicture: 'https://i.imgur.com/mdZnRbI.png',
@@ -224,8 +246,6 @@ export const jsonLegends: Legend[] = [
     },
     sockets: 5,
     cost: 55,
-    crewmateAbility1: `Si un autre personnage utilise son coup spécial, réduit le temps de chargement du coup spécial du personnage de 4 tours.`,
-    crewmateAbility2: `Rend les cercles [TND] avantageux pour tous les personnages.`,
     hasLimitBreak: true,
     hasLimitBreakPlus: true,
     potentialAbilities: [
@@ -341,6 +361,16 @@ export const jsonLegends: Legend[] = [
       ],
       special: null,
       specialTurns: null,
+      crewmateAbilities: [
+        {
+          ability: `Immunise le personnage contre "Paralysie".`,
+          needLimitBreak: true,
+        },
+        {
+          ability: `Ajoute 50 en HP, ATK et RCV pour tous les personnages.`,
+          needLimitBreak: true,
+        },
+      ],
       picture: {
         fiveStarsPicture: null,
         sixStarsPicture: null,
@@ -350,8 +380,6 @@ export const jsonLegends: Legend[] = [
     },
     sockets: 5,
     cost: 55,
-    crewmateAbility1: `Immunise le personnage contre "Paralysie".`,
-    crewmateAbility2: `Ajoute 50 en HP, ATK et RCV pour tous les personnages.`,
     hasLimitBreak: true,
     hasLimitBreakPlus: true,
     potentialAbilities: [
@@ -420,6 +448,8 @@ export const jsonLegends: Legend[] = [
     },
     dualCharacterData: {
       hasOnlyOneSpecial: false,
+      hasDifferentCrewmateAbility1: true,
+      hasDifferentCrewmateAbility2: false,
       special: null,
       specialTurns: {
         initial: 17,
@@ -455,6 +485,12 @@ export const jsonLegends: Legend[] = [
         captainAbilityAdditionnalInformation: null,
         ownSpecial:
           'Inflige 400 fois son ATK en dégâts non élémentaires sur un ennemi, rend les cercles [DEX] et [QCK] avantageux pour tous les personnages pendant un tour, multiplie les effets des cercles de tous les personnages par 2,5 pendant un tour et devient "Luffy et Law" pendant 3 tours.',
+        crewmateAbilities: [
+          {
+            ability: `Ajoute 50 en ATK pour tous les personnages.`,
+            needLimitBreak: false,
+          },
+        ],
         picture: {
           fiveStarsPicture: 'https://i.imgur.com/Q9cXCYu.png',
           sixStarsPicture: 'https://i.imgur.com/UCxboK0.png',
@@ -487,6 +523,12 @@ export const jsonLegends: Legend[] = [
         captainAbilityAdditionnalInformation: null,
         ownSpecial: `Inflige 75 fois son ATK en dégâts non élémentaires sur tous les ennemis en ignorant les effets défensifs, rend les cercles [DEX] et [QCK] avantageux pour tous les personnages pendant un tour, multiplie les effets des cercles de tous les personnages par 2,5 pendant un tour et devient "Luffy et Law" pendant 3 tours.
         `,
+        crewmateAbilities: [
+          {
+            ability: `Ajoute 50 en HP pour tous les personnages.`,
+            needLimitBreak: false,
+          },
+        ],
         picture: {
           fiveStarsPicture: 'https://i.imgur.com/O9vYfIg.png',
           sixStarsPicture: 'https://i.imgur.com/gQjtivT.png',
@@ -518,6 +560,16 @@ export const jsonLegends: Legend[] = [
         captainAbilityAdditionnalInformation: null,
         captainAbilityAfterLimitBreakPlus: null,
         ownSpecial: null,
+        crewmateAbilities: [
+          {
+            ability: `Ajoute 50 en HP, ATK et RCV pour tous les personnages.`,
+            needLimitBreak: false,
+          },
+          {
+            ability: `Immunise le personnage contre "Lien des coups spéciaux" et "Paralysie".`,
+            needLimitBreak: true,
+          },
+        ],
         picture: {
           fiveStarsPicture:
             'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f2533.png',
@@ -530,8 +582,6 @@ export const jsonLegends: Legend[] = [
     singleCharacterData: null,
     sockets: 5,
     cost: 55,
-    crewmateAbility1: `Ajoute 50 en HP, ATK et RCV pour tous les personnages.`,
-    crewmateAbility2: `Immunise le personnage contre "Lien des coups spéciaux" et "Paralysie".`,
     hasLimitBreak: true,
     hasLimitBreakPlus: false,
     potentialAbilities: [

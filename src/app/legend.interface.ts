@@ -57,6 +57,12 @@ interface LegendData {
   special: string;
   specialTurns: SpecialTurns;
   picture: Picture;
+  crewmateAbilities: CrewmateAbility[];
+}
+
+interface CrewmateAbility {
+  ability: string;
+  needLimitBreak: boolean;
 }
 
 interface DualLegendForm {
@@ -73,10 +79,13 @@ interface DualLegendForm {
   captainAbilityAdditionnalInformation: string;
   ownSpecial: string;
   picture: Picture;
+  crewmateAbilities: CrewmateAbility[];
 }
 
 interface DualLegendData {
   hasOnlyOneSpecial: boolean;
+  hasDifferentCrewmateAbility1: boolean;
+  hasDifferentCrewmateAbility2: boolean;
   specialWithStages: SpecialWithStage[];
   special: string;
   specialTurns: SpecialTurns;
@@ -95,8 +104,6 @@ export interface Legend {
   singleCharacterData: LegendData;
   sockets: number;
   cost: number;
-  crewmateAbility1: string;
-  crewmateAbility2: string;
   hasLimitBreak: boolean;
   hasLimitBreakPlus: boolean;
   potentialAbilities: PotentialAbility[];

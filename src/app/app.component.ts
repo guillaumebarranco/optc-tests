@@ -8,34 +8,36 @@ import { jsonLegends } from './legends';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public legend = JSON.parse(localStorage.getItem('legend')) || jsonLegends[3];
+  public legend = JSON.parse(localStorage.getItem('legend')) || jsonLegends[1];
 
-  public color(type: string) {
+  public getColorFromType(type: string): string {
     switch (type) {
       case 'QCK':
-        return {
-          color: 'blue',
-        };
+        return 'blue';
       case 'STR':
-        return {
-          color: 'red',
-        };
+        return 'red';
       case 'DEX':
-        return {
-          color: 'green',
-        };
+        return 'green';
       case 'PSY':
-        return {
-          color: 'yellow',
-        };
+        return 'yellow';
       case 'INT':
-        return {
-          color: 'purple',
-        };
+        return 'purple';
       default:
-        return {
-          color: 'black',
-        };
+        return 'black';
     }
+  }
+
+  public color(type: string) {
+    return {
+      color: this.getColorFromType(type),
+    };
+  }
+
+  public gradient(type1: string, type2: string) {
+    return {
+      background: `linear-gradient(to right,${this.getColorFromType(
+        type1
+      )}, ${this.getColorFromType(type2)})`,
+    };
   }
 }
