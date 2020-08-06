@@ -1,0 +1,17 @@
+export enum PotentialAbility {
+  ATTAQUE_CRITIQUE = 'Attaque critique',
+  AUGMENTATION_ATK = 'Attaque critique',
+  SOIN_IMPOSSIBLE = 'Réduction de la durée de Soin Impossible',
+  LIEN_CERCLES = 'Réduction de la durée de Lien des Cercles',
+  DESESPOIR_BATEAU = 'Réduction de la durée du désespoir du bateau',
+  CREWMATE_DESESPOIR = 'Réduction de la durée du désespoir des coéquipiers',
+  BARRIERE = 'Attaque critique',
+  SOIN_URGENCE = `Soin d'urgence`,
+  REDUCTION_SPECIAL = 'Réduction du chargement du coup spécial au début de la quête',
+  DOUBLE_SPECIAL = 'Réduction du temps de chargement du coup spécial après utilisation',
+  STR_REDUCTION = 'Réduction des dégâts de type STR',
+  DEX_REDUCTION = 'Réduction des dégâts de type DEX',
+  QCK_REDUCTION = 'Réduction des dégâts de type QCK',
+  PSY_REDUCTION = 'Réduction des dégâts de type PSY',
+  INT_REDUCTION = 'Réduction des dégâts de type INT',
+}

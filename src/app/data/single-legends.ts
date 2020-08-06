@@ -1,4 +1,6 @@
 import { Legend } from '../models/legend.interface';
+import { CharacterClass } from '../models/character-class.interface';
+import { PotentialAbility } from '../models/potential-ability';
 
 export const singleLegends: Legend[] = [
   // Soba Mask
@@ -15,7 +17,7 @@ export const singleLegends: Legend[] = [
     singleCharacterData: {
       story: `Cuisinier de l'équipage de Chapeau de paille. Grâce à sa Raid Suit, un bijou de technologie Germa permettant de devenir invisible en projetant sur son corps tout son environnement, il remporte sur Page One une victoire écrasante.`,
       type: 'QCK',
-      classes: ['Tenace', 'Libre'],
+      classes: [CharacterClass.Tenace, CharacterClass.Libre],
       combo: 5,
       hp: {
         initial: 3622,
@@ -68,7 +70,7 @@ export const singleLegends: Legend[] = [
     hasLimitBreakPlus: true,
     potentialAbilities: [
       {
-        type: 'ATK Critique',
+        type: PotentialAbility.ATTAQUE_CRITIQUE,
         icon: '',
         effects: [
           `Si un coup "PARFAIT" est effectué avec ce personnage, 20% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
@@ -79,9 +81,8 @@ export const singleLegends: Legend[] = [
         ],
       },
       {
-        type: 'Restauration HP',
+        type: PotentialAbility.SOIN_URGENCE,
         icon: '',
-
         effects: [
           `Restaure les HP à hauteur de 1 fois les RCV du personnage si ce dernier réussit un “PARFAIT” lorsque les HP restants sont inférieurs ou égaux à 20%.`,
           `Restaure les HP à hauteur de 1 fois les RCV du personnage si ce dernier réussit un “PARFAIT” lorsque les HP restants sont inférieurs ou égaux à 25%.`,
@@ -91,7 +92,7 @@ export const singleLegends: Legend[] = [
         ],
       },
       {
-        type: 'Réduction soin impossible',
+        type: PotentialAbility.SOIN_IMPOSSIBLE,
         icon: '',
         effects: [
           `Réduit la durée de “Soin impossible” de 1 tour.`,
@@ -136,7 +137,7 @@ export const singleLegends: Legend[] = [
     singleCharacterData: {
       story: `Capitaine de l'équipage de Chapeau de paille. Grâce à cette nouvelle forme du "Gear Fourth", à la fois plus fine et plus rapide que "Tank Man" et "Bound Man", il parvient à faire jeu égal avec Dent-de-chien lors de son duel contre celui-ci.`,
       type: 'STR',
-      classes: ['Cogneur', 'Tenace'],
+      classes: [CharacterClass.Cogneur, CharacterClass.Tenace],
       combo: 4,
       hp: {
         initial: 3820,
@@ -203,7 +204,7 @@ export const singleLegends: Legend[] = [
     hasLimitBreakPlus: true,
     potentialAbilities: [
       {
-        type: 'Lien des cercles',
+        type: PotentialAbility.LIEN_CERCLES,
         icon: '',
         effects: [
           `Réduit la durée de “Lien des cercles” du personnage de 1 tour.`,
@@ -214,7 +215,7 @@ export const singleLegends: Legend[] = [
         ],
       },
       {
-        type: 'Restauration HP',
+        type: PotentialAbility.SOIN_URGENCE,
         icon: '',
         effects: [
           `Restaure les HP à hauteur de 1 fois les RCV du personnage si ce dernier réussit un “PARFAIT” lorsque les HP restants sont inférieurs ou égaux à 10%.`,
@@ -225,7 +226,7 @@ export const singleLegends: Legend[] = [
         ],
       },
       {
-        type: 'ATK Critique',
+        type: PotentialAbility.ATTAQUE_CRITIQUE,
         icon: '',
         effects: [
           `Si un coup "PARFAIT" est effectué avec ce personnage, 40% de chances de faire 4% l'ATK du personnage en dégâts additionnels.`,
@@ -271,7 +272,7 @@ export const singleLegends: Legend[] = [
       story: `35e fille de la famille Charlotte. Soucieuse de ne pas porter préjudice à Sanji, elle quitte ce dernier après l'avoir remercié et serré dans ses bras, autant de souvenirs qu'elle lui ôte aussitôt à l'aide de ses pouvoirs.
       `,
       type: 'INT',
-      classes: ['Intellectuel', 'Tireur'],
+      classes: [CharacterClass.Intellectuel, CharacterClass.Tireur],
       combo: 5,
       hp: {
         initial: 2932,
@@ -323,7 +324,7 @@ export const singleLegends: Legend[] = [
     hasLimitBreakPlus: true,
     potentialAbilities: [
       {
-        type: 'Transpercement des barrières',
+        type: PotentialAbility.BARRIERE,
         icon: '',
         effects: [
           `Permet aux attaques normales du personnage d'ignorer les barrières si les HP sont au maximum.`,
@@ -334,7 +335,7 @@ export const singleLegends: Legend[] = [
         ],
       },
       {
-        type: 'Lien des cercles',
+        type: PotentialAbility.LIEN_CERCLES,
         icon: '',
         effects: [
           `Réduit la durée de “Lien des cercles” du personnage de 1 tour.`,
@@ -345,7 +346,7 @@ export const singleLegends: Legend[] = [
         ],
       },
       {
-        type: 'Réduction soin impossible',
+        type: PotentialAbility.SOIN_IMPOSSIBLE,
         icon: '',
         effects: [
           `Réduit la durée de “Soin impossible” de 1 tour.`,
@@ -375,5 +376,485 @@ export const singleLegends: Legend[] = [
       ],
     },
     batch: `Waifus`,
+  },
+  // Barbe Blanche V1
+  {
+    title: null,
+    name: 'Barbe Blanche',
+    isDual: false,
+    artwork: {
+      fiveStars: 'https://i.imgur.com/VWSTtgM.png',
+      sixStars: 'https://i.imgur.com/03SM5d6.png',
+      sixPlusStars: null,
+    },
+    dualCharacterData: null,
+    singleCharacterData: {
+      story: `Le capitaine de l'équipage de Barbe Blanche et l'un des Quatre Empereurs. Edward Newgate de son véritable nom. Il a mangé le Fruit du Tremblement qui permet de déclencher des séismes et des tsunamis. Utilise le Haki du Conquérant.`,
+      type: 'STR',
+      classes: [CharacterClass.Ravageur, CharacterClass.Tenace],
+      combo: 4,
+      hp: {
+        initial: 3900,
+        afterLimitBreak: 4395,
+        afterLimitBreakPlus: 4895,
+      },
+      atk: {
+        initial: 1360,
+        afterLimitBreak: 1575,
+        afterLimitBreakPlus: 1775,
+      },
+      rcv: {
+        initial: 235,
+        afterLimitBreak: 320,
+        afterLimitBreakPlus: 395,
+      },
+      captainAbility: `Multiplie l'ATK de tous les personnages par 3 si les HP sont en-dessous de 30%.`,
+      captainAbilityAfterLimitBreakPlus: null,
+      captainAbilityAdditionnalInformation: null,
+      captainAction: null,
+      captainActionTurns: null,
+      specialWithStages: null,
+      special: `Enlève 30% des HP de chaque ennemi.`,
+      specialTurns: {
+        initial: 25,
+        max: 17,
+        gainWithLimitBreak: 0,
+        gainWithLimitBreakPlus: 2,
+      },
+      crewmateAbilities: [
+        {
+          ability: `Ajoute 60 en ATK pour les personnages de classe Ravageur et Tenace.`,
+          needLimitBreak: true,
+        },
+        {
+          ability: `Immunise le personnage contre "Paralysie".`,
+          needLimitBreak: true,
+        },
+      ],
+      picture: {
+        fiveStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0260.png',
+        sixStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0261.png',
+        sixPlusStarsPicture: null,
+      },
+    },
+    sockets: 5,
+    cost: 55,
+    hasLimitBreak: true,
+    hasLimitBreakPlus: true,
+    potentialAbilities: [
+      {
+        type: PotentialAbility.DEX_REDUCTION,
+        icon: '',
+        effects: [
+          `Réduit les dégâts subis par les ennemis de type DEX de 2%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 3%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 4%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 5%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 7%.`,
+        ],
+      },
+      {
+        type: PotentialAbility.ATTAQUE_CRITIQUE,
+        icon: '',
+        effects: [
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 20% de chances de faire 3% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 30% de chances de faire 3% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 30% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 50% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 50% de chances de faire 10% l'ATK du personnage en dégâts additionnels.`,
+        ],
+      },
+      {
+        type: PotentialAbility.AUGMENTATION_ATK,
+        icon: '',
+        effects: [
+          `Ajoute 25 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 50 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 100 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 150 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 200 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+        ],
+      },
+    ],
+    evolvers: [
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0118.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0084.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0266.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0100.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0095.png',
+    ],
+    support: {
+      hasSupportEffect: true,
+      supportedCharacters: ['Personnages de type STR'],
+      levels: [
+        `Ajoute 5% de l'ATK du personnage en ATK pour les personnages soutenus.`,
+        `Ajoute 6% de l'ATK du personnage en ATK pour les personnages soutenus.`,
+        `Ajoute 8% de l'ATK du personnage en ATK pour les personnages soutenus.`,
+        `Ajoute 10% de l'ATK du personnage en ATK pour les personnages soutenus.`,
+        `Ajoute 12% de l'ATK du personnage en ATK pour les personnages soutenus.`,
+      ],
+    },
+    batch: `First Legend`,
+  },
+  // Barbe Blanche V1 6+
+  {
+    title: 'Quatre Empereurs',
+    name: 'Barbe Blanche',
+    isDual: false,
+    artwork: {
+      fiveStars: null,
+      sixStars: null,
+      sixPlusStars: 'https://i.imgur.com/ymeQY1E.png',
+    },
+    dualCharacterData: null,
+    singleCharacterData: {
+      story: `Capitaine de l'équipage de Barbe Blanche. Bien qu'ayant subi de multiples attaques lors de la guerre au sommet, ce "père" exemplaire est mort sans même poser genou à terre, le dos exempt de toute blessure infamante.`,
+      type: 'STR',
+      classes: [CharacterClass.Ravageur, CharacterClass.Tenace],
+      combo: 4,
+      hp: {
+        initial: 3806,
+        afterLimitBreak: 4301,
+        afterLimitBreakPlus: 4801,
+      },
+      atk: {
+        initial: 1558,
+        afterLimitBreak: 1773,
+        afterLimitBreakPlus: 1973,
+      },
+      rcv: {
+        initial: 347,
+        afterLimitBreak: 423,
+        afterLimitBreakPlus: 498,
+      },
+      captainAbility: `Multiplie l'ATK de tous les personnages par 3 si les HP sont en-dessous de 30%, sinon par 1,75, et multiplie les HP de tous les personnages par 1,2.`,
+      captainAbilityAfterLimitBreakPlus: null,
+      captainAbilityAdditionnalInformation: null,
+      captainAction: null,
+      captainActionTurns: null,
+      specialWithStages: null,
+      special: `Enlève 30% des HP de chaque ennemi, réduit le temps de chargement des coups spéciaux des personnages qui ne sont pas capitaines d'un tour et mélange les cercles qui ne sont pas correspondants de tous les personnages (cercles [BLK] inclus) aléatoirement.`,
+      specialTurns: {
+        initial: 25,
+        max: 17,
+        gainWithLimitBreak: 0,
+        gainWithLimitBreakPlus: 2,
+      },
+      crewmateAbilities: [
+        {
+          ability: `Ajoute 60 en ATK pour les personnages de classe Ravageur et Tenace.`,
+          needLimitBreak: true,
+        },
+        {
+          ability: `Immunise le personnage contre "Paralysie".`,
+          needLimitBreak: true,
+        },
+      ],
+      picture: {
+        fiveStarsPicture: null,
+        sixStarsPicture: null,
+        sixPlusStarsPicture: 'https://i.imgur.com/z9NGsV3.png',
+      },
+    },
+    sockets: 5,
+    cost: 65,
+    hasLimitBreak: true,
+    hasLimitBreakPlus: true,
+    potentialAbilities: [
+      {
+        type: PotentialAbility.DEX_REDUCTION,
+        icon: '',
+        effects: [
+          `Réduit les dégâts subis par les ennemis de type DEX de 2%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 3%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 4%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 5%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 7%.`,
+        ],
+      },
+      {
+        type: PotentialAbility.ATTAQUE_CRITIQUE,
+        icon: '',
+        effects: [
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 20% de chances de faire 3% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 30% de chances de faire 3% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 30% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 50% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 50% de chances de faire 10% l'ATK du personnage en dégâts additionnels.`,
+        ],
+      },
+      {
+        type: PotentialAbility.AUGMENTATION_ATK,
+        icon: '',
+        effects: [
+          `Ajoute 25 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 50 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 100 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 150 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 200 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+        ],
+      },
+    ],
+    evolvers: [
+      'https://onepiece-treasurecruise.com/wp-content/uploads/red_skull_f.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0118.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0084.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0300.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0095.png',
+    ],
+    support: {
+      hasSupportEffect: true,
+      supportedCharacters: ['Personnages de type STR'],
+      levels: [
+        `Ajoute 5% de l'ATK du personnage en ATK pour les personnages soutenus.`,
+        `Ajoute 6% de l'ATK du personnage en ATK pour les personnages soutenus.`,
+        `Ajoute 8% de l'ATK du personnage en ATK pour les personnages soutenus.`,
+        `Ajoute 10% de l'ATK du personnage en ATK pour les personnages soutenus.`,
+        `Ajoute 12% de l'ATK du personnage en ATK pour les personnages soutenus.`,
+      ],
+    },
+    batch: `First Legend`,
+  },
+  // Rayleigh V1
+  {
+    title: null,
+    name: 'Rayleigh le Seigneur des Ténèbres',
+    isDual: false,
+    artwork: {
+      fiveStars: 'https://i.imgur.com/iMMRzHA.png',
+      sixStars: 'https://i.imgur.com/eERtzOs.png',
+      sixPlusStars: null,
+    },
+    dualCharacterData: null,
+    singleCharacterData: {
+      story: `Ancien second de l'équipage de Roger. Également connu sous les noms de "Bras Droit du Roi des Pirates" et de "Seigneur des Ténèbres". C'est une légende vivante pour tous, ses exploits sont plus que célèbres. C'est un pirate à la retraite qui utilise le Fluide du Conquérant.`,
+      type: 'INT',
+      classes: [CharacterClass.Cogneur, CharacterClass.Intellectuel],
+      combo: 4,
+      hp: {
+        initial: 3001,
+        afterLimitBreak: 3501,
+        afterLimitBreakPlus: 0,
+      },
+      atk: {
+        initial: 1300,
+        afterLimitBreak: 1490,
+        afterLimitBreakPlus: 0,
+      },
+      rcv: {
+        initial: 500,
+        afterLimitBreak: 600,
+        afterLimitBreakPlus: 0,
+      },
+      captainAbility: `Multiplie le multiplicateur de combos par 4.`,
+      captainAbilityAfterLimitBreakPlus: null,
+      captainAbilityAdditionnalInformation: null,
+      captainAction: null,
+      captainActionTurns: null,
+      specialWithStages: null,
+      special: `Inflige 20 fois son ATK en dégâts de type INT sur tous les ennemis et réduit la durée de "Lien" de 5 tours.`,
+      specialTurns: {
+        initial: 23,
+        max: 18,
+        gainWithLimitBreak: 2,
+        gainWithLimitBreakPlus: 0,
+      },
+      crewmateAbilities: [
+        {
+          ability: `Ajoute 50 en HP, ATK et RCV pour tous les personnages.`,
+          needLimitBreak: true,
+        },
+        {
+          ability: `Si un autre personnage utilise son coup spécial, réduit son coup spécial de 2 tours.`,
+          needLimitBreak: true,
+        },
+      ],
+      picture: {
+        fiveStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0366.png',
+        sixStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0367.png',
+        sixPlusStarsPicture: null,
+      },
+    },
+    sockets: 4,
+    cost: 55,
+    hasLimitBreak: true,
+    hasLimitBreakPlus: true,
+    potentialAbilities: [
+      {
+        type: PotentialAbility.LIEN_CERCLES,
+        icon: '',
+        effects: [
+          `Réduit la durée de “Lien des cercles” du personnage de 1 tour.`,
+          `Réduit la durée de “Lien des cercles” du personnage de 2 tours.`,
+          `Réduit la durée de “Lien des cercles” du personnage de 3 tours.`,
+          `Réduit la durée de “Lien des cercles” du personnage de 5 tours.`,
+          `Réduit la durée de “Lien des cercles” du personnage de 7 tours.`,
+        ],
+      },
+      {
+        type: PotentialAbility.ATTAQUE_CRITIQUE,
+        icon: '',
+        effects: [
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 10% de chances de faire 3% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 20% de chances de faire 3% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 30% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 40% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 50% de chances de faire 7% l'ATK du personnage en dégâts additionnels.`,
+        ],
+      },
+      {
+        type: PotentialAbility.SOIN_URGENCE,
+        icon: '',
+        effects: [
+          `Restaure les HP à hauteur de 1 fois les RCV du personnage si ce dernier réussit un “PARFAIT” lorsque les HP restants sont inférieurs ou égaux à 10%.`,
+          `Restaure les HP à hauteur de 1 fois les RCV du personnage si ce dernier réussit un “PARFAIT” lorsque les HP restants sont inférieurs ou égaux à 15%.`,
+          `Restaure les HP à hauteur de 1,5 fois les RCV du personnage si ce dernier réussit un “PARFAIT” lorsque les HP restants sont inférieurs ou égaux à 20%.`,
+          `Restaure les HP à hauteur de 1,5 fois les RCV du personnage si ce dernier réussit un “PARFAIT” lorsque les HP restants sont inférieurs ou égaux à 30%,`,
+          `Restaure les HP à hauteur de 2 fois les RCV du personnage si ce dernier réussit un “PARFAIT” lorsque les HP restants sont inférieurs ou égaux à 50%.`,
+        ],
+      },
+    ],
+    evolvers: [
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0118.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0088.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0266.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0099.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0095.png',
+    ],
+    support: {
+      hasSupportEffect: true,
+      supportedCharacters: ['Monkey D. Luffy'],
+      levels: [
+        `Réduit la durée de "Lien" et de "Désespoir du capitaine" de 1 tour si un personnage a été touché par le "Lien" ou le "Désespoir du capitaine" (une fois par quête).`,
+        `Réduit la durée de "Lien" et de "Désespoir du capitaine" de 1 tour si un personnage a été touché par le "Lien" ou le "Désespoir du capitaine" (une fois par quête).`,
+        `Réduit la durée de "Lien" et de "Désespoir du capitaine" de 1 tour si un personnage a été touché par le "Lien" ou le "Désespoir du capitaine" (une fois par quête).`,
+        `Réduit la durée de "Lien", de "Désespoir du capitaine" et de "Paralysie" de 1 tour si un personnage a été touché par le "Lien", le "Désespoir du capitaine" ou la "Paralysie" (une fois par quête).`,
+        `Réduit la durée de "Lien", de "Désespoir du capitaine" et de "Paralysie" de 2 tours si un personnage a été touché par le "Lien", le "Désespoir du capitaine" ou la "Paralysie" (une fois par quête).`,
+      ],
+    },
+    batch: `First Legend`,
+  },
+  // Rayleigh V1 6+
+  {
+    title: 'Bras droit du roi des pirates',
+    name: `Silvers Rayleigh le "seigneur des ténèbres"`,
+    isDual: false,
+    artwork: {
+      fiveStars: null,
+      sixStars: null,
+      sixPlusStars: 'https://i.imgur.com/7oBy6xX.png',
+    },
+    dualCharacterData: null,
+    singleCharacterData: {
+      story: `Ancien vice-capitaine de l'équipage de Roger. Bien qu'il ait conquis Grand Line et découvert la véritable Histoire aux côtés de Roger, dont on raconte qu'il pouvait entendre la voix de "toutes les choses", il n'en dit que très peu sur ses différents exploits et préfère encourager les jeunes aventuriers à explorer le monde par eux-mêmes.`,
+      type: 'INT',
+      classes: [CharacterClass.Cogneur, CharacterClass.Intellectuel],
+      combo: 4,
+      hp: {
+        initial: 3121,
+        afterLimitBreak: 3621,
+        afterLimitBreakPlus: 0,
+      },
+      atk: {
+        initial: 1472,
+        afterLimitBreak: 1662,
+        afterLimitBreakPlus: 0,
+      },
+      rcv: {
+        initial: 515,
+        afterLimitBreak: 615,
+        afterLimitBreakPlus: 0,
+      },
+      captainAbility: `Multiplie le multiplicateur de combos par 4 et multiplie les HP et la RCV de tous les personnages par 1,2.`,
+      captainAbilityAfterLimitBreakPlus: null,
+      captainAbilityAdditionnalInformation: null,
+      captainAction: null,
+      captainActionTurns: null,
+      specialWithStages: null,
+      special: `Réduit la durée de "Lien", de "Désespoir du capitaine" et de "Paralysie" de 7 tours, retarde toutes les attaques ennemies d'un tour et rend le timing des coups "PARFAIT" plus facile pendant un tour.`,
+      specialTurns: {
+        initial: 19,
+        max: 14,
+        gainWithLimitBreak: 2,
+        gainWithLimitBreakPlus: 0,
+      },
+      crewmateAbilities: [
+        {
+          ability: `Ajoute 50 en HP, ATK et RCV pour tous les personnages.`,
+          needLimitBreak: true,
+        },
+        {
+          ability: `Si un autre personnage utilise son coup spécial, réduit son coup spécial de 2 tours.`,
+          needLimitBreak: true,
+        },
+      ],
+      picture: {
+        fiveStarsPicture: null,
+        sixStarsPicture: null,
+        sixPlusStarsPicture: 'https://i.imgur.com/KBeErRM.png',
+      },
+    },
+    sockets: 4,
+    cost: 65,
+    hasLimitBreak: true,
+    hasLimitBreakPlus: false,
+    potentialAbilities: [
+      {
+        type: PotentialAbility.LIEN_CERCLES,
+        icon: '',
+        effects: [
+          `Réduit la durée de “Lien des cercles” du personnage de 1 tour.`,
+          `Réduit la durée de “Lien des cercles” du personnage de 2 tours.`,
+          `Réduit la durée de “Lien des cercles” du personnage de 3 tours.`,
+          `Réduit la durée de “Lien des cercles” du personnage de 5 tours.`,
+          `Réduit la durée de “Lien des cercles” du personnage de 7 tours.`,
+        ],
+      },
+      {
+        type: PotentialAbility.ATTAQUE_CRITIQUE,
+        icon: '',
+        effects: [
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 10% de chances de faire 3% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 20% de chances de faire 3% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 30% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 40% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 50% de chances de faire 7% l'ATK du personnage en dégâts additionnels.`,
+        ],
+      },
+      {
+        type: PotentialAbility.SOIN_URGENCE,
+        icon: '',
+        effects: [
+          `Restaure les HP à hauteur de 1 fois les RCV du personnage si ce dernier réussit un “PARFAIT” lorsque les HP restants sont inférieurs ou égaux à 10%.`,
+          `Restaure les HP à hauteur de 1 fois les RCV du personnage si ce dernier réussit un “PARFAIT” lorsque les HP restants sont inférieurs ou égaux à 15%.`,
+          `Restaure les HP à hauteur de 1,5 fois les RCV du personnage si ce dernier réussit un “PARFAIT” lorsque les HP restants sont inférieurs ou égaux à 20%.`,
+          `Restaure les HP à hauteur de 1,5 fois les RCV du personnage si ce dernier réussit un “PARFAIT” lorsque les HP restants sont inférieurs ou égaux à 30%,`,
+          `Restaure les HP à hauteur de 2 fois les RCV du personnage si ce dernier réussit un “PARFAIT” lorsque les HP restants sont inférieurs ou égaux à 50%.`,
+        ],
+      },
+    ],
+    evolvers: [
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0118.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0088.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0266.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0099.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0095.png',
+    ],
+    support: {
+      hasSupportEffect: true,
+      supportedCharacters: ['Monkey D. Luffy'],
+      levels: [
+        `Réduit la durée de "Lien" et de "Désespoir du capitaine" de 1 tour si un personnage a été touché par le "Lien" ou le "Désespoir du capitaine" (une fois par quête).`,
+        `Réduit la durée de "Lien" et de "Désespoir du capitaine" de 1 tour si un personnage a été touché par le "Lien" ou le "Désespoir du capitaine" (une fois par quête).`,
+        `Réduit la durée de "Lien" et de "Désespoir du capitaine" de 1 tour si un personnage a été touché par le "Lien" ou le "Désespoir du capitaine" (une fois par quête).`,
+        `Réduit la durée de "Lien", de "Désespoir du capitaine" et de "Paralysie" de 1 tour si un personnage a été touché par le "Lien", le "Désespoir du capitaine" ou la "Paralysie" (une fois par quête).`,
+        `Réduit la durée de "Lien", de "Désespoir du capitaine" et de "Paralysie" de 2 tours si un personnage a été touché par le "Lien", le "Désespoir du capitaine" ou la "Paralysie" (une fois par quête).`,
+      ],
+    },
+    batch: `First Legend`,
   },
 ];

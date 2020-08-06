@@ -131,9 +131,12 @@
           <td>
             {{ legend.singleCharacterData.hp.initial }} puis
             {{ legend.singleCharacterData.hp.afterLimitBreak }} après le
-            dépassement de limites puis
-            {{ legend.singleCharacterData.hp.afterLimitBreakPlus }}
-            après l'extension du dépassement de limites<br />
+            dépassement de limites
+            <span *ngIf="legend.hasLimitBreakPlus"
+              >puis
+              {{ legend.singleCharacterData.hp.afterLimitBreakPlus }} après
+              l'extension du dépassement de limites</span
+            ><br />
           </td>
         </tr>
         <tr>
@@ -141,9 +144,12 @@
           <td>
             {{ legend.singleCharacterData.atk.initial }} puis
             {{ legend.singleCharacterData.atk.afterLimitBreak }} après le
-            dépassement de limites puis
-            {{ legend.singleCharacterData.atk.afterLimitBreakPlus }}
-            après l'extension du dépassement de limites<br />
+            dépassement de limites
+            <span *ngIf="legend.hasLimitBreakPlus"
+              >puis
+              {{ legend.singleCharacterData.atk.afterLimitBreakPlus }}
+              après l'extension du dépassement de limites</span
+            ><br />
           </td>
         </tr>
         <tr>
@@ -151,9 +157,12 @@
           <td>
             {{ legend.singleCharacterData.rcv.initial }} puis
             {{ legend.singleCharacterData.rcv.afterLimitBreak }} après le
-            dépassement de limites puis
-            {{ legend.singleCharacterData.rcv.afterLimitBreakPlus }}
-            après l'extension du dépassement de limites<br />
+            dépassement de limites
+            <span *ngIf="legend.hasLimitBreakPlus"
+              >puis
+              {{ legend.singleCharacterData.rcv.afterLimitBreakPlus }}
+              après l'extension du dépassement de limites</span
+            ><br />
           </td>
         </tr>
         <tr>
@@ -173,7 +182,7 @@
           </td>
         </tr>
 
-        <tr>
+        <tr *ngIf="legend.hasLimitBreakPlus">
           <td>Captain Ability (après l'extension du dépassement de limites)</td>
           <td>
             {{ legend.singleCharacterData.captainAbilityAfterLimitBreakPlus }}
@@ -635,21 +644,23 @@
             }}</b>
             : {{ legend.dualCharacterData.firstForm.hp.initial }} puis
             {{ legend.dualCharacterData.firstForm.hp.afterLimitBreak }} après le
-            dépassement de limites puis
-            {{
-              legend.dualCharacterData.firstForm.hp.afterLimitBreakPlus
-            }}
-            après l'extension du dépassement de limites<br />
+            dépassement de limites
+            <span *ngIf="legend.hasLimitBreakPlus"
+              >puis
+              {{ legend.dualCharacterData.firstForm.hp.afterLimitBreakPlus }}
+              après l'extension du dépassement de limites</span
+            ><br />
             <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
               legend.dualCharacterData.secondForm.name
             }}</b>
             : {{ legend.dualCharacterData.secondForm.hp.initial }} puis
             {{ legend.dualCharacterData.secondForm.hp.afterLimitBreak }} après
-            le dépassement de limites puis
-            {{
-              legend.dualCharacterData.secondForm.hp.afterLimitBreakPlus
-            }}
-            après l'extension du dépassement de limites<br />
+            le dépassement de limites
+            <span *ngIf="legend.hasLimitBreakPlus"
+              >puis
+              {{ legend.dualCharacterData.secondForm.hp.afterLimitBreakPlus }}
+              après l'extension du dépassement de limites</span
+            ><br />
             <b
               class="dual-name"
               [ngStyle]="
@@ -662,11 +673,12 @@
             >
             : {{ legend.dualCharacterData.finalForm.hp.initial }} puis
             {{ legend.dualCharacterData.finalForm.hp.afterLimitBreak }} après le
-            dépassement de limites puis
-            {{
-              legend.dualCharacterData.finalForm.hp.afterLimitBreakPlus
-            }}
-            après l'extension du dépassement de limites<br />
+            dépassement de limites
+            <span *ngIf="legend.hasLimitBreakPlus"
+              >puis
+              {{ legend.dualCharacterData.finalForm.hp.afterLimitBreakPlus }}
+              après l'extension du dépassement de limites</span
+            ><br />
           </td>
         </tr>
         <tr>
@@ -677,19 +689,23 @@
             }}</b>
             : {{ legend.dualCharacterData.firstForm.atk.initial }} puis
             {{ legend.dualCharacterData.firstForm.atk.afterLimitBreak }} après
-            le dépassement de limites puis
-            {{
-              legend.dualCharacterData.firstForm.atk.afterLimitBreakPlus
-            }}
-            après l'extension du dépassement de limites<br />
+            le dépassement de limites
+            <span *ngIf="legend.hasLimitBreakPlus"
+              >puis
+              {{ legend.dualCharacterData.firstForm.atk.afterLimitBreakPlus }}
+              après l'extension du dépassement de limites</span
+            ><br />
             <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
               legend.dualCharacterData.secondForm.name
             }}</b>
             : {{ legend.dualCharacterData.secondForm.atk.initial }} puis
             {{ legend.dualCharacterData.secondForm.atk.afterLimitBreak }} après
-            le dépassement de limites puis
-            {{ legend.dualCharacterData.secondForm.atk.afterLimitBreakPlus }}
-            après l'extension du dépassement de limites<br />
+            le dépassement de limites
+            <span *ngIf="legend.hasLimitBreakPlus"
+              >puis
+              {{ legend.dualCharacterData.secondForm.atk.afterLimitBreakPlus }}
+              après l'extension du dépassement de limites</span
+            ><br />
             <b
               class="dual-name"
               [ngStyle]="
@@ -702,11 +718,12 @@
             >
             : {{ legend.dualCharacterData.finalForm.atk.initial }} puis
             {{ legend.dualCharacterData.finalForm.atk.afterLimitBreak }} après
-            le dépassement de limites puis
-            {{
-              legend.dualCharacterData.finalForm.atk.afterLimitBreakPlus
-            }}
-            après l'extension du dépassement de limites<br />
+            le dépassement de limites
+            <span *ngIf="legend.hasLimitBreakPlus"
+              >puis
+              {{ legend.dualCharacterData.finalForm.atk.afterLimitBreakPlus }}
+              après l'extension du dépassement de limites</span
+            ><br />
           </td>
         </tr>
         <tr>
@@ -717,19 +734,23 @@
             }}</b>
             : {{ legend.dualCharacterData.firstForm.rcv.initial }} puis
             {{ legend.dualCharacterData.firstForm.rcv.afterLimitBreak }} après
-            le dépassement de limites puis
-            {{
-              legend.dualCharacterData.firstForm.rcv.afterLimitBreakPlus
-            }}
-            après l'extension du dépassement de limites<br />
+            le dépassement de limites
+            <span *ngIf="legend.hasLimitBreakPlus"
+              >puis
+              {{ legend.dualCharacterData.firstForm.rcv.afterLimitBreakPlus }}
+              après l'extension du dépassement de limites</span
+            ><br />
             <b [ngStyle]="color(legend.dualCharacterData.secondForm.type)">{{
               legend.dualCharacterData.secondForm.name
             }}</b>
             : {{ legend.dualCharacterData.secondForm.rcv.initial }} puis
             {{ legend.dualCharacterData.secondForm.rcv.afterLimitBreak }} après
-            le dépassement de limites puis
-            {{ legend.dualCharacterData.secondForm.rcv.afterLimitBreakPlus }}
-            après l'extension du dépassement de limites<br />
+            le dépassement de limites
+            <span *ngIf="legend.hasLimitBreakPlus"
+              >puis
+              {{ legend.dualCharacterData.secondForm.rcv.afterLimitBreakPlus }}
+              après l'extension du dépassement de limites</span
+            ><br />
             <b
               class="dual-name"
               [ngStyle]="
@@ -742,11 +763,12 @@
             >
             : {{ legend.dualCharacterData.finalForm.rcv.initial }} puis
             {{ legend.dualCharacterData.finalForm.rcv.afterLimitBreak }} après
-            le dépassement de limites puis
-            {{
-              legend.dualCharacterData.finalForm.rcv.afterLimitBreakPlus
-            }}
-            après l'extension du dépassement de limites<br />
+            le dépassement de limites
+            <span *ngIf="legend.hasLimitBreakPlus"
+              >puis
+              {{ legend.dualCharacterData.finalForm.rcv.afterLimitBreakPlus }}
+              après l'extension du dépassement de limites</span
+            ><br />
           </td>
         </tr>
         <tr>
