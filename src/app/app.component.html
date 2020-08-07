@@ -1,6 +1,6 @@
 <br />
 <ul class="legends-list">
-  <li *ngFor="let l of legends" (click)="selectLegend(l.name)">
+  <li *ngFor="let l of legends" (click)="selectLegend(l.id)">
     <img
       *ngIf="l.isDual"
       [src]="l.dualCharacterData.finalForm.picture.sixStarsPicture"
@@ -176,13 +176,25 @@
           <td>Captain Ability</td>
           <td>
             {{ legend.singleCharacterData.captainAbility }}
-            <small>{{
-              legend.singleCharacterData.captainAbilityAdditionnalInformation
-            }}</small>
+            <ng-container
+              *ngIf="
+                legend.singleCharacterData.captainAbilityAdditionnalInformation
+              "
+            >
+              <br />
+              <small>{{
+                legend.singleCharacterData.captainAbilityAdditionnalInformation
+              }}</small>
+            </ng-container>
           </td>
         </tr>
 
-        <tr *ngIf="legend.hasLimitBreakPlus">
+        <tr
+          *ngIf="
+            legend.hasLimitBreakPlus &&
+            legend.singleCharacterData.captainAbilityAfterLimitBreakPlus
+          "
+        >
           <td>Captain Ability (après l'extension du dépassement de limites)</td>
           <td>
             {{ legend.singleCharacterData.captainAbilityAfterLimitBreakPlus }}
@@ -203,12 +215,47 @@
               legend.singleCharacterData.specialTurns.max
             }}
             <span
-              *ngIf="legend.singleCharacterData.specialTurns.gainWithLimitBreak"
+              *ngIf="
+                legend.singleCharacterData.specialTurns.gainWithLimitBreak &&
+                !legend.singleCharacterData.specialTurns.gainWithLimitBreakPlus
+              "
             >
               puis
               {{
                 legend.singleCharacterData.specialTurns.max -
                   legend.singleCharacterData.specialTurns.gainWithLimitBreak
+              }}</span
+            >
+            <span
+              *ngIf="
+                legend.singleCharacterData.specialTurns
+                  .gainWithLimitBreakPlus &&
+                !legend.singleCharacterData.specialTurns.gainWithLimitBreak
+              "
+            >
+              puis
+              {{
+                legend.singleCharacterData.specialTurns.max -
+                  legend.singleCharacterData.specialTurns.gainWithLimitBreakPlus
+              }}</span
+            >
+            <span
+              *ngIf="
+                legend.singleCharacterData.specialTurns
+                  .gainWithLimitBreakPlus &&
+                legend.singleCharacterData.specialTurns.gainWithLimitBreak
+              "
+            >
+              puis
+              {{
+                legend.singleCharacterData.specialTurns.max -
+                  legend.singleCharacterData.specialTurns.gainWithLimitBreak
+              }}
+              puis
+              {{
+                legend.singleCharacterData.specialTurns.max -
+                  legend.singleCharacterData.specialTurns.gainWithLimitBreak -
+                  legend.singleCharacterData.specialTurns.gainWithLimitBreakPlus
               }}</span
             >)
           </td>
@@ -229,11 +276,46 @@
             Special - Stage {{ i + 1 }} ({{ special.specialTurns.initial }}→{{
               special.specialTurns.max
             }}
-            <span *ngIf="special.specialTurns.gainWithLimitBreak">
+            <span
+              *ngIf="
+                special.specialTurns.gainWithLimitBreak &&
+                !special.specialTurns.gainWithLimitBreakPlus
+              "
+            >
               puis
               {{
                 special.specialTurns.max -
                   special.specialTurns.gainWithLimitBreak
+              }}</span
+            >
+            <span
+              *ngIf="
+                special.specialTurns.gainWithLimitBreakPlus &&
+                !special.specialTurns.gainWithLimitBreak
+              "
+            >
+              puis
+              {{
+                special.specialTurns.max -
+                  special.specialTurns.gainWithLimitBreakPlus
+              }}</span
+            >
+            <span
+              *ngIf="
+                special.specialTurns.gainWithLimitBreakPlus &&
+                !special.specialTurns.gainWithLimitBreak
+              "
+            >
+              puis
+              {{
+                special.specialTurns.max -
+                  special.specialTurns.gainWithLimitBreak
+              }}
+              puis
+              {{
+                special.specialTurns.max -
+                  special.specialTurns.gainWithLimitBreak -
+                  special.specialTurns.gainWithLimitBreakPlus
               }}</span
             >)
           </td>

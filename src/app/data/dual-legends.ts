@@ -2,6 +2,7 @@ import { Legend } from '../models/legend.interface';
 
 export const dualLegends: Legend[] = [
   {
+    id: '2862',
     title: 'Pirates solidaires',
     name: 'Équipage de Shanks le Roux',
     isDual: true,
@@ -185,6 +186,7 @@ export const dualLegends: Legend[] = [
     batch: `6ème anniversaire de la version japonaise`,
   },
   {
+    id: '2534',
     title: 'Membres de la génération des "miracles"',
     name: 'Luffy et Law',
     isDual: true,

@@ -12,21 +12,23 @@ import { Subject } from 'rxjs';
 export class AppComponent implements OnInit {
   public legends = singleLegends.concat(dualLegends);
   public legend$: Subject<any> = new Subject();
-  public selectedLegendName = null;
+  public selectedLegendId = null;
 
   public ngOnInit() {
     const currentLegend =
-      localStorage.getItem('selectLegendName') !== null
+      localStorage.getItem('selectLegendId') !== null
         ? this.legends.find(
-            (l) => l.name === localStorage.getItem('selectLegendName')
+            (l) => l.id === localStorage.getItem('selectLegendId').toString()
           )
         : this.legends[0];
+
+    console.log('currentLegend', currentLegend);
 
     setTimeout(() => {
       this.legend$.next(currentLegend);
     }, 100);
 
-    this.selectedLegendName = currentLegend.name;
+    this.selectedLegendId = currentLegend.id;
   }
 
   public getColorFromType(type: string): string {
@@ -60,13 +62,12 @@ export class AppComponent implements OnInit {
     };
   }
 
-  public selectLegend(legendName: string): void {
-    console.log('this.selectedLegendName', this.selectedLegendName);
-    console.log('legendName', legendName);
-    if (this.selectedLegendName !== legendName) {
-      this.legend$.next(this.legends.find((l) => l.name === legendName));
-      this.selectedLegendName = legendName;
-      localStorage.setItem('selectLegendName', legendName);
+  public selectLegend(id: string): void {
+    if (this.selectedLegendId !== id) {
+      this.legend$.next(this.legends.find((l) => l.name === id));
+      this.selectedLegendId = id;
+      localStorage.setItem('selectLegendId', id);
+      window.location.reload();
     }
   }
 }

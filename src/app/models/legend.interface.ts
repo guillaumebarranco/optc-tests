@@ -96,6 +96,7 @@ interface DualLegendData {
 }
 
 export interface Legend {
+  id: string;
   title: string;
   name: string;
   isDual: boolean;

@@ -11,7 +11,10 @@
     <app-root></app-root>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
-      // setTimeout(replaceOrbsColors, 1000);
+      setTimeout(() => {
+        replaceOrbsColors();
+        replaceTypesColors();
+      }, 1000);
 
       function replaceOrbsColors() {
         let $section = $("section").html();
@@ -53,6 +56,44 @@
           $section = $section.replace(
             regex,
             `<strong style="color: ${orb.color};">[${orb.name}]</strong>`
+          );
+        });
+
+        $("section").html($section);
+      }
+
+      function replaceTypesColors() {
+        let $section = $("section").html();
+
+        const types = [
+          {
+            name: "STR",
+            color: "red",
+          },
+          {
+            name: "DEX",
+            color: "green",
+          },
+          {
+            name: "QCK",
+            color: "blue",
+          },
+          {
+            name: "PSY",
+            color: "rgb(240, 195, 0)",
+          },
+          {
+            name: "INT",
+            color: "purple",
+          },
+        ];
+
+        types.forEach((type) => {
+          const regex = new RegExp(escapeRegExp(` ${type.name} `), "gi");
+
+          $section = $section.replace(
+            regex,
+            `<strong style="color: ${type.color};"> ${type.name} </strong>`
           );
         });
 
