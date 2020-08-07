@@ -198,6 +198,18 @@
           <td>Captain Ability (après l'extension du dépassement de limites)</td>
           <td>
             {{ legend.singleCharacterData.captainAbilityAfterLimitBreakPlus }}
+            <ng-container
+              *ngIf="
+                legend.singleCharacterData
+                  .captainAbilityAfterLimitBreakPlusAdditionnalInformation
+              "
+            >
+              <br />
+              <small>{{
+                legend.singleCharacterData
+                  .captainAbilityAfterLimitBreakPlusAdditionnalInformation
+              }}</small>
+            </ng-container>
           </td>
         </tr>
         <tr *ngIf="legend.singleCharacterData.captainAction">

@@ -38,6 +38,7 @@ export const singleLegendsInt: Legend[] = [
       captainAbility: `Multiplie le multiplicateur de combos par 4.`,
       captainAbilityAfterLimitBreakPlus: null,
       captainAbilityAdditionnalInformation: null,
+      captainAbilityAfterLimitBreakPlusAdditionnalInformation: null,
       captainAction: null,
       captainActionTurns: null,
       specialWithStages: null,
@@ -69,7 +70,7 @@ export const singleLegendsInt: Legend[] = [
     sockets: 4,
     cost: 55,
     hasLimitBreak: true,
-    hasLimitBreakPlus: true,
+    hasLimitBreakPlus: false,
     potentialAbilities: [
       {
         type: PotentialAbility.LIEN_CERCLES,
@@ -160,6 +161,7 @@ export const singleLegendsInt: Legend[] = [
       captainAbility: `Multiplie le multiplicateur de combos par 4 et multiplie les HP et la RCV de tous les personnages par 1,2.`,
       captainAbilityAfterLimitBreakPlus: null,
       captainAbilityAdditionnalInformation: null,
+      captainAbilityAfterLimitBreakPlusAdditionnalInformation: null,
       captainAction: null,
       captainActionTurns: null,
       specialWithStages: null,
@@ -281,6 +283,7 @@ export const singleLegendsInt: Legend[] = [
       captainAbility: `Multiplie les HP des personnages de type INT par 1,25, multiplie l'ATK des personnages de type INT par 4,25 s'ils ont un cercle correspondant, sinon par 3,5, rend les cercles [PSY] avantageux pour tous les personnages et augmente les chances d'apparition des cercles [PSY].`,
       captainAbilityAfterLimitBreakPlus: null,
       captainAbilityAdditionnalInformation: null,
+      captainAbilityAfterLimitBreakPlusAdditionnalInformation: null,
       captainAction: null,
       captainActionTurns: null,
       specialWithStages: null,
@@ -366,7 +369,7 @@ export const singleLegendsInt: Legend[] = [
     },
     batch: `Waifus`,
   },
-  // Sengoku6+
+  // Sengoku 6+
   {
     id: '1847',
     title: 'Amiral commandant en chef de la Marine',
@@ -401,6 +404,7 @@ export const singleLegendsInt: Legend[] = [
       captainAbility: `Réduit le temps de chargement des coups spéciaux de tous les personnages de 2 tours au début de la quête, multiplie l'ATK des personnages ayant un coût inférieur ou égal à 29 par 3,25, les HP par 1,2 et multiplie l'ATK des personnages ayant un coût égal à 54 par 3.`,
       captainAbilityAfterLimitBreakPlus: `Réduit le temps de chargement des coups spéciaux de tous les personnages de 2 tours au début de la quête, multiplie l'ATK des personnages ayant un coût inférieur ou égal à 29 par 4, les HP et la RCV par 1,5 et multiplie l'ATK des personnages ayant un coût égal à 54 par 4.`,
       captainAbilityAdditionnalInformation: null,
+      captainAbilityAfterLimitBreakPlusAdditionnalInformation: null,
       captainAction: null,
       captainActionTurns: null,
       specialWithStages: null,
@@ -483,6 +487,265 @@ export const singleLegendsInt: Legend[] = [
         `Multiplie l'ATK du personnage soutenu par 1,75 pendant un tour si le personnage soutenu utilise son coup spécial (une fois par quête).`,
         `Multiplie l'ATK du personnage soutenu par 2 pendant un tour si le personnage soutenu utilise son coup spécial (une fois par quête).`,
         `Multiplie l'ATK du personnage soutenu par 2,5 pendant un tour si le personnage soutenu utilise son coup spécial (une fois par quête).`,
+      ],
+    },
+    batch: `First Legend`,
+  },
+  // Mihawk V1
+  {
+    id: '0718',
+    title: 'Le plus puissant sabreur du monde',
+    name: 'Mihawk "Œil de faucon"',
+    isDual: false,
+    artwork: {
+      fiveStars: 'https://i.imgur.com/KHbs8zx.png',
+      sixStars: 'https://i.imgur.com/F6Ckd1J.png',
+      sixPlusStars: null,
+    },
+    dualCharacterData: null,
+    singleCharacterData: {
+      story: `Ancien second de l'équipage de Roger. Également connu sous les noms de "Bras Droit du Roi des Pirates" et de "Seigneur des Ténèbres". C'est une légende vivante pour tous, ses exploits sont plus que célèbres. C'est un pirate à la retraite qui utilise le Fluide du Conquérant.`,
+      type: 'INT',
+      classes: [CharacterClass.Sabreur],
+      combo: 5,
+      hp: {
+        initial: 3900,
+        afterLimitBreak: 4500,
+        afterLimitBreakPlus: 4850,
+      },
+      atk: {
+        initial: 1490,
+        afterLimitBreak: 1690,
+        afterLimitBreakPlus: 1890,
+      },
+      rcv: {
+        initial: 120,
+        afterLimitBreak: 190,
+        afterLimitBreakPlus: 265,
+      },
+      captainAbility: `Multiplie l'ATK des personnages de classe Sabreur selon le timing du personnage précédent.`,
+      captainAbilityAfterLimitBreakPlus: 'Inconnue.',
+      captainAbilityAdditionnalInformation: `Par 2 si le personnage précédent effectue un "MANQUÉ" ou un coup inférieur à "BIEN", par 2,25 si le personnage précédent effectue un "BIEN", par 2,5 si le personnage précédent effectue un "SUPER" et par 2,75 si le personnage précédent effectue un "PARFAIT".`,
+      captainAbilityAfterLimitBreakPlusAdditionnalInformation: null,
+      captainAction: null,
+      captainActionTurns: null,
+      specialWithStages: null,
+      special: `Inflige 50% des dégâts infligés par des attaques normales sur tous les ennemis en dégâts non élémentaires.`,
+      specialTurns: {
+        initial: 25,
+        max: 19,
+        gainWithLimitBreak: 1,
+        gainWithLimitBreakPlus: 4,
+      },
+      crewmateAbilities: [
+        {
+          ability: `Ajoute 120 en HP pour les personnages de classe Sabreur.`,
+          needLimitBreak: true,
+        },
+        {
+          ability: `Ajoute 50 en ATK pour les personnages de classe Sabreur.`,
+          needLimitBreak: true,
+        },
+      ],
+      picture: {
+        fiveStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0717.png',
+        sixStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0718.png',
+        sixPlusStarsPicture: null,
+      },
+    },
+    sockets: 4,
+    cost: 55,
+    hasLimitBreak: true,
+    hasLimitBreakPlus: true,
+    potentialAbilities: [
+      {
+        type: PotentialAbility.AUGMENTATION_ATK,
+        icon: '',
+        effects: [
+          `Ajoute 20 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 40 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 60 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 80 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 120 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+        ],
+      },
+      {
+        type: PotentialAbility.PSY_REDUCTION,
+        icon: '',
+        effects: [
+          `Réduit les dégâts subis par les ennemis de type PSY de 1%.`,
+          `Réduit les dégâts subis par les ennemis de type PSY de 2%.`,
+          `Réduit les dégâts subis par les ennemis de type PSY de 3%.`,
+          `Réduit les dégâts subis par les ennemis de type PSY de 4%.`,
+          `Réduit les dégâts subis par les ennemis de type PSY de 5%.`,
+        ],
+      },
+      {
+        type: PotentialAbility.ATTAQUE_CRITIQUE,
+        icon: '',
+        effects: [
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 10% de chances de faire 3% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 20% de chances de faire 3% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 30% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 40% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 50% de chances de faire 7% l'ATK du personnage en dégâts additionnels.`,
+        ],
+      },
+    ],
+    evolvers: [
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0118.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0088.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0099.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0304.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0095.png',
+    ],
+    support: {
+      hasSupportEffect: true,
+      supportedCharacters: ['Personnages de classe Sabreur'],
+      levels: [
+        `Ajoute 4% des HP, de l'ATK et de la RCV du personnage en HP, ATK et RCV pour les personnages soutenus.`,
+        `Ajoute 5% des HP, de l'ATK et de la RCV du personnage en HP, ATK et RCV pour les personnages soutenus.`,
+        `Ajoute 7% des HP, de l'ATK et de la RCV du personnage en HP, ATK et RCV pour les personnages soutenus.`,
+        `Ajoute 8% des HP, de l'ATK et de la RCV du personnage en HP, ATK et RCV pour les personnages soutenus.`,
+        `Ajoute 9% des HP, de l'ATK et de la RCV du personnage en HP, ATK et RCV pour les personnages soutenus.`,
+      ],
+    },
+    batch: `First Legend`,
+  },
+  // Mihawk V1 6+
+  {
+    id: '1881',
+    title: 'Sabre noir "Yoru"',
+    name: 'Mihawk "Œil de faucon"',
+    isDual: false,
+    artwork: {
+      fiveStars: null,
+      sixStars: null,
+      sixPlusStars: 'https://i.imgur.com/j0rV3Tc.png',
+    },
+    dualCharacterData: null,
+    singleCharacterData: {
+      story: `Un des sept grands corsaires. Connu comme étant le plus puissant sabreur du monde, il se dresse face à Luffy durant la guerre au sommet. Bien que Luffy fût impressionné par sa puissance, Mihawk a de son côté ressenti l'effroyable capacité qu'a Luffy de se faire des alliés.`,
+      type: 'INT',
+      classes: [CharacterClass.Sabreur],
+      combo: 6,
+      hp: {
+        initial: 4200,
+        afterLimitBreak: 4800,
+        afterLimitBreakPlus: 5150,
+      },
+      atk: {
+        initial: 1590,
+        afterLimitBreak: 1790,
+        afterLimitBreakPlus: 1990,
+      },
+      rcv: {
+        initial: 120,
+        afterLimitBreak: 190,
+        afterLimitBreakPlus: 265,
+      },
+      captainAbility: `Multiplie l'ATK des personnages de classe Sabreur selon le timing du personnage précédent.`,
+      captainAbilityAfterLimitBreakPlus: `Multiplie l'ATK des personnages de classe Sabreur selon le timing du personnage précédent et augmente les chances d'apparition des cercles correspondants.`,
+      captainAbilityAdditionnalInformation: `Par 1,5 si le personnage précédent effectue un "MANQUÉ" ou un coup inférieur à "BIEN", par 2 si le personnage précédent effectue un "BIEN", par 2,75 si le personnage précédent effectue un "SUPER" et par 3,5 si le personnage précédent effectue un "PARFAIT".`,
+      captainAbilityAfterLimitBreakPlusAdditionnalInformation: `Par ? si le personnage précédent effectue un "MANQUÉ" ou un coup inférieur à "BIEN", par ? si le personnage précédent effectue un "BIEN", par ? si le personnage précédent effectue un "SUPER" et par 3,75 si le personnage précédent effectue un "PARFAIT".`,
+      captainAction: null,
+      captainActionTurns: null,
+      specialWithStages: [
+        {
+          specialTurns: {
+            initial: 18,
+            max: 12,
+            gainWithLimitBreak: 1,
+            gainWithLimitBreakPlus: 4,
+          },
+          special: `Inflige 30% des dégâts infligés par des attaques normales sur tous les ennemis en dégâts non élémentaires.`,
+        },
+        {
+          specialTurns: {
+            initial: 24,
+            max: 18,
+            gainWithLimitBreak: 1,
+            gainWithLimitBreakPlus: 4,
+          },
+          special: `Inflige 60% des dégâts infligés par des attaques normales sur tous les ennemis en dégâts non élémentaires.`,
+        },
+      ],
+      special: null,
+      specialTurns: null,
+      crewmateAbilities: [
+        {
+          ability: `Ajoute 120 en HP pour les personnages de classe Sabreur.`,
+          needLimitBreak: true,
+        },
+        {
+          ability: `Ajoute 50 en ATK pour les personnages de classe Sabreur.`,
+          needLimitBreak: true,
+        },
+      ],
+      picture: {
+        fiveStarsPicture: null,
+        sixStarsPicture: null,
+        sixPlusStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f1881.png',
+      },
+    },
+    sockets: 4,
+    cost: 65,
+    hasLimitBreak: true,
+    hasLimitBreakPlus: true,
+    potentialAbilities: [
+      {
+        type: PotentialAbility.AUGMENTATION_ATK,
+        icon: '',
+        effects: [
+          `Ajoute 20 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 40 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 60 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 80 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 120 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+        ],
+      },
+      {
+        type: PotentialAbility.PSY_REDUCTION,
+        icon: '',
+        effects: [
+          `Réduit les dégâts subis par les ennemis de type PSY de 1%.`,
+          `Réduit les dégâts subis par les ennemis de type PSY de 2%.`,
+          `Réduit les dégâts subis par les ennemis de type PSY de 3%.`,
+          `Réduit les dégâts subis par les ennemis de type PSY de 4%.`,
+          `Réduit les dégâts subis par les ennemis de type PSY de 5%.`,
+        ],
+      },
+      {
+        type: PotentialAbility.ATTAQUE_CRITIQUE,
+        icon: '',
+        effects: [
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 10% de chances de faire 3% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 20% de chances de faire 3% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 30% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 40% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 50% de chances de faire 7% l'ATK du personnage en dégâts additionnels.`,
+        ],
+      },
+    ],
+    evolvers: [
+      'https://onepiece-treasurecruise.com/wp-content/uploads/black_skull_f.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0118.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0088.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0303.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0095.png',
+    ],
+    support: {
+      hasSupportEffect: true,
+      supportedCharacters: ['Personnages de classe Sabreur'],
+      levels: [
+        `Ajoute 4% des HP, de l'ATK et de la RCV du personnage en HP, ATK et RCV pour les personnages soutenus.`,
+        `Ajoute 5% des HP, de l'ATK et de la RCV du personnage en HP, ATK et RCV pour les personnages soutenus.`,
+        `Ajoute 7% des HP, de l'ATK et de la RCV du personnage en HP, ATK et RCV pour les personnages soutenus.`,
+        `Ajoute 8% des HP, de l'ATK et de la RCV du personnage en HP, ATK et RCV pour les personnages soutenus.`,
+        `Ajoute 9% des HP, de l'ATK et de la RCV du personnage en HP, ATK et RCV pour les personnages soutenus.`,
       ],
     },
     batch: `First Legend`,

@@ -51,6 +51,7 @@ interface LegendData {
   captainAbility: string;
   captainAbilityAfterLimitBreakPlus: string;
   captainAbilityAdditionnalInformation: string;
+  captainAbilityAfterLimitBreakPlusAdditionnalInformation: string;
   captainAction: string;
   captainActionTurns: number;
   specialWithStages: SpecialWithStage[];
