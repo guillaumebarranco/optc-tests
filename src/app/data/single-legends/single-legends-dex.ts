@@ -111,7 +111,7 @@ export const singleLegendsDex: Legend[] = [
       'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0086.png',
       'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0266.png',
       'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0302.png',
-      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0095.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0267.png',
     ],
     support: {
       hasSupportEffect: true,
@@ -233,7 +233,7 @@ export const singleLegendsDex: Legend[] = [
       'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0118.png',
       'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0086.png',
       'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0302.png',
-      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0095.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0267.png',
     ],
     support: {
       hasSupportEffect: true,
@@ -244,6 +244,129 @@ export const singleLegendsDex: Legend[] = [
         `Bloque le cercle du personnage soutenu pendant un tour si le personnage soutenu utilise un coup spécial qui enlève un pourcentage d'HP ou qui inflige des dégâts aux ennemis (une fois par quête).`,
         `Bloque les cercles pendant un tour si le personnage soutenu utilise un coup spécial qui enlève un pourcentage d'HP ou qui inflige des dégâts aux ennemis (une fois par quête).`,
         `Bloque les cercles pendant 2 tours si le personnage soutenu utilise un coup spécial qui enlève un pourcentage d'HP ou qui inflige des dégâts aux ennemis (une fois par quête).`,
+      ],
+    },
+    batch: `First Legend`,
+  },
+  // Crocodile
+  {
+    id: '0720',
+    title: `Ancien membre de l'ordre des sept grands corsaires`,
+    name: 'Sir Crocodile Logia',
+    isDual: false,
+    artwork: {
+      fiveStars: 'https://i.imgur.com/hcQhi4J.png',
+      sixStars: 'https://i.imgur.com/5N2Dc9R.png',
+      sixPlusStars: null,
+    },
+    dualCharacterData: null,
+    singleCharacterData: {
+      story: `Ancien membre de l'ordre des sept grands corsaires et chef de l'organisation criminelle Baroque Works. Le crochet qui lui sert de main gauche est empoisonné et recouvert de venin de scorpion.`,
+      type: 'DEX',
+      classes: [CharacterClass.Intellectuel, CharacterClass.Ravageur],
+      combo: 4,
+      hp: {
+        initial: 3621,
+        afterLimitBreak: 4121,
+        afterLimitBreakPlus: 0,
+      },
+      atk: {
+        initial: 1435,
+        afterLimitBreak: 1635,
+        afterLimitBreakPlus: 0,
+      },
+      rcv: {
+        initial: 310,
+        afterLimitBreak: 410,
+        afterLimitBreakPlus: 0,
+      },
+      captainAbility: `Multiplie l'ATK des personnages de classe Intellectuel selon les HP de l'équipe au début du tour.`,
+      captainAbilityAfterLimitBreakPlus: null,
+      captainAbilityAdditionnalInformation: `Par 1,5 si les HP de l'équipe sont au maximum et par 3,25 s'il ne reste qu'un HP à l'équipe.`,
+      captainAbilityAfterLimitBreakPlusAdditionnalInformation: null,
+      captainAction: null,
+      captainActionTurns: null,
+      specialWithStages: null,
+      special: `Multiplie l'ATK des personnages de classe Intellectuel par 2 pendant un tour si les HP sont en-dessous de 30%, sinon par 1,5 pendant un tour, et inflige 20 fois son ATK en dégâts de type DEX sur tous les ennemis.`,
+      specialTurns: {
+        initial: 21,
+        max: 14,
+        gainWithLimitBreak: 1,
+        gainWithLimitBreakPlus: 0,
+      },
+      crewmateAbilities: [
+        {
+          ability: `Ajoute 50 en ATK pour les personnages de classe Intellectuel.`,
+          needLimitBreak: true,
+        },
+        {
+          ability: `Rend les cercles [DEX] avantageux pour les personnages de classe Intellectuel.`,
+          needLimitBreak: true,
+        },
+      ],
+      picture: {
+        fiveStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0719.png',
+        sixStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0720.png',
+        sixPlusStarsPicture: null,
+      },
+    },
+    sockets: 5,
+    cost: 55,
+    hasLimitBreak: true,
+    hasLimitBreakPlus: false,
+    potentialAbilities: [
+      {
+        type: PotentialAbility.QCK_REDUCTION,
+        icon: '',
+        effects: [
+          `Réduit les dégâts subis par les ennemis de type QCK de 1%.`,
+          `Réduit les dégâts subis par les ennemis de type QCK de 2%.`,
+          `Réduit les dégâts subis par les ennemis de type QCK de 3%.`,
+          `Réduit les dégâts subis par les ennemis de type QCK de 5%.`,
+          `Réduit les dégâts subis par les ennemis de type QCK de 7%.`,
+        ],
+      },
+      {
+        type: PotentialAbility.ATTAQUE_CRITIQUE,
+        icon: '',
+        effects: [
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 10% de chances de faire 3% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 20% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 30% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 40% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 50% de chances de faire 7% l'ATK du personnage en dégâts additionnels.`,
+        ],
+      },
+      {
+        type: PotentialAbility.AUGMENTATION_ATK,
+        icon: '',
+        effects: [
+          `Ajoute 75 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 100 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 200 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 250 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 300 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+        ],
+      },
+    ],
+    evolvers: [
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0118.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0086.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0266.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0102.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0267.png',
+    ],
+    support: {
+      hasSupportEffect: true,
+      supportedCharacters: ['Personnages de classe Intellectuel'],
+      levels: [
+        `Ajoute 5% des HP, de l'ATK et de la RCV du personnage en HP, ATK et RCV pour les personnages soutenus.`,
+        `Ajoute 6% des HP, de l'ATK et de la RCV du personnage en HP, ATK et RCV pour les personnages soutenus.`,
+        `Ajoute 7% des HP, de l'ATK et de la RCV du personnage en HP, ATK et RCV pour les personnages soutenus.`,
+        `Ajoute 8% des HP, de l'ATK et de la RCV du personnage en HP, ATK et RCV pour les personnages soutenus.`,
+        `Ajoute 9% des HP, de l'ATK et de la RCV du personnage en HP, ATK et RCV pour les personnages soutenus.`,
       ],
     },
     batch: `First Legend`,

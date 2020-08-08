@@ -1,4 +1,11 @@
 <br />
+<select
+  [value]="selectedLegendOrder"
+  (change)="updateOrder($event.target.value)"
+>
+  <option value="color">Par couleur</option>
+  <option value="id">Par ID</option> </select
+><br />
 <ul class="legends-list">
   <li *ngFor="let l of legends" (click)="selectLegend(l.id)">
     <img
