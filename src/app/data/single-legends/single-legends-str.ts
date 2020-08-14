@@ -882,4 +882,127 @@ export const singleLegendsStr: Legend[] = [
     },
     batch: `First Legend`,
   },
+  // Bartolomeo
+  {
+    id: '1035',
+    title: null,
+    name: 'Bartolomeo le cannibale',
+    isDual: false,
+    artwork: {
+      fiveStars: 'https://i.imgur.com/WybxH1X.png',
+      sixStars: 'https://i.imgur.com/PvdqV0p.png',
+      sixPlusStars: null,
+    },
+    dualCharacterData: null,
+    singleCharacterData: {
+      story: `Capitaine de l'équipage du Barto Club. Il utilise le fruit de la barrière pour générér des barrières à volonté. Cela lui permet d'en former une autour de son poing pour infuser ce dernier de puissance, une technique qu'il a copiée du Gum Gum Bullet de Luffy.`,
+      type: 'STR',
+      classes: [CharacterClass.Ravageur, CharacterClass.Ambitieux],
+      combo: 4,
+      hp: {
+        initial: 3505,
+        afterLimitBreak: 3975,
+        afterLimitBreakPlus: 0,
+      },
+      atk: {
+        initial: 1431,
+        afterLimitBreak: 1651,
+        afterLimitBreakPlus: 0,
+      },
+      rcv: {
+        initial: 341,
+        afterLimitBreak: 426,
+        afterLimitBreakPlus: 0,
+      },
+      captainAbility: `Multiplie l'ATK des personnages de classe Ravageur selon le nombre de personnages de classe Ravageur présents dans l'équipe et si le personnage n'attaque pas durant le tour, réduit les dégâts subis de 30%.`,
+      captainAbilityAfterLimitBreakPlus: null,
+      captainAbilityAdditionnalInformation: `Par 1,25 si l'équipe contient un personnage de classe Ravageur, par 1,5 si l'équipe contient 2 personnages de classe Ravageur, par 1,75 si l'équipe contient 3 personnages de classe Ravageur, par 2 si l'équipe contient 4 personnages de classe Ravageur, par 2,5 si l'équipe contient 5 personnages de classe Ravageur et par 2,75 si l'équipe contient 6 personnages de classe Ravageur.`,
+      captainAbilityAfterLimitBreakPlusAdditionnalInformation: null,
+      captainAction: null,
+      captainActionTurns: null,
+      specialWithStages: null,
+      special: `Empêche la défaite pendant un tour et inflige des dégâts non élémentaires sur un ennemi selon les HP de l'équipe.`,
+      specialTurns: {
+        initial: 23,
+        max: 18,
+        gainWithLimitBreak: 4,
+        gainWithLimitBreakPlus: 0,
+      },
+      crewmateAbilities: [
+        {
+          ability: `Ajoute 60 en HP et ATK pour les personnages de classe Ravageur.`,
+          needLimitBreak: true,
+        },
+        {
+          ability: `Immunise le personnage contre "Paralysie".`,
+          needLimitBreak: true,
+        },
+      ],
+      picture: {
+        fiveStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f1034.png',
+        sixStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f1035.png',
+        sixPlusStarsPicture: null,
+      },
+    },
+    sockets: 5,
+    cost: 55,
+    hasLimitBreak: true,
+    hasLimitBreakPlus: false,
+    potentialAbilities: [
+      {
+        type: PotentialAbility.DEX_REDUCTION,
+        icon: '',
+        effects: [
+          `Réduit les dégâts subis par les ennemis de type DEX de 2%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 3%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 4%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 5%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 7%.`,
+        ],
+      },
+      {
+        type: PotentialAbility.AUGMENTATION_ATK,
+        icon: '',
+        effects: [
+          `Ajoute 30 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 60 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 90 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 120 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 150 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+        ],
+      },
+      {
+        type: PotentialAbility.SOIN_IMPOSSIBLE,
+        icon: '',
+        effects: [
+          `Réduit la durée de “Soin impossible” de 1 tour.`,
+          `Réduit la durée de “Soin impossible” de 2 tours.`,
+          `Réduit la durée de “Soin impossible” de 3 tours.`,
+          `Réduit la durée de “Soin impossible” de 4 tours.`,
+          `Réduit la durée de “Soin impossible” de 5 tours.`,
+        ],
+      },
+    ],
+    evolvers: [
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0118.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0084.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0266.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0300.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0267.png',
+    ],
+    support: {
+      hasSupportEffect: true,
+      supportedCharacters: ['Nico Robin', 'Cavendish'],
+      levels: [
+        `Réduit la durée de "Paralysie" de 1 tour si un personnage a été touché par la "Paralysie" (une fois par quête).`,
+        `Réduit la durée de "Paralysie" de 1 tour si un personnage a été touché par la "Paralysie" (une fois par quête).`,
+        `Réduit la durée de "Paralysie" de 1 tour si un personnage a été touché par la "Paralysie" (une fois par quête).`,
+        `Réduit la durée de "Paralysie" de 2 tours si un personnage a été touché par la "Paralysie" (une fois par quête).`,
+        `Réduit la durée de "Paralysie" de 3 tours si un personnage a été touché par la "Paralysie" (une fois par quête).`,
+      ],
+    },
+    batch: `First Legend`,
+  },
 ];

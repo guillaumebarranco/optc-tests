@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   public legends: Legend[] = [];
   public legend$: Subject<any> = new Subject();
   public selectedLegendId = null;
-  public selectedLegendOrder = 'id';
+  public selectedLegendOrder = 'color';
 
   public ngOnInit() {
     this._refreshLegends();
