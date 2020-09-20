@@ -50,16 +50,18 @@
           },
         ];
 
-        orbs.forEach((orb) => {
-          const regex = new RegExp(escapeRegExp(`[${orb.name}]`), "gi");
+        if ($section) {
+          orbs.forEach((orb) => {
+            const regex = new RegExp(escapeRegExp(`[${orb.name}]`), "gi");
 
-          $section = $section.replace(
-            regex,
-            `<strong style="color: ${orb.color};">[${orb.name}]</strong>`
-          );
-        });
+            $section = $section.replace(
+              regex,
+              `<strong style="color: ${orb.color};">[${orb.name}]</strong>`
+            );
+          });
 
-        $("section").html($section);
+          $("section").html($section);
+        }
       }
 
       function replaceTypesColors() {
@@ -88,16 +90,18 @@
           },
         ];
 
-        types.forEach((type) => {
-          const regex = new RegExp(escapeRegExp(` ${type.name} `), "gi");
+        if ($section) {
+          types.forEach((type) => {
+            const regex = new RegExp(escapeRegExp(` ${type.name} `), "gi");
 
-          $section = $section.replace(
-            regex,
-            `<strong style="color: ${type.color};"> ${type.name} </strong>`
-          );
-        });
+            $section = $section.replace(
+              regex,
+              `<strong style="color: ${type.color};"> ${type.name} </strong>`
+            );
+          });
 
-        $("section").html($section);
+          $("section").html($section);
+        }
       }
 
       function escapeRegExp(text) {

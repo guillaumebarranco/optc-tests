@@ -1,0 +1,19 @@
+.legends-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    margin-left: 10px;
+    list-style: none;
+    cursor: pointer;
+  }
+}
+
+.dual-name {
+  -webkit-text-fill-color: transparent !important;
+  -webkit-background-clip: text !important;
+}
+
+section {
+  margin-bottom: 50px;
+}

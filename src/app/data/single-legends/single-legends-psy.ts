@@ -885,4 +885,286 @@ export const singleLegendsPsy: Legend[] = [
     },
     batch: `First Legend`,
   },
+  // Kizaru
+  {
+    id: '1240',
+    title: null,
+    name: 'Borsalino',
+    isDual: false,
+    artwork: {
+      fiveStars: 'https://i.imgur.com/4RdIJtP.png',
+      sixStars: 'https://i.imgur.com/adgWTQL.png',
+      sixPlusStars: null,
+    },
+    dualCharacterData: null,
+    singleCharacterData: {
+      story: `Amiral au quartier général de la Marine. D'un caractère insouciant mais capable de capturer 500 pirates par simples représailles, il se situe quelque part entre l'indépendance d'esprit d'Aokiji et le zèle forcené d'Akainu.`,
+      type: 'PSY',
+      classes: [CharacterClass.Sabreur, CharacterClass.Tireur],
+      combo: 4,
+      hp: {
+        initial: 2590,
+        afterLimitBreak: 2940,
+        afterLimitBreakPlus: 3290,
+      },
+      atk: {
+        initial: 1489,
+        afterLimitBreak: 1739,
+        afterLimitBreakPlus: 1939,
+      },
+      rcv: {
+        initial: 500,
+        afterLimitBreak: 600,
+        afterLimitBreakPlus: 675,
+      },
+      captainAbility: `Réduit le temps de chargement des coups spéciaux de tous les personnages d'un tour au début de la quête, multiplie l'ATK de tous les personnages par 2 et la RCV par 1,3. Si le coup spécial "Perles sacrées de sagesse" est utilisé, multiplie l'ATK de tous les personnages par 3 pendant un tour.`,
+      captainAbilityAfterLimitBreakPlus: `Inconnue.`,
+      captainAbilityAdditionnalInformation: null,
+      captainAbilityAfterLimitBreakPlusAdditionnalInformation: null,
+      captainAction: null,
+      captainActionTurns: null,
+      specialWithStages: [
+        {
+          specialTurns: {
+            initial: 6,
+            max: 3,
+            gainWithLimitBreak: 0,
+            gainWithLimitBreakPlus: 0,
+          },
+          special: `Mélange les cercles qui ne sont pas correspondants des personnages de classe Sabreur et Tireur aléatoirement et inflige 10 coups avec de faibles dégâts aléatoires non élémentaires sur des ennemis aléatoires.`,
+        },
+        {
+          specialTurns: {
+            initial: 12,
+            max: 9,
+            gainWithLimitBreak: 0,
+            gainWithLimitBreakPlus: 0,
+          },
+          special: `Mélange les cercles qui ne sont pas correspondants des personnages de classe Sabreur et Tireur aléatoirement, restaure les HP avec 5 fois sa RCV et inflige 10 coups avec des dégâts aléatoires non élémentaires sur des ennemis aléatoires.`,
+        },
+        {
+          specialTurns: {
+            initial: 20,
+            max: 17,
+            gainWithLimitBreak: 0,
+            gainWithLimitBreakPlus: 0,
+          },
+          special: `Change les cercles des personnages de classe Sabreur et Tireur en cercles correspondants, restaure les HP avec 10 fois sa RCV et inflige 10 coups avec de lourds dégâts aléatoires non élémentaires sur des ennemis aléatoires.`,
+        },
+      ],
+      special: null,
+      specialTurns: null,
+      crewmateAbilities: [
+        {
+          ability: `Immunise le personnage contre "Paralysie".`,
+          needLimitBreak: true,
+        },
+        {
+          ability: `Rend les cercles [PSY] avantageux pour les personnages de classe Tireur.`,
+          needLimitBreak: true,
+        },
+      ],
+      picture: {
+        fiveStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f1239.png',
+        sixStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f1240.png',
+        sixPlusStarsPicture: null,
+      },
+    },
+    sockets: 5,
+    cost: 55,
+    hasLimitBreak: true,
+    hasLimitBreakPlus: false,
+    potentialAbilities: [
+      {
+        type: PotentialAbility.INT_REDUCTION,
+        icon: '',
+        effects: [
+          `Réduit les dégâts subis par les ennemis de type INT de 1%.`,
+          `Réduit les dégâts subis par les ennemis de type INT de 2%.`,
+          `Réduit les dégâts subis par les ennemis de type INT de 3%.`,
+          `Réduit les dégâts subis par les ennemis de type INT de 4%.`,
+          `Réduit les dégâts subis par les ennemis de type INT de 5%.`,
+        ],
+      },
+      {
+        type: PotentialAbility.SOIN_IMPOSSIBLE,
+        icon: '',
+        effects: [
+          `Réduit la durée de “Soin impossible” de 1 tour.`,
+          `Réduit la durée de “Soin impossible” de 2 tours.`,
+          `Réduit la durée de “Soin impossible” de 3 tours.`,
+          `Réduit la durée de “Soin impossible” de 4 tours.`,
+          `Réduit la durée de “Soin impossible” de 5 tours.`,
+        ],
+      },
+      {
+        type: PotentialAbility.BARRIERE,
+        icon: '',
+        effects: [
+          `Permet aux attaques normales du personnage d'ignorer les barrières si les HP sont au maximum.`,
+          `Permet aux attaques normales du personnage d'ignorer les barrières si les HP sont supérieurs ou égaux à 90%.`,
+          `Permet aux attaques normales du personnage d'ignorer les barrières si les HP sont supérieurs ou égaux à 70%.`,
+          `Permet aux attaques normales du personnage d'ignorer les barrières si les HP sont supérieurs ou égaux à 50%.`,
+          `Permet aux attaques normales du personnage d'ignorer les barrières.`,
+        ],
+      },
+    ],
+    evolvers: [
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0118.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0266.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0098.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0303.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0267.png',
+    ],
+    support: {
+      hasSupportEffect: true,
+      supportedCharacters: ['Sakazuki', 'Kuzan'],
+      levels: [
+        `Mélange les cercles des personnages de classe Tireur si les cercles sont mélangés par les ennemis (une fois par quête).`,
+        `Mélange les cercles des personnages de classe Tireur si les cercles sont mélangés par les ennemis (une fois par quête).`,
+        `Change les cercles des personnages de classe Tireur en cercles correspondants si les cercles sont mélangés par les ennemis (une fois par quête).`,
+        `Change les cercles des personnages de classe Tireur en cercles correspondants si les cercles sont mélangés par les ennemis (une fois par quête).`,
+        `Change les cercles des personnages de classe Tireur et Sabreur en cercles correspondants si les cercles sont mélangés par les ennemis (une fois par quête).`,
+      ],
+    },
+    batch: `First Legend`,
+  },
+  // Kizaru 6+
+  {
+    id: '2034',
+    title: 'La plus puissante des forces de combat de la Marine',
+    name: 'Borsalino',
+    isDual: false,
+    artwork: {
+      fiveStars: null,
+      sixStars: null,
+      sixPlusStars: 'https://i.imgur.com/sEjmxpr.png',
+    },
+    dualCharacterData: null,
+    singleCharacterData: {
+      story: `Amiral au quartier général de la Marine. Arrivé "le cœur léger" sur l'archipel des Sabaody, dont il sait qu'il abrite un grand nombre de pirates dont la prime dépasse les 100 millions, il inflige une telle correction aux supernovæ que Luffy n'a pas d'autre choix que de reconnaître sa supériorité et de préférer la fuite à la confrontation.`,
+      type: 'PSY',
+      classes: [CharacterClass.Sabreur, CharacterClass.Tireur],
+      combo: 7,
+      hp: {
+        initial: 2928,
+        afterLimitBreak: 3278,
+        afterLimitBreakPlus: 3628,
+      },
+      atk: {
+        initial: 1512,
+        afterLimitBreak: 1762,
+        afterLimitBreakPlus: 1962,
+      },
+      rcv: {
+        initial: 508,
+        afterLimitBreak: 608,
+        afterLimitBreakPlus: 683,
+      },
+      captainAbility: `Réduit le temps de chargement des coups spéciaux de tous les personnages de 2 tours au début de la quête, multiplie l'ATK de tous les personnages par 2 et la RCV par 1,35. Si le coup spécial "Perles sacrées de sagesse - Lumière divine" est utilisé, multiplie l'ATK de tous les personnages par 3,5 pendant un tour.`,
+      captainAbilityAfterLimitBreakPlus: `Réduit le temps de chargement des coups spéciaux de tous les personnages de 2 tours au début de la quête, multiplie l'ATK de tous les personnages par 3,5 et la RCV par 1,35. Si le coup spécial "Perles sacrées de sagesse - Lumière divine" est utilisé, multiplie l'ATK de tous les personnages par 4,25 pendant un tour.`,
+      captainAbilityAdditionnalInformation: null,
+      captainAbilityAfterLimitBreakPlusAdditionnalInformation: null,
+      captainAction: null,
+      captainActionTurns: null,
+      specialWithStages: [
+        {
+          specialTurns: {
+            initial: 9,
+            max: 6,
+            gainWithLimitBreak: 0,
+            gainWithLimitBreakPlus: 0,
+          },
+          special: `Mélange les cercles qui ne sont pas correspondants des personnages de classe Sabreur et Tireur aléatoirement, restaure les HP avec 6 fois sa RCV et inflige 20 coups avec des dégâts aléatoires non élémentaires sur des ennemis aléatoires.`,
+        },
+        {
+          specialTurns: {
+            initial: 15,
+            max: 12,
+            gainWithLimitBreak: 0,
+            gainWithLimitBreakPlus: 0,
+          },
+          special: `Change les cercles des personnages de classe Sabreur et Tireur en cercles correspondants, restaure les HP avec 15 fois sa RCV et inflige 20 coups avec de lourds dégâts aléatoires non élémentaires sur des ennemis aléatoires.`,
+        },
+      ],
+      special: null,
+      specialTurns: null,
+      crewmateAbilities: [
+        {
+          ability: `Immunise le personnage contre "Paralysie".`,
+          needLimitBreak: true,
+        },
+        {
+          ability: `Rend les cercles [PSY] avantageux pour les personnages de classe Tireur.`,
+          needLimitBreak: true,
+        },
+      ],
+      picture: {
+        fiveStarsPicture: null,
+        sixStarsPicture: null,
+        sixPlusStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f2034.png',
+      },
+    },
+    sockets: 5,
+    cost: 65,
+    hasLimitBreak: true,
+    hasLimitBreakPlus: false,
+    potentialAbilities: [
+      {
+        type: PotentialAbility.INT_REDUCTION,
+        icon: '',
+        effects: [
+          `Réduit les dégâts subis par les ennemis de type INT de 1%.`,
+          `Réduit les dégâts subis par les ennemis de type INT de 2%.`,
+          `Réduit les dégâts subis par les ennemis de type INT de 3%.`,
+          `Réduit les dégâts subis par les ennemis de type INT de 4%.`,
+          `Réduit les dégâts subis par les ennemis de type INT de 5%.`,
+        ],
+      },
+      {
+        type: PotentialAbility.SOIN_IMPOSSIBLE,
+        icon: '',
+        effects: [
+          `Réduit la durée de “Soin impossible” de 1 tour.`,
+          `Réduit la durée de “Soin impossible” de 2 tours.`,
+          `Réduit la durée de “Soin impossible” de 3 tours.`,
+          `Réduit la durée de “Soin impossible” de 4 tours.`,
+          `Réduit la durée de “Soin impossible” de 5 tours.`,
+        ],
+      },
+      {
+        type: PotentialAbility.BARRIERE,
+        icon: '',
+        effects: [
+          `Permet aux attaques normales du personnage d'ignorer les barrières si les HP sont au maximum.`,
+          `Permet aux attaques normales du personnage d'ignorer les barrières si les HP sont supérieurs ou égaux à 90%.`,
+          `Permet aux attaques normales du personnage d'ignorer les barrières si les HP sont supérieurs ou égaux à 70%.`,
+          `Permet aux attaques normales du personnage d'ignorer les barrières si les HP sont supérieurs ou égaux à 50%.`,
+          `Permet aux attaques normales du personnage d'ignorer les barrières.`,
+        ],
+      },
+    ],
+    evolvers: [
+      'https://onepiece-treasurecruise.com/wp-content/uploads/yellow_skull2_f.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0118.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0087.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0303.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0267.png',
+    ],
+    support: {
+      hasSupportEffect: true,
+      supportedCharacters: ['Sakazuki', 'Kuzan'],
+      levels: [
+        `Mélange les cercles des personnages de classe Tireur si les cercles sont mélangés par les ennemis (une fois par quête).`,
+        `Mélange les cercles des personnages de classe Tireur si les cercles sont mélangés par les ennemis (une fois par quête).`,
+        `Change les cercles des personnages de classe Tireur en cercles correspondants si les cercles sont mélangés par les ennemis (une fois par quête).`,
+        `Change les cercles des personnages de classe Tireur en cercles correspondants si les cercles sont mélangés par les ennemis (une fois par quête).`,
+        `Change les cercles des personnages de classe Tireur et Sabreur en cercles correspondants si les cercles sont mélangés par les ennemis (une fois par quête).`,
+      ],
+    },
+    batch: `First Legend`,
+  },
 ];
