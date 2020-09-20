@@ -16,6 +16,7 @@ import { raids } from 'src/app/data/tier-lists/raids';
 import { tms } from 'src/app/data/tier-lists/tm';
 import { kizunas } from 'src/app/data/tier-lists/kizuna';
 import { ambushs } from 'src/app/data/tier-lists/ambush';
+import { ActivatedRoute } from '@angular/router';
 
 interface SavedTierList {
   name: string;
@@ -122,8 +123,22 @@ export class RareRecruitsComponent implements OnInit {
 
   public hideLastTier = false;
 
+  constructor(private activatedRoute: ActivatedRoute) {}
+
   public ngOnInit() {
-    this._initTiers(0);
+    this.activatedRoute.queryParams.subscribe((params) => {
+      console.log('params', params);
+
+      if (params.name && params.tiers) {
+        console.log('params.name', params.name);
+        console.log('params.tiers', params.tiers);
+
+        this.tiers = JSON.parse(params.tiers);
+        this.tierListTitle = params.name;
+      } else {
+        this._initTiers(0);
+      }
+    });
   }
 
   private _initTiers(index: number): void {
@@ -136,6 +151,20 @@ export class RareRecruitsComponent implements OnInit {
         characters: x === 'F' ? [...this.allCharacters] : [],
       };
     });
+  }
+
+  public copyToClipboard(val: string) {
+    const selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = val;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
   }
 
   public switchTierList(tierIndex: number) {
@@ -157,6 +186,16 @@ export class RareRecruitsComponent implements OnInit {
         event.currentIndex
       );
     }
+  }
+
+  public share() {
+    // const baseUrl = 'http://optc.webarranco.fr';
+    const baseUrl = 'http://localhost:4200';
+    const url = `${baseUrl}?name=${this.tierListTitle}&tiers=${JSON.stringify(
+      this.tiers
+    )}`;
+
+    this.copyToClipboard(url);
   }
 
   public getSavedTierLists(): SavedTierList[] {

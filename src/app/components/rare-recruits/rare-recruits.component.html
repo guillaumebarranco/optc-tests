@@ -23,6 +23,7 @@
 <details class="actions-container">
   <summary>Actions</summary>
 
+  <button (click)="share()">Partager ma Tier List</button>
   <button (click)="downloadImage(false)">Exporter ma Tier List</button>
   <button (click)="downloadImage(true)">
     Exporter ma Tier List sans voir le dernier Tier
@@ -70,34 +71,32 @@
 </div>
 
 <div cdkDropListGroup>
-  <div id="tablewrap">
-    <table #screen>
-      <tbody>
-        <ng-container *ngFor="let tier of tiers; let i = index">
-          <tr *ngIf="i !== 6 || !hideLastTier">
-            <td class="labelHolder" contenteditable="false">
-              <input
-                [ngStyle]="{ 'background-color': colors[i] }"
-                [(ngModel)]="tier.name"
+  <table #screen>
+    <tbody>
+      <ng-container *ngFor="let tier of tiers; let i = index">
+        <tr *ngIf="i !== 6 || !hideLastTier">
+          <td class="labelHolder" contenteditable="false">
+            <input
+              [ngStyle]="{ 'background-color': colors[i] }"
+              [(ngModel)]="tier.name"
+            />
+          </td>
+          <td
+            cdkDropList
+            [cdkDropListData]="tier.characters"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <div class="tier sort" id="rows">
+              <img
+                *ngFor="let character of tier.characters"
+                [src]="'assets/characters/' + character"
+                width="64"
+                alt=""
+                cdkDrag
               />
-            </td>
-            <td
-              cdkDropList
-              [cdkDropListData]="tier.characters"
-              (cdkDropListDropped)="drop($event)"
-            >
-              <div class="tier sort" id="rows">
-                <img
-                  *ngFor="let character of tier.characters"
-                  [src]="'assets/characters/' + character"
-                  width="64"
-                  alt=""
-                  cdkDrag
-                />
-              </div>
-            </td></tr
-        ></ng-container>
-      </tbody>
-    </table>
-  </div>
+            </div>
+          </td></tr
+      ></ng-container>
+    </tbody>
+  </table>
 </div>
