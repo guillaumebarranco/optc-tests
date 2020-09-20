@@ -202,19 +202,8 @@ div#moveDown {
   opacity: 1;
 }
 
-button {
-  background: #fff;
-  box-shadow: 0 2px #dedede; /* found a way to shoehorn it back in boys */
-  border: solid 1px #dedede;
-  cursor: pointer;
-  outline: none;
-  position: relative;
-  padding: 4px 8px;
-}
-
-button:active {
-  box-shadow: 0 1px #dedede;
-  top: 1px;
+button.active {
+  background-color: lightskyblue;
 }
 
 @media (max-width: 1280px) and (max-device-width: 1280px) {

@@ -1,15 +1,58 @@
-<button
-  *ngFor="let tierList of tierLists; let tierIndex = index"
-  (click)="switchTierList(tierIndex)"
->
-  {{ tierList.name }}
-</button>
-
 <h1>
   <input [(ngModel)]="tierListTitle" />
 </h1>
 
-<button (click)="downloadImage()">Export Tier List</button>
+<details>
+  <summary>Actions</summary>
+
+  <button (click)="downloadImage()">Exporter ma Tier List</button>
+  <button (click)="saveTierList()">Sauvegarder ma Tier List</button>
+  <button [ngClass]="{ active: loadingTierList }" (click)="loadTierList()">
+    Charger une Tier List
+  </button>
+  <button
+    [ngClass]="{ active: removingTierList }"
+    style="background-color: red"
+    (click)="removeTierList()"
+  >
+    Supprimer une Tier List
+  </button>
+
+  <div *ngIf="loadingTierList">
+    <h2>Tier List sauvegardées</h2>
+    <p>Veuillez sélectionner une Tier List à charger</p>
+    <button
+      *ngFor="let tierList of loadedTierLists"
+      (click)="selectTierListToLoad(tierList)"
+    >
+      {{ tierList.name }}
+    </button>
+  </div>
+
+  <div *ngIf="removingTierList">
+    <h2>Tier List sauvegardées</h2>
+    <p>Veuillez sélectionner une Tier List à supprimer</p>
+    <button
+      *ngFor="let tierList of loadedTierLists"
+      (click)="selectTierListToRemove(tierList)"
+    >
+      {{ tierList.name }}
+    </button>
+  </div>
+</details>
+
+<br />
+
+<details>
+  <summary>Changer de Tier List</summary>
+
+  <button
+    *ngFor="let tierList of tierLists; let tierIndex = index"
+    (click)="switchTierList(tierIndex)"
+  >
+    {{ tierList.name }}
+  </button>
+</details>
 
 <div id="download" style="visibility: hidden; height: 0">
   <img #canvas />
@@ -20,9 +63,12 @@
   <div id="tablewrap">
     <table #screen>
       <tbody>
-        <tr *ngFor="let tier of tiers">
+        <tr *ngFor="let tier of tiers; let i = index">
           <td class="labelHolder" contenteditable="false">
-            <input [(ngModel)]="tier.name" />
+            <input
+              [ngStyle]="{ 'background-color': colors[i] }"
+              [(ngModel)]="tier.name"
+            />
           </td>
           <td
             cdkDropList

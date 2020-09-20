@@ -15,6 +15,11 @@ import { colisees } from 'src/app/data/tier-lists/colisees';
 import { raids } from 'src/app/data/tier-lists/raids';
 import { tms } from 'src/app/data/tier-lists/tm';
 
+interface SavedTierList {
+  name: string;
+  tiers: Tier[];
+}
+
 interface TierList {
   name: string;
   characters: string[];
@@ -68,7 +73,21 @@ export class RareRecruitsComponent implements OnInit {
   public allCharacters = [];
   public tierListTitle = '';
   public tiers: Tier[] = [];
+  public colors = [
+    'rgb(255, 127, 127)',
+    'rgb(255, 191, 127)',
+    'rgb(255, 223, 127)',
+    '#FFFF7F',
+    'rgb(191, 255, 127)',
+    'rgb(127, 255, 127)',
+    'rgb(127, 255, 255)',
+  ];
   public basicTiers: string[] = ['S', 'A', 'B', 'C', 'D', 'E', 'F'];
+
+  public loadingTierList = false;
+  public loadedTierLists: SavedTierList[] = [];
+
+  public removingTierList = false;
 
   public ngOnInit() {
     this._initTiers(0);
@@ -107,15 +126,91 @@ export class RareRecruitsComponent implements OnInit {
     }
   }
 
+  public getSavedTierLists(): SavedTierList[] {
+    return localStorage.getItem('tierLists') !== null
+      ? JSON.parse(localStorage.getItem('tierLists'))
+      : [];
+  }
+
+  public saveTierList() {
+    const savedTierLists: SavedTierList[] = this.getSavedTierLists();
+    const tierListWithSameNameAlreadyExists = savedTierLists.find(
+      (list) => list.name === this.tierListTitle
+    );
+
+    if (!tierListWithSameNameAlreadyExists) {
+      const tierListsUpdated: SavedTierList[] = savedTierLists.concat({
+        name: this.tierListTitle,
+        tiers: this.tiers,
+      });
+      localStorage.setItem('tierLists', JSON.stringify(tierListsUpdated));
+    } else {
+      const tierListsUpdated: SavedTierList[] = savedTierLists.map((list) => {
+        return list.name === this.tierListTitle
+          ? {
+              name: list.name,
+              tiers: this.tiers,
+            }
+          : list;
+      });
+      localStorage.setItem('tierLists', JSON.stringify(tierListsUpdated));
+    }
+  }
+
+  public loadTierList() {
+    if (!this.loadingTierList) {
+      this.loadingTierList = true;
+      this.loadedTierLists = this.getSavedTierLists();
+    } else {
+      this.loadingTierList = false;
+      this.loadedTierLists = [];
+    }
+  }
+
+  public removeTierList() {
+    if (!this.removingTierList) {
+      this.removingTierList = true;
+      this.loadedTierLists = this.getSavedTierLists();
+    } else {
+      this.removingTierList = false;
+      this.loadedTierLists = [];
+    }
+  }
+
+  public selectTierListToLoad(savedTierList: SavedTierList) {
+    this.tierListTitle = savedTierList.name;
+    this.tiers = savedTierList.tiers;
+
+    this.loadingTierList = false;
+    this.loadedTierLists = [];
+  }
+
+  public selectTierListToRemove(savedTierList: SavedTierList) {
+    const tierListsUpdated = this.loadedTierLists.filter(
+      (list) => list.name !== savedTierList.name
+    );
+
+    localStorage.setItem('tierLists', JSON.stringify(tierListsUpdated));
+
+    this.removingTierList = false;
+    this.loadedTierLists = [];
+  }
+
   public downloadImage() {
     const transformToCanvas: any = html2canvas;
     transformToCanvas(this.screen.nativeElement, { useCORS: true }).then(
       (canvas) => {
         this.canvas.nativeElement.src = canvas.toDataURL();
         this.downloadLink.nativeElement.href = canvas.toDataURL('image/png');
-        this.downloadLink.nativeElement.download = 'tier-list.png';
+        this.downloadLink.nativeElement.download = `${this.tierListTitle}.png`;
         this.downloadLink.nativeElement.click();
       }
     );
+  }
+
+  public getTierStyle(index: number) {
+    return {
+      'background-color': this.colors[index],
+    };
   }
 }
