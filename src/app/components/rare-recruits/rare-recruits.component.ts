@@ -45,11 +45,14 @@ export class RareRecruitsComponent {
   }
 
   public downloadImage() {
-    html2canvas(this.screen.nativeElement, { useCORS: true }).then((canvas) => {
-      this.canvas.nativeElement.src = canvas.toDataURL();
-      this.downloadLink.nativeElement.href = canvas.toDataURL('image/png');
-      this.downloadLink.nativeElement.download = 'rr-tier-list.png';
-      this.downloadLink.nativeElement.click();
-    });
+    const transformToCanvas: any = html2canvas;
+    transformToCanvas(this.screen.nativeElement, { useCORS: true }).then(
+      (canvas) => {
+        this.canvas.nativeElement.src = canvas.toDataURL();
+        this.downloadLink.nativeElement.href = canvas.toDataURL('image/png');
+        this.downloadLink.nativeElement.download = 'rr-tier-list.png';
+        this.downloadLink.nativeElement.click();
+      }
+    );
   }
 }

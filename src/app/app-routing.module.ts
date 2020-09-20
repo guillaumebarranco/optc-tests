@@ -8,11 +8,11 @@ import { LegendsComponent } from './components/legends/legends.component';
 const routes: Routes = [
   {
     path: '',
-    component: LegendsComponent,
+    component: RareRecruitsComponent,
   },
   {
-    path: 'rr',
-    component: RareRecruitsComponent,
+    path: 'legends',
+    component: LegendsComponent,
   },
 ];
 
