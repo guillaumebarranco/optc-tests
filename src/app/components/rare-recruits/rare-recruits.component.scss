@@ -1,18 +1,3 @@
-html,
-body {
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
-body {
-  text-align: center;
-  background-color: #00bfff;
-  font-family: "Trebuchet MS", Arial, sans-serif;
-}
-
 #controls {
   width: 774px;
   height: 80px;
@@ -221,11 +206,85 @@ button.active {
   }
 }
 
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+div,
+input,
+details {
+  color: white;
+}
+
+h1,
+details {
+  text-align: center;
+}
+
+details {
+  margin-top: 20px;
+}
+
+details button {
+  margin-top: 15px;
+}
+
+.nav {
+  background-color: #666666;
+  color: white;
+  display: flex;
+  justify-content: center;
+
+  & > li {
+    border-left: solid 1px white;
+    padding: 15px;
+    cursor: pointer;
+    position: relative;
+
+    &:first-of-type {
+      border-left: 0;
+    }
+
+    &:hover {
+      background-color: #eee;
+      color: black;
+
+      ul {
+        display: block;
+      }
+    }
+  }
+
+  li ul {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: #666666;
+    padding: 0;
+
+    li {
+      list-style: none;
+      padding: 15px;
+      cursor: pointer;
+      color: white;
+
+      &:hover {
+        background-color: #eee;
+        color: black;
+      }
+    }
+  }
+}
+
 h1 input {
   background-color: transparent;
   border: none;
   display: block;
   width: 100%;
+  text-align: center;
 }
 
 table input {
@@ -233,8 +292,5 @@ table input {
   border: none;
   display: block;
   height: 100%;
-}
-
-.actions-container button {
-  display: block;
+  color: black;
 }

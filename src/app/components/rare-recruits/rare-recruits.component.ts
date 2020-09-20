@@ -14,6 +14,8 @@ import { soutiens } from 'src/app/data/tier-lists/soutiens';
 import { colisees } from 'src/app/data/tier-lists/colisees';
 import { raids } from 'src/app/data/tier-lists/raids';
 import { tms } from 'src/app/data/tier-lists/tm';
+import { kizunas } from 'src/app/data/tier-lists/kizuna';
+import { ambushs } from 'src/app/data/tier-lists/ambush';
 
 interface SavedTierList {
   name: string;
@@ -42,32 +44,61 @@ export class RareRecruitsComponent implements OnInit {
 
   public tierLists: TierList[] = [
     {
-      name: 'Tier List des Légendes',
+      name: 'Légendes',
       characters: legends,
     },
     {
-      name: 'Tier List des Personnages RR',
+      name: 'Personnages RR',
       characters: rrs,
     },
     {
-      name: 'Tier List des Personnages LRR',
-      characters: lrrs,
-    },
-    {
-      name: 'Tier List des Personnages Spéciaux (soutiens)',
-      characters: soutiens,
-    },
-    {
-      name: 'Tier List des Personnages Colisées',
+      name: 'Personnages Colisées',
       characters: colisees,
     },
     {
-      name: 'Tier List des Personnages Raids',
+      name: 'Personnages Raids',
       characters: raids,
     },
     {
-      name: 'Tier List des Personnages TM',
+      name: 'Personnages TM',
       characters: tms,
+    },
+    {
+      name: 'Personnages LRR',
+      characters: lrrs,
+    },
+    {
+      name: 'Personnages Spéciaux (soutiens)',
+      characters: soutiens,
+    },
+    {
+      name: 'Personnages Kizuna',
+      characters: kizunas,
+    },
+    {
+      name: 'Personnages Ambush',
+      characters: ambushs,
+    },
+    {
+      name: 'Tout les personnages F2P',
+      characters: [...tms, ...colisees, ...raids, ...kizunas, ...ambushs],
+    },
+    {
+      name: 'Tous les personnages Premium',
+      characters: [...rrs, ...lrrs, ...legends],
+    },
+    {
+      name: 'Tous les personnages',
+      characters: [
+        ...tms,
+        ...colisees,
+        ...raids,
+        ...kizunas,
+        ...ambushs,
+        ...rrs,
+        ...lrrs,
+        ...legends,
+      ],
     },
   ];
   public allCharacters = [];
@@ -97,7 +128,7 @@ export class RareRecruitsComponent implements OnInit {
 
   private _initTiers(index: number): void {
     this.allCharacters = this.tierLists[index].characters;
-    this.tierListTitle = this.tierLists[index].name;
+    this.tierListTitle = `Tier List des ${this.tierLists[index].name}`;
 
     this.tiers = this.basicTiers.map((x) => {
       return {
@@ -196,20 +227,6 @@ export class RareRecruitsComponent implements OnInit {
 
     this.removingTierList = false;
     this.loadedTierLists = [];
-  }
-
-  public copyToClipboard(val: string) {
-    const selBox = document.createElement('textarea');
-    selBox.style.position = 'fixed';
-    selBox.style.left = '0';
-    selBox.style.top = '0';
-    selBox.style.opacity = '0';
-    selBox.value = val;
-    document.body.appendChild(selBox);
-    selBox.focus();
-    selBox.select();
-    document.execCommand('copy');
-    document.body.removeChild(selBox);
   }
 
   public downloadImage(removeLastTier: boolean) {

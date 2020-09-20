@@ -2,6 +2,24 @@
   <input [(ngModel)]="tierListTitle" />
 </h1>
 
+<ul class="nav">
+  <ng-container *ngFor="let tierList of tierLists; let tierIndex = index">
+    <li *ngIf="tierIndex < 5" (click)="switchTierList(tierIndex)">
+      {{ tierList.name }}
+    </li>
+  </ng-container>
+  <li>
+    <span>Autres</span>
+    <ul>
+      <ng-container *ngFor="let tierList of tierLists; let tierIndex = index">
+        <li *ngIf="tierIndex > 4" (click)="switchTierList(tierIndex)">
+          {{ tierList.name }}
+        </li>
+      </ng-container>
+    </ul>
+  </li>
+</ul>
+
 <details class="actions-container">
   <summary>Actions</summary>
 
@@ -45,17 +63,6 @@
 </details>
 
 <br />
-
-<details>
-  <summary>Changer de Tier List</summary>
-
-  <button
-    *ngFor="let tierList of tierLists; let tierIndex = index"
-    (click)="switchTierList(tierIndex)"
-  >
-    {{ tierList.name }}
-  </button>
-</details>
 
 <div id="download" style="visibility: hidden; height: 0">
   <img #canvas />
