@@ -231,3 +231,17 @@ button:active {
     width: 800px;
   }
 }
+
+h1 input {
+  background-color: transparent;
+  border: none;
+  display: block;
+  width: 100%;
+}
+
+table input {
+  background-color: #00bfff;
+  border: none;
+  display: block;
+  height: 100%;
+}

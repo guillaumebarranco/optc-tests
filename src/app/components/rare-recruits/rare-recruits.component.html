@@ -1,5 +1,12 @@
+<button
+  *ngFor="let tierList of tierLists; let tierIndex = index"
+  (click)="switchTierList(tierIndex)"
+>
+  {{ tierList.name }}
+</button>
+
 <h1>
-  <div style="text-align: center"><u>Tier List des RR</u></div>
+  <input [(ngModel)]="tierListTitle" />
 </h1>
 
 <button (click)="downloadImage()">Export Tier List</button>
@@ -13,139 +20,19 @@
   <div id="tablewrap">
     <table #screen>
       <tbody>
-        <tr>
+        <tr *ngFor="let tier of tiers">
           <td class="labelHolder" contenteditable="false">
-            <span class="label">S</span>
+            <input [(ngModel)]="tier.name" />
           </td>
           <td
             cdkDropList
-            [cdkDropListData]="tierS"
+            [cdkDropListData]="tier.characters"
             (cdkDropListDropped)="drop($event)"
           >
             <div class="tier sort" id="rows">
               <img
-                *ngFor="let c of tierS"
-                [src]="'assets/characters/' + c"
-                width="64"
-                alt=""
-                cdkDrag
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="labelHolder" contenteditable="false">
-            <span class="label">A</span>
-          </td>
-          <td
-            cdkDropList
-            [cdkDropListData]="tierA"
-            (cdkDropListDropped)="drop($event)"
-          >
-            <div class="tier sort" id="rows">
-              <img
-                *ngFor="let c of tierA"
-                [src]="'assets/characters/' + c"
-                width="64"
-                alt=""
-                cdkDrag
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="labelHolder" contenteditable="false">
-            <span class="label">B</span>
-          </td>
-          <td
-            cdkDropList
-            [cdkDropListData]="tierB"
-            (cdkDropListDropped)="drop($event)"
-          >
-            <div class="tier sort" id="rows">
-              <img
-                *ngFor="let c of tierB"
-                [src]="'assets/characters/' + c"
-                width="64"
-                alt=""
-                cdkDrag
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="labelHolder" contenteditable="false">
-            <span class="label">C</span>
-          </td>
-          <td
-            cdkDropList
-            [cdkDropListData]="tierC"
-            (cdkDropListDropped)="drop($event)"
-          >
-            <div class="tier sort" id="rows">
-              <img
-                *ngFor="let c of tierC"
-                [src]="'assets/characters/' + c"
-                width="64"
-                alt=""
-                cdkDrag
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="labelHolder" contenteditable="false">
-            <span class="label">D</span>
-          </td>
-          <td
-            cdkDropList
-            [cdkDropListData]="tierD"
-            (cdkDropListDropped)="drop($event)"
-          >
-            <div class="tier sort" id="rows">
-              <img
-                *ngFor="let c of tierD"
-                [src]="'assets/characters/' + c"
-                width="64"
-                alt=""
-                cdkDrag
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="labelHolder" contenteditable="false">
-            <span class="label">E</span>
-          </td>
-          <td
-            cdkDropList
-            [cdkDropListData]="tierE"
-            (cdkDropListDropped)="drop($event)"
-          >
-            <div class="tier sort" id="rows">
-              <img
-                *ngFor="let c of tierE"
-                [src]="'assets/characters/' + c"
-                width="64"
-                alt=""
-                cdkDrag
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="labelHolder" contenteditable="false">
-            <span class="label">F</span>
-          </td>
-          <td
-            cdkDropList
-            [cdkDropListData]="tierF"
-            (cdkDropListDropped)="drop($event)"
-          >
-            <div class="tier sort" id="rows">
-              <img
-                *ngFor="let c of tierF"
-                [src]="'assets/characters/' + c"
+                *ngFor="let character of tier.characters"
+                [src]="'assets/characters/' + character"
                 width="64"
                 alt=""
                 cdkDrag
