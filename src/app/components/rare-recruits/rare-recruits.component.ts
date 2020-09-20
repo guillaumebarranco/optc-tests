@@ -89,6 +89,8 @@ export class RareRecruitsComponent implements OnInit {
 
   public removingTierList = false;
 
+  public hideLastTier = false;
+
   public ngOnInit() {
     this._initTiers(0);
   }
@@ -196,16 +198,41 @@ export class RareRecruitsComponent implements OnInit {
     this.loadedTierLists = [];
   }
 
-  public downloadImage() {
-    const transformToCanvas: any = html2canvas;
-    transformToCanvas(this.screen.nativeElement, { useCORS: true }).then(
-      (canvas) => {
-        this.canvas.nativeElement.src = canvas.toDataURL();
-        this.downloadLink.nativeElement.href = canvas.toDataURL('image/png');
-        this.downloadLink.nativeElement.download = `${this.tierListTitle}.png`;
-        this.downloadLink.nativeElement.click();
-      }
-    );
+  public copyToClipboard(val: string) {
+    const selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = val;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
+  }
+
+  public downloadImage(removeLastTier: boolean) {
+    if (removeLastTier) {
+      this.hideLastTier = true;
+    }
+
+    setTimeout(() => {
+      const transformToCanvas: any = html2canvas;
+
+      transformToCanvas(this.screen.nativeElement, { useCORS: true }).then(
+        (canvas) => {
+          this.canvas.nativeElement.src = canvas.toDataURL();
+          this.downloadLink.nativeElement.href = canvas.toDataURL('image/png');
+          this.downloadLink.nativeElement.download = `${this.tierListTitle}.png`;
+          this.downloadLink.nativeElement.click();
+
+          setTimeout(() => {
+            this.hideLastTier = false;
+          }, 100);
+        }
+      );
+    }, 500);
   }
 
   public getTierStyle(index: number) {
