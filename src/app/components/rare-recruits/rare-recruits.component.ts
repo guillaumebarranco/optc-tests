@@ -132,6 +132,9 @@ export class RareRecruitsComponent implements OnInit {
 
   public hideLastTier = false;
 
+  public showRemovedCharacters = false;
+  public removedCharacters: string[] = [];
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private snackBar: MatSnackBar,
@@ -199,8 +202,8 @@ export class RareRecruitsComponent implements OnInit {
   }
 
   public share() {
-    // const baseUrl = 'http://optc.webarranco.fr';
-    const baseUrl = 'http://localhost:4200';
+    const baseUrl = 'http://optc.webarranco.fr';
+    // const baseUrl = 'http://localhost:4200';
     const params = `?name=${this.tierListTitle}&tiers=${JSON.stringify(
       this.tiers
     )}`;
@@ -217,7 +220,7 @@ export class RareRecruitsComponent implements OnInit {
   }
 
   public showInformationsDialog(): void {
-    const dialogRef = this.dialog.open(DialogOverviewExampleDialogComponent, {
+    const dialogRef = this.dialog.open(InformationsDialogComponent, {
       width: '500px',
     });
 
@@ -331,6 +334,42 @@ export class RareRecruitsComponent implements OnInit {
     }, 500);
   }
 
+  public removeCharacterFromTier(tier: Tier, characterToRemove: string) {
+    const foundTier = this.tiers.find((t) => t.name === tier.name);
+
+    const updatedTier = {
+      ...foundTier,
+      characters: foundTier.characters.filter((c) => c !== characterToRemove),
+    };
+
+    this.tiers = this.tiers
+      .filter((t) => t.name !== tier.name)
+      .concat(updatedTier);
+
+    this.removedCharacters.push(characterToRemove);
+
+    return false;
+  }
+
+  public putCharacterBackInTier(tier: Tier, characterToRePutInTier: string) {
+    const foundTier = this.tiers.find((t) => t.name === tier.name);
+
+    const updatedTier = {
+      ...foundTier,
+      characters: foundTier.characters.concat(characterToRePutInTier),
+    };
+
+    this.tiers = this.tiers
+      .filter((t) => t.name !== tier.name)
+      .concat(updatedTier);
+
+    this.removedCharacters = this.removedCharacters.filter(
+      (c) => c !== characterToRePutInTier
+    );
+
+    return false;
+  }
+
   public getTierStyle(index: number) {
     return {
       'background-color': this.colors[index],
@@ -339,7 +378,7 @@ export class RareRecruitsComponent implements OnInit {
 }
 
 @Component({
-  selector: 'app-dialog-overview-example-dialog',
+  selector: 'app-informations-dialog',
   template: `
     <div>
       Bienvenue sur OPTC TierList Maker <br />
@@ -352,6 +391,13 @@ export class RareRecruitsComponent implements OnInit {
       <ul>
         <li>Le titre de la Tier list est modifiable</li>
         <li>Les noms des différents Tiers sont modifiables</li>
+        <li>
+          Uniquement dans le dernier Tier, vous pouvez effectuer un clic droit
+          sur un personnage pour le supprimer de la Tier List. Vous pouvez
+          ré-afficher les personnages supprimés via un bouton d'action. Les
+          personnages peuvent ensuite être remis dans la tier list avec un
+          nouveau clic droit.
+        </li>
         <li>
           Vous pouvez sauvegarder votre Tier List à tout moment pour la
           reprendre plus tard ou simplement la garder. Votre Tier List est
@@ -380,10 +426,8 @@ export class RareRecruitsComponent implements OnInit {
     </div>
   `,
 })
-export class DialogOverviewExampleDialogComponent {
-  constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialogComponent>
-  ) {}
+export class InformationsDialogComponent {
+  constructor(public dialogRef: MatDialogRef<InformationsDialogComponent>) {}
 
   onNoClick(): void {
     this.dialogRef.close();

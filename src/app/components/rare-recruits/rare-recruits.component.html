@@ -27,6 +27,12 @@
   <details class="actions-container">
     <summary>Actions</summary>
 
+    <button
+      [ngClass]="{ active: showRemovedCharacters }"
+      (click)="showRemovedCharacters = !showRemovedCharacters"
+    >
+      Voir les personnages supprimés
+    </button>
     <button (click)="share()">Partager ma Tier List</button>
     <button (click)="downloadImage(false)">Exporter ma Tier List</button>
     <button (click)="downloadImage(true)">
@@ -91,13 +97,38 @@
               (cdkDropListDropped)="drop($event)"
             >
               <div class="tier sort" id="rows">
-                <img
-                  *ngFor="let character of tier.characters"
-                  [src]="'assets/characters/' + character"
-                  width="64"
-                  alt=""
-                  cdkDrag
-                />
+                <ng-container *ngFor="let character of tier.characters">
+                  <ng-container *ngIf="i !== 6">
+                    <img
+                      [src]="'assets/characters/' + character"
+                      width="64"
+                      alt=""
+                      cdkDrag
+                    />
+                  </ng-container>
+
+                  <ng-container *ngIf="i === 6">
+                    <img
+                      [src]="'assets/characters/' + character"
+                      width="64"
+                      alt=""
+                      (contextmenu)="removeCharacterFromTier(tier, character)"
+                      cdkDrag
+                    />
+                  </ng-container>
+                </ng-container>
+
+                <ng-container *ngIf="showRemovedCharacters && i === 6">
+                  <img
+                    *ngFor="let character of removedCharacters"
+                    class="removed-character"
+                    [src]="'assets/characters/' + character"
+                    width="64"
+                    alt=""
+                    (contextmenu)="putCharacterBackInTier(tier, character)"
+                    cdkDrag
+                  />
+                </ng-container>
               </div>
             </td></tr
         ></ng-container>

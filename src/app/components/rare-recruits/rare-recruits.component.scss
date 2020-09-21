@@ -168,11 +168,15 @@ table input {
   padding: 20px;
 }
 
-details {
+details summary {
   cursor: pointer;
 }
 
 details button {
   font-size: 15px;
   cursor: pointer;
+}
+
+.removed-character {
+  filter: grayscale(1);
 }
