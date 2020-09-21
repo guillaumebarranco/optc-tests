@@ -24,65 +24,15 @@
 </ul>
 
 <div class="container">
-  <details class="actions-container">
-    <summary>Actions</summary>
-
-    <button
-      mat-button
-      [ngClass]="{ active: showRemovedCharacters }"
-      (click)="showRemovedCharacters = !showRemovedCharacters"
-    >
-      Voir les personnages supprimés
-    </button>
-    <button mat-button (click)="share()">Partager ma Tier List</button>
-    <button mat-button (click)="downloadImage(false)">
-      Exporter ma Tier List
-    </button>
-    <button mat-button (click)="downloadImage(true)">
-      Exporter ma Tier List sans voir le dernier Tier
-    </button>
-    <button mat-button (click)="saveTierList()">
-      Sauvegarder ma Tier List
-    </button>
-    <button
-      mat-button
-      [ngClass]="{ active: loadingTierList }"
-      (click)="loadTierList()"
-    >
-      Charger une Tier List
-    </button>
-    <button
-      mat-button
-      [ngClass]="{ active: removingTierList }"
-      class="warn"
-      (click)="removeTierList()"
-    >
-      Supprimer une Tier List
-    </button>
-
-    <div *ngIf="loadingTierList">
-      <h2>Tier List sauvegardées</h2>
-      <p>Veuillez sélectionner une Tier List à charger</p>
-      <button
-        mat-button
-        *ngFor="let tierList of loadedTierLists"
-        (click)="selectTierListToLoad(tierList)"
-      >
-        {{ tierList.name }}
-      </button>
-    </div>
-
-    <div *ngIf="removingTierList">
-      <h2>Tier List sauvegardées</h2>
-      <p>Veuillez sélectionner une Tier List à supprimer</p>
-      <button
-        *ngFor="let tierList of loadedTierLists"
-        (click)="selectTierListToRemove(tierList)"
-      >
-        {{ tierList.name }}
-      </button>
-    </div>
-  </details>
+  <app-tier-list-actions
+    [tierListTitle]="tierListTitle"
+    [tiers]="tiers"
+    [removedCharacters]="removedCharacters"
+    [showRemovedCharacters]="showRemovedCharacters"
+    (toggleShowRemovedCharacters)="onToggleShowRemovedCharacters($event)"
+    (loadTierList)="onLoadTierList($event)"
+    (exportTierList)="onExportTierList($event)"
+  ></app-tier-list-actions>
 
   <br />
 
