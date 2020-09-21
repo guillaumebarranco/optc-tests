@@ -91,15 +91,15 @@ export class RareRecruitsComponent implements OnInit {
       characters: ambushs,
     },
     {
-      name: 'Tout les personnages F2P',
+      name: 'Personnages F2P',
       characters: [...tms, ...colisees, ...raids, ...kizunas, ...ambushs],
     },
     {
-      name: 'Tous les personnages Premium',
+      name: 'Personnages Premium',
       characters: [...rrs, ...lrrs, ...legends],
     },
     {
-      name: 'Tous les personnages',
+      name: 'Personnages au complet',
       characters: [
         ...tms,
         ...colisees,

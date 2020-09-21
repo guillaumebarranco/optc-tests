@@ -11,6 +11,7 @@ import { components } from './components';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [AppComponent, ...components],
@@ -22,6 +23,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     DragDropModule,
     MatSnackBarModule,
     MatDialogModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -28,23 +28,33 @@
     <summary>Actions</summary>
 
     <button
+      mat-button
       [ngClass]="{ active: showRemovedCharacters }"
       (click)="showRemovedCharacters = !showRemovedCharacters"
     >
       Voir les personnages supprimés
     </button>
-    <button (click)="share()">Partager ma Tier List</button>
-    <button (click)="downloadImage(false)">Exporter ma Tier List</button>
-    <button (click)="downloadImage(true)">
+    <button mat-button (click)="share()">Partager ma Tier List</button>
+    <button mat-button (click)="downloadImage(false)">
+      Exporter ma Tier List
+    </button>
+    <button mat-button (click)="downloadImage(true)">
       Exporter ma Tier List sans voir le dernier Tier
     </button>
-    <button (click)="saveTierList()">Sauvegarder ma Tier List</button>
-    <button [ngClass]="{ active: loadingTierList }" (click)="loadTierList()">
+    <button mat-button (click)="saveTierList()">
+      Sauvegarder ma Tier List
+    </button>
+    <button
+      mat-button
+      [ngClass]="{ active: loadingTierList }"
+      (click)="loadTierList()"
+    >
       Charger une Tier List
     </button>
     <button
+      mat-button
       [ngClass]="{ active: removingTierList }"
-      style="background-color: red"
+      class="warn"
       (click)="removeTierList()"
     >
       Supprimer une Tier List
@@ -54,6 +64,7 @@
       <h2>Tier List sauvegardées</h2>
       <p>Veuillez sélectionner une Tier List à charger</p>
       <button
+        mat-button
         *ngFor="let tierList of loadedTierLists"
         (click)="selectTierListToLoad(tierList)"
       >
