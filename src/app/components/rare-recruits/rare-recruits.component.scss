@@ -10,12 +10,8 @@ tr {
 }
 
 table {
-  min-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
   border-spacing: 0;
   border: solid 3px black;
-  background: #00bfff;
 }
 
 .labelHolder {
@@ -64,6 +60,11 @@ details {
 h1,
 details {
   text-align: center;
+}
+
+h1 {
+  width: 80%;
+  margin: 0 auto;
 }
 
 details {
@@ -122,12 +123,19 @@ details button {
   }
 }
 
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 h1 input {
   background-color: transparent;
   border: none;
   display: block;
   width: 100%;
   text-align: center;
+  font-size: 24px;
 }
 
 table input {
@@ -136,4 +144,34 @@ table input {
   display: block;
   height: 100%;
   color: black;
+}
+
+.infos {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  box-sizing: border-box;
+  border: solid 1px white;
+  padding: 5px;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+}
+
+.header {
+  position: relative;
+  padding: 20px;
+}
+
+details {
+  cursor: pointer;
+}
+
+details button {
+  font-size: 15px;
+  cursor: pointer;
 }

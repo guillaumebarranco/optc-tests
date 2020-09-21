@@ -1,6 +1,15 @@
-import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  ElementRef,
+  OnInit,
+  Inject,
+} from '@angular/core';
 
 import * as html2canvas from 'html2canvas';
+
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 import { rrs } from '../../data/tier-lists/rr';
 import {
@@ -16,7 +25,7 @@ import { raids } from 'src/app/data/tier-lists/raids';
 import { tms } from 'src/app/data/tier-lists/tm';
 import { kizunas } from 'src/app/data/tier-lists/kizuna';
 import { ambushs } from 'src/app/data/tier-lists/ambush';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface SavedTierList {
   name: string;
@@ -123,16 +132,17 @@ export class RareRecruitsComponent implements OnInit {
 
   public hideLastTier = false;
 
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private snackBar: MatSnackBar,
+    public dialog: MatDialog
+  ) {}
 
   public ngOnInit() {
     this.activatedRoute.queryParams.subscribe((params) => {
-      console.log('params', params);
+      console.log('window.location.hostname', window.location.hostname);
 
       if (params.name && params.tiers) {
-        console.log('params.name', params.name);
-        console.log('params.tiers', params.tiers);
-
         this.tiers = JSON.parse(params.tiers);
         this.tierListTitle = params.name;
       } else {
@@ -189,13 +199,31 @@ export class RareRecruitsComponent implements OnInit {
   }
 
   public share() {
-    const baseUrl = 'http://optc.webarranco.fr';
-    // const baseUrl = 'http://localhost:4200';
-    const url = `${baseUrl}?name=${this.tierListTitle}&tiers=${JSON.stringify(
+    // const baseUrl = 'http://optc.webarranco.fr';
+    const baseUrl = 'http://localhost:4200';
+    const params = `?name=${this.tierListTitle}&tiers=${JSON.stringify(
       this.tiers
     )}`;
 
-    this.copyToClipboard(url);
+    this.copyToClipboard(baseUrl + encodeURI(params));
+
+    this.snackBar.open(
+      `L'URL de partage de votre tier list a été copiée dans votre presse-papiers !`,
+      null,
+      {
+        duration: 5000,
+      }
+    );
+  }
+
+  public showInformationsDialog(): void {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialogComponent, {
+      width: '500px',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+    });
   }
 
   public getSavedTierLists(): SavedTierList[] {
@@ -227,6 +255,10 @@ export class RareRecruitsComponent implements OnInit {
       });
       localStorage.setItem('tierLists', JSON.stringify(tierListsUpdated));
     }
+
+    this.snackBar.open(`Votre Tier List a bien été sauvegardée !`, null, {
+      duration: 5000,
+    });
   }
 
   public loadTierList() {
@@ -255,6 +287,10 @@ export class RareRecruitsComponent implements OnInit {
 
     this.loadingTierList = false;
     this.loadedTierLists = [];
+
+    this.snackBar.open(`Votre Tier List a bien été chargée !`, null, {
+      duration: 5000,
+    });
   }
 
   public selectTierListToRemove(savedTierList: SavedTierList) {
@@ -266,6 +302,10 @@ export class RareRecruitsComponent implements OnInit {
 
     this.removingTierList = false;
     this.loadedTierLists = [];
+
+    this.snackBar.open(`Votre Tier List a bien été supprimée !`, null, {
+      duration: 5000,
+    });
   }
 
   public downloadImage(removeLastTier: boolean) {
@@ -295,5 +335,57 @@ export class RareRecruitsComponent implements OnInit {
     return {
       'background-color': this.colors[index],
     };
+  }
+}
+
+@Component({
+  selector: 'app-dialog-overview-example-dialog',
+  template: `
+    <div>
+      Bienvenue sur OPTC TierList Maker <br />
+      <br />
+      Ici vous pouvez réaliser vos différentes Tier List pour One Piece Treasure
+      Cruise par catégorie. <br />
+      Voici la liste des fonctionnalités : <br />
+      <br />
+
+      <ul>
+        <li>Le titre de la Tier list est modifiable</li>
+        <li>Les noms des différents Tiers sont modifiables</li>
+        <li>
+          Vous pouvez sauvegarder votre Tier List à tout moment pour la
+          reprendre plus tard ou simplement la garder. Votre Tier List est
+          stockée dans votre propre navigateur via le Local Storage.
+        </li>
+        <li>
+          Vous pouvez sauvegarder autant de Tier Lists que vous le souhaitez
+        </li>
+        <li>
+          Vous pouvez charger une Tier List précédemment sauvegardée. Cela
+          effacera votre Tier List en cours si elle n'a pas été sauvegardée au
+          préalable.
+        </li>
+        <li>Vous pouvez supprimer une Tier List précédemment sauvegardée</li>
+        <li>
+          Vous pouvez partager une Tier List via une simple URL. Cliquez sur le
+          bouton de partage et l'URL contenant votre Tier List sera copiée dans
+          votre presse-papiers (faites CTRL+V ensuite)
+        </li>
+        <li>Vous pouvez exporter votre Tier List sous forme d'une image</li>
+        <li>
+          Vous pouvez exporter votre Tier List sous forme d'une image tout en
+          choisissant de cacher le dernier Tier
+        </li>
+      </ul>
+    </div>
+  `,
+})
+export class DialogOverviewExampleDialogComponent {
+  constructor(
+    public dialogRef: MatDialogRef<DialogOverviewExampleDialogComponent>
+  ) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }

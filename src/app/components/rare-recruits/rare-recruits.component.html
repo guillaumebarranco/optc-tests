@@ -1,6 +1,9 @@
-<h1>
-  <input [(ngModel)]="tierListTitle" />
-</h1>
+<div class="header">
+  <div class="infos" (click)="showInformationsDialog()">i</div>
+  <h1>
+    <input [(ngModel)]="tierListTitle" />
+  </h1>
+</div>
 
 <ul class="nav">
   <ng-container *ngFor="let tierList of tierLists; let tierIndex = index">
@@ -20,83 +23,85 @@
   </li>
 </ul>
 
-<details class="actions-container">
-  <summary>Actions</summary>
+<div class="container">
+  <details class="actions-container">
+    <summary>Actions</summary>
 
-  <button (click)="share()">Partager ma Tier List</button>
-  <button (click)="downloadImage(false)">Exporter ma Tier List</button>
-  <button (click)="downloadImage(true)">
-    Exporter ma Tier List sans voir le dernier Tier
-  </button>
-  <button (click)="saveTierList()">Sauvegarder ma Tier List</button>
-  <button [ngClass]="{ active: loadingTierList }" (click)="loadTierList()">
-    Charger une Tier List
-  </button>
-  <button
-    [ngClass]="{ active: removingTierList }"
-    style="background-color: red"
-    (click)="removeTierList()"
-  >
-    Supprimer une Tier List
-  </button>
-
-  <div *ngIf="loadingTierList">
-    <h2>Tier List sauvegardées</h2>
-    <p>Veuillez sélectionner une Tier List à charger</p>
-    <button
-      *ngFor="let tierList of loadedTierLists"
-      (click)="selectTierListToLoad(tierList)"
-    >
-      {{ tierList.name }}
+    <button (click)="share()">Partager ma Tier List</button>
+    <button (click)="downloadImage(false)">Exporter ma Tier List</button>
+    <button (click)="downloadImage(true)">
+      Exporter ma Tier List sans voir le dernier Tier
     </button>
+    <button (click)="saveTierList()">Sauvegarder ma Tier List</button>
+    <button [ngClass]="{ active: loadingTierList }" (click)="loadTierList()">
+      Charger une Tier List
+    </button>
+    <button
+      [ngClass]="{ active: removingTierList }"
+      style="background-color: red"
+      (click)="removeTierList()"
+    >
+      Supprimer une Tier List
+    </button>
+
+    <div *ngIf="loadingTierList">
+      <h2>Tier List sauvegardées</h2>
+      <p>Veuillez sélectionner une Tier List à charger</p>
+      <button
+        *ngFor="let tierList of loadedTierLists"
+        (click)="selectTierListToLoad(tierList)"
+      >
+        {{ tierList.name }}
+      </button>
+    </div>
+
+    <div *ngIf="removingTierList">
+      <h2>Tier List sauvegardées</h2>
+      <p>Veuillez sélectionner une Tier List à supprimer</p>
+      <button
+        *ngFor="let tierList of loadedTierLists"
+        (click)="selectTierListToRemove(tierList)"
+      >
+        {{ tierList.name }}
+      </button>
+    </div>
+  </details>
+
+  <br />
+
+  <div id="download" style="visibility: hidden; height: 0">
+    <img #canvas />
+    <a #downloadLink></a>
   </div>
 
-  <div *ngIf="removingTierList">
-    <h2>Tier List sauvegardées</h2>
-    <p>Veuillez sélectionner une Tier List à supprimer</p>
-    <button
-      *ngFor="let tierList of loadedTierLists"
-      (click)="selectTierListToRemove(tierList)"
-    >
-      {{ tierList.name }}
-    </button>
-  </div>
-</details>
-
-<br />
-
-<div id="download" style="visibility: hidden; height: 0">
-  <img #canvas />
-  <a #downloadLink></a>
-</div>
-
-<div cdkDropListGroup>
-  <table #screen>
-    <tbody>
-      <ng-container *ngFor="let tier of tiers; let i = index">
-        <tr *ngIf="i !== 6 || !hideLastTier">
-          <td class="labelHolder" contenteditable="false">
-            <input
-              [ngStyle]="{ 'background-color': colors[i] }"
-              [(ngModel)]="tier.name"
-            />
-          </td>
-          <td
-            cdkDropList
-            [cdkDropListData]="tier.characters"
-            (cdkDropListDropped)="drop($event)"
-          >
-            <div class="tier sort" id="rows">
-              <img
-                *ngFor="let character of tier.characters"
-                [src]="'assets/characters/' + character"
-                width="64"
-                alt=""
-                cdkDrag
+  <div cdkDropListGroup>
+    <table #screen>
+      <tbody>
+        <ng-container *ngFor="let tier of tiers; let i = index">
+          <tr *ngIf="i !== 6 || !hideLastTier">
+            <td class="labelHolder" contenteditable="false">
+              <input
+                [ngStyle]="{ 'background-color': colors[i] }"
+                [(ngModel)]="tier.name"
               />
-            </div>
-          </td></tr
-      ></ng-container>
-    </tbody>
-  </table>
+            </td>
+            <td
+              cdkDropList
+              [cdkDropListData]="tier.characters"
+              (cdkDropListDropped)="drop($event)"
+            >
+              <div class="tier sort" id="rows">
+                <img
+                  *ngFor="let character of tier.characters"
+                  [src]="'assets/characters/' + character"
+                  width="64"
+                  alt=""
+                  cdkDrag
+                />
+              </div>
+            </td></tr
+        ></ng-container>
+      </tbody>
+    </table>
+  </div>
 </div>
