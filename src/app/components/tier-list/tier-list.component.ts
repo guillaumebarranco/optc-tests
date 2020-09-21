@@ -109,6 +109,7 @@ export class TierListComponent implements OnInit {
   public basicTiers: string[] = ['S', 'A', 'B', 'C', 'D', 'E', 'F'];
 
   public hideLastTier = false;
+  public showActions = false;
 
   public showRemovedCharacters = false;
   public removedCharacters: string[] = [];
@@ -135,6 +136,7 @@ export class TierListComponent implements OnInit {
   private _initTiers(index: number): void {
     this.allCharacters = this.tierLists[index].characters;
     this.tierListTitle = `Tier List des ${this.tierLists[index].name}`;
+    this.removedCharacters = [];
 
     this.tiers = this.basicTiers.map((x) => {
       return {
@@ -167,7 +169,7 @@ export class TierListComponent implements OnInit {
 
   public showInformationsDialog(): void {
     const dialogRef = this.dialog.open(TierListInformationsComponent, {
-      width: '500px',
+      width: '1000px',
     });
     dialogRef.afterClosed().subscribe();
   }

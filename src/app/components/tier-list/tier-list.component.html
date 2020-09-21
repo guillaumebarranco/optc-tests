@@ -1,5 +1,4 @@
 <div class="header">
-  <div class="infos" (click)="showInformationsDialog()">i</div>
   <h1>
     <input [(ngModel)]="tierListTitle" />
   </h1>
@@ -25,6 +24,8 @@
 
 <div class="container">
   <app-tier-list-actions
+    class="actions-list"
+    [hidden]="!showActions"
     [tierListTitle]="tierListTitle"
     [tiers]="tiers"
     [removedCharacters]="removedCharacters"
@@ -96,4 +97,18 @@
       </tbody>
     </table>
   </div>
+</div>
+
+<div class="fixed-buttons">
+  <button
+    mat-icon-button
+    [ngClass]="{ active: showActions }"
+    (click)="showActions = !showActions"
+  >
+    <mat-icon>settings</mat-icon>
+  </button>
+
+  <button mat-icon-button (click)="showInformationsDialog()">
+    <mat-icon>info</mat-icon>
+  </button>
 </div>

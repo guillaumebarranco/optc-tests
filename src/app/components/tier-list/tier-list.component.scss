@@ -12,6 +12,7 @@ tr {
 table {
   border-spacing: 0;
   border: solid 3px black;
+  margin-top: 20px;
 }
 
 .labelHolder {
@@ -26,31 +27,13 @@ table {
   text-align: left;
 }
 
-@media (max-width: 1280px) and (max-device-width: 1280px) {
-  .tier {
-    width: 640px;
-  }
-  table {
-    min-width: 0px;
-  }
-}
-
-@media handheld {
-  body {
-    width: 800px;
-  }
-}
-
-* {
-  font-family: "Roboto", sans-serif;
-}
-
 h1,
 h2,
 div,
 input,
 details {
   color: white;
+  font-family: "Roboto", sans-serif;
 }
 
 h1,
@@ -83,8 +66,12 @@ details button {
     cursor: pointer;
     position: relative;
 
-    &:first-of-type {
-      border-left: 0;
+    // &:first-of-type {
+    //   border-left: 0;
+    // }
+
+    &:last-of-type {
+      border-right: solid 1px white;
     }
 
     &:hover {
@@ -123,6 +110,7 @@ details button {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 h1 input {
@@ -144,9 +132,6 @@ table input {
 }
 
 .infos {
-  position: absolute;
-  top: 20px;
-  left: 20px;
   box-sizing: border-box;
   border: solid 1px white;
   padding: 5px;
@@ -157,6 +142,22 @@ table input {
   border-radius: 50%;
   text-align: center;
   line-height: 20px;
+}
+
+.fixed-buttons {
+  position: fixed;
+  bottom: 35px;
+  left: 35px;
+  display: flex;
+  flex-direction: column;
+
+  button {
+    margin-top: 20px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
 }
 
 .header {

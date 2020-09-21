@@ -1,59 +1,53 @@
-<details class="actions-container">
-  <summary>Actions</summary>
+<button
+  mat-button
+  [ngClass]="{ active: showRemovedCharacters }"
+  (click)="onToggleShowRemovedCharacters()"
+>
+  Voir les personnages supprimés
+</button>
+<button mat-button (click)="share()">Partager ma Tier List</button>
+<button mat-button (click)="onExportTierList(false)">
+  Exporter ma Tier List
+</button>
+<button mat-button (click)="onExportTierList(true)">
+  Exporter ma Tier List sans voir le dernier Tier
+</button>
+<button mat-button (click)="onSaveTierList()">Sauvegarder ma Tier List</button>
+<button
+  mat-button
+  [ngClass]="{ active: loadingTierList }"
+  (click)="onLoadTierList()"
+>
+  Charger une Tier List
+</button>
+<button
+  mat-button
+  [ngClass]="{ active: removingTierList }"
+  class="warn"
+  (click)="onRemoveTierList()"
+>
+  Supprimer une Tier List
+</button>
 
+<div *ngIf="loadingTierList">
+  <h2>Tier List sauvegardées</h2>
+  <p>Veuillez sélectionner une Tier List à charger</p>
   <button
     mat-button
-    [ngClass]="{ active: showRemovedCharacters }"
-    (click)="onToggleShowRemovedCharacters()"
+    *ngFor="let tierList of loadedTierLists"
+    (click)="selectTierListToLoad(tierList)"
   >
-    Voir les personnages supprimés
+    {{ tierList.name }}
   </button>
-  <button mat-button (click)="share()">Partager ma Tier List</button>
-  <button mat-button (click)="onExportTierList(false)">
-    Exporter ma Tier List
-  </button>
-  <button mat-button (click)="onExportTierList(true)">
-    Exporter ma Tier List sans voir le dernier Tier
-  </button>
-  <button mat-button (click)="onSaveTierList()">
-    Sauvegarder ma Tier List
-  </button>
-  <button
-    mat-button
-    [ngClass]="{ active: loadingTierList }"
-    (click)="onLoadTierList()"
-  >
-    Charger une Tier List
-  </button>
-  <button
-    mat-button
-    [ngClass]="{ active: removingTierList }"
-    class="warn"
-    (click)="onRemoveTierList()"
-  >
-    Supprimer une Tier List
-  </button>
+</div>
 
-  <div *ngIf="loadingTierList">
-    <h2>Tier List sauvegardées</h2>
-    <p>Veuillez sélectionner une Tier List à charger</p>
-    <button
-      mat-button
-      *ngFor="let tierList of loadedTierLists"
-      (click)="selectTierListToLoad(tierList)"
-    >
-      {{ tierList.name }}
-    </button>
-  </div>
-
-  <div *ngIf="removingTierList">
-    <h2>Tier List sauvegardées</h2>
-    <p>Veuillez sélectionner une Tier List à supprimer</p>
-    <button
-      *ngFor="let tierList of loadedTierLists"
-      (click)="selectTierListToRemove(tierList)"
-    >
-      {{ tierList.name }}
-    </button>
-  </div>
-</details>
+<div *ngIf="removingTierList">
+  <h2>Tier List sauvegardées</h2>
+  <p>Veuillez sélectionner une Tier List à supprimer</p>
+  <button
+    *ngFor="let tierList of loadedTierLists"
+    (click)="selectTierListToRemove(tierList)"
+  >
+    {{ tierList.name }}
+  </button>
+</div>
