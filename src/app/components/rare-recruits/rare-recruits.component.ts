@@ -30,6 +30,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 interface SavedTierList {
   name: string;
   tiers: Tier[];
+  removedCharacters: string[];
 }
 
 interface TierList {
@@ -245,6 +246,7 @@ export class RareRecruitsComponent implements OnInit {
       const tierListsUpdated: SavedTierList[] = savedTierLists.concat({
         name: this.tierListTitle,
         tiers: this.tiers,
+        removedCharacters: this.removedCharacters,
       });
       localStorage.setItem('tierLists', JSON.stringify(tierListsUpdated));
     } else {
@@ -253,6 +255,7 @@ export class RareRecruitsComponent implements OnInit {
           ? {
               name: list.name,
               tiers: this.tiers,
+              removedCharacters: this.removedCharacters,
             }
           : list;
       });
@@ -287,6 +290,7 @@ export class RareRecruitsComponent implements OnInit {
   public selectTierListToLoad(savedTierList: SavedTierList) {
     this.tierListTitle = savedTierList.name;
     this.tiers = savedTierList.tiers;
+    this.removedCharacters = savedTierList.removedCharacters || [];
 
     this.loadingTierList = false;
     this.loadedTierLists = [];

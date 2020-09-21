@@ -106,7 +106,6 @@ export const legends = [
   'f3071.png',
   'f3073.png',
   'f5014.png',
-  'YEBGXv1.png',
   'z9NGsV3.png',
   'NGPiGd5.png',
   'f1492.png',
