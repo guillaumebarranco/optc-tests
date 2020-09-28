@@ -156,4 +156,5 @@ export const legends = [
   'f3018.png',
   'f3048.png',
   'f3079.png',
+  'f5068.png',
 ];
