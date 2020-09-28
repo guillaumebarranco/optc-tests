@@ -5,25 +5,17 @@ import * as html2canvas from 'html2canvas';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 
-import { rrs } from '../../data/tier-lists/rr';
 import {
   CdkDragDrop,
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
-import { legends } from 'src/app/data/tier-lists/legends';
-import { lrrs } from 'src/app/data/tier-lists/lrr';
-import { soutiens } from 'src/app/data/tier-lists/soutiens';
-import { colisees } from 'src/app/data/tier-lists/colisees';
-import { raids } from 'src/app/data/tier-lists/raids';
-import { tms } from 'src/app/data/tier-lists/tm';
-import { kizunas } from 'src/app/data/tier-lists/kizuna';
-import { ambushs } from 'src/app/data/tier-lists/ambush';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TierListInformationsComponent } from '../tier-list-informations/tier-list-informations.component';
 import { TierList } from 'src/app/models/tier-list';
 import { Tier } from 'src/app/models/tier';
 import { SavedTierList } from 'src/app/models/saved-tier-list';
+import { tierLists } from './tier-lists';
 
 @Component({
   selector: 'app-tier-list',
@@ -35,65 +27,7 @@ export class TierListComponent implements OnInit {
   @ViewChild('canvas') canvas: ElementRef;
   @ViewChild('downloadLink') downloadLink: ElementRef;
 
-  public tierLists: TierList[] = [
-    {
-      name: 'Légendes',
-      characters: legends,
-    },
-    {
-      name: 'Personnages RR',
-      characters: rrs,
-    },
-    {
-      name: 'Personnages Colisées',
-      characters: colisees,
-    },
-    {
-      name: 'Personnages Raids',
-      characters: raids,
-    },
-    {
-      name: 'Personnages TM',
-      characters: tms,
-    },
-    {
-      name: 'Personnages LRR',
-      characters: lrrs,
-    },
-    {
-      name: 'Personnages Spéciaux (soutiens)',
-      characters: soutiens,
-    },
-    {
-      name: 'Personnages Kizuna',
-      characters: kizunas,
-    },
-    {
-      name: 'Personnages Ambush',
-      characters: ambushs,
-    },
-    {
-      name: 'Personnages F2P',
-      characters: [...tms, ...colisees, ...raids, ...kizunas, ...ambushs],
-    },
-    {
-      name: 'Personnages Premium',
-      characters: [...rrs, ...lrrs, ...legends],
-    },
-    {
-      name: 'Personnages au complet',
-      characters: [
-        ...tms,
-        ...colisees,
-        ...raids,
-        ...kizunas,
-        ...ambushs,
-        ...rrs,
-        ...lrrs,
-        ...legends,
-      ],
-    },
-  ];
+  public tierLists: TierList[] = tierLists;
   public allCharacters = [];
   public tierListTitle = '';
   public tiers: Tier[] = [];
