@@ -88,6 +88,18 @@ const formatedAmbushes = ambushs.map(id => ({
   type: TierListCharacterType.AMBUSH,
 }));
 
+export const combinedAllCategoriesCharacters = [
+  ...formatedTms,
+  ...formatedColosseums,
+  ...formatedRaids,
+  ...formatedKizunas,
+  ...formatedAmbushes,
+  ...formatedRrs,
+  ...formatedLrrs,
+  ...formatedPvps,
+  ...allLegends,
+];
+
 export const tierLists: TierList[] = [
   {
     frenchName: 'Légendes',
@@ -163,16 +175,6 @@ export const tierLists: TierList[] = [
   {
     frenchName: 'Personnages au complet',
     englishName: 'Alid Characters',
-    characters: [
-      ...formatedTms,
-      ...formatedColosseums,
-      ...formatedRaids,
-      ...formatedKizunas,
-      ...formatedAmbushes,
-      ...formatedRrs,
-      ...formatedLrrs,
-      ...formatedPvps,
-      ...allLegends,
-    ],
+    characters: [...combinedAllCategoriesCharacters],
   },
 ];

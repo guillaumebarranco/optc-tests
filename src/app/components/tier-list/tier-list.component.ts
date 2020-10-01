@@ -15,7 +15,7 @@ import { TierListInformationsFrenchComponent } from '../tier-list-informations-f
 import { TierList } from 'src/app/models/tier-list';
 import { Tier } from 'src/app/models/tier';
 import { SavedTierList } from 'src/app/models/saved-tier-list';
-import { tierLists } from './tier-lists';
+import { combinedAllCategoriesCharacters, tierLists } from './tier-lists';
 import {
   legends,
   legends2015,
@@ -89,7 +89,17 @@ export class TierListComponent implements OnInit {
       }
 
       if (params.name && params.tiers) {
-        this.tiers = JSON.parse(params.tiers);
+        const sharedTiers = JSON.parse(params.tiers);
+
+        console.log('sharedTiers', sharedTiers);
+
+        this.tiers = sharedTiers.map(tier => ({
+          ...tier,
+          characters: tier.characters.map(c => {
+            return combinedAllCategoriesCharacters.find(cc => cc.id === c);
+          }),
+        }));
+
         this.tierListTitle = params.name;
         this._currentTierIndex = -1;
       } else {

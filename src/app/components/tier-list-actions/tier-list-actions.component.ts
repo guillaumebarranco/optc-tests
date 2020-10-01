@@ -1,17 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
-
-interface SavedTierList {
-  name: string;
-  tiers: Tier[];
-  removedCharacters: string[];
-}
-
-interface Tier {
-  name: string;
-  characters: string[];
-}
+import { SavedTierList } from 'src/app/models/saved-tier-list';
+import { Tier } from 'src/app/models/tier';
+import { TierListCharacter } from 'src/app/models/tier-list-character';
 
 @Component({
   selector: 'app-tier-list-actions',
@@ -25,7 +17,7 @@ export class TierListActionsComponent {
 
   @Input() public tierListTitle;
   @Input() public tiers: Tier[];
-  @Input() public removedCharacters: string[];
+  @Input() public removedCharacters: TierListCharacter[];
   @Input() public showRemovedCharacters = false;
   @Input() public language: string;
 
@@ -51,21 +43,30 @@ export class TierListActionsComponent {
   }
 
   public share() {
-    const baseUrl = 'http://optc.webarranco.fr';
-    // const baseUrl = 'http://localhost:4200';
-    const params = `?name=${this.tierListTitle}&tiers=${JSON.stringify(
-      this.tiers
+    // const baseUrl = 'http://optc.webarranco.fr';
+    const baseUrl = 'http://localhost:4200';
+    const params = `?name=${encodeURI(
+      this.tierListTitle
+    )}&tiers=${JSON.stringify(
+      this.tiers.map(tier => ({
+        name: tier.name,
+        characters: tier.characters.map(c => c.id),
+      }))
     )}`;
 
-    this.copyToClipboard(baseUrl + encodeURI(params));
+    this.copyToClipboard(baseUrl + params);
 
-    this.snackBar.open(
-      `L'URL de partage de votre tier list a été copiée dans votre presse-papiers !`,
-      null,
-      {
-        duration: 5000,
-      }
-    );
+    let message;
+
+    if (this.language === 'FR') {
+      message = `L'URL de partage de votre tier list a été copiée dans votre presse-papiers !`;
+    } else if (this.language === 'EN') {
+      message = `URL for sharing your tier list has been copy-pasted in your clipboard !`;
+    }
+
+    this.snackBar.open(message, null, {
+      duration: 5000,
+    });
   }
 
   public getSavedTierLists(): SavedTierList[] {
