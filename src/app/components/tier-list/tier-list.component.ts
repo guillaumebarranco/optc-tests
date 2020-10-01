@@ -16,6 +16,17 @@ import { TierList } from 'src/app/models/tier-list';
 import { Tier } from 'src/app/models/tier';
 import { SavedTierList } from 'src/app/models/saved-tier-list';
 import { tierLists } from './tier-lists';
+import {
+  japLegends,
+  legends,
+  legends2015,
+  legends2016,
+  legends2017,
+  legends2018,
+  legends2019,
+  legends2020,
+} from 'src/app/data/tier-lists/legends';
+import { legendsSixPlus } from 'src/app/data/tier-lists/legends_sixplus';
 
 @Component({
   selector: 'app-tier-list',
@@ -44,9 +55,16 @@ export class TierListComponent implements OnInit {
 
   public hideLastTier = false;
   public showActions = false;
+  public showFilters = false;
 
   public showRemovedCharacters = false;
   public removedCharacters: string[] = [];
+
+  public _filters = {
+    showSixStarsLegends: true,
+    showSixPlusLegends: true,
+    selectedYearLegend: 'none',
+  };
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -56,8 +74,6 @@ export class TierListComponent implements OnInit {
 
   public ngOnInit() {
     this.activatedRoute.queryParams.subscribe((params) => {
-      console.log('window.location.hostname', window.location.hostname);
-
       if (params.name && params.tiers) {
         this.tiers = JSON.parse(params.tiers);
         this.tierListTitle = params.name;
@@ -102,10 +118,7 @@ export class TierListComponent implements OnInit {
   }
 
   public showInformationsDialog(): void {
-    const dialogRef = this.dialog.open(TierListInformationsComponent, {
-      width: '1000px',
-    });
-    dialogRef.afterClosed().subscribe();
+    this.dialog.open(TierListInformationsComponent).afterClosed().subscribe();
   }
 
   public getSavedTierLists(): SavedTierList[] {
@@ -191,5 +204,66 @@ export class TierListComponent implements OnInit {
     return {
       'background-color': this.colors[index],
     };
+  }
+
+  public _filteredCharactersList(characters: string[]): string[] {
+    let filteredCharacters = [...characters];
+
+    if (!this._filters.showSixStarsLegends) {
+      filteredCharacters = filteredCharacters.filter(
+        (c) => !legends.includes(c)
+      );
+    }
+
+    if (!this._filters.showSixPlusLegends) {
+      filteredCharacters = filteredCharacters.filter(
+        (c) => !legendsSixPlus.includes(c)
+      );
+    }
+
+    if (this._filters.selectedYearLegend !== 'none') {
+      switch (this._filters.selectedYearLegend.toString()) {
+        case '2015':
+          filteredCharacters = filteredCharacters.filter((c) =>
+            legends2015.includes(c)
+          );
+          break;
+        case '2016':
+          filteredCharacters = filteredCharacters.filter((c) =>
+            legends2016.includes(c)
+          );
+          break;
+        case '2017':
+          filteredCharacters = filteredCharacters.filter((c) =>
+            legends2017.includes(c)
+          );
+          break;
+        case '2018':
+          filteredCharacters = filteredCharacters.filter((c) =>
+            legends2018.includes(c)
+          );
+          break;
+        case '2019':
+          filteredCharacters = filteredCharacters.filter((c) =>
+            legends2019.includes(c)
+          );
+          break;
+        case '2020':
+          filteredCharacters = filteredCharacters.filter((c) =>
+            legends2020.includes(c)
+          );
+          break;
+        case 'jap':
+          filteredCharacters = filteredCharacters.filter((c) =>
+            japLegends.includes(c)
+          );
+          break;
+
+        default:
+          break;
+      }
+    }
+
+    return filteredCharacters;
   }
 }

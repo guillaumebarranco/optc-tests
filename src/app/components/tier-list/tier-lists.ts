@@ -1,5 +1,5 @@
 import { legends } from '../../data/tier-lists/legends';
-import { legendsSixPlus } from '../../data/tier-lists/legends_sixplus';
+// import { legendsSixPlus } from '../../data/tier-lists/legends_sixplus';
 import { lrrs } from '../../data/tier-lists/lrr';
 import { pvps } from '../../data/tier-lists/pvp';
 import { soutiens } from '../../data/tier-lists/soutiens';
@@ -12,8 +12,8 @@ import { TierList } from '../../models/tier-list';
 import { rrs } from '../../data/tier-lists/rr';
 
 const formatedLegends = legends.map((l) => `legend/sixstars/${l}`);
-const formatedSixPlusLegends = legendsSixPlus.map((l) => `legend/sixplus/${l}`);
-const allLegends = [...formatedLegends, ...formatedSixPlusLegends];
+// const formatedSixPlusLegends = legendsSixPlus.map((l) => `legend/sixplus/${l}`);
+const allLegends = [...formatedLegends];
 
 const formatedRrs = rrs.map((l) => `rr/${l}`);
 const formatedLrrs = lrrs.map((l) => `lrr/${l}`);

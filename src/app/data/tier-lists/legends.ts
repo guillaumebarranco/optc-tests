@@ -1,9 +1,12 @@
-export const legends = [
+export const legends2015 = [
   'f0261.png',
   'f0367.png',
   'f0416.png',
   'f0459.png',
   'f0530.png',
+];
+
+export const legends2016 = [
   'f0562.png',
   'f0649.png',
   'f0669.png',
@@ -18,8 +21,11 @@ export const legends = [
   'f1085.png',
   'f1121.png',
   'f1123.png',
-  'f1192.png',
   'f1240.png',
+];
+
+export const legends2017 = [
+  'f1192.png',
   'f1268.png',
   'f1314.png',
   'f1362.png',
@@ -36,6 +42,9 @@ export const legends = [
   'f1747.png',
   'f1751.png',
   'f1763.png',
+];
+
+export const legends2018 = [
   'f1794.png',
   'f1832.png',
   'f1869.png',
@@ -52,11 +61,15 @@ export const legends = [
   'f2099.png',
   'f2113.png',
   'f2148.png',
+  'f2251.png',
+  'f5014.png',
+];
+
+export const legends2019 = [
   'f2181.png',
   'f2201.png',
   'f2234.png',
   'f2236.png',
-  'f2251.png',
   'f2265.png',
   'f2302.png',
   'f2330.png',
@@ -75,6 +88,9 @@ export const legends = [
   'f2577.png',
   'f2601.png',
   'f2603.png',
+];
+
+export const legends2020 = [
   'f2651.png',
   'f2672.png',
   'f2686.png',
@@ -95,18 +111,30 @@ export const legends = [
   'f2958.png',
   'f2960.png',
   'f2962.png',
+  'f3027.png',
+  'f3385.png',
   'f2964.png',
+];
+
+export const japLegends = [
   'f2980.png',
   'f2982.png',
   'f3007.png',
   'f3009.png',
-  'f3027.png',
   'f3038.png',
   'f3065.png',
   'f3071.png',
   'f3073.png',
-  'f3385.png',
-  'f5014.png',
   'w4AxSlh.png',
   'o7xOhNd.png',
+];
+
+export const legends = [
+  ...legends2015,
+  ...legends2016,
+  ...legends2017,
+  ...legends2018,
+  ...legends2019,
+  ...legends2020,
+  ...japLegends,
 ];
