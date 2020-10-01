@@ -180,6 +180,8 @@ export class TierListComponent implements OnInit {
   }
 
   public onExportTierList(removeLastTier: boolean) {
+    window.scrollTo(0, 0);
+
     if (removeLastTier) {
       this.hideLastTier = true;
     }
