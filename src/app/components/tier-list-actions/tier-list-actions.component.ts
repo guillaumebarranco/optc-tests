@@ -1,18 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import * as html2canvas from 'html2canvas';
-
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 interface SavedTierList {
   name: string;
   tiers: Tier[];
   removedCharacters: string[];
-}
-
-interface TierList {
-  name: string;
-  characters: string[];
 }
 
 interface Tier {
@@ -26,14 +19,15 @@ interface Tier {
   styleUrls: ['./tier-list-actions.component.scss'],
 })
 export class TierListActionsComponent {
-  @Output() loadTierList = new EventEmitter<any>();
-  @Output() exportTierList = new EventEmitter<any>();
-  @Output() toggleShowRemovedCharacters = new EventEmitter<any>();
+  @Output() public loadTierList = new EventEmitter<any>();
+  @Output() public exportTierList = new EventEmitter<any>();
+  @Output() public toggleShowRemovedCharacters = new EventEmitter<any>();
 
   @Input() public tierListTitle;
   @Input() public tiers: Tier[];
   @Input() public removedCharacters: string[];
   @Input() public showRemovedCharacters = false;
+  @Input() public language: string;
 
   public loadingTierList = false;
   public loadedTierLists: SavedTierList[] = [];
@@ -83,7 +77,7 @@ export class TierListActionsComponent {
   public onSaveTierList() {
     const savedTierLists: SavedTierList[] = this.getSavedTierLists();
     const tierListWithSameNameAlreadyExists = savedTierLists.find(
-      (list) => list.name === this.tierListTitle
+      list => list.name === this.tierListTitle
     );
 
     if (!tierListWithSameNameAlreadyExists) {
@@ -94,7 +88,7 @@ export class TierListActionsComponent {
       });
       localStorage.setItem('tierLists', JSON.stringify(tierListsUpdated));
     } else {
-      const tierListsUpdated: SavedTierList[] = savedTierLists.map((list) => {
+      const tierListsUpdated: SavedTierList[] = savedTierLists.map(list => {
         return list.name === this.tierListTitle
           ? {
               name: list.name,
@@ -148,7 +142,7 @@ export class TierListActionsComponent {
 
   public selectTierListToRemove(savedTierList: SavedTierList) {
     const tierListsUpdated = this.loadedTierLists.filter(
-      (list) => list.name !== savedTierList.name
+      list => list.name !== savedTierList.name
     );
 
     localStorage.setItem('tierLists', JSON.stringify(tierListsUpdated));

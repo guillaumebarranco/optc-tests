@@ -2,20 +2,50 @@
   <h1>
     <input [(ngModel)]="tierListTitle" />
   </h1>
+
+  <div class="languages">
+    <button
+      mat-button
+      [ngClass]="{ active: language === 'FR' }"
+      (click)="changeLanguage('FR')"
+    >
+      FR
+    </button>
+    <button
+      mat-button
+      [ngClass]="{ active: language === 'EN' }"
+      (click)="changeLanguage('EN')"
+    >
+      EN
+    </button>
+  </div>
 </div>
 
 <ul class="nav">
   <ng-container *ngFor="let tierList of tierLists; let tierIndex = index">
-    <li *ngIf="tierIndex < 5" (click)="switchTierList(tierIndex)">
-      {{ tierList.name }}
+    <li
+      *ngIf="tierIndex < 5"
+      [ngClass]="{ active: _currentTierIndex === tierIndex }"
+      (click)="switchTierList(tierIndex)"
+    >
+      <span *ngIf="language === 'FR'"> {{ tierList.frenchName }}</span>
+      <span *ngIf="language === 'EN'"> {{ tierList.englishName }}</span>
     </li>
   </ng-container>
+
   <li>
-    <span>Autres</span>
+    <span *ngIf="language === 'FR'">Autres</span>
+    <span *ngIf="language === 'EN'">Others</span>
+
     <ul>
       <ng-container *ngFor="let tierList of tierLists; let tierIndex = index">
-        <li *ngIf="tierIndex > 4" (click)="switchTierList(tierIndex)">
-          {{ tierList.name }}
+        <li
+          *ngIf="tierIndex > 4"
+          [ngClass]="{ active: _currentTierIndex === tierIndex }"
+          (click)="switchTierList(tierIndex)"
+        >
+          <span *ngIf="language === 'FR'"> {{ tierList.frenchName }}</span>
+          <span *ngIf="language === 'EN'"> {{ tierList.englishName }}</span>
         </li>
       </ng-container>
     </ul>
@@ -30,16 +60,42 @@
     [tiers]="tiers"
     [removedCharacters]="removedCharacters"
     [showRemovedCharacters]="showRemovedCharacters"
+    [language]="language"
     (toggleShowRemovedCharacters)="onToggleShowRemovedCharacters($event)"
     (loadTierList)="onLoadTierList($event)"
     (exportTierList)="onExportTierList($event)"
   ></app-tier-list-actions>
 
   <div [hidden]="!showFilters">
-    <button>Hide Legends 6+ version</button>
-    <button>
+    <!-- <button mat-button>Hide Legends 6+ version</button> -->
+    <!-- <button mat-button>
       Hide Legends 6 stars version when legend also have a 6+ version
-    </button>
+    </button> -->
+
+    <div *ngIf="language === 'FR'">Pour les légendes uniquement</div>
+    <div *ngIf="language === 'EN'">For legends only</div>
+
+    <br />
+
+    <mat-form-field appearance="fill">
+      <mat-label *ngIf="language === 'FR'">Année de sortie</mat-label>
+      <mat-label *ngIf="language === 'EN'">Debut Year Selection</mat-label>
+
+      <mat-select
+        name="year-selection"
+        [ngModel]="_filters.selectedYearLegend"
+        (ngModelChange)="updateYearSelection($event)"
+      >
+        <mat-option *ngIf="language === 'FR'" value="none">Aucune</mat-option>
+        <mat-option *ngIf="language === 'EN'" value="none">None</mat-option>
+        <mat-option value="2015">2015</mat-option>
+        <mat-option value="2016">2016</mat-option>
+        <mat-option value="2017">2017</mat-option>
+        <mat-option value="2018">2018</mat-option>
+        <mat-option value="2019">2019</mat-option>
+        <mat-option value="2020">2020</mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
 
   <br />
@@ -66,14 +122,14 @@
               (cdkDropListDropped)="drop($event)"
             >
               <div class="tier sort" id="rows">
-                <ng-container
-                  *ngFor="
-                    let character of _filteredCharactersList(tier.characters)
-                  "
-                >
+                <ng-container *ngFor="let character of tier.characters">
                   <ng-container *ngIf="i !== 6">
                     <img
-                      [src]="'assets/characters/' + character"
+                      [src]="_getCharacterImgPath(character)"
+                      [hidden]="
+                        !_filteredCharacters.includes(character.id) &&
+                        _filteredCharacters.length > 0
+                      "
                       width="64"
                       alt=""
                       cdkDrag
@@ -82,7 +138,11 @@
 
                   <ng-container *ngIf="i === 6">
                     <img
-                      [src]="'assets/characters/' + character"
+                      [src]="_getCharacterImgPath(character)"
+                      [hidden]="
+                        !_filteredCharacters.includes(character.id) &&
+                        _filteredCharacters.length > 0
+                      "
                       width="64"
                       alt=""
                       (contextmenu)="removeCharacterFromTier(tier, character)"
@@ -95,7 +155,7 @@
                   <img
                     *ngFor="let character of removedCharacters"
                     class="removed-character"
-                    [src]="'assets/characters/' + character"
+                    [src]="_getCharacterImgPath(character)"
                     width="64"
                     alt=""
                     (contextmenu)="putCharacterBackInTier(tier, character)"

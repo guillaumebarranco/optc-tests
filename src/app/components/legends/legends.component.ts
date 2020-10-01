@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { dualLegends } from '../../data/dual-legends';
 import { singleLegends } from '../../data/single-legends';
@@ -22,7 +22,7 @@ export class LegendsComponent implements OnInit {
     const currentLegend =
       localStorage.getItem('selectLegendId') !== null
         ? this.legends.find(
-            (l) => l.id === localStorage.getItem('selectLegendId').toString()
+            l => l.id === localStorage.getItem('selectLegendId').toString()
           )
         : this.legends[0];
 
@@ -99,7 +99,7 @@ export class LegendsComponent implements OnInit {
 
   public selectLegend(id: string): void {
     if (this.selectedLegendId !== id) {
-      this.legend$.next(this.legends.find((l) => l.name === id));
+      this.legend$.next(this.legends.find(l => l.name === id));
       this.selectedLegendId = id;
       localStorage.setItem('selectLegendId', id);
       window.location.reload();

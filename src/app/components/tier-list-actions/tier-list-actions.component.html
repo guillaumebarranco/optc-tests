@@ -1,53 +1,113 @@
-<button
-  mat-button
-  [ngClass]="{ active: showRemovedCharacters }"
-  (click)="onToggleShowRemovedCharacters()"
->
-  Voir les personnages supprimés
-</button>
-<button mat-button (click)="share()">Partager ma Tier List</button>
-<button mat-button (click)="onExportTierList(false)">
-  Exporter ma Tier List
-</button>
-<button mat-button (click)="onExportTierList(true)">
-  Exporter ma Tier List sans voir le dernier Tier
-</button>
-<button mat-button (click)="onSaveTierList()">Sauvegarder ma Tier List</button>
-<button
-  mat-button
-  [ngClass]="{ active: loadingTierList }"
-  (click)="onLoadTierList()"
->
-  Charger une Tier List
-</button>
-<button
-  mat-button
-  [ngClass]="{ active: removingTierList }"
-  class="warn"
-  (click)="onRemoveTierList()"
->
-  Supprimer une Tier List
-</button>
+<div class="tier-list-actions-container">
+  <div>
+    <button
+      mat-button
+      [ngClass]="{ active: showRemovedCharacters }"
+      (click)="onToggleShowRemovedCharacters()"
+    >
+      <ng-container *ngIf="language === 'FR'"
+        >Voir les personnages supprimés</ng-container
+      >
+      <ng-container *ngIf="language === 'EN'"
+        >Show removed characters</ng-container
+      >
+    </button>
+  </div>
 
-<div *ngIf="loadingTierList">
-  <h2>Tier List sauvegardées</h2>
-  <p>Veuillez sélectionner une Tier List à charger</p>
-  <button
-    mat-button
-    *ngFor="let tierList of loadedTierLists"
-    (click)="selectTierListToLoad(tierList)"
-  >
-    {{ tierList.name }}
-  </button>
-</div>
+  <div>
+    <button mat-button (click)="share()">
+      <mat-icon>share</mat-icon>
+      <ng-container *ngIf="language === 'FR'"
+        >Partager ma Tier List</ng-container
+      >
+      <ng-container *ngIf="language === 'EN'">Share my Tier List</ng-container>
+    </button>
 
-<div *ngIf="removingTierList">
-  <h2>Tier List sauvegardées</h2>
-  <p>Veuillez sélectionner une Tier List à supprimer</p>
-  <button
-    *ngFor="let tierList of loadedTierLists"
-    (click)="selectTierListToRemove(tierList)"
-  >
-    {{ tierList.name }}
-  </button>
+    <button mat-button (click)="onExportTierList(false)">
+      <mat-icon>save_alt</mat-icon>
+      <ng-container *ngIf="language === 'FR'"
+        >Exporter ma Tier List</ng-container
+      >
+      <ng-container *ngIf="language === 'EN'">Export my Tier List</ng-container>
+    </button>
+
+    <button mat-button (click)="onExportTierList(true)">
+      <mat-icon>save_alt</mat-icon>
+      <ng-container *ngIf="language === 'FR'"
+        >Exporter ma Tier List sans voir le dernier Tier</ng-container
+      >
+      <ng-container *ngIf="language === 'EN'"
+        >Export my Tier List hiding the last Tier</ng-container
+      >
+    </button>
+  </div>
+
+  <div>
+    <button mat-button (click)="onSaveTierList()">
+      <mat-icon>save</mat-icon>
+      <ng-container *ngIf="language === 'FR'"
+        >Sauvegarder ma Tier List</ng-container
+      >
+      <ng-container *ngIf="language === 'EN'">Save my Tier List</ng-container>
+    </button>
+
+    <button
+      mat-button
+      [ngClass]="{ active: loadingTierList }"
+      (click)="onLoadTierList()"
+    >
+      <mat-icon>cloud_download</mat-icon>
+      <ng-container *ngIf="language === 'FR'"
+        >Charger une Tier List</ng-container
+      >
+      <ng-container *ngIf="language === 'EN'">Load Tier List</ng-container>
+    </button>
+
+    <button
+      mat-button
+      [ngClass]="{ active: removingTierList }"
+      class="warn"
+      (click)="onRemoveTierList()"
+    >
+      <mat-icon>delete</mat-icon>
+      <ng-container *ngIf="language === 'FR'"
+        >Supprimer une Tier List</ng-container
+      >
+      <ng-container *ngIf="language === 'EN'">Delete Tier List</ng-container>
+    </button>
+  </div>
+
+  <div *ngIf="loadingTierList">
+    <h2 *ngIf="language === 'FR'">Tier List sauvegardées</h2>
+    <h2 *ngIf="language === 'EN'">Saved Tier Lists</h2>
+
+    <p *ngIf="language === 'FR'">
+      Veuillez sélectionner une Tier List à charger
+    </p>
+    <p *ngIf="language === 'EN'">Select a Tier List to load</p>
+    <button
+      *ngFor="let tierList of loadedTierLists"
+      mat-button
+      (click)="selectTierListToLoad(tierList)"
+    >
+      {{ tierList.name }}
+    </button>
+  </div>
+
+  <div *ngIf="removingTierList">
+    <h2 *ngIf="language === 'FR'">Tier List sauvegardées</h2>
+    <h2 *ngIf="language === 'EN'">Saved Tier Lists</h2>
+
+    <p *ngIf="language === 'FR'">
+      Veuillez sélectionner une Tier List à supprimer
+    </p>
+    <p *ngIf="language === 'EN'">Select a Tier List to remove</p>
+    <button
+      *ngFor="let tierList of loadedTierLists"
+      mat-button
+      (click)="selectTierListToRemove(tierList)"
+    >
+      {{ tierList.name }}
+    </button>
+  </div>
 </div>

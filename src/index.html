@@ -14,6 +14,10 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link
+      href="node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <app-root></app-root>
@@ -25,42 +29,42 @@
       }, 1000);
 
       function replaceOrbsColors() {
-        let $section = $("section").html();
+        let $section = $('section').html();
 
         const orbs = [
           {
-            name: "STR",
-            color: "red",
+            name: 'STR',
+            color: 'red',
           },
           {
-            name: "DEX",
-            color: "green",
+            name: 'DEX',
+            color: 'green',
           },
           {
-            name: "QCK",
-            color: "blue",
+            name: 'QCK',
+            color: 'blue',
           },
           {
-            name: "PSY",
-            color: "rgb(240, 195, 0)",
+            name: 'PSY',
+            color: 'rgb(240, 195, 0)',
           },
           {
-            name: "INT",
-            color: "purple",
+            name: 'INT',
+            color: 'purple',
           },
           {
-            name: "BLK",
-            color: "rgb(72, 61, 139)",
+            name: 'BLK',
+            color: 'rgb(72, 61, 139)',
           },
           {
-            name: "TND",
-            color: "peru",
+            name: 'TND',
+            color: 'peru',
           },
         ];
 
         if ($section) {
-          orbs.forEach((orb) => {
-            const regex = new RegExp(escapeRegExp(`[${orb.name}]`), "gi");
+          orbs.forEach(orb => {
+            const regex = new RegExp(escapeRegExp(`[${orb.name}]`), 'gi');
 
             $section = $section.replace(
               regex,
@@ -68,39 +72,39 @@
             );
           });
 
-          $("section").html($section);
+          $('section').html($section);
         }
       }
 
       function replaceTypesColors() {
-        let $section = $("section").html();
+        let $section = $('section').html();
 
         const types = [
           {
-            name: "STR",
-            color: "red",
+            name: 'STR',
+            color: 'red',
           },
           {
-            name: "DEX",
-            color: "green",
+            name: 'DEX',
+            color: 'green',
           },
           {
-            name: "QCK",
-            color: "blue",
+            name: 'QCK',
+            color: 'blue',
           },
           {
-            name: "PSY",
-            color: "rgb(240, 195, 0)",
+            name: 'PSY',
+            color: 'rgb(240, 195, 0)',
           },
           {
-            name: "INT",
-            color: "purple",
+            name: 'INT',
+            color: 'purple',
           },
         ];
 
         if ($section) {
-          types.forEach((type) => {
-            const regex = new RegExp(escapeRegExp(` ${type.name} `), "gi");
+          types.forEach(type => {
+            const regex = new RegExp(escapeRegExp(` ${type.name} `), 'gi');
 
             $section = $section.replace(
               regex,
@@ -108,12 +112,12 @@
             );
           });
 
-          $("section").html($section);
+          $('section').html($section);
         }
       }
 
       function escapeRegExp(text) {
-        return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+        return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
       }
     </script>
   </body>

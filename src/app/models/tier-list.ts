@@ -1,4 +1,7 @@
+import { TierListCharacter } from './tier-list-character';
+
 export interface TierList {
-  name: string;
-  characters: string[];
+  frenchName: string;
+  englishName: string;
+  characters: TierListCharacter[];
 }

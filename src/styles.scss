@@ -1,6 +1,6 @@
 body {
   background-color: #333333;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   padding: 0;
   margin: 0;
   overflow-x: hidden;
@@ -13,5 +13,25 @@ ul li {
 .mat-dialog-container {
   ul li {
     list-style: square;
+  }
+}
+
+.mat-form-field-label,
+.mat-select-value {
+  color: white !important;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.actions-list {
+  .mat-button .mat-icon {
+    margin-right: 10px;
+  }
+
+  .mat-button-wrapper {
+    display: flex;
+    align-items: center;
   }
 }

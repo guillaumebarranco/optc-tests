@@ -1,3 +1,15 @@
+.tier-list-actions-container {
+  text-align: center;
+
+  & > div {
+    margin-top: 10px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+}
+
 button {
   font-size: 15px;
   cursor: pointer;

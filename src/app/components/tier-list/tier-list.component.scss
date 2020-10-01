@@ -6,6 +6,19 @@
   background-color: #333333;
 }
 
+.languages {
+  position: absolute;
+  right: 20px;
+
+  button {
+    margin-left: 10px;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+}
+
 table {
   background-color: #333333;
   border-spacing: 0;
@@ -42,7 +55,7 @@ div,
 input,
 details {
   color: white;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1,
@@ -51,7 +64,7 @@ details {
 }
 
 h1 {
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -72,6 +85,11 @@ details button {
 
   @media (max-width: 900px) {
     flex-direction: column;
+  }
+
+  li.active {
+    background-color: white;
+    color: #666666;
   }
 
   & > li {
@@ -106,6 +124,7 @@ details button {
     background-color: #666666;
     padding: 0;
     z-index: 2;
+    width: 200px;
 
     li {
       list-style: none;
@@ -171,6 +190,7 @@ table input {
 .header {
   position: relative;
   padding: 20px;
+  display: flex;
 }
 
 details summary {

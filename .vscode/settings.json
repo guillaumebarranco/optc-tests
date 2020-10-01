@@ -1,7 +1,6 @@
 {
   "files.trimTrailingWhitespace": true,
   "editor.formatOnSave": true,
-  "scss.lint.boxModel": "warning",
   "editor.tabSize": 2,
   "html.format.enable": true,
   "importSorter.sortConfiguration.customOrderingRules.rules": [
