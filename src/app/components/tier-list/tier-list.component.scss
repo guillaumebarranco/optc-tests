@@ -99,6 +99,7 @@ details button {
   display: flex;
   justify-content: center;
   padding: 0;
+  margin-bottom: 20px;
 
   li.active {
     background-color: white;
@@ -156,6 +157,7 @@ details button {
     flex-direction: column;
     width: 60%;
     margin: 0 auto;
+    margin-bottom: 20px;
 
     & > li {
       border: 0;
