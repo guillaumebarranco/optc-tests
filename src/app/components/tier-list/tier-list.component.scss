@@ -4,11 +4,20 @@
   margin: 0 auto;
   margin-bottom: 30px;
   background-color: #333333;
+
+  @media (max-width: 900px) {
+    width: 95%;
+  }
 }
 
 .languages {
   position: absolute;
   right: 20px;
+
+  @media (max-width: 900px) {
+    position: relative;
+    right: 0;
+  }
 
   button {
     margin-left: 10px;
@@ -39,9 +48,13 @@ td {
 }
 
 .labelHolder {
-  width: 48px;
+  width: 150px;
   height: 64px;
   transition: background 0.3s;
+
+  @media (max-width: 900px) {
+    width: 50px;
+  }
 }
 
 .tier {
@@ -97,10 +110,6 @@ details button {
     padding: 15px;
     cursor: pointer;
     position: relative;
-
-    // &:first-of-type {
-    //   border-left: 0;
-    // }
 
     &:last-of-type {
       border-right: solid 1px white;
@@ -158,6 +167,7 @@ table input {
   border: none;
   display: block;
   height: 100%;
+  width: 100%;
   color: black;
   text-align: center;
 }

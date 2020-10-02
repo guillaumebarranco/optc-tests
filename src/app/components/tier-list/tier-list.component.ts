@@ -9,7 +9,7 @@ import { moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { ActivatedRoute } from '@angular/router';
 
 import { TierListInformationsFrenchComponent } from '../tier-list-informations-french/tier-list-informations-french.component';
-import { TierList } from '../../models/tier-list';
+import { TierList, TierListId } from '../../models/tier-list';
 import { Tier } from '../../models/tier';
 import { SavedTierList } from '../../models/saved-tier-list';
 import { combinedAllCategoriesCharacters, tierLists } from './tier-lists';
@@ -50,6 +50,8 @@ export class TierListComponent implements OnInit {
     'rgb(127, 255, 255)',
   ];
   public basicTiers: string[] = ['S', 'A', 'B', 'C', 'D', 'E', 'F'];
+
+  public _tierListIdEnum = TierListId;
 
   public hideLastTier = false;
   public showActions = false;
