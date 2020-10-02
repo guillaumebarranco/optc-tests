@@ -25,8 +25,8 @@
   <ng-container *ngFor="let tierList of tierLists; let tierIndex = index">
     <li
       *ngIf="tierIndex < 5"
-      [ngClass]="{ active: _currentTierIndex === tierIndex }"
-      (click)="switchTierList(tierIndex)"
+      [ngClass]="{ active: currentTierList.id === tierList.id }"
+      (click)="switchTierList(tierList.id)"
     >
       <span *ngIf="language === 'FR'"> {{ tierList.frenchName }}</span>
       <span *ngIf="language === 'EN'"> {{ tierList.englishName }}</span>
@@ -41,8 +41,8 @@
       <ng-container *ngFor="let tierList of tierLists; let tierIndex = index">
         <li
           *ngIf="tierIndex > 4"
-          [ngClass]="{ active: _currentTierIndex === tierIndex }"
-          (click)="switchTierList(tierIndex)"
+          [ngClass]="{ active: currentTierList.id === tierList.id }"
+          (click)="switchTierList(tierList.id)"
         >
           <span *ngIf="language === 'FR'"> {{ tierList.frenchName }}</span>
           <span *ngIf="language === 'EN'"> {{ tierList.englishName }}</span>

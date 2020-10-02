@@ -12,12 +12,13 @@ import { TierListInformationsFrenchComponent } from '../tier-list-informations-f
 import { TierList, TierListId } from '../../models/tier-list';
 import { Tier } from '../../models/tier';
 import { SavedTier, SavedTierList } from '../../models/saved-tier-list';
-import { combinedAllCategoriesCharacters, tierLists } from './tier-lists';
+import { tierLists } from './tier-lists';
 import { TierListInformationsEnglishComponent } from '../tier-list-informations-english/tier-list-informations-english.component';
 import { TierListCharacter } from '../../models/tier-list-character';
 import { filtersCharactersList, getCharacterImgPath } from './tier-list.utils';
 import { TierListFilters } from '../../models/tier-list-filters';
 import { TierListCharacterType } from 'src/app/models/tier-list-character-type';
+import { flatten } from '@angular/compiler';
 
 @Component({
   selector: 'app-tier-list',
@@ -35,9 +36,8 @@ export class TierListComponent implements OnInit {
       : 'FR';
 
   public tierLists: TierList[] = tierLists;
-  public allCharacters = [];
   public currentTierList: TierList;
-  public _currentTierIndex = 0;
+  public _currentTierListIndex = 0;
   public tierListTitle = '';
   public tiers: Tier[] = [];
   public colors = [
@@ -99,11 +99,13 @@ export class TierListComponent implements OnInit {
       }
 
       if (params.name && params.tiers) {
+        this.currentTierList = tierLists.find(t => t.id === params.tierListId);
+
         const sharedTiers: SavedTier[] = JSON.parse(params.tiers);
 
         this.tiers = sharedTiers.map(tier => ({
           ...tier,
-          characters: combinedAllCategoriesCharacters.reduce(
+          characters: this.currentTierList.characters.reduce(
             (acc: TierListCharacter[], character: TierListCharacter) => {
               if (tier.characters.includes(character.id)) {
                 acc = acc.concat(character);
@@ -115,18 +117,22 @@ export class TierListComponent implements OnInit {
           ),
         }));
 
+        this.removedCharacters = this.currentTierList.characters.filter(c => {
+          const tiersCharactersIds = this.tiers.map(t =>
+            t.characters.map(tch => tch.id)
+          );
+          return !flatten(tiersCharactersIds).includes(c.id);
+        });
+
         this.tierListTitle = params.name;
-        this._currentTierIndex = -1;
       } else {
-        this._initTiers(0);
+        this._initTiers(TierListId.LEGEND);
       }
     });
   }
 
-  private _initTiers(index: number): void {
-    this.allCharacters = this.tierLists[index].characters;
-
-    this.currentTierList = this.tierLists[index];
+  private _initTiers(tierListId: TierListId): void {
+    this.currentTierList = this.tierLists.find(t => t.id === tierListId);
 
     this._changeTierListName();
 
@@ -135,7 +141,7 @@ export class TierListComponent implements OnInit {
     this.tiers = this.basicTiers.map(x => {
       return {
         name: x,
-        characters: x === 'F' ? [...this.allCharacters] : [],
+        characters: x === 'F' ? [...this.currentTierList.characters] : [],
       };
     });
   }
@@ -148,9 +154,8 @@ export class TierListComponent implements OnInit {
     }
   }
 
-  public switchTierList(tierIndex: number) {
-    this._currentTierIndex = tierIndex;
-    this._initTiers(tierIndex);
+  public switchTierList(tierListId: TierListId) {
+    this._initTiers(tierListId);
   }
 
   public drop(event: any) {

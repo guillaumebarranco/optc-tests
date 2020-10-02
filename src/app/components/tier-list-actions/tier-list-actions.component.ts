@@ -53,7 +53,7 @@ export class TierListActionsComponent {
         name: tier.name,
         characters: tier.characters.map(c => c.id),
       }))
-    )}`;
+    )}&tierListId=${this.currentTierListId}`;
 
     const url = baseUrl + params;
 
