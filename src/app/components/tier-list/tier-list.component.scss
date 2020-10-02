@@ -79,6 +79,10 @@ details {
 .page-title {
   width: 55%;
   margin: 0 auto;
+
+  @media (max-width: 900px) {
+    width: 90%;
+  }
 }
 
 details {
