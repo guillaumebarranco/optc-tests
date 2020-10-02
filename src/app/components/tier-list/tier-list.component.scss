@@ -132,6 +132,10 @@ details button {
       cursor: pointer;
       color: white;
 
+      &.active {
+        color: black;
+      }
+
       &:hover {
         background-color: #eee;
         color: black;

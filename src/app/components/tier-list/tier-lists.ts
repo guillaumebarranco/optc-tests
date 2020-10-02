@@ -11,7 +11,7 @@ import { raids } from '../../data/tier-lists/raids';
 import { tms } from '../../data/tier-lists/tm';
 import { kizunas } from '../../data/tier-lists/kizuna';
 import { ambushs } from '../../data/tier-lists/ambush';
-import { TierList } from '../../models/tier-list';
+import { TierList, TierListId } from '../../models/tier-list';
 import { rrs } from '../../data/tier-lists/rr';
 import { TierListCharacter } from 'src/app/models/tier-list-character';
 import { TierListCharacterType } from 'src/app/models/tier-list-character-type';
@@ -97,6 +97,7 @@ export const combinedAllCategoriesCharacters = [
   ...formatedRrs,
   ...formatedLrrs,
   ...formatedPvps,
+  ...formatedSupports,
   ...allLegends,
 ];
 
@@ -105,51 +106,61 @@ export const tierLists: TierList[] = [
     frenchName: 'Légendes',
     englishName: 'Legends',
     characters: allLegends,
+    id: TierListId.LEGEND,
   },
   {
     frenchName: 'Personnages RR',
     englishName: 'RR Characters',
     characters: formatedRrs,
+    id: TierListId.RR,
   },
   {
     frenchName: 'Personnages Colisées',
     englishName: 'Colosseums Characters',
     characters: formatedColosseums,
+    id: TierListId.COLOSSEUM,
   },
   {
     frenchName: 'Personnages Raids',
     englishName: 'Raids Characters',
     characters: formatedRaids,
+    id: TierListId.RAID,
   },
   {
     frenchName: 'Personnages TM',
     englishName: 'TM Characters',
     characters: formatedTms,
+    id: TierListId.TM,
   },
   {
     frenchName: 'Personnages PVP',
     englishName: 'PVP Characters',
     characters: formatedPvps,
+    id: TierListId.PVP,
   },
   {
     frenchName: 'Personnages LRR',
     englishName: 'LRR Characters',
     characters: formatedLrrs,
+    id: TierListId.LRR,
   },
   {
     frenchName: 'Personnages Spéciaux (soutiens)',
-    englishName: 'Speciaid Characters (support)',
+    englishName: 'Special Characters (support)',
     characters: formatedSupports,
+    id: TierListId.SUPPORT,
   },
   {
     frenchName: 'Personnages Kizuna',
     englishName: 'Kizuna Characters',
     characters: formatedKizunas,
+    id: TierListId.KIZUNA,
   },
   {
     frenchName: 'Personnages Ambush',
     englishName: 'Ambush Characters',
     characters: formatedAmbushes,
+    id: TierListId.AMBUSH,
   },
   {
     frenchName: 'Personnages F2P',
@@ -161,6 +172,7 @@ export const tierLists: TierList[] = [
       ...formatedKizunas,
       ...formatedAmbushes,
     ],
+    id: TierListId.F2P,
   },
   {
     frenchName: 'Personnages Premium',
@@ -169,12 +181,15 @@ export const tierLists: TierList[] = [
       ...formatedRrs,
       ...formatedLrrs,
       ...formatedPvps,
+      ...formatedSupports,
       ...allLegends,
     ],
+    id: TierListId.P2P,
   },
   {
     frenchName: 'Personnages au complet',
-    englishName: 'Alid Characters',
+    englishName: 'All Characters',
     characters: [...combinedAllCategoriesCharacters],
+    id: TierListId.ALL,
   },
 ];

@@ -1,0 +1,159 @@
+<div class="tier-list-filters">
+  <ng-container *ngIf="tierListId === _tierListIdEnum.LEGEND">
+    <mat-form-field appearance="fill">
+      <mat-label *ngIf="language === 'FR'">Année de sortie</mat-label>
+      <mat-label *ngIf="language === 'EN'">Debut Year Selection</mat-label>
+
+      <mat-select
+        name="year-selection"
+        [ngModel]="filters.selectedYearLegend"
+        (ngModelChange)="_onUpdateYearSelection($event)"
+      >
+        <mat-option *ngIf="language === 'FR'" value="none">Aucune</mat-option>
+        <mat-option *ngIf="language === 'EN'" value="none">None</mat-option>
+        <mat-option value="2015">2015</mat-option>
+        <mat-option value="2016">2016</mat-option>
+        <mat-option value="2017">2017</mat-option>
+        <mat-option value="2018">2018</mat-option>
+        <mat-option value="2019">2019</mat-option>
+        <mat-option value="2020">2020</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </ng-container>
+
+  <ng-container
+    *ngIf="
+      tierListId === _tierListIdEnum.F2P || tierListId === _tierListIdEnum.ALL
+    "
+  >
+    <ng-container *ngIf="language === 'FR'">
+      <mat-checkbox
+        [checked]="filters.characterTypesDisplay[_tierListCharacterType.TM]"
+        (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.TM)"
+        >Afficher les personnages de TM</mat-checkbox
+      >
+      <mat-checkbox
+        [checked]="
+          filters.characterTypesDisplay[_tierListCharacterType.COLOSSEUM]
+        "
+        (change)="
+          _onToggleCharacterTypeDisplay(_tierListCharacterType.COLOSSEUM)
+        "
+        >Afficher les personnages de Colisées</mat-checkbox
+      >
+      <mat-checkbox
+        [checked]="filters.characterTypesDisplay[_tierListCharacterType.RAID]"
+        (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.RAID)"
+        >Afficher les personnages de Raids</mat-checkbox
+      >
+      <mat-checkbox
+        [checked]="filters.characterTypesDisplay[_tierListCharacterType.KIZUNA]"
+        (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.KIZUNA)"
+        >Afficher les personnages de Kizuna</mat-checkbox
+      >
+      <mat-checkbox
+        [checked]="filters.characterTypesDisplay[_tierListCharacterType.AMBUSH]"
+        (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.AMBUSH)"
+        >Afficher les personnages d'attaques ennemies</mat-checkbox
+      >
+    </ng-container>
+
+    <ng-container *ngIf="language === 'EN'">
+      <mat-checkbox
+        [checked]="filters.characterTypesDisplay[_tierListCharacterType.TM]"
+        (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.TM)"
+        >Display TM characters</mat-checkbox
+      >
+      <mat-checkbox
+        [checked]="
+          filters.characterTypesDisplay[_tierListCharacterType.COLOSSEUM]
+        "
+        (change)="
+          _onToggleCharacterTypeDisplay(_tierListCharacterType.COLOSSEUM)
+        "
+        >Display Colosseums characters</mat-checkbox
+      >
+      <mat-checkbox
+        [checked]="filters.characterTypesDisplay[_tierListCharacterType.RAID]"
+        (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.RAID)"
+        >Display Raids characters</mat-checkbox
+      >
+      <mat-checkbox
+        [checked]="filters.characterTypesDisplay[_tierListCharacterType.KIZUNA]"
+        (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.KIZUNA)"
+        >Display Kizuna characters</mat-checkbox
+      >
+      <mat-checkbox
+        [checked]="filters.characterTypesDisplay[_tierListCharacterType.AMBUSH]"
+        (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.AMBUSH)"
+        >Display Ambush characters</mat-checkbox
+      >
+    </ng-container>
+  </ng-container>
+
+  <ng-container
+    *ngIf="
+      tierListId === _tierListIdEnum.P2P || tierListId === _tierListIdEnum.ALL
+    "
+  >
+    <ng-container *ngIf="language === 'FR'">
+      <mat-checkbox
+        [checked]="filters.characterTypesDisplay[_tierListCharacterType.LEGEND]"
+        (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.LEGEND)"
+        >Afficher les légendes</mat-checkbox
+      >
+      <mat-checkbox
+        [checked]="filters.characterTypesDisplay[_tierListCharacterType.RR]"
+        (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.RR)"
+        >Afficher les personnages du recrutement rare</mat-checkbox
+      >
+      <mat-checkbox
+        [checked]="filters.characterTypesDisplay[_tierListCharacterType.LRR]"
+        (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.LRR)"
+        >Afficher les personnages limités au recrutement rare</mat-checkbox
+      >
+      <mat-checkbox
+        [checked]="
+          filters.characterTypesDisplay[_tierListCharacterType.SUPPORT]
+        "
+        (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.SUPPORT)"
+        >Afficher les personnages spéciaux (soutiens)</mat-checkbox
+      >
+      <mat-checkbox
+        [checked]="filters.characterTypesDisplay[_tierListCharacterType.PVP]"
+        (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.PVP)"
+        >Afficher les personnages limités pour la Fête des Pirates</mat-checkbox
+      >
+    </ng-container>
+
+    <ng-container *ngIf="language === 'EN'">
+      <mat-checkbox
+        [checked]="filters.characterTypesDisplay[_tierListCharacterType.LEGEND]"
+        (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.LEGEND)"
+        >Display Legends</mat-checkbox
+      >
+      <mat-checkbox
+        [checked]="filters.characterTypesDisplay[_tierListCharacterType.RR]"
+        (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.RR)"
+        >Display rare recruits</mat-checkbox
+      >
+      <mat-checkbox
+        [checked]="filters.characterTypesDisplay[_tierListCharacterType.LRR]"
+        (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.LRR)"
+        >Display limited rare recruits</mat-checkbox
+      >
+      <mat-checkbox
+        [checked]="
+          filters.characterTypesDisplay[_tierListCharacterType.SUPPORT]
+        "
+        (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.SUPPORT)"
+        >Display specials characters (supports)</mat-checkbox
+      >
+      <mat-checkbox
+        [checked]="filters.characterTypesDisplay[_tierListCharacterType.PVP]"
+        (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.PVP)"
+        >Display PVP limited rare recruits</mat-checkbox
+      >
+    </ng-container>
+  </ng-container>
+</div>

@@ -18,6 +18,7 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [AppComponent, ...components],
@@ -35,6 +36,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatOptionModule,
     MatTabsModule,
     MatInputModule,
+    MatCheckboxModule,
     MatFormFieldModule,
   ],
   providers: [],

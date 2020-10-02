@@ -7,23 +7,16 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { ActivatedRoute } from '@angular/router';
+
 import { TierListInformationsFrenchComponent } from '../tier-list-informations-french/tier-list-informations-french.component';
-import { TierList } from 'src/app/models/tier-list';
-import { Tier } from 'src/app/models/tier';
-import { SavedTierList } from 'src/app/models/saved-tier-list';
+import { TierList } from '../../models/tier-list';
+import { Tier } from '../../models/tier';
+import { SavedTierList } from '../../models/saved-tier-list';
 import { combinedAllCategoriesCharacters, tierLists } from './tier-lists';
-import {
-  legends,
-  legends2015,
-  legends2016,
-  legends2017,
-  legends2018,
-  legends2019,
-  legends2020,
-} from 'src/app/data/tier-lists/legends';
-import { legendsSixPlus } from 'src/app/data/tier-lists/legends_sixplus';
 import { TierListInformationsEnglishComponent } from '../tier-list-informations-english/tier-list-informations-english.component';
-import { TierListCharacter } from 'src/app/models/tier-list-character';
+import { TierListCharacter } from '../../models/tier-list-character';
+import { filtersCharactersList, getCharacterImgPath } from './tier-list.utils';
+import { TierListFilters } from '../../models/tier-list-filters';
 import { TierListCharacterType } from 'src/app/models/tier-list-character-type';
 
 @Component({
@@ -66,10 +59,25 @@ export class TierListComponent implements OnInit {
   public removedCharacters: TierListCharacter[] = [];
   public _filteredCharacters: string[] = [];
 
-  public _filters = {
+  public _filters: TierListFilters = {
     showSixStarsLegends: true,
     showSixPlusLegends: true,
     selectedYearLegend: 'none',
+    characterTypesDisplay: {
+      [TierListCharacterType.LEGEND]: true,
+      [TierListCharacterType.SIX_PLUS_LEGEND]: true,
+      [TierListCharacterType.JAP_LEGEND]: true,
+      [TierListCharacterType.JAP_SIX_PLUS_LEGEND]: true,
+      [TierListCharacterType.RR]: true,
+      [TierListCharacterType.LRR]: true,
+      [TierListCharacterType.COLOSSEUM]: true,
+      [TierListCharacterType.RAID]: true,
+      [TierListCharacterType.TM]: true,
+      [TierListCharacterType.PVP]: true,
+      [TierListCharacterType.SUPPORT]: true,
+      [TierListCharacterType.KIZUNA]: true,
+      [TierListCharacterType.AMBUSH]: true,
+    },
   };
 
   constructor(
@@ -263,63 +271,22 @@ export class TierListComponent implements OnInit {
   }
 
   public filtersCharactersList(): void {
-    let filteredCharacters: string[] = [
-      ...this.currentTierList.characters.map(c => c.id),
-    ];
-
-    if (!this._filters.showSixStarsLegends) {
-      filteredCharacters = filteredCharacters.filter(c => !legends.includes(c));
-    }
-
-    if (!this._filters.showSixPlusLegends) {
-      filteredCharacters = filteredCharacters.filter(
-        c => !legendsSixPlus.includes(c)
-      );
-    }
-
-    if (this._filters.selectedYearLegend !== 'none') {
-      switch (this._filters.selectedYearLegend.toString()) {
-        case '2015':
-          filteredCharacters = filteredCharacters.filter(c =>
-            legends2015.includes(c)
-          );
-          break;
-        case '2016':
-          filteredCharacters = filteredCharacters.filter(c =>
-            legends2016.includes(c)
-          );
-          break;
-        case '2017':
-          filteredCharacters = filteredCharacters.filter(c =>
-            legends2017.includes(c)
-          );
-          break;
-        case '2018':
-          filteredCharacters = filteredCharacters.filter(c =>
-            legends2018.includes(c)
-          );
-          break;
-        case '2019':
-          filteredCharacters = filteredCharacters.filter(c =>
-            legends2019.includes(c)
-          );
-          break;
-        case '2020':
-          filteredCharacters = filteredCharacters.filter(c =>
-            legends2020.includes(c)
-          );
-          break;
-
-        default:
-          break;
-      }
-    }
-
+    const filteredCharacters = filtersCharactersList(
+      this.currentTierList,
+      this._filters
+    );
     this._filteredCharacters = [...filteredCharacters];
   }
 
-  public updateYearSelection(value: string): void {
+  public _onUpdateYearSelection(value: string): void {
     this._filters.selectedYearLegend = value;
+    this.filtersCharactersList();
+  }
+
+  public _onToggleCharacterTypeDisplay(value: TierListCharacterType): void {
+    this._filters.characterTypesDisplay[value] = !this._filters
+      .characterTypesDisplay[value];
+
     this.filtersCharactersList();
   }
 
@@ -330,38 +297,7 @@ export class TierListComponent implements OnInit {
   }
 
   public _getCharacterImgPath(character: TierListCharacter): string {
-    const basePath = 'assets/characters';
-
-    switch (character.type) {
-      case TierListCharacterType.LEGEND:
-        return `${basePath}/legend/sixstars/f${character.id}.png`;
-      case TierListCharacterType.SIX_PLUS_LEGEND:
-        return `${basePath}/legend/sixplus/f${character.id}.png`;
-      case TierListCharacterType.JAP_LEGEND:
-        return `${basePath}/legend/sixstars/f${character.id}.png`;
-      case TierListCharacterType.JAP_SIX_PLUS_LEGEND:
-        return `${basePath}/legend/sixplus/f${character.id}.png`;
-      case TierListCharacterType.RR:
-        return `${basePath}/rr/f${character.id}.png`;
-      case TierListCharacterType.LRR:
-        return `${basePath}/lrr/f${character.id}.png`;
-      case TierListCharacterType.COLOSSEUM:
-        return `${basePath}/colosseum/f${character.id}.png`;
-      case TierListCharacterType.RAID:
-        return `${basePath}/raid/f${character.id}.png`;
-      case TierListCharacterType.TM:
-        return `${basePath}/tm/f${character.id}.png`;
-      case TierListCharacterType.PVP:
-        return `${basePath}/pvp/f${character.id}.png`;
-      case TierListCharacterType.SUPPORT:
-        return `${basePath}/support/f${character.id}.png`;
-      case TierListCharacterType.KIZUNA:
-        return `${basePath}/kizuna/f${character.id}.png`;
-      case TierListCharacterType.AMBUSH:
-        return `${basePath}/ambush/f${character.id}.png`;
-      default:
-        return '';
-    }
+    return getCharacterImgPath(character);
   }
 
   public _getImgStyleFormFiltering(characterId: string): any {

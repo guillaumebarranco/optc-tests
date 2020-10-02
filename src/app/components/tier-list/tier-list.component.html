@@ -72,30 +72,13 @@
       Hide Legends 6 stars version when legend also have a 6+ version
     </button> -->
 
-    <div *ngIf="language === 'FR'">Pour les légendes uniquement</div>
-    <div *ngIf="language === 'EN'">For legends only</div>
-
-    <br />
-
-    <mat-form-field appearance="fill">
-      <mat-label *ngIf="language === 'FR'">Année de sortie</mat-label>
-      <mat-label *ngIf="language === 'EN'">Debut Year Selection</mat-label>
-
-      <mat-select
-        name="year-selection"
-        [ngModel]="_filters.selectedYearLegend"
-        (ngModelChange)="updateYearSelection($event)"
-      >
-        <mat-option *ngIf="language === 'FR'" value="none">Aucune</mat-option>
-        <mat-option *ngIf="language === 'EN'" value="none">None</mat-option>
-        <mat-option value="2015">2015</mat-option>
-        <mat-option value="2016">2016</mat-option>
-        <mat-option value="2017">2017</mat-option>
-        <mat-option value="2018">2018</mat-option>
-        <mat-option value="2019">2019</mat-option>
-        <mat-option value="2020">2020</mat-option>
-      </mat-select>
-    </mat-form-field>
+    <app-tier-list-filters
+      [language]="language"
+      [tierListId]="currentTierList.id"
+      [filters]="_filters"
+      (updateYearSelection)="_onUpdateYearSelection($event)"
+      (toggleCharacterTypeDisplay)="_onToggleCharacterTypeDisplay($event)"
+    ></app-tier-list-filters>
   </div>
 
   <br />
