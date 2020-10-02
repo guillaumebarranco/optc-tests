@@ -1,4 +1,4 @@
-export const legendsSixPlus = [
+export const legendsSixPlus2017 = [
   '1413',
   '1445',
   '1492',
@@ -13,6 +13,9 @@ export const legendsSixPlus = [
   '1880',
   '1881',
   '1921',
+];
+
+export const legendsSixPlus2018 = [
   '1922',
   '1927',
   '1928',
@@ -27,9 +30,13 @@ export const legendsSixPlus = [
   '2245',
   '2300',
   '2357',
-  '2363',
   '2372',
   '2373',
+  '2784',
+];
+
+export const legendsSixPlus2019 = [
+  '2363',
   '2434',
   '2444',
   '2500',
@@ -37,14 +44,23 @@ export const legendsSixPlus = [
   '2578',
   '2588',
   '2631',
+];
+
+export const legendsSixPlus2020 = [
   '2681',
   '2739',
-  '2784',
   '2814',
   '2830',
   '2868',
   '2909',
   '2954',
+];
+
+export const legendsSixPlus = [
+  ...legendsSixPlus2017,
+  ...legendsSixPlus2018,
+  ...legendsSixPlus2019,
+  ...legendsSixPlus2020,
 ];
 
 export const japLegendsSixPLus = ['2991', '3018', '3048', '3079'];
