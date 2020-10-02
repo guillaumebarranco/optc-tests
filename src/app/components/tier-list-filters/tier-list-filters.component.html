@@ -1,4 +1,20 @@
 <div class="tier-list-filters">
+  <div>
+    <button
+      mat-button
+      [ngClass]="{ active: filters.showRemovedCharacters }"
+      (click)="onToggleShowRemovedCharacters()"
+    >
+      <ng-container *ngIf="language === 'FR'"
+        >Voir les personnages supprimés</ng-container
+      >
+      <ng-container *ngIf="language === 'EN'"
+        >Show removed characters</ng-container
+      >
+    </button>
+  </div>
+  <br />
+
   <ng-container *ngIf="tierListId === _tierListIdEnum.LEGEND">
     <mat-form-field appearance="fill">
       <mat-label *ngIf="language === 'FR'">Année de sortie</mat-label>

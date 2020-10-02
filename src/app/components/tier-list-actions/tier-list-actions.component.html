@@ -1,20 +1,5 @@
 <div class="tier-list-actions-container">
   <div>
-    <button
-      mat-button
-      [ngClass]="{ active: showRemovedCharacters }"
-      (click)="onToggleShowRemovedCharacters()"
-    >
-      <ng-container *ngIf="language === 'FR'"
-        >Voir les personnages supprimés</ng-container
-      >
-      <ng-container *ngIf="language === 'EN'"
-        >Show removed characters</ng-container
-      >
-    </button>
-  </div>
-
-  <div>
     <button mat-button (click)="share()">
       <mat-icon>share</mat-icon>
       <ng-container *ngIf="language === 'FR'"
@@ -78,9 +63,6 @@
   </div>
 
   <div *ngIf="loadingTierList">
-    <h2 *ngIf="language === 'FR'">Tier List sauvegardées</h2>
-    <h2 *ngIf="language === 'EN'">Saved Tier Lists</h2>
-
     <p *ngIf="language === 'FR'">
       Veuillez sélectionner une Tier List à charger
     </p>
@@ -95,9 +77,6 @@
   </div>
 
   <div *ngIf="removingTierList">
-    <h2 *ngIf="language === 'FR'">Tier List sauvegardées</h2>
-    <h2 *ngIf="language === 'EN'">Saved Tier Lists</h2>
-
     <p *ngIf="language === 'FR'">
       Veuillez sélectionner une Tier List à supprimer
     </p>

@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 import { TierListInformationsFrenchComponent } from '../tier-list-informations-french/tier-list-informations-french.component';
 import { TierList, TierListId } from '../../models/tier-list';
 import { Tier } from '../../models/tier';
-import { SavedTierList } from '../../models/saved-tier-list';
+import { SavedTier, SavedTierList } from '../../models/saved-tier-list';
 import { combinedAllCategoriesCharacters, tierLists } from './tier-lists';
 import { TierListInformationsEnglishComponent } from '../tier-list-informations-english/tier-list-informations-english.component';
 import { TierListCharacter } from '../../models/tier-list-character';
@@ -57,7 +57,6 @@ export class TierListComponent implements OnInit {
   public showActions = false;
   public showFilters = false;
 
-  public showRemovedCharacters = false;
   public removedCharacters: TierListCharacter[] = [];
   public _filteredCharacters: string[] = [];
 
@@ -65,6 +64,7 @@ export class TierListComponent implements OnInit {
     showSixStarsLegends: true,
     showSixPlusLegends: true,
     selectedYearLegend: 'none',
+    showRemovedCharacters: false,
     characterTypesDisplay: {
       [TierListCharacterType.LEGEND]: true,
       [TierListCharacterType.SIX_PLUS_LEGEND]: true,
@@ -89,19 +89,30 @@ export class TierListComponent implements OnInit {
   ) {}
 
   public ngOnInit() {
+    this._initTierFromUrlShare();
+  }
+
+  private _initTierFromUrlShare(): void {
     this.activatedRoute.queryParams.subscribe(params => {
       if (params.language === 'FR' || params.language === 'EN') {
         this.language = params.language;
       }
 
       if (params.name && params.tiers) {
-        const sharedTiers = JSON.parse(params.tiers);
+        const sharedTiers: SavedTier[] = JSON.parse(params.tiers);
 
         this.tiers = sharedTiers.map(tier => ({
           ...tier,
-          characters: tier.characters.map(c => {
-            return combinedAllCategoriesCharacters.find(cc => cc.id === c);
-          }),
+          characters: combinedAllCategoriesCharacters.reduce(
+            (acc: TierListCharacter[], character: TierListCharacter) => {
+              if (tier.characters.includes(character.id)) {
+                acc = acc.concat(character);
+              }
+
+              return acc;
+            },
+            []
+          ),
         }));
 
         this.tierListTitle = params.name;
@@ -185,11 +196,46 @@ export class TierListComponent implements OnInit {
 
   public onLoadTierList(savedTierList: SavedTierList) {
     this.tierListTitle = savedTierList.name;
-    this.tiers = savedTierList.tiers;
-    this.removedCharacters = savedTierList.removedCharacters || [];
+
     this.currentTierList = tierLists.find(
       t => t.id === savedTierList.tierListId
     );
+
+    const alreadyAddedCharacters = [];
+
+    this.tiers = savedTierList.tiers.map((tier, index) => {
+      const tierCharacters: TierListCharacter[] = this.currentTierList.characters.reduce(
+        (acc, character) => {
+          if (tier.characters.includes(character.id)) {
+            alreadyAddedCharacters.push(character.id);
+            return acc.concat(character);
+          }
+
+          if (
+            index === 6 &&
+            !tier.characters.includes(character.id) &&
+            !savedTierList.removedCharacters.includes(character.id) &&
+            !alreadyAddedCharacters.includes(character.id)
+          ) {
+            return acc.concat(character);
+          }
+
+          return acc;
+        },
+        []
+      );
+
+      return {
+        characters: tierCharacters,
+        name: tier.name,
+      };
+    });
+
+    this.removedCharacters = savedTierList.removedCharacters
+      ? this.currentTierList.characters.filter(c =>
+          savedTierList.removedCharacters.includes(c.id)
+        )
+      : [];
 
     this.snackBar.open(`Votre Tier List a bien été chargée !`, null, {
       duration: 5000,
@@ -221,8 +267,8 @@ export class TierListComponent implements OnInit {
     }, 500);
   }
 
-  public onToggleShowRemovedCharacters(value: boolean) {
-    this.showRemovedCharacters = value;
+  public onToggleShowRemovedCharacters() {
+    this._filters.showRemovedCharacters = !this._filters.showRemovedCharacters;
   }
 
   public removeCharacterFromTier(

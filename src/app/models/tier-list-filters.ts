@@ -8,5 +8,6 @@ export interface TierListFilters {
   showSixStarsLegends: boolean;
   showSixPlusLegends: boolean;
   selectedYearLegend: string;
+  showRemovedCharacters: boolean;
   characterTypesDisplay: TierListCharacterTypeFilter;
 }

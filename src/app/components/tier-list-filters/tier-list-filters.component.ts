@@ -13,6 +13,7 @@ export class TierListFiltersComponent {
   @Output() public toggleCharacterTypeDisplay = new EventEmitter<
     TierListCharacterType
   >();
+  @Output() public toggleShowRemovedCharacters = new EventEmitter<void>();
 
   @Input() public tierListId: TierListId;
   @Input() public language: string;
@@ -27,5 +28,9 @@ export class TierListFiltersComponent {
 
   public _onToggleCharacterTypeDisplay(type: TierListCharacterType) {
     this.toggleCharacterTypeDisplay.emit(type);
+  }
+
+  public onToggleShowRemovedCharacters() {
+    this.toggleShowRemovedCharacters.emit();
   }
 }

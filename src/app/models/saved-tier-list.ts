@@ -1,10 +1,13 @@
-import { Tier } from './tier';
 import { TierListId } from './tier-list';
-import { TierListCharacter } from './tier-list-character';
+
+export interface SavedTier {
+  name: string;
+  characters: string[];
+}
 
 export interface SavedTierList {
   name: string;
-  tiers: Tier[];
+  tiers: SavedTier[];
   tierListId: TierListId;
-  removedCharacters: TierListCharacter[];
+  removedCharacters: string[];
 }

@@ -14,7 +14,6 @@ import { TierListCharacter } from 'src/app/models/tier-list-character';
 export class TierListActionsComponent {
   @Output() public loadTierList = new EventEmitter<any>();
   @Output() public exportTierList = new EventEmitter<any>();
-  @Output() public toggleShowRemovedCharacters = new EventEmitter<any>();
 
   @Input() public tierListTitle;
   @Input() public tiers: Tier[];
@@ -86,8 +85,13 @@ export class TierListActionsComponent {
     if (!tierListWithSameNameAlreadyExists) {
       const tierListsUpdated: SavedTierList[] = savedTierLists.concat({
         name: this.tierListTitle,
-        tiers: this.tiers,
-        removedCharacters: this.removedCharacters,
+        tiers: this.tiers.map(tier => {
+          return {
+            characters: tier.characters.map(c => c.id),
+            name: tier.name,
+          };
+        }),
+        removedCharacters: this.removedCharacters.map(c => c.id),
         tierListId: this.currentTierListId,
       });
       localStorage.setItem('tierLists', JSON.stringify(tierListsUpdated));
@@ -96,8 +100,13 @@ export class TierListActionsComponent {
         return list.name === this.tierListTitle
           ? {
               name: list.name,
-              tiers: this.tiers,
-              removedCharacters: this.removedCharacters,
+              tiers: this.tiers.map(tier => {
+                return {
+                  characters: tier.characters.map(c => c.id),
+                  name: tier.name,
+                };
+              }),
+              removedCharacters: this.removedCharacters.map(c => c.id),
               tierListId: this.currentTierListId,
             }
           : list;
@@ -113,6 +122,7 @@ export class TierListActionsComponent {
   public onLoadTierList() {
     if (!this.loadingTierList) {
       this.loadingTierList = true;
+      this.removingTierList = false;
       this.loadedTierLists = this.getSavedTierLists();
     } else {
       this.loadingTierList = false;
@@ -123,15 +133,12 @@ export class TierListActionsComponent {
   public onRemoveTierList() {
     if (!this.removingTierList) {
       this.removingTierList = true;
+      this.loadingTierList = false;
       this.loadedTierLists = this.getSavedTierLists();
     } else {
       this.removingTierList = false;
       this.loadedTierLists = [];
     }
-  }
-
-  public onToggleShowRemovedCharacters() {
-    this.toggleShowRemovedCharacters.emit(!this.showRemovedCharacters);
   }
 
   public onExportTierList(showLastTier: boolean) {
