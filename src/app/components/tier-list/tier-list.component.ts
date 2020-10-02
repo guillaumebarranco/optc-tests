@@ -185,6 +185,9 @@ export class TierListComponent implements OnInit {
     this.tierListTitle = savedTierList.name;
     this.tiers = savedTierList.tiers;
     this.removedCharacters = savedTierList.removedCharacters || [];
+    this.currentTierList = tierLists.find(
+      t => t.id === savedTierList.tierListId
+    );
 
     this.snackBar.open(`Votre Tier List a bien été chargée !`, null, {
       duration: 5000,

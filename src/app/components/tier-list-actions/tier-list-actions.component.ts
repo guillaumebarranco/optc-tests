@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SavedTierList } from 'src/app/models/saved-tier-list';
 import { Tier } from 'src/app/models/tier';
+import { TierListId } from 'src/app/models/tier-list';
 import { TierListCharacter } from 'src/app/models/tier-list-character';
 
 @Component({
@@ -17,6 +18,7 @@ export class TierListActionsComponent {
 
   @Input() public tierListTitle;
   @Input() public tiers: Tier[];
+  @Input() public currentTierListId: TierListId;
   @Input() public removedCharacters: TierListCharacter[];
   @Input() public showRemovedCharacters = false;
   @Input() public language: string;
@@ -86,6 +88,7 @@ export class TierListActionsComponent {
         name: this.tierListTitle,
         tiers: this.tiers,
         removedCharacters: this.removedCharacters,
+        tierListId: this.currentTierListId,
       });
       localStorage.setItem('tierLists', JSON.stringify(tierListsUpdated));
     } else {
@@ -95,6 +98,7 @@ export class TierListActionsComponent {
               name: list.name,
               tiers: this.tiers,
               removedCharacters: this.removedCharacters,
+              tierListId: this.currentTierListId,
             }
           : list;
       });
