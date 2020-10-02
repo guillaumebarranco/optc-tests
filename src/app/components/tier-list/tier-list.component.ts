@@ -364,4 +364,14 @@ export class TierListComponent implements OnInit {
       return {};
     }
   }
+
+  public _toggleActionsButton(): void {
+    this.showFilters = false;
+    this.showActions = !this.showActions;
+  }
+
+  public _toggleFiltersButton(): void {
+    this.showActions = false;
+    this.showFilters = !this.showFilters;
+  }
 }

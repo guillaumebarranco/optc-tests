@@ -150,7 +150,7 @@
   <button
     mat-icon-button
     [ngClass]="{ active: showActions }"
-    (click)="showActions = !showActions"
+    (click)="_toggleActionsButton()"
   >
     <mat-icon>settings</mat-icon>
   </button>
@@ -164,7 +164,7 @@
     "
     mat-icon-button
     [ngClass]="{ active: showFilters }"
-    (click)="showFilters = !showFilters"
+    (click)="_toggleFiltersButton()"
   >
     <mat-icon>filter_list</mat-icon>
   </button>

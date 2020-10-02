@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-
+import shortenUrl from '@kulkul/tinyurl-client';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { SavedTierList } from 'src/app/models/saved-tier-list';
-import { Tier } from 'src/app/models/tier';
-import { TierListId } from 'src/app/models/tier-list';
-import { TierListCharacter } from 'src/app/models/tier-list-character';
+import { SavedTierList } from '../../models/saved-tier-list';
+import { Tier } from '../../models/tier';
+import { TierListId } from '../../models/tier-list';
+import { TierListCharacter } from '../../models/tier-list-character';
 
 @Component({
   selector: 'app-tier-list-actions',
@@ -55,18 +55,23 @@ export class TierListActionsComponent {
       }))
     )}`;
 
-    this.copyToClipboard(baseUrl + params);
+    const url = baseUrl + params;
 
-    let message;
+    shortenUrl(url).then(result => {
+      console.log('result', result);
+      this.copyToClipboard(url);
 
-    if (this.language === 'FR') {
-      message = `L'URL de partage de votre tier list a été copiée dans votre presse-papiers !`;
-    } else if (this.language === 'EN') {
-      message = `URL for sharing your tier list has been copy-pasted in your clipboard !`;
-    }
+      let message;
 
-    this.snackBar.open(message, null, {
-      duration: 5000,
+      if (this.language === 'FR') {
+        message = `L'URL de partage de votre tier list a été copiée dans votre presse-papiers !`;
+      } else if (this.language === 'EN') {
+        message = `URL for sharing your tier list has been copy-pasted in your clipboard !`;
+      }
+
+      this.snackBar.open(message, null, {
+        duration: 5000,
+      });
     });
   }
 
