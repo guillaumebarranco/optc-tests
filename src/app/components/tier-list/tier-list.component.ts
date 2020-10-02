@@ -5,11 +5,7 @@ import * as html2canvas from 'html2canvas';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 
-import {
-  CdkDragDrop,
-  moveItemInArray,
-  transferArrayItem,
-} from '@angular/cdk/drag-drop';
+import { moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { ActivatedRoute } from '@angular/router';
 import { TierListInformationsFrenchComponent } from '../tier-list-informations-french/tier-list-informations-french.component';
 import { TierList } from 'src/app/models/tier-list';
@@ -91,8 +87,6 @@ export class TierListComponent implements OnInit {
       if (params.name && params.tiers) {
         const sharedTiers = JSON.parse(params.tiers);
 
-        console.log('sharedTiers', sharedTiers);
-
         this.tiers = sharedTiers.map(tier => ({
           ...tier,
           characters: tier.characters.map(c => {
@@ -138,18 +132,18 @@ export class TierListComponent implements OnInit {
     this._initTiers(tierIndex);
   }
 
-  public drop(event: CdkDragDrop<string[]>) {
+  public drop(event: any) {
     if (event.previousContainer === event.container) {
       moveItemInArray(
         event.container.data,
-        event.previousIndex,
+        event.previousContainer.data.indexOf(event.item.data),
         event.currentIndex
       );
     } else {
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
-        event.previousIndex,
+        event.previousContainer.data.indexOf(event.item.data),
         event.currentIndex
       );
     }
@@ -269,7 +263,7 @@ export class TierListComponent implements OnInit {
   }
 
   public filtersCharactersList(): void {
-    let filteredCharacters = [
+    let filteredCharacters: string[] = [
       ...this.currentTierList.characters.map(c => c.id),
     ];
 
@@ -287,32 +281,32 @@ export class TierListComponent implements OnInit {
       switch (this._filters.selectedYearLegend.toString()) {
         case '2015':
           filteredCharacters = filteredCharacters.filter(c =>
-            legends2015.includes(c.split('/')[2])
+            legends2015.includes(c)
           );
           break;
         case '2016':
           filteredCharacters = filteredCharacters.filter(c =>
-            legends2016.includes(c.split('/')[2])
+            legends2016.includes(c)
           );
           break;
         case '2017':
           filteredCharacters = filteredCharacters.filter(c =>
-            legends2017.includes(c.split('/')[2])
+            legends2017.includes(c)
           );
           break;
         case '2018':
           filteredCharacters = filteredCharacters.filter(c =>
-            legends2018.includes(c.split('/')[2])
+            legends2018.includes(c)
           );
           break;
         case '2019':
           filteredCharacters = filteredCharacters.filter(c =>
-            legends2019.includes(c.split('/')[2])
+            legends2019.includes(c)
           );
           break;
         case '2020':
           filteredCharacters = filteredCharacters.filter(c =>
-            legends2020.includes(c.split('/')[2])
+            legends2020.includes(c)
           );
           break;
 
@@ -367,6 +361,20 @@ export class TierListComponent implements OnInit {
         return `${basePath}/ambush/f${character.id}.png`;
       default:
         return '';
+    }
+  }
+
+  public _getImgStyleFormFiltering(characterId: string): any {
+    const shouldBeHidden =
+      !this._filteredCharacters.includes(characterId) &&
+      this._filteredCharacters.length > 0;
+
+    if (shouldBeHidden) {
+      return {
+        display: 'none',
+      };
+    } else {
+      return {};
     }
   }
 }

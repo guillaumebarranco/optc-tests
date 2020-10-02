@@ -126,27 +126,22 @@
                   <ng-container *ngIf="i !== 6">
                     <img
                       [src]="_getCharacterImgPath(character)"
-                      [hidden]="
-                        !_filteredCharacters.includes(character.id) &&
-                        _filteredCharacters.length > 0
-                      "
+                      [ngStyle]="_getImgStyleFormFiltering(character.id)"
                       width="64"
                       alt=""
                       cdkDrag
+                      [cdkDragData]="character"
                     />
                   </ng-container>
 
                   <ng-container *ngIf="i === 6">
                     <img
                       [src]="_getCharacterImgPath(character)"
-                      [hidden]="
-                        !_filteredCharacters.includes(character.id) &&
-                        _filteredCharacters.length > 0
-                      "
+                      [ngStyle]="_getImgStyleFormFiltering(character.id)"
                       width="64"
-                      alt=""
                       (contextmenu)="removeCharacterFromTier(tier, character)"
                       cdkDrag
+                      [cdkDragData]="character"
                     />
                   </ng-container>
                 </ng-container>
@@ -157,9 +152,7 @@
                     class="removed-character"
                     [src]="_getCharacterImgPath(character)"
                     width="64"
-                    alt=""
                     (contextmenu)="putCharacterBackInTier(tier, character)"
-                    cdkDrag
                   />
                 </ng-container>
               </div>
