@@ -4,6 +4,8 @@ export enum TierListId {
   LEGEND = 'LEGEND',
   RR = 'RR',
   LRR = 'LRR',
+  KIZUNA_LRR = 'KIZUNA_LRR',
+  PERIOD_LRR = 'PERIOD_LRR',
   COLOSSEUM = 'COLOSSEUM',
   RAID = 'RAID',
   TM = 'TM',

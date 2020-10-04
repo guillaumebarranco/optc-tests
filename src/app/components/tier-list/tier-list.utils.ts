@@ -29,6 +29,8 @@ import { rrs } from 'src/app/data/tier-lists/rr';
 import { lrrs } from 'src/app/data/tier-lists/lrr';
 import { soutiens } from 'src/app/data/tier-lists/soutiens';
 import { pvps } from 'src/app/data/tier-lists/pvp';
+import { kizunaLrrs } from 'src/app/data/tier-lists/kizuna_lrrs';
+import { periodsLrrs } from 'src/app/data/tier-lists/periods_lrrs';
 
 export function getCharacterImgPath(character: TierListCharacter): string {
   const basePath = 'assets/characters';
@@ -46,6 +48,10 @@ export function getCharacterImgPath(character: TierListCharacter): string {
       return `${basePath}/rr/f${character.id}.png`;
     case TierListCharacterType.LRR:
       return `${basePath}/lrr/f${character.id}.png`;
+    case TierListCharacterType.KIZUNA_LRR:
+      return `${basePath}/kizuna_lrr/f${character.id}.png`;
+    case TierListCharacterType.PERIOD_LRR:
+      return `${basePath}/periods_lrr/f${character.id}.png`;
     case TierListCharacterType.COLOSSEUM:
       return `${basePath}/colosseum/f${character.id}.png`;
     case TierListCharacterType.RAID:
@@ -146,6 +152,16 @@ function filterCategories(
       case TierListCharacterType.LRR:
         filteredCharacters = filteredCharacters = filteredCharacters.filter(
           c => !lrrs.includes(c)
+        );
+        break;
+      case TierListCharacterType.KIZUNA_LRR:
+        filteredCharacters = filteredCharacters = filteredCharacters.filter(
+          c => !kizunaLrrs.includes(c)
+        );
+        break;
+      case TierListCharacterType.PERIOD_LRR:
+        filteredCharacters = filteredCharacters = filteredCharacters.filter(
+          c => !periodsLrrs.includes(c)
         );
         break;
       case TierListCharacterType.SUPPORT:

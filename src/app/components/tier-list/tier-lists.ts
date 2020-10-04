@@ -162,13 +162,13 @@ export const tierLists: TierList[] = [
     frenchName: 'Personnages Kizuna LRR',
     englishName: 'Kizuna LRR Characters',
     characters: formatedKizunaLrrs,
-    id: TierListId.LRR,
+    id: TierListId.KIZUNA_LRR,
   },
   {
     frenchName: 'Personnages LRR (périodes)',
     englishName: 'Periods LRR Characters',
     characters: formatedPeriodsLrrs,
-    id: TierListId.LRR,
+    id: TierListId.PERIOD_LRR,
   },
   {
     frenchName: 'Personnages Spéciaux (soutiens)',
