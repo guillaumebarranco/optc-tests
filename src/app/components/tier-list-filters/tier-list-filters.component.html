@@ -131,6 +131,26 @@
       >
       <mat-checkbox
         [checked]="
+          filters.characterTypesDisplay[_tierListCharacterType.KIZUNA_LRR]
+        "
+        (change)="
+          _onToggleCharacterTypeDisplay(_tierListCharacterType.KIZUNA_LRR)
+        "
+        >Afficher les personnages limités au recrutement rare pour le
+        Kizuna</mat-checkbox
+      >
+      <mat-checkbox
+        [checked]="
+          filters.characterTypesDisplay[_tierListCharacterType.PERIOD_LRR]
+        "
+        (change)="
+          _onToggleCharacterTypeDisplay(_tierListCharacterType.PERIOD_LRR)
+        "
+        >Afficher les personnages limités au recrutement rare pour certaines
+        périodes</mat-checkbox
+      >
+      <mat-checkbox
+        [checked]="
           filters.characterTypesDisplay[_tierListCharacterType.SUPPORT]
         "
         (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.SUPPORT)"

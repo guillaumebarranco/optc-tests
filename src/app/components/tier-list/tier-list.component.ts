@@ -79,6 +79,8 @@ export class TierListComponent implements OnInit {
       [TierListCharacterType.SUPPORT]: true,
       [TierListCharacterType.KIZUNA]: true,
       [TierListCharacterType.AMBUSH]: true,
+      [TierListCharacterType.KIZUNA_LRR]: true,
+      [TierListCharacterType.PERIOD_LRR]: true,
     },
   };
 

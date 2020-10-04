@@ -1,9 +1,9 @@
-const fs = require("fs");
+const fs = require('fs');
 
-fs.readdir("src/assets/characters/tm", (err, files) => {
+fs.readdir('src/assets/characters/kizuna_lrr', (err, files) => {
   const orderedFile = files.sort((a, b) => {
-    const ax = a.replace(".png", "").replace("f", "");
-    const bx = b.replace(".png", "").replace("f", "");
+    const ax = a.replace('.png', '').replace('f', '');
+    const bx = b.replace('.png', '').replace('f', '');
 
     if (Number(ax) > Number(bx)) {
       return 1;
@@ -12,7 +12,7 @@ fs.readdir("src/assets/characters/tm", (err, files) => {
     }
   });
 
-  orderedFile.forEach((file) => {
+  orderedFile.forEach(file => {
     console.log(file);
   });
 });

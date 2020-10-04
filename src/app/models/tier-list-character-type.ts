@@ -5,6 +5,8 @@ export enum TierListCharacterType {
   JAP_SIX_PLUS_LEGEND = 'JAP_SIX_PLUS_LEGEND',
   RR = 'RR',
   LRR = 'LRR',
+  PERIOD_LRR = 'PERIOD_LRR',
+  KIZUNA_LRR = 'KIZUNA_LRR',
   COLOSSEUM = 'COLOSSEUM',
   RAID = 'RAID',
   TM = 'TM',

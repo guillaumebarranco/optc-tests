@@ -15,6 +15,8 @@ import { TierList, TierListId } from '../../models/tier-list';
 import { rrs } from '../../data/tier-lists/rr';
 import { TierListCharacter } from 'src/app/models/tier-list-character';
 import { TierListCharacterType } from 'src/app/models/tier-list-character-type';
+import { periodsLrrs } from 'src/app/data/tier-lists/periods_lrrs';
+import { kizunaLrrs } from 'src/app/data/tier-lists/kizuna_lrrs';
 
 const formatedLegends: TierListCharacter[] = legends.map(id => ({
   id,
@@ -51,6 +53,16 @@ const formatedRrs = rrs.map(id => ({
 const formatedLrrs = lrrs.map(id => ({
   id,
   type: TierListCharacterType.LRR,
+}));
+
+const formatedPeriodsLrrs = periodsLrrs.map(id => ({
+  id,
+  type: TierListCharacterType.PERIOD_LRR,
+}));
+
+const formatedKizunaLrrs = kizunaLrrs.map(id => ({
+  id,
+  type: TierListCharacterType.KIZUNA_LRR,
 }));
 
 const formatedColosseums = colisees.map(id => ({
@@ -96,6 +108,8 @@ export const combinedAllCategoriesCharacters = [
   ...formatedAmbushes,
   ...formatedRrs,
   ...formatedLrrs,
+  ...formatedPeriodsLrrs,
+  ...formatedKizunaLrrs,
   ...formatedPvps,
   ...formatedSupports,
   ...allLegends,
@@ -145,6 +159,18 @@ export const tierLists: TierList[] = [
     id: TierListId.LRR,
   },
   {
+    frenchName: 'Personnages Kizuna LRR',
+    englishName: 'Kizuna LRR Characters',
+    characters: formatedKizunaLrrs,
+    id: TierListId.LRR,
+  },
+  {
+    frenchName: 'Personnages LRR (périodes)',
+    englishName: 'Periods LRR Characters',
+    characters: formatedPeriodsLrrs,
+    id: TierListId.LRR,
+  },
+  {
     frenchName: 'Personnages Spéciaux (soutiens)',
     englishName: 'Special Characters (support)',
     characters: formatedSupports,
@@ -180,6 +206,8 @@ export const tierLists: TierList[] = [
     characters: [
       ...formatedRrs,
       ...formatedLrrs,
+      ...formatedPeriodsLrrs,
+      ...formatedKizunaLrrs,
       ...formatedPvps,
       ...formatedSupports,
       ...allLegends,
