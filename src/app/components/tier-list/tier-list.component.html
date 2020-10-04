@@ -157,12 +157,6 @@
   </button>
 
   <button
-    *ngIf="
-      currentTierList.id === _tierListIdEnum.LEGEND ||
-      currentTierList.id === _tierListIdEnum.F2P ||
-      currentTierList.id === _tierListIdEnum.P2P ||
-      currentTierList.id === _tierListIdEnum.ALL
-    "
     mat-icon-button
     [ngClass]="{ active: showFilters }"
     (click)="_toggleFiltersButton()"
