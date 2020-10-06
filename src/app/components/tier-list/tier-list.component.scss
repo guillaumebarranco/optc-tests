@@ -10,6 +10,39 @@
   }
 }
 
+.header {
+  position: relative;
+  padding: 20px;
+  display: flex;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+
+    & > div,
+    & > h1 {
+      margin-top: 10px;
+    }
+
+    .languages {
+      text-align: right;
+    }
+  }
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+
+  @media (max-width: 900px) {
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+}
+
 .languages {
   position: absolute;
   right: 20px;
@@ -34,26 +67,36 @@ table {
   border: solid 3px black;
   margin-top: 20px;
   width: 100%;
-}
 
-tr {
-  line-height: 0px;
-}
+  tr {
+    line-height: 0px;
+  }
 
-td {
-  border: solid 3px black;
-  margin: 0;
-  padding: 0;
-  height: 64px;
-}
+  td {
+    border: solid 3px black;
+    margin: 0;
+    padding: 0;
+    height: 64px;
+  }
 
-.labelHolder {
-  width: 150px;
-  height: 64px;
-  transition: background 0.3s;
+  .labelHolder {
+    width: 150px;
+    height: 64px;
+    transition: background 0.3s;
 
-  @media (max-width: 900px) {
-    width: 50px;
+    @media (max-width: 900px) {
+      width: 50px;
+    }
+  }
+
+  input {
+    background-color: #00bfff;
+    border: none;
+    display: block;
+    height: 100%;
+    width: 100%;
+    color: black;
+    text-align: center;
   }
 }
 
@@ -65,15 +108,9 @@ td {
 h1,
 h2,
 div,
-input,
-details {
+input {
   color: white;
   font-family: 'Roboto', sans-serif;
-}
-
-h1,
-details {
-  text-align: center;
 }
 
 .page-title {
@@ -184,16 +221,6 @@ details button {
   font-size: 24px;
 }
 
-table input {
-  background-color: #00bfff;
-  border: none;
-  display: block;
-  height: 100%;
-  width: 100%;
-  color: black;
-  text-align: center;
-}
-
 .infos {
   box-sizing: border-box;
   border: solid 1px white;
@@ -223,42 +250,6 @@ table input {
   }
 }
 
-.header {
-  position: relative;
-  padding: 20px;
-  display: flex;
-
-  @media (max-width: 900px) {
-    flex-direction: column;
-
-    & > div,
-    & > h1 {
-      margin-top: 10px;
-    }
-
-    .languages {
-      text-align: right;
-    }
-  }
-}
-
-h1 {
-  margin: 0;
-  position: absolute;
-  left: 20px;
-  top: 20px;
-
-  @media (max-width: 900px) {
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-}
-
-details summary {
-  cursor: pointer;
-}
-
 button {
   font-size: 15px;
   cursor: pointer;
@@ -272,11 +263,6 @@ button {
   &.active {
     background-color: lightskyblue;
   }
-}
-
-details button {
-  margin-left: 10px;
-  margin-top: 10px;
 }
 
 .removed-character {

@@ -22,7 +22,7 @@
   </div>
 </div>
 
-<ul class="nav">
+<ul *ngIf="currentTierList" class="nav">
   <ng-container *ngFor="let tierList of tierLists; let tierIndex = index">
     <li
       *ngIf="tierIndex < 5"
@@ -53,7 +53,7 @@
   </li>
 </ul>
 
-<div class="container">
+<div *ngIf="currentTierList" class="container">
   <app-tier-list-actions
     class="actions-list"
     [hidden]="!showActions"
@@ -64,6 +64,7 @@
     [language]="language"
     (loadTierList)="onLoadTierList($event)"
     (exportTierList)="onExportTierList($event)"
+    (exportAllTierLists)="_onExportAllTierLists()"
   ></app-tier-list-actions>
 
   <div [hidden]="!showFilters">
@@ -148,6 +149,10 @@
 </div>
 
 <div class="fixed-buttons">
+  <button mat-icon-button (click)="_onSaveTierList()">
+    <mat-icon>save</mat-icon>
+  </button>
+
   <button
     mat-icon-button
     [ngClass]="{ active: showActions }"

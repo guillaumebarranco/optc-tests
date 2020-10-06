@@ -1,24 +1,31 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { flatten } from '@angular/compiler';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { ActivatedRoute, Params } from '@angular/router';
 
 import * as html2canvas from 'html2canvas';
 
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDialog } from '@angular/material/dialog';
-
-import { moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { ActivatedRoute } from '@angular/router';
-
-import { TierListInformationsFrenchComponent } from '../tier-list-informations-french/tier-list-informations-french.component';
+import {
+  TierListInformationsEnglishComponent,
+  TierListInformationsFrenchComponent,
+  SaveTierListFrenchComponent,
+  SaveTierListEnglishComponent,
+} from '../dialogs';
 import { TierList, TierListId } from '../../models/tier-list';
 import { Tier } from '../../models/tier';
 import { SavedTier, SavedTierList } from '../../models/saved-tier-list';
 import { tierLists } from './tier-lists';
-import { TierListInformationsEnglishComponent } from '../tier-list-informations-english/tier-list-informations-english.component';
 import { TierListCharacter } from '../../models/tier-list-character';
-import { filtersCharactersList, getCharacterImgPath } from './tier-list.utils';
+import {
+  filtersCharactersList,
+  getCharacterImgPath,
+  getDefaultFilters,
+} from './tier-list.utils';
 import { TierListFilters } from '../../models/tier-list-filters';
-import { TierListCharacterType } from 'src/app/models/tier-list-character-type';
-import { flatten } from '@angular/compiler';
+import { TierListCharacterType } from '../../models/tier-list-character-type';
+import { StorageService } from '../../services';
 
 @Component({
   selector: 'app-tier-list',
@@ -37,7 +44,6 @@ export class TierListComponent implements OnInit {
 
   public tierLists: TierList[] = tierLists;
   public currentTierList: TierList;
-  public _currentTierListIndex = 0;
   public tierListTitle = '';
   public tiers: Tier[] = [];
   public colors = [
@@ -51,8 +57,6 @@ export class TierListComponent implements OnInit {
   ];
   public basicTiers: string[] = ['S', 'A', 'B', 'C', 'D', 'E', 'F'];
 
-  public _tierListIdEnum = TierListId;
-
   public hideLastTier = false;
   public showActions = false;
   public showFilters = false;
@@ -60,77 +64,59 @@ export class TierListComponent implements OnInit {
   public removedCharacters: TierListCharacter[] = [];
   public _filteredCharacters: string[] = [];
 
-  public _filters: TierListFilters = {
-    showSixStarsLegends: true,
-    showSixPlusLegends: true,
-    selectedYearLegend: 'none',
-    showRemovedCharacters: false,
-    characterTypesDisplay: {
-      [TierListCharacterType.LEGEND]: true,
-      [TierListCharacterType.SIX_PLUS_LEGEND]: true,
-      [TierListCharacterType.JAP_LEGEND]: true,
-      [TierListCharacterType.JAP_SIX_PLUS_LEGEND]: true,
-      [TierListCharacterType.RR]: true,
-      [TierListCharacterType.LRR]: true,
-      [TierListCharacterType.COLOSSEUM]: true,
-      [TierListCharacterType.RAID]: true,
-      [TierListCharacterType.TM]: true,
-      [TierListCharacterType.PVP]: true,
-      [TierListCharacterType.SUPPORT]: true,
-      [TierListCharacterType.KIZUNA]: true,
-      [TierListCharacterType.AMBUSH]: true,
-      [TierListCharacterType.KIZUNA_LRR]: true,
-      [TierListCharacterType.PERIOD_LRR]: true,
-    },
-  };
+  public _filters: TierListFilters = null;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private snackBar: MatSnackBar,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private _storageService: StorageService
   ) {}
 
   public ngOnInit() {
-    this._initTierFromUrlShare();
-  }
+    this._filters = getDefaultFilters();
 
-  private _initTierFromUrlShare(): void {
     this.activatedRoute.queryParams.subscribe(params => {
-      if (params.language === 'FR' || params.language === 'EN') {
-        this.language = params.language;
-      }
-
-      if (params.name && params.tiers) {
-        this.currentTierList = tierLists.find(t => t.id === params.tierListId);
-
-        const sharedTiers: SavedTier[] = JSON.parse(params.tiers);
-
-        this.tiers = sharedTiers.map(tier => ({
-          ...tier,
-          characters: this.currentTierList.characters.reduce(
-            (acc: TierListCharacter[], character: TierListCharacter) => {
-              if (tier.characters.includes(character.id)) {
-                acc = acc.concat(character);
-              }
-
-              return acc;
-            },
-            []
-          ),
-        }));
-
-        this.removedCharacters = this.currentTierList.characters.filter(c => {
-          const tiersCharactersIds = this.tiers.map(t =>
-            t.characters.map(tch => tch.id)
-          );
-          return !flatten(tiersCharactersIds).includes(c.id);
-        });
-
-        this.tierListTitle = params.name;
+      if (Object.keys(params).length > 0) {
+        this._initTierFromUrlShare(params);
       } else {
         this._initTiers(TierListId.LEGEND);
       }
     });
+  }
+
+  private _initTierFromUrlShare(params: Params): void {
+    if (params.language === 'FR' || params.language === 'EN') {
+      this.language = params.language;
+    }
+
+    if (params.name && params.tiers) {
+      this.currentTierList = tierLists.find(t => t.id === params.tierListId);
+
+      const sharedTiers: SavedTier[] = JSON.parse(params.tiers);
+
+      this.tiers = sharedTiers.map(tier => ({
+        ...tier,
+        characters: this.currentTierList.characters.reduce(
+          (acc: TierListCharacter[], character: TierListCharacter) =>
+            tier.characters.includes(character.id)
+              ? acc.concat(character)
+              : acc,
+          []
+        ),
+      }));
+
+      this.removedCharacters = this.currentTierList.characters.filter(c => {
+        const tiersCharactersIds = this.tiers.map(t =>
+          t.characters.map(tch => tch.id)
+        );
+        return !flatten(tiersCharactersIds).includes(c.id);
+      });
+
+      this.tierListTitle = params.name;
+    } else {
+      this._initTiers(TierListId.LEGEND);
+    }
   }
 
   private _initTiers(tierListId: TierListId): void {
@@ -193,12 +179,6 @@ export class TierListComponent implements OnInit {
       })
       .afterClosed()
       .subscribe();
-  }
-
-  public getSavedTierLists(): SavedTierList[] {
-    return localStorage.getItem('tierLists') !== null
-      ? JSON.parse(localStorage.getItem('tierLists'))
-      : [];
   }
 
   public onLoadTierList(savedTierList: SavedTierList) {
@@ -272,6 +252,27 @@ export class TierListComponent implements OnInit {
         }
       );
     }, 500);
+  }
+
+  public _onExportAllTierLists(): void {
+    const allSavedTierLists = this._storageService.getSavedTierLists();
+    this._download('tierslists.json', JSON.stringify(allSavedTierLists));
+  }
+
+  public _download(filename: string, text: string) {
+    const element = document.createElement('a');
+    element.setAttribute(
+      'href',
+      'data:text/plain;charset=utf-8,' + encodeURIComponent(text)
+    );
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
   }
 
   public onToggleShowRemovedCharacters() {
@@ -380,5 +381,47 @@ export class TierListComponent implements OnInit {
   public _toggleFiltersButton(): void {
     this.showActions = false;
     this.showFilters = !this.showFilters;
+  }
+
+  public _onSaveTierList() {
+    let component;
+
+    if (this.language === 'FR') {
+      component = SaveTierListFrenchComponent;
+    } else if (this.language === 'EN') {
+      component = SaveTierListEnglishComponent;
+    }
+
+    const tierListAlreadySaved = this._storageService
+      .getSavedTierLists()
+      .find(t => t.name === this.tierListTitle);
+
+    if (tierListAlreadySaved) {
+      this.dialog
+        .open(component)
+        .afterClosed()
+        .subscribe(validateSave => {
+          if (validateSave) {
+            this._saveTierList();
+          }
+        });
+    } else {
+      this._saveTierList();
+    }
+  }
+
+  private _saveTierList(): void {
+    this._storageService
+      .saveTierList(
+        this.currentTierList.id,
+        this.tierListTitle,
+        this.tiers,
+        this.removedCharacters
+      )
+      .then(() => {
+        this.snackBar.open(`Votre Tier List a bien été sauvegardée !`, null, {
+          duration: 5000,
+        });
+      });
   }
 }

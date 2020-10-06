@@ -11,31 +11,37 @@
     <button mat-button (click)="onExportTierList(false)">
       <mat-icon>save_alt</mat-icon>
       <ng-container *ngIf="language === 'FR'"
-        >Exporter ma Tier List</ng-container
+        >Exporter ma Tier List sous forme d'image</ng-container
       >
-      <ng-container *ngIf="language === 'EN'">Export my Tier List</ng-container>
+      <ng-container *ngIf="language === 'EN'"
+        >Export my Tier List as a picture</ng-container
+      >
     </button>
 
     <button mat-button (click)="onExportTierList(true)">
       <mat-icon>save_alt</mat-icon>
       <ng-container *ngIf="language === 'FR'"
-        >Exporter ma Tier List sans voir le dernier Tier</ng-container
+        >Exporter ma Tier List sous forme d'image sans voir le dernier
+        Tier</ng-container
       >
       <ng-container *ngIf="language === 'EN'"
-        >Export my Tier List hiding the last Tier</ng-container
+        >Export my Tier List as a picture hiding the last Tier</ng-container
+      >
+    </button>
+
+    <button mat-button (click)="onExportAllTierLists()">
+      <mat-icon>save_alt</mat-icon>
+      <ng-container *ngIf="language === 'FR'"
+        >Exporter toutes mes Tier Lists sauvegardées au format
+        JSON</ng-container
+      >
+      <ng-container *ngIf="language === 'EN'"
+        >Export all my saved Tier List in JSON format</ng-container
       >
     </button>
   </div>
 
   <div>
-    <button mat-button (click)="onSaveTierList()">
-      <mat-icon>save</mat-icon>
-      <ng-container *ngIf="language === 'FR'"
-        >Sauvegarder ma Tier List</ng-container
-      >
-      <ng-container *ngIf="language === 'EN'">Save my Tier List</ng-container>
-    </button>
-
     <button
       mat-button
       [ngClass]="{ active: loadingTierList }"

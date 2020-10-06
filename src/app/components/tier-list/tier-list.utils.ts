@@ -98,6 +98,32 @@ export function filtersCharactersList(
   return filteredCharacters;
 }
 
+export function getDefaultFilters(): TierListFilters {
+  return {
+    showSixStarsLegends: true,
+    showSixPlusLegends: true,
+    selectedYearLegend: 'none',
+    showRemovedCharacters: false,
+    characterTypesDisplay: {
+      [TierListCharacterType.LEGEND]: true,
+      [TierListCharacterType.SIX_PLUS_LEGEND]: true,
+      [TierListCharacterType.JAP_LEGEND]: true,
+      [TierListCharacterType.JAP_SIX_PLUS_LEGEND]: true,
+      [TierListCharacterType.RR]: true,
+      [TierListCharacterType.LRR]: true,
+      [TierListCharacterType.COLOSSEUM]: true,
+      [TierListCharacterType.RAID]: true,
+      [TierListCharacterType.TM]: true,
+      [TierListCharacterType.PVP]: true,
+      [TierListCharacterType.SUPPORT]: true,
+      [TierListCharacterType.KIZUNA]: true,
+      [TierListCharacterType.AMBUSH]: true,
+      [TierListCharacterType.KIZUNA_LRR]: true,
+      [TierListCharacterType.PERIOD_LRR]: true,
+    },
+  };
+}
+
 function filterCategories(
   filteredCharacters: string[],
   filters: TierListFilters
