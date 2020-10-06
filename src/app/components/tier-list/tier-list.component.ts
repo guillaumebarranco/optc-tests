@@ -26,6 +26,7 @@ import {
 import { TierListFilters } from '../../models/tier-list-filters';
 import { TierListCharacterType } from '../../models/tier-list-character-type';
 import { StorageService } from '../../services';
+import { downloadFile } from 'src/app/utils/utils';
 
 @Component({
   selector: 'app-tier-list',
@@ -67,16 +68,16 @@ export class TierListComponent implements OnInit {
   public _filters: TierListFilters = null;
 
   constructor(
-    private activatedRoute: ActivatedRoute,
-    private snackBar: MatSnackBar,
-    public dialog: MatDialog,
+    private _activatedRoute: ActivatedRoute,
+    private _snackBar: MatSnackBar,
+    public _dialog: MatDialog,
     private _storageService: StorageService
   ) {}
 
-  public ngOnInit() {
+  public ngOnInit(): void {
     this._filters = getDefaultFilters();
 
-    this.activatedRoute.queryParams.subscribe(params => {
+    this._activatedRoute.queryParams.subscribe(params => {
       if (Object.keys(params).length > 0) {
         this._initTierFromUrlShare(params);
       } else {
@@ -142,11 +143,11 @@ export class TierListComponent implements OnInit {
     }
   }
 
-  public switchTierList(tierListId: TierListId) {
+  public switchTierList(tierListId: TierListId): void {
     this._initTiers(tierListId);
   }
 
-  public drop(event: any) {
+  public drop(event: any): void {
     if (event.previousContainer === event.container) {
       moveItemInArray(
         event.container.data,
@@ -172,7 +173,7 @@ export class TierListComponent implements OnInit {
       component = TierListInformationsEnglishComponent;
     }
 
-    this.dialog
+    this._dialog
       .open(component, {
         width: '1000px',
         height: '500px',
@@ -181,7 +182,7 @@ export class TierListComponent implements OnInit {
       .subscribe();
   }
 
-  public onLoadTierList(savedTierList: SavedTierList) {
+  public onLoadTierList(savedTierList: SavedTierList): void {
     this.tierListTitle = savedTierList.name;
 
     this.currentTierList = tierLists.find(
@@ -224,12 +225,12 @@ export class TierListComponent implements OnInit {
         )
       : [];
 
-    this.snackBar.open(`Votre Tier List a bien été chargée !`, null, {
+    this._snackBar.open(`Votre Tier List a bien été chargée !`, null, {
       duration: 5000,
     });
   }
 
-  public onExportTierList(removeLastTier: boolean) {
+  public onExportTierList(removeLastTier: boolean): void {
     window.scrollTo(0, 0);
 
     if (removeLastTier) {
@@ -256,33 +257,17 @@ export class TierListComponent implements OnInit {
 
   public _onExportAllTierLists(): void {
     const allSavedTierLists = this._storageService.getSavedTierLists();
-    this._download('tierslists.json', JSON.stringify(allSavedTierLists));
+    downloadFile('tierslists.json', JSON.stringify(allSavedTierLists));
   }
 
-  public _download(filename: string, text: string) {
-    const element = document.createElement('a');
-    element.setAttribute(
-      'href',
-      'data:text/plain;charset=utf-8,' + encodeURIComponent(text)
-    );
-    element.setAttribute('download', filename);
-
-    element.style.display = 'none';
-    document.body.appendChild(element);
-
-    element.click();
-
-    document.body.removeChild(element);
-  }
-
-  public onToggleShowRemovedCharacters() {
+  public onToggleShowRemovedCharacters(): void {
     this._filters.showRemovedCharacters = !this._filters.showRemovedCharacters;
   }
 
   public removeCharacterFromTier(
     tier: Tier,
     characterToRemove: TierListCharacter
-  ) {
+  ): boolean {
     const foundTier = this.tiers.find(t => t.name === tier.name);
 
     const updatedTier = {
@@ -304,7 +289,7 @@ export class TierListComponent implements OnInit {
   public putCharacterBackInTier(
     tier: Tier,
     characterToRePutInTier: TierListCharacter
-  ) {
+  ): boolean {
     const foundTier = this.tiers.find(t => t.name === tier.name);
 
     const updatedTier: Tier = {
@@ -323,13 +308,13 @@ export class TierListComponent implements OnInit {
     return false;
   }
 
-  public getTierStyle(index: number) {
+  public getTierStyle(index: number): any {
     return {
       'background-color': this.colors[index],
     };
   }
 
-  public filtersCharactersList(): void {
+  private _filtersCharactersList(): void {
     const filteredCharacters = filtersCharactersList(
       this.currentTierList,
       this._filters
@@ -339,14 +324,14 @@ export class TierListComponent implements OnInit {
 
   public _onUpdateYearSelection(value: string): void {
     this._filters.selectedYearLegend = value;
-    this.filtersCharactersList();
+    this._filtersCharactersList();
   }
 
   public _onToggleCharacterTypeDisplay(value: TierListCharacterType): void {
     this._filters.characterTypesDisplay[value] = !this._filters
       .characterTypesDisplay[value];
 
-    this.filtersCharactersList();
+    this._filtersCharactersList();
   }
 
   public changeLanguage(language: string): void {
@@ -383,7 +368,7 @@ export class TierListComponent implements OnInit {
     this.showFilters = !this.showFilters;
   }
 
-  public _onSaveTierList() {
+  public _onSaveTierList(): void {
     let component;
 
     if (this.language === 'FR') {
@@ -397,7 +382,7 @@ export class TierListComponent implements OnInit {
       .find(t => t.name === this.tierListTitle);
 
     if (tierListAlreadySaved) {
-      this.dialog
+      this._dialog
         .open(component)
         .afterClosed()
         .subscribe(validateSave => {
@@ -419,7 +404,7 @@ export class TierListComponent implements OnInit {
         this.removedCharacters
       )
       .then(() => {
-        this.snackBar.open(`Votre Tier List a bien été sauvegardée !`, null, {
+        this._snackBar.open(`Votre Tier List a bien été sauvegardée !`, null, {
           duration: 5000,
         });
       });

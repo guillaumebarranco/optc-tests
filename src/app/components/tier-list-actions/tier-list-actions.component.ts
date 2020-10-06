@@ -9,6 +9,7 @@ import { TierListId } from '../../models/tier-list';
 import { TierListCharacter } from '../../models/tier-list-character';
 import { StorageService } from '../../services';
 import { RemoveTierListFrenchComponent } from '../dialogs';
+import { copyToClipboard } from '../../utils/utils';
 
 @Component({
   selector: 'app-tier-list-actions',
@@ -39,17 +40,7 @@ export class TierListActionsComponent {
   ) {}
 
   public copyToClipboard(val: string) {
-    const selBox = document.createElement('textarea');
-    selBox.style.position = 'fixed';
-    selBox.style.left = '0';
-    selBox.style.top = '0';
-    selBox.style.opacity = '0';
-    selBox.value = val;
-    document.body.appendChild(selBox);
-    selBox.focus();
-    selBox.select();
-    document.execCommand('copy');
-    document.body.removeChild(selBox);
+    copyToClipboard(val);
   }
 
   public share() {
