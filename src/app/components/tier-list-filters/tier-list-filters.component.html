@@ -13,6 +13,20 @@
         >Show removed characters</ng-container
       >
     </button>
+
+    <ng-container *ngIf="filters.showRemovedCharacters">
+      <div *ngIf="language === 'FR'">
+        <br />
+        Les personnages supprimés sont désormais affichés en noir et blanc dans
+        le dernier Tier.
+      </div>
+
+      <div *ngIf="language === 'EN'">
+        <br />
+        Removed characters are now displayed in black/white filter in the last
+        Tier.
+      </div>
+    </ng-container>
   </div>
   <br />
 
