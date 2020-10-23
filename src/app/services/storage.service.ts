@@ -5,6 +5,8 @@ import { TierListCharacter } from '../models/tier-list-character';
 
 const TIER_LISTS_KEY = 'tierLists';
 
+const LAST_MAJ_UPDATE = '23_10_2020_MAJ';
+
 export class StorageService {
   public getSavedTierLists(): SavedTierList[] {
     return localStorage.getItem(TIER_LISTS_KEY) !== null
@@ -58,5 +60,13 @@ export class StorageService {
 
       resolve();
     });
+  }
+
+  public hasSeenLastMajUpdate(): boolean {
+    return localStorage.getItem(LAST_MAJ_UPDATE) !== null;
+  }
+
+  public userSawLastMajUpdate(): void {
+    localStorage.setItem(LAST_MAJ_UPDATE, 'true');
   }
 }

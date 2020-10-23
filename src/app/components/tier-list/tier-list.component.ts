@@ -77,6 +77,8 @@ export class TierListComponent implements OnInit {
   public ngOnInit(): void {
     this._filters = getDefaultFilters();
 
+    this._displayNews();
+
     this._activatedRoute.queryParams.subscribe(params => {
       if (Object.keys(params).length > 0) {
         this._initTierFromUrlShare(params);
@@ -84,6 +86,27 @@ export class TierListComponent implements OnInit {
         this._initTiers(TierListId.LEGEND);
       }
     });
+  }
+
+  private _displayNews(): void {
+    const text =
+      this.language === 'FR'
+        ? ` Mise à jour 23/10/2020 !
+            Vous pouvez désormais effectuer un double-clic sur un personnage pour avoir
+            accès à sa fiche descriptive sur https://optc-db.github.io !
+            Les nouveaux personnages des différentes catégories ont été ajoutées (jusqu'à Shanks INT Légende)`
+        : ` 2020/10/23 Update !
+            You can now double click on a character to see his characteristics on https://optc-db.github.io !
+            New characters from different categories have been added (Until Shanks INT Legend)`;
+
+    if (!this._storageService.hasSeenLastMajUpdate()) {
+      this._storageService.userSawLastMajUpdate();
+      this._snackBar.open(text, 'OK', {
+        duration: 20000,
+        horizontalPosition: 'right',
+        verticalPosition: 'top',
+      });
+    }
   }
 
   private _initTierFromUrlShare(params: Params): void {
@@ -227,6 +250,8 @@ export class TierListComponent implements OnInit {
 
     this._snackBar.open(`Votre Tier List a bien été chargée !`, null, {
       duration: 5000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
     });
   }
 
@@ -406,7 +431,16 @@ export class TierListComponent implements OnInit {
       .then(() => {
         this._snackBar.open(`Votre Tier List a bien été sauvegardée !`, null, {
           duration: 5000,
+          horizontalPosition: 'center',
+          verticalPosition: 'top',
         });
       });
+  }
+
+  public _seeCharacterInformation(characterId: string): void {
+    window.open(
+      `https://optc-db.github.io/characters/#/view/${characterId}`,
+      '_blank'
+    );
   }
 }
