@@ -1,6 +1,7 @@
 import { Legend } from '../../models/legend.interface';
 import { CharacterClass } from '../../models/character-class.interface';
 import { PotentialAbility } from '../../models/potential-ability';
+import { PvpStyle } from 'src/app/models/pvp.interface';
 
 export const singleLegendsStr: Legend[] = [
   // Barbe Blanche V1
@@ -1237,6 +1238,332 @@ export const singleLegendsStr: Legend[] = [
         `Change le cercle du personnage soutenu en cercle [STR] et multiplie l'ATK des personnages de type STR par 1,3 pendant un tour si le personnage soutenu utilise un coup spécial qui enlève un pourcentage d'HP ou qui inflige des dégâts aux ennemis (une fois par quête).`,
         `Change le cercle du personnage soutenu en cercle [STR] et multiplie l'ATK des personnages de type STR par 1,4 pendant un tour si le personnage soutenu utilise un coup spécial qui enlève un pourcentage d'HP ou qui inflige des dégâts aux ennemis (une fois par quête).`,
         `Change les cercles de tous les personnages en cercles [STR] et multiplie l'ATK des personnages de type STR par 1,5 pendant un tour si le personnage soutenu utilise un coup spécial qui enlève un pourcentage d'HP ou qui inflige des dégâts aux ennemis (une fois par quête).`,
+      ],
+    },
+    batch: `First Legend`,
+  },
+  // Inuarashi
+  {
+    id: '1571',
+    title: 'Le seigneur diurne',
+    name: 'Caborage',
+    isDual: false,
+    artwork: {
+      fiveStars: 'https://i.imgur.com/jIiEQ5c.png',
+      sixStars: 'https://i.imgur.com/uLmwyYL.png',
+      sixPlusStars: null,
+    },
+    dualCharacterData: null,
+    singleCharacterData: {
+      story: `Seigneur diurne de la principauté de Mokomo. Bien qu'ayant autrefois servi le même maître que Chavipère le seigneur nocturne, il entretenait avec ce dernier des relations si exécrables qu'un combat à mort pouvait éclater à tout moment entre eux. Il lui proposa toutefois de faire une trêve afin de ne pas faire de peine au fils de leur ancien suzerain.`,
+      type: 'STR',
+      classes: [CharacterClass.Intellectuel, CharacterClass.Sabreur],
+      combo: 4,
+      hp: {
+        initial: 2978,
+        afterLimitBreak: 3473,
+        afterLimitBreakPlus: 3833,
+      },
+      atk: {
+        initial: 1535,
+        afterLimitBreak: 1740,
+        afterLimitBreakPlus: 1940,
+      },
+      rcv: {
+        initial: 389,
+        afterLimitBreak: 489,
+        afterLimitBreakPlus: 564,
+      },
+      captainAbility: `Multiplie l'ATK des personnages de classe Intellectuel par 2,75 et le multiplicateur de combos par 1,5 si les HP sont en-dessous de 30%, sinon par 2,5.`,
+      captainAbilityAfterLimitBreakPlus: `Multiplie l'ATK des personnages de classe Intellectuel par 3 et le multiplicateur de combos par 1,5 si les HP sont en-dessous de 30%, sinon par 2,75.`,
+      captainAbilityAdditionnalInformation: null,
+      captainAbilityAfterLimitBreakPlusAdditionnalInformation: null,
+      captainAction: null,
+      captainActionTurns: null,
+      specialWithStages: null,
+      special: `Réduit les HP de l'équipe de 80%, inflige 60 fois son ATK en dégâts de type STR sur un ennemi et ajoute 80 fois son ATK en dégâts additionnels non élémentaires pendant un tour.`,
+      specialTurns: {
+        initial: 19,
+        max: 14,
+        gainWithLimitBreak: 1,
+        gainWithLimitBreakPlus: 4,
+      },
+      crewmateAbilities: [
+        {
+          ability: `Ajoute 200 en HP pour les personnages de classe Intellectuel.`,
+          needLimitBreak: true,
+        },
+        {
+          ability: `Si le personnage est le dernier à attaquer, ajoute 200 en ATK pour le personnage.`,
+          needLimitBreak: true,
+        },
+      ],
+      picture: {
+        fiveStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f1313.png',
+        sixStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f1314.png',
+        sixPlusStarsPicture: null,
+      },
+    },
+    pvpData: {
+      cost: 55,
+      style: PvpStyle.ATK,
+      ct: 28,
+      specialDescription: [
+        `Réduit les HP du personnage de 20% et inflige 1,05 fois son ATK aux ennemis à longue portée (horizontal).`,
+        `Réduit les HP du personnage de 20% et inflige 1,12 fois son ATK aux ennemis à longue portée (horizontal).`,
+        `Réduit les HP du personnage de 20% et inflige 1,18 fois son ATK aux ennemis à longue portée (horizontal).`,
+        `Réduit les HP du personnage de 20% et inflige 1,25 fois son ATK aux ennemis à longue portée (horizontal).`,
+        `Réduit les HP du personnage de 20% et inflige 1,32 fois son ATK aux ennemis à longue portée (horizontal).`,
+        `Réduit les HP du personnage de 20% et inflige 1,39 fois son ATK aux ennemis à longue portée (horizontal).`,
+        `Réduit les HP du personnage de 20% et inflige 1,45 fois son ATK aux ennemis à longue portée (horizontal).`,
+        `Réduit les HP du personnage de 20% et inflige 1,52 fois son ATK aux ennemis à longue portée (horizontal).`,
+        `Réduit les HP du personnage de 20% et inflige 1,59 fois son ATK aux ennemis à longue portée (horizontal).`,
+        `Réduit les HP du personnage de 20% et inflige 1,7 fois son ATK aux ennemis à longue portée (horizontal).`,
+      ],
+      capacityDescription: [
+        `Augmente la vitesse des alliés de classe Intellectuel de 1 niveau et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 5 niveaux.`,
+        `Augmente la vitesse des alliés de classe Intellectuel de 2 niveaux et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 5 niveaux.`,
+        `Augmente la vitesse des alliés de classe Intellectuel de 3 niveaux et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 5 niveaux.`,
+        `Augmente la vitesse des alliés de classe Intellectuel de 4 niveaux et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 5 niveaux.`,
+        `Augmente la vitesse des alliés de classe Intellectuel de 5 niveaux et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 5 niveaux.`,
+      ],
+      capacityAttributes: [
+        {
+          SPEED: {
+            value: 6,
+            targets: [CharacterClass.Intellectuel],
+            fromTime: 100,
+            toTime: 0,
+          },
+          ATK: {
+            value: 5,
+            targets: ['SELF'],
+            fromHPPercent: 60,
+            toHPPercent: 0,
+          },
+        },
+      ],
+    },
+    sockets: 5,
+    cost: 55,
+    hasLimitBreak: true,
+    hasLimitBreakPlus: true,
+    potentialAbilities: [
+      {
+        type: PotentialAbility.DEX_REDUCTION,
+        icon: '',
+        effects: [
+          `Réduit les dégâts subis par les ennemis de type DEX de 1%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 2%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 3%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 4%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 5%.`,
+        ],
+      },
+      {
+        type: PotentialAbility.ATTAQUE_CRITIQUE,
+        icon: '',
+        effects: [
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 10% de chances de faire 3% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 20% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 30% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 40% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 50% de chances de faire 7% l'ATK du personnage en dégâts additionnels.`,
+        ],
+      },
+      {
+        type: PotentialAbility.AUGMENTATION_ATK,
+        icon: '',
+        effects: [
+          `Ajoute 75 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 100 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 200 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 250 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 300 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+        ],
+      },
+    ],
+    evolvers: [
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0118.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0084.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0266.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0100.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0267.png',
+    ],
+    support: {
+      hasSupportEffect: true,
+      supportedCharacters: ['Chavipère'],
+      levels: [
+        `Ajoute 50 fois son ATK en dégâts additionnels non élémentaires pour le personnage soutenu pendant un tour au début du dernier stage d'une quête.`,
+        `Ajoute 70 fois son ATK en dégâts additionnels non élémentaires pour le personnage soutenu pendant un tour au début du dernier stage d'une quête.`,
+        `Ajoute 90 fois son ATK en dégâts additionnels non élémentaires pour le personnage soutenu pendant un tour au début du dernier stage d'une quête.`,
+        `Ajoute 110 fois son ATK en dégâts additionnels non élémentaires pour le personnage soutenu pendant un tour au début du dernier stage d'une quête.`,
+        `Ajoute 130 fois son ATK en dégâts additionnels non élémentaires pour le personnage soutenu pendant 2 tours au début du dernier stage d'une quête.`,
+      ],
+    },
+    batch: `First Legend`,
+  },
+  // Inuarashi 6+
+  {
+    id: '2372',
+    title: 'Festin préparé à la main',
+    name: 'Caborage',
+    isDual: false,
+    artwork: {
+      fiveStars: 'https://i.imgur.com/jIiEQ5c.png',
+      sixStars: 'https://i.imgur.com/uLmwyYL.png',
+      sixPlusStars: null,
+    },
+    dualCharacterData: null,
+    singleCharacterData: {
+      story: `Seigneur diurne de la principauté de Mokomo. Pour son Seigneur, il déclara à Chavipère une "Trêve" dans leur longue et interminable querelle, puis prit alors son ancien ami par l'épaule en repensant à leurs aventures passées.`,
+      type: 'STR',
+      classes: [CharacterClass.Intellectuel, CharacterClass.Sabreur],
+      combo: 4,
+      hp: {
+        initial: 3245,
+        afterLimitBreak: 3740,
+        afterLimitBreakPlus: 4090,
+      },
+      atk: {
+        initial: 1582,
+        afterLimitBreak: 1787,
+        afterLimitBreakPlus: 1989,
+      },
+      rcv: {
+        initial: 421,
+        afterLimitBreak: 521,
+        afterLimitBreakPlus: 596,
+      },
+      captainAbility: `Multiplie l'ATK des personnages de classe Intellectuel par 3 et si les HP sont en-dessous de 30%, multiplie le multiplicateur de combos par 1,5.`,
+      captainAbilityAfterLimitBreakPlus: `Multiplie l'ATK des personnages de classe Intellectuel par 3,25 et si les HP sont en-dessous de 30%, multiplie le multiplicateur de combos par 1,5. Rend les cercles [STR] avantageux pour les personnages de classe Intellectuel.`,
+      captainAbilityAdditionnalInformation: null,
+      captainAbilityAfterLimitBreakPlusAdditionnalInformation: null,
+      captainAction: null,
+      captainActionTurns: null,
+      specialWithStages: null,
+      special: `Réduit les HP de l'équipe de 80%, enlève 20% des HP d'un ennemi et ajoute 130 fois son ATK en dégâts additionnels non élémentaires pendant un tour.`,
+      specialTurns: {
+        initial: 19,
+        max: 14,
+        gainWithLimitBreak: 1,
+        gainWithLimitBreakPlus: 4,
+      },
+      crewmateAbilities: [
+        {
+          ability: `Ajoute 200 en HP pour les personnages de classe Intellectuel.`,
+          needLimitBreak: true,
+        },
+        {
+          ability: `Si le personnage est le dernier à attaquer, ajoute 200 en ATK pour le personnage.`,
+          needLimitBreak: true,
+        },
+      ],
+      picture: {
+        fiveStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f1313.png',
+        sixStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f1314.png',
+        sixPlusStarsPicture: null,
+      },
+    },
+    pvpData: {
+      cost: 55,
+      style: PvpStyle.ATK,
+      ct: 28,
+      specialDescription: [
+        `Réduit les HP du personnage de 20% et inflige 1,3 fois son ATK aux ennemis à longue portée (horizontal).`,
+        `Réduit les HP du personnage de 20% et inflige 1,37 fois son ATK aux ennemis à longue portée (horizontal).`,
+        `Réduit les HP du personnage de 20% et inflige 1,43 fois son ATK aux ennemis à longue portée (horizontal).`,
+        `Réduit les HP du personnage de 20% et inflige 1,5 fois son ATK aux ennemis à longue portée (horizontal).`,
+        `Réduit les HP du personnage de 20% et inflige 1,57 fois son ATK aux ennemis à longue portée (horizontal).`,
+        `Réduit les HP du personnage de 20% et inflige 1,64 fois son ATK aux ennemis à longue portée (horizontal).`,
+        `Réduit les HP du personnage de 20% et inflige 1,7 fois son ATK aux ennemis à longue portée (horizontal).`,
+        `Réduit les HP du personnage de 20% et inflige 1,77 fois son ATK aux ennemis à longue portée (horizontal).`,
+        `Réduit les HP du personnage de 20% et inflige 1,84 fois son ATK aux ennemis à longue portée (horizontal).`,
+        `Réduit les HP du personnage de 20% et inflige 1,95 fois son ATK aux ennemis à longue portée (horizontal).`,
+      ],
+      capacityDescription: [
+        `Augmente la vitesse des alliés de classe Intellectuel de 2 niveaux et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 9 niveaux.`,
+        `Augmente la vitesse des alliés de classe Intellectuel de 3 niveaux et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 9 niveaux.`,
+        `Augmente la vitesse des alliés de classe Intellectuel de 4 niveaux et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 9 niveaux.`,
+        `Augmente la vitesse des alliés de classe Intellectuel de 5 niveaux et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 9 niveaux.`,
+        `Augmente la vitesse des alliés de classe Intellectuel de 6 niveaux et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 9 niveaux.`,
+      ],
+      capacityAttributes: [
+        {
+          SPEED: {
+            value: 6,
+            targets: [CharacterClass.Intellectuel],
+            fromTime: 100,
+            toTime: 0,
+          },
+          ATK: {
+            value: 9,
+            targets: ['SELF'],
+            fromHPPercent: 60,
+            toHPPercent: 0,
+          },
+        },
+      ],
+    },
+    sockets: 5,
+    cost: 65,
+    hasLimitBreak: true,
+    hasLimitBreakPlus: true,
+    potentialAbilities: [
+      {
+        type: PotentialAbility.DEX_REDUCTION,
+        icon: '',
+        effects: [
+          `Réduit les dégâts subis par les ennemis de type DEX de 1%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 2%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 3%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 4%.`,
+          `Réduit les dégâts subis par les ennemis de type DEX de 5%.`,
+        ],
+      },
+      {
+        type: PotentialAbility.ATTAQUE_CRITIQUE,
+        icon: '',
+        effects: [
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 10% de chances de faire 3% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 20% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 30% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 40% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 50% de chances de faire 7% l'ATK du personnage en dégâts additionnels.`,
+        ],
+      },
+      {
+        type: PotentialAbility.AUGMENTATION_ATK,
+        icon: '',
+        effects: [
+          `Ajoute 75 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 100 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 200 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 250 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+          `Ajoute 300 points d'ATK au tour suivant lorsque des dégâts sont subis.`,
+        ],
+      },
+    ],
+    evolvers: [
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0118.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0084.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0266.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0100.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0267.png',
+    ],
+    support: {
+      hasSupportEffect: true,
+      supportedCharacters: ['Chavipère'],
+      levels: [
+        `Ajoute 50 fois son ATK en dégâts additionnels non élémentaires pour le personnage soutenu pendant un tour au début du dernier stage d'une quête.`,
+        `Ajoute 70 fois son ATK en dégâts additionnels non élémentaires pour le personnage soutenu pendant un tour au début du dernier stage d'une quête.`,
+        `Ajoute 90 fois son ATK en dégâts additionnels non élémentaires pour le personnage soutenu pendant un tour au début du dernier stage d'une quête.`,
+        `Ajoute 110 fois son ATK en dégâts additionnels non élémentaires pour le personnage soutenu pendant un tour au début du dernier stage d'une quête.`,
+        `Ajoute 130 fois son ATK en dégâts additionnels non élémentaires pour le personnage soutenu pendant 2 tours au début du dernier stage d'une quête.`,
       ],
     },
     batch: `First Legend`,

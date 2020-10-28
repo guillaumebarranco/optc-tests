@@ -1,6 +1,10 @@
 import { Legend } from '../../models/legend.interface';
-import { CharacterClass } from '../../models/character-class.interface';
+import {
+  CharacterClass,
+  CharacterTypeClass,
+} from '../../models/character-class.interface';
 import { PotentialAbility } from '../../models/potential-ability';
+import { PvpStyle } from 'src/app/models/pvp.interface';
 
 export const singleLegendsPsy: Legend[] = [
   // Sengoku
@@ -1108,6 +1112,46 @@ export const singleLegendsPsy: Legend[] = [
           'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f2034.png',
       },
     },
+    pvpData: {
+      cost: 55,
+      style: PvpStyle.SUPPORT,
+      ct: 15,
+      specialDescription: [
+        `Inflige 0,7 fois son ATK à 4 ennemis et augmente l'ATK des alliés de classe Sabreur et Tireur de 2 niveaux pendant 20 secondes.`,
+        `Inflige 0,73 fois son ATK à 4 ennemis et augmente l'ATK des alliés de classe Sabreur et Tireur de 2 niveaux pendant 20 secondes.`,
+        `Inflige 0,76 fois son ATK à 4 ennemis et augmente l'ATK des alliés de classe Sabreur et Tireur de 3 niveaux pendant 21 secondes.`,
+        `Inflige 0,79 fois son ATK à 4 ennemis et augmente l'ATK des alliés de classe Sabreur et Tireur de 3 niveaux pendant 21 secondes.`,
+        `Inflige 0,82 fois son ATK à 4 ennemis et augmente l'ATK des alliés de classe Sabreur et Tireur de 4 niveaux pendant 22 secondes.`,
+        `Inflige 0,85 fois son ATK à 4 ennemis et augmente l'ATK des alliés de classe Sabreur et Tireur de 4 niveaux pendant 22 secondes.`,
+        `Inflige 0,88 fois son ATK à 4 ennemis et augmente l'ATK des alliés de classe Sabreur et Tireur de 5 niveaux pendant 23 secondes.`,
+        `Inflige 0,91 fois son ATK à 4 ennemis et augmente l'ATK des alliés de classe Sabreur et Tireur de 5 niveaux pendant 23 secondes.`,
+        `Inflige 0,94 fois son ATK à 4 ennemis et augmente l'ATK des alliés de classe Sabreur et Tireur de 6 niveaux pendant 24 secondes.`,
+        `Inflige 1 fois son ATK à 4 ennemis et augmente l'ATK des alliés de classe Sabreur et Tireur de 7 niveaux pendant 24 secondes.`,
+      ],
+      capacityDescription: [
+        `Augmente la vitesse des alliés de classe Sabreur et Tireur de 2 niveaux. Pendant 30 secondes à partir du début du combat, augmente la vitesse de chargement des coups spéciaux des alliés de classe Sabreur et Tireur de 2 niveaux.`,
+        `Augmente la vitesse des alliés de classe Sabreur et Tireur de 3 niveaux. Pendant 30 secondes à partir du début du combat, augmente la vitesse de chargement des coups spéciaux des alliés de classe Sabreur et Tireur de 2 niveaux.`,
+        `Augmente la vitesse des alliés de classe Sabreur et Tireur de 4 niveaux. Pendant 30 secondes à partir du début du combat, augmente la vitesse de chargement des coups spéciaux des alliés de classe Sabreur et Tireur de 2 niveaux.`,
+        `Augmente la vitesse des alliés de classe Sabreur et Tireur de 5 niveaux. Pendant 30 secondes à partir du début du combat, augmente la vitesse de chargement des coups spéciaux des alliés de classe Sabreur et Tireur de 2 niveaux.`,
+        `Augmente la vitesse des alliés de classe Sabreur et Tireur de 6 niveaux. Pendant 30 secondes à partir du début du combat, augmente la vitesse de chargement des coups spéciaux des alliés de classe Sabreur et Tireur de 4 niveaux.`,
+      ],
+      capacityAttributes: [
+        {
+          SPEED: {
+            value: 6,
+            targets: [CharacterClass.Sabreur, CharacterClass.Tireur],
+            fromTime: 100,
+            toTime: 0,
+          },
+          CT_SPEED: {
+            value: 4,
+            targets: [CharacterClass.Sabreur, CharacterClass.Tireur],
+            fromTime: 100,
+            toTime: 70,
+          },
+        },
+      ],
+    },
     sockets: 5,
     cost: 65,
     hasLimitBreak: true,
@@ -1163,6 +1207,158 @@ export const singleLegendsPsy: Legend[] = [
         `Change les cercles des personnages de classe Tireur en cercles correspondants si les cercles sont mélangés par les ennemis (une fois par quête).`,
         `Change les cercles des personnages de classe Tireur en cercles correspondants si les cercles sont mélangés par les ennemis (une fois par quête).`,
         `Change les cercles des personnages de classe Tireur et Sabreur en cercles correspondants si les cercles sont mélangés par les ennemis (une fois par quête).`,
+      ],
+    },
+    batch: `First Legend`,
+  },
+  // Law V3
+  {
+    id: '3027',
+    title: 'Alliance pour ouvrir le pays des Wa',
+    name: 'Trafalgar Law',
+    isDual: false,
+    artwork: {
+      fiveStars: 'https://i.imgur.com/4RdIJtP.png',
+      sixStars: 'https://i.imgur.com/adgWTQL.png',
+      sixPlusStars: null,
+    },
+    dualCharacterData: null,
+    singleCharacterData: {
+      story: `Capitaine de l'équipage du "Heart". Il prouve encore une fois au pays des Wa que ses capacités sont suffisantes pour faire de lui un membre des sept grands corsaires. Lors de son affrontement contre Hawkins, il comprend immédiatement les pouvoirs de son adversaire et assène des coups de sabre aux hommes d'Hawkins afin de sceller sa substitution.`,
+      type: 'PSY',
+      classes: [CharacterClass.Libre, CharacterClass.Sabreur],
+      combo: 5,
+      hp: {
+        initial: 3218,
+        afterLimitBreak: 3718,
+        afterLimitBreakPlus: 4068,
+      },
+      atk: {
+        initial: 1640,
+        afterLimitBreak: 1840,
+        afterLimitBreakPlus: 2040,
+      },
+      rcv: {
+        initial: 317,
+        afterLimitBreak: 417,
+        afterLimitBreakPlus: 492,
+      },
+      captainAbility: `Multiplie l'ATK des personnages de classe Libre, Cogneur et Ravageur par 4,5 si les HP sont au maximum, sinon par 4, restaure 1 500 HP à la fin de chaque tour et réduit les dégâts subis de 25%.`,
+      captainAbilityAfterLimitBreakPlus: null,
+      captainAbilityAdditionnalInformation: null,
+      captainAbilityAfterLimitBreakPlusAdditionnalInformation: null,
+      captainAction: null,
+      captainActionTurns: null,
+      specialWithStages: [],
+      special: `Change les cercles [EMP], [BLK], [BOMB], [RCV], [G], désavantageux et son cercle en cercles correspondants. Si le capitaine est un personnage de classe Cogneur, Sabreur, Ravageur ou Tireur, multiplie les effets des cercles de tous les personnages par 2,25 pendant 2 tours et si le capitaine est un personnage de classe Libre, Intellectuel, Tenace ou Ambitieux, bloque le minimum du multiplicateur de combos à 2,5 et le maximum du multiplicateur de combos à 35 pendant 2 tours.`,
+      specialTurns: null,
+      crewmateAbilities: [
+        {
+          ability: `Si un autre personnage de classe Libre ou Sabreur utilise son coup spécial, réduit le temps de chargement du coup spécial du personnage d'un tour.`,
+          needLimitBreak: true,
+        },
+        {
+          ability: `Ajoute 300 sur les HP restaurés par les cercles [RCV].`,
+          needLimitBreak: true,
+        },
+      ],
+      picture: {
+        fiveStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f1239.png',
+        sixStarsPicture:
+          'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f1240.png',
+        sixPlusStarsPicture: null,
+      },
+    },
+    pvpData: {
+      cost: 55,
+      style: PvpStyle.ATK,
+      ct: 35,
+      specialDescription: [
+        `Inflige 1 100 points de dégâts aux ennemis à longue portée, réduit la durée de "Lien des coups spéciaux" des alliés de type PSY pendant 15 secondes, réduit la durée de "Paralysie" des alliés de type PSY pendant 15 secondes et réduit la durée de "Lien des actions" des alliés de type PSY pendant 15 secondes.`,
+        `Inflige 1 200 points de dégâts aux ennemis à longue portée, réduit la durée de "Lien des coups spéciaux" des alliés de type PSY pendant 15 secondes, réduit la durée de "Paralysie" des alliés de type PSY pendant 15 secondes et réduit la durée de "Lien des actions" des alliés de type PSY pendant 15 secondes.`,
+        `Inflige 1 300 points de dégâts aux ennemis à longue portée, réduit la durée de "Lien des coups spéciaux" des alliés de type PSY pendant 16 secondes, réduit la durée de "Paralysie" des alliés de type PSY pendant 16 secondes et réduit la durée de "Lien des actions" des alliés de type PSY pendant 16 secondes.`,
+        `Inflige 1 400 points de dégâts aux ennemis à longue portée, réduit la durée de "Lien des coups spéciaux" des alliés de type PSY pendant 17 secondes, réduit la durée de "Paralysie" des alliés de type PSY pendant 17 secondes et réduit la durée de "Lien des actions" des alliés de type PSY pendant 17 secondes.`,
+        `Inflige 1 500 points de dégâts aux ennemis à longue portée, réduit la durée de "Lien des coups spéciaux" des alliés de type PSY pendant 18 secondes, réduit la durée de "Paralysie" des alliés de type PSY pendant 18 secondes et réduit la durée de "Lien des actions" des alliés de type PSY pendant 18 secondes.`,
+        `Inflige 1 600 points de dégâts aux ennemis à longue portée, réduit la durée de "Lien des coups spéciaux" des alliés de type PSY pendant 19 secondes, réduit la durée de "Paralysie" des alliés de type PSY pendant 19 secondes et réduit la durée de "Lien des actions" des alliés de type PSY pendant 19 secondes.`,
+        `Inflige 1 700 points de dégâts aux ennemis à longue portée, réduit la durée de "Lien des coups spéciaux" des alliés de type PSY pendant 19 secondes, réduit la durée de "Paralysie" des alliés de type PSY pendant 19 secondes et réduit la durée de "Lien des actions" des alliés de type PSY pendant 19 secondes.`,
+        `Inflige 1 800 points de dégâts aux ennemis à longue portée, réduit la durée de "Lien des coups spéciaux" des alliés de type PSY pendant 20 secondes, réduit la durée de "Paralysie" des alliés de type PSY pendant 20 secondes et réduit la durée de "Lien des actions" des alliés de type PSY pendant 20 secondes.`,
+        `Inflige 1 900 points de dégâts aux ennemis à longue portée, réduit la durée de "Lien des coups spéciaux" des alliés de type PSY pendant 21 secondes, réduit la durée de "Paralysie" des alliés de type PSY pendant 21 secondes et réduit la durée de "Lien des actions" des alliés de type PSY pendant 21 secondes.`,
+        `Inflige 2 200 points de dégâts aux ennemis à longue portée, réduit la durée de "Lien des coups spéciaux" des alliés de type PSY pendant 22 secondes, réduit la durée de "Paralysie" des alliés de type PSY pendant 22 secondes et réduit la durée de "Lien des actions" des alliés de type PSY pendant 22 secondes.`,
+      ],
+      capacityDescription: [
+        `Augmente la vitesse de chargement des coups spéciaux des alliés de type PSY de 2 niveaux. Pendant 40 secondes à partir du début du combat, réduit la vitesse de chargement des coups spéciaux des ennemis de classe Ambitieux et Tenace de 2 niveaux, réduit les chances de réussite de "Garde" des ennemis de classe Ambitieux et Tenace de 2 niveaux et réduit la vitesse des ennemis de classe Ambitieux et Tenace de 2 niveaux.`,
+        `Augmente la vitesse de chargement des coups spéciaux des alliés de type PSY de 3 niveaux. Pendant 40 secondes à partir du début du combat, réduit la vitesse de chargement des coups spéciaux des ennemis de classe Ambitieux et Tenace de 3 niveaux, réduit les chances de réussite de "Garde" des ennemis de classe Ambitieux et Tenace de 3 niveaux et réduit la vitesse des ennemis de classe Ambitieux et Tenace de 3 niveaux.`,
+        `Augmente la vitesse de chargement des coups spéciaux des alliés de type PSY de 4 niveaux. Pendant 40 secondes à partir du début du combat, réduit la vitesse de chargement des coups spéciaux des ennemis de classe Ambitieux et Tenace de 4 niveaux, réduit les chances de réussite de "Garde" des ennemis de classe Ambitieux et Tenace de 4 niveaux et réduit la vitesse des ennemis de classe Ambitieux et Tenace de 4 niveaux.`,
+        `Augmente la vitesse de chargement des coups spéciaux des alliés de type PSY de 5 niveaux. Pendant 40 secondes à partir du début du combat, réduit la vitesse de chargement des coups spéciaux des ennemis de classe Ambitieux et Tenace de 5 niveaux, réduit les chances de réussite de "Garde" des ennemis de classe Ambitieux et Tenace de 5 niveaux et réduit la vitesse des ennemis de classe Ambitieux et Tenace de 5 niveaux.`,
+        `Augmente la vitesse de chargement des coups spéciaux des alliés de type PSY de 6 niveaux. Pendant 40 secondes à partir du début du combat, réduit la vitesse de chargement des coups spéciaux des ennemis de classe Ambitieux et Tenace de 6 niveaux, réduit les chances de réussite de "Garde" des ennemis de classe Ambitieux et Tenace de 6 niveaux et réduit la vitesse des ennemis de classe Ambitieux et Tenace de 6 niveaux.`,
+      ],
+      capacityAttributes: [
+        {
+          CT_SPEED: {
+            value: 6,
+            targets: [CharacterTypeClass.PSY],
+            fromTime: 100,
+            toTime: 0,
+          },
+        },
+      ],
+    },
+    sockets: 5,
+    cost: 55,
+    hasLimitBreak: true,
+    hasLimitBreakPlus: false,
+    potentialAbilities: [
+      {
+        type: PotentialAbility.SOIN_URGENCE,
+        icon: '',
+        effects: [
+          `Restaure les HP à hauteur de 1 fois les RCV du personnage si ce dernier réussit un “PARFAIT” lorsque les HP restants sont inférieurs ou égaux à 10%.`,
+          `Restaure les HP à hauteur de 1 fois les RCV du personnage si ce dernier réussit un “PARFAIT” lorsque les HP restants sont inférieurs ou égaux à 20%.`,
+          `Restaure les HP à hauteur de 1 fois les RCV du personnage si ce dernier réussit un “PARFAIT” lorsque les HP restants sont inférieurs ou égaux à 30%.`,
+          `Restaure les HP à hauteur de 1,5 fois les RCV du personnage si ce dernier réussit un “PARFAIT” lorsque les HP restants sont inférieurs ou égaux à 40%.`,
+          `Restaure les HP à hauteur de 1,5 fois les RCV du personnage si ce dernier réussit un “PARFAIT” lorsque les HP restants sont inférieurs ou égaux à 50%.`,
+        ],
+      },
+      {
+        type: PotentialAbility.SOIN_IMPOSSIBLE,
+        icon: '',
+        effects: [
+          `Réduit la durée de “Soin impossible” de 1 tour.`,
+          `Réduit la durée de “Soin impossible” de 2 tours.`,
+          `Réduit la durée de “Soin impossible” de 3 tours.`,
+          `Réduit la durée de “Soin impossible” de 5 tours.`,
+          `Réduit la durée de “Soin impossible” de 7 tours.`,
+        ],
+      },
+      {
+        type: PotentialAbility.LIEN_CERCLES,
+        icon: '',
+        effects: [
+          `Réduit la durée de “Lien des cercles” du personnage de 1 tour.`,
+          `Réduit la durée de “Lien des cercles” du personnage de 3 tours.`,
+          `Réduit la durée de “Lien des cercles” du personnage de 5 tours.`,
+          `Réduit la durée de “Lien des cercles” du personnage de 7 tours.`,
+          `Réduit la durée de “Lien des cercles” du personnage de 10 tours.`,
+        ],
+      },
+    ],
+    evolvers: [
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0118.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0266.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0098.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0303.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0267.png',
+    ],
+    support: {
+      hasSupportEffect: true,
+      supportedCharacters: ['Bepo', 'Don Quijote Rosinante'],
+      levels: [
+        `Change les cercles [RCV] et [G] des personnages de classe Libre en cercles correspondants si les cercles sont mélangés par les ennemis (une fois par quête).`,
+        `Change les cercles [BOMB], [RCV] et [G] des personnages de classe Libre en cercles correspondants si les cercles sont mélangés par les ennemis (une fois par quête).`,
+        `Change les cercles [EMP], [BOMB], [RCV] et [G] des personnages de classe Libre en cercles correspondants si les cercles sont mélangés par les ennemis (une fois par quête).`,
+        `Change les cercles [EMP], [BOMB], [RCV], [G] et désavantageux des personnages de classe Libre en cercles correspondants si les cercles sont mélangés par les ennemis (une fois par quête).`,
+        `Change les cercles [EMP], [BLK], [BOMB], [RCV], [G], désavantageux des personnages de classe Libre en cercles correspondants si les cercles sont mélangés par les ennemis (une fois par quête).`,
       ],
     },
     batch: `First Legend`,

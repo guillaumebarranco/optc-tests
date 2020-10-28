@@ -1,6 +1,7 @@
 import { Legend } from '../../models/legend.interface';
 import { CharacterClass } from '../../models/character-class.interface';
 import { PotentialAbility } from '../../models/potential-ability';
+import { PvpStyle } from 'src/app/models/pvp.interface';
 
 export const singleLegendsQck: Legend[] = [
   // Soba Mask
@@ -1349,6 +1350,173 @@ export const singleLegendsQck: Legend[] = [
         `Réduit les dégâts subis par les ennemis de type STR de 3% et ajoute 7% de l'ATK du personnage en ATK pour les personnages soutenus.`,
         `Réduit les dégâts subis par les ennemis de type STR de 4% et ajoute 10% de l'ATK du personnage en ATK pour les personnages soutenus.`,
         `Réduit les dégâts subis par les ennemis de type STR de 5% et ajoute 13% de l'ATK du personnage en ATK pour les personnages soutenus.`,
+      ],
+    },
+    batch: `First Legend`,
+  },
+  // Carrot
+  {
+    id: '2338',
+    title: 'Sulong mystérieuse',
+    name: 'Carrot',
+    isDual: false,
+    artwork: {
+      fiveStars: 'https://i.imgur.com/VVpQwGp.png',
+      sixStars: 'https://i.imgur.com/cn9TE3E.png',
+      sixPlusStars: null,
+    },
+    dualCharacterData: null,
+    singleCharacterData: {
+      story: `"Oiseau royal" de la principauté de Mokomo. Pour permettre à l'équipage de Chapeau de paille de semer l'ennemi, elle se transforme en sulong et détruit plusieurs gouvernails de la flotte commandée par Daifuku.`,
+      type: 'QCK',
+      classes: [CharacterClass.Cogneur, CharacterClass.Sabreur],
+      combo: 4,
+      hp: {
+        initial: 3650,
+        afterLimitBreak: 4120,
+        afterLimitBreakPlus: 4470,
+      },
+      atk: {
+        initial: 1555,
+        afterLimitBreak: 1805,
+        afterLimitBreakPlus: 2005,
+      },
+      rcv: {
+        initial: 280,
+        afterLimitBreak: 380,
+        afterLimitBreakPlus: 455,
+      },
+      captainAbility: `Réduit le temps de chargement des coups spéciaux de tous les personnages de 2 tours au début de la quête. Pendant 12 tours, multiplie l'ATK des personnages de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel par 2 (par 4 pour les personnages qui ont 2 classes), augmente les chances d’apparition des cercles correspondants des personnages de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel et permet aux attaques normales d'ignorer les effets défensifs dont bénéficient les ennemis et l'équipe. Après 12 tours, multiplie l’ATK des personnages de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel par 2,75.`,
+      captainAbilityAfterLimitBreakPlus: null,
+      captainAbilityAdditionnalInformation: null,
+      captainAbilityAfterLimitBreakPlusAdditionnalInformation: null,
+      captainAction: null,
+      captainActionTurns: null,
+      specialWithStages: null,
+      special: `Multiple les effets des cercles des personnages de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel par 2 pendant un tour, réduit le temps de chargement des coups spéciaux des personnages de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel de 2 tours et rend les cercles [QCK], [RCV] et [TND] avantageux pour tous les personnages pendant un tour. Si le personnage n'est pas capitaine, échange sa place avec le capitaine pendant un tour.`,
+      specialTurns: {
+        initial: 18,
+        max: 13,
+        gainWithLimitBreak: 1,
+        gainWithLimitBreakPlus: 2,
+      },
+      crewmateAbilities: [
+        {
+          ability: `Ajoute 30 en HP, ATK et RCV pour tous les personnages.`,
+          needLimitBreak: true,
+        },
+        {
+          ability: `Immunise le personnage contre l'inversion de son coup spécial.`,
+          needLimitBreak: true,
+        },
+      ],
+      picture: {
+        fiveStarsPicture: 'https://i.imgur.com/qlwveMk.png',
+        sixStarsPicture: 'https://i.imgur.com/egc92TX.png',
+        sixPlusStarsPicture: null,
+      },
+    },
+    pvpData: {
+      cost: 55,
+      style: PvpStyle.ATK,
+      ct: 39,
+      specialDescription: [
+        `Inflige 1 700 points de dégâts aux ennemis à longue portée (frontal) et réduit le chargement des coups spéciaux des alliés de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel de 16%.`,
+        `Inflige 1 775 points de dégâts aux ennemis à longue portée (frontal) et réduit le chargement des coups spéciaux des alliés de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel de 16%.`,
+        `Inflige 1 850 points de dégâts aux ennemis à longue portée (frontal) et réduit le chargement des coups spéciaux des alliés de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel de 16%.`,
+        `Inflige 1 925 points de dégâts aux ennemis à longue portée (frontal) et réduit le chargement des coups spéciaux des alliés de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel de 17%.`,
+        `Inflige 2 000 points de dégâts aux ennemis à longue portée (frontal) et réduit le chargement des coups spéciaux des alliés de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel de 17%.`,
+        `Inflige 2 075 points de dégâts aux ennemis à longue portée (frontal) et réduit le chargement des coups spéciaux des alliés de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel de 18%.`,
+        `Inflige 2 150 points de dégâts aux ennemis à longue portée (frontal) et réduit le chargement des coups spéciaux des alliés de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel de 18%.`,
+        `Inflige 2 225 points de dégâts aux ennemis à longue portée (frontal) et réduit le chargement des coups spéciaux des alliés de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel de 18%.`,
+        `Inflige 2 300 points de dégâts aux ennemis à longue portée (frontal) et réduit le chargement des coups spéciaux des alliés de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel de 19%.`,
+        `Inflige 2 450 points de dégâts aux ennemis à longue portée (frontal) et réduit le chargement des coups spéciaux des alliés de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel de 20%.`,
+      ],
+      capacityDescription: [
+        `Augmente la vitesse des alliés de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel de 1 niveau et augmente l'ATK du personnage de 5 niveaux.`,
+        `Augmente la vitesse des alliés de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel de 2 niveaux et augmente l'ATK du personnage de 5 niveaux.`,
+        `Augmente la vitesse des alliés de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel de 3 niveaux et augmente l'ATK du personnage de 5 niveaux.`,
+        `Augmente la vitesse des alliés de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel de 4 niveaux et augmente l'ATK du personnage de 5 niveaux.`,
+        `Augmente la vitesse des alliés de classe Cogneur, Sabreur, Ravageur, Tireur et Intellectuel de 5 niveaux et augmente l'ATK du personnage de 5 niveaux.`,
+      ],
+      capacityAttributes: [
+        {
+          SPEED: {
+            value: 5,
+            targets: [
+              CharacterClass.Cogneur,
+              CharacterClass.Sabreur,
+              CharacterClass.Ravageur,
+              CharacterClass.Tireur,
+              CharacterClass.Intellectuel,
+            ],
+            fromTime: 100,
+            toTime: 0,
+          },
+          ATK: {
+            value: 5,
+            targets: ['SELF'],
+            fromTime: 100,
+            toTime: 0,
+          },
+        },
+      ],
+    },
+    sockets: 5,
+    cost: 55,
+    hasLimitBreak: true,
+    hasLimitBreakPlus: true,
+    potentialAbilities: [
+      {
+        type: PotentialAbility.STR_REDUCTION,
+        icon: '',
+        effects: [
+          `Réduit les dégâts subis par les ennemis de type STR de 2%.`,
+          `Réduit les dégâts subis par les ennemis de type STR de 3%.`,
+          `Réduit les dégâts subis par les ennemis de type STR de 4%.`,
+          `Réduit les dégâts subis par les ennemis de type STR de 5%.`,
+          `Réduit les dégâts subis par les ennemis de type STR de 7%.`,
+        ],
+      },
+      {
+        type: PotentialAbility.BARRIERE,
+        icon: '',
+        effects: [
+          `Permet aux attaques normales du personnage d'ignorer les barrières si les HP sont au maximum.`,
+          `Permet aux attaques normales du personnage d'ignorer les barrières si les HP sont supérieurs ou égaux à 90%.`,
+          `Permet aux attaques normales du personnage d'ignorer les barrières si les HP sont supérieurs ou égaux à 70%.`,
+          `Permet aux attaques normales du personnage d'ignorer les barrières si les HP sont supérieurs ou égaux à 50%.`,
+          `Permet aux attaques normales du personnage d'ignorer les barrières.`,
+        ],
+      },
+      {
+        type: PotentialAbility.ATTAQUE_CRITIQUE,
+        icon: '',
+        effects: [
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 40% de chances de faire 4% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 50% de chances de faire 5% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 70% de chances de faire 6% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 80% de chances de faire 8% l'ATK du personnage en dégâts additionnels.`,
+          `Si un coup "PARFAIT" est effectué avec ce personnage, 90% de chances de faire 10% l'ATK du personnage en dégâts additionnels.`,
+        ],
+      },
+    ],
+    evolvers: [
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0118.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0266.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0301.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0101.png',
+      'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f0267.png',
+    ],
+    support: {
+      hasSupportEffect: true,
+      supportedCharacters: ['Nami', 'Tony-Tony Chopper', 'Brook', 'Jinbe'],
+      levels: [
+        `Ajoute 8% de l'ATK du personnage en ATK pour les personnages soutenus.`,
+        `Ajoute 10% de l'ATK du personnage en ATK pour les personnages soutenus.`,
+        `Ajoute 12% de l'ATK du personnage en ATK pour les personnages soutenus.`,
+        `Ajoute 15% de l'ATK du personnage en ATK pour les personnages soutenus.`,
+        `Ajoute 18% de l'ATK du personnage en ATK pour les personnages soutenus.`,
       ],
     },
     batch: `First Legend`,

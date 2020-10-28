@@ -1,6 +1,7 @@
 import { Legend } from '../../models/legend.interface';
 import { CharacterClass } from '../../models/character-class.interface';
 import { PotentialAbility } from '../../models/potential-ability';
+import { PvpStyle } from 'src/app/models/pvp.interface';
 
 export const singleLegendsInt: Legend[] = [
   // Rayleigh V1
@@ -811,6 +812,52 @@ export const singleLegendsInt: Legend[] = [
         sixStarsPicture: null,
         sixPlusStarsPicture: 'https://i.imgur.com/bd769sX.png',
       },
+    },
+    pvpData: {
+      cost: 55,
+      style: PvpStyle.DEF,
+      ct: 27,
+      specialDescription: [
+        `Inflige 1 fois son ATK à 3 ennemis, augmente la défense des alliés de classe Sabreur et Ambitieux de 5 niveaux pendant 10 secondes et augmente les chances des alliés de classe Sabreur et Ambitieux d'effectuer une attaque critique de 2 niveaux pendant 10 secondes.`,
+        `Inflige 1,1 fois son ATK à 3 ennemis, augmente la défense des alliés de classe Sabreur et Ambitieux de 5 niveaux pendant 11 secondes et augmente les chances des alliés de classe Sabreur et Ambitieux d'effectuer une attaque critique de 2 niveaux pendant 11 secondes.`,
+        `Inflige 1,2 fois son ATK à 3 ennemis, augmente la défense des alliés de classe Sabreur et Ambitieux de 5 niveaux pendant 12 secondes et augmente les chances des alliés de classe Sabreur et Ambitieux d'effectuer une attaque critique de 2 niveaux pendant 12 secondes.`,
+        `Inflige 1,3 fois son ATK à 3 ennemis, augmente la défense des alliés de classe Sabreur et Ambitieux de 5 niveaux pendant 13 secondes et augmente les chances des alliés de classe Sabreur et Ambitieux d'effectuer une attaque critique de 3 niveaux pendant 13 secondes.`,
+        `Inflige 1,4 fois son ATK à 3 ennemis, augmente la défense des alliés de classe Sabreur et Ambitieux de 5 niveaux pendant 14 secondes et augmente les chances des alliés de classe Sabreur et Ambitieux d'effectuer une attaque critique de 3 niveaux pendant 14 secondes.`,
+        `Inflige 1,5 fois son ATK à 3 ennemis, augmente la défense des alliés de classe Sabreur et Ambitieux de 5 niveaux pendant 15 secondes et augmente les chances des alliés de classe Sabreur et Ambitieux d'effectuer une attaque critique de 4 niveaux pendant 15 secondes.`,
+        `Inflige 1,6 fois son ATK à 3 ennemis, augmente la défense des alliés de classe Sabreur et Ambitieux de 5 niveaux pendant 16 secondes et augmente les chances des alliés de classe Sabreur et Ambitieux d'effectuer une attaque critique de 4 niveaux pendant 16 secondes.`,
+        `Inflige 1,7 fois son ATK à 3 ennemis, augmente la défense des alliés de classe Sabreur et Ambitieux de 5 niveaux pendant 17 secondes et augmente les chances des alliés de classe Sabreur et Ambitieux d'effectuer une attaque critique de 4 niveaux pendant 17 secondes.`,
+        `Inflige 1,8 fois son ATK à 3 ennemis, augmente la défense des alliés de classe Sabreur et Ambitieux de 5 niveaux pendant 18 secondes et augmente les chances des alliés de classe Sabreur et Ambitieux d'effectuer une attaque critique de 5 niveaux pendant 18 secondes.`,
+        `Inflige 2 fois son ATK à 3 ennemis, augmente la défense des alliés de classe Sabreur et Ambitieux de 5 niveaux pendant 19 secondes et augmente les chances des alliés de classe Sabreur et Ambitieux d'effectuer une attaque critique de 6 niveaux pendant 19 secondes.`,
+      ],
+      capacityDescription: [
+        `Augmente les HP des alliés de classe Sabreur et Ambitieux de 2 niveaux. Pendant 30 secondes à partir du début du combat, augmente la défense des alliés de classe Sabreur et Ambitieux de 3 niveaux et augmente l'ATK des alliés de classe Sabreur et Ambitieux de 2 niveaux.`,
+        `Augmente les HP des alliés de classe Sabreur et Ambitieux de 3 niveaux. Pendant 30 secondes à partir du début du combat, augmente la défense des alliés de classe Sabreur et Ambitieux de 3 niveaux et augmente l'ATK des alliés de classe Sabreur et Ambitieux de 3 niveaux.`,
+        `Augmente les HP des alliés de classe Sabreur et Ambitieux de 4 niveaux. Pendant 30 secondes à partir du début du combat, augmente la défense des alliés de classe Sabreur et Ambitieux de 3 niveaux et augmente l'ATK des alliés de classe Sabreur et Ambitieux de 4 niveaux.`,
+        `Augmente les HP des alliés de classe Sabreur et Ambitieux de 5 niveaux. Pendant 30 secondes à partir du début du combat, augmente la défense des alliés de classe Sabreur et Ambitieux de 3 niveaux et augmente l'ATK des alliés de classe Sabreur et Ambitieux de 5 niveaux.`,
+        `Augmente les HP des alliés de classe Sabreur et Ambitieux de 6 niveaux. Pendant 30 secondes à partir du début du combat, augmente la défense des alliés de classe Sabreur et Ambitieux de 3 niveaux et augmente l'ATK des alliés de classe Sabreur et Ambitieux de 6 niveaux.`,
+      ],
+      capacityAttributes: [
+        {
+          HP: {
+            value: 6,
+            targets: [CharacterClass.Sabreur, CharacterClass.Ambitieux],
+            fromTime: 100,
+            toTime: 0,
+          },
+          DEF: {
+            value: 3,
+            targets: [CharacterClass.Sabreur, CharacterClass.Ambitieux],
+            fromTime: 100,
+            toTime: 70,
+          },
+          ATK: {
+            value: 6,
+            targets: [CharacterClass.Sabreur, CharacterClass.Ambitieux],
+            fromTime: 100,
+            toTime: 70,
+          },
+        },
+      ],
     },
     sockets: 5,
     cost: 65,

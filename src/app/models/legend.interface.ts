@@ -1,3 +1,5 @@
+import { PvpData } from './pvp.interface';
+
 interface LegendArtwork {
   fiveStars: string;
   sixStars: string;
@@ -109,6 +111,7 @@ export interface Legend {
   hasLimitBreak: boolean;
   hasLimitBreakPlus: boolean;
   potentialAbilities: PotentialAbility[];
+  pvpData?: PvpData;
   evolvers: string[];
   support: Support;
   batch: string;

@@ -8,3 +8,11 @@ export enum CharacterClass {
   Tireur = 'Tireur',
   Ambitieux = 'Ambitieux',
 }
+
+export enum CharacterTypeClass {
+  INT = 'INT',
+  PSY = 'PSY',
+  STR = 'STR',
+  DEX = 'DEX',
+  QCK = 'QCK',
+}

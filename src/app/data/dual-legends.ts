@@ -1,4 +1,5 @@
 import { Legend } from '../models/legend.interface';
+import { PvpStyle } from '../models/pvp.interface';
 
 export const dualLegends: Legend[] = [
   {
@@ -132,6 +133,46 @@ export const dualLegends: Legend[] = [
       },
     },
     singleCharacterData: null,
+    pvpData: {
+      cost: 55,
+      style: PvpStyle.DEF,
+      ct: 24,
+      specialDescription: [
+        `Enlève 18% des HP des ennemis à moyenne portée (horizontal) et augmente la défense de tous les alliés de 2 niveaux pendant 5 secondes.`,
+        `Enlève 18% des HP des ennemis à moyenne portée (horizontal) et augmente la défense de tous les alliés de 2 niveaux pendant 6 secondes.`,
+        `Enlève 18% des HP des ennemis à moyenne portée (horizontal) et augmente la défense de tous les alliés de 2 niveaux pendant 7 secondes.`,
+        `Enlève 18% des HP des ennemis à moyenne portée (horizontal) et augmente la défense de tous les alliés de 2 niveaux pendant 8 secondes.`,
+        `Enlève 19% des HP des ennemis à moyenne portée (horizontal) et augmente la défense de tous les alliés de 2 niveaux pendant 9 secondes.`,
+        `Enlève 19% des HP des ennemis à moyenne portée (horizontal) et augmente la défense de tous les alliés de 2 niveaux pendant 10 secondes.`,
+        `Enlève 19% des HP des ennemis à moyenne portée (horizontal) et augmente la défense de tous les alliés de 3 niveaux pendant 11 secondes.`,
+        `Enlève 19% des HP des ennemis à moyenne portée (horizontal) et augmente la défense de tous les alliés de 3 niveaux pendant 12 secondes.`,
+        `Enlève 20% des HP des ennemis à moyenne portée (horizontal) et augmente la défense de tous les alliés de 3 niveaux pendant 13 secondes.`,
+        `Enlève 21% des HP des ennemis à moyenne portée (horizontal) et augmente la défense de tous les alliés de 4 niveaux pendant 14 secondes.`,
+      ],
+      capacityDescription: [
+        `Lorsqu'il reste 70 secondes ou moins, augmente la défense de tous les alliés de 1 niveau et augmente l'ATK du personnage de 3 niveaux.`,
+        `Lorsqu'il reste 70 secondes ou moins, augmente la défense de tous les alliés de 2 niveaux et augmente l'ATK du personnage de 3 niveaux.`,
+        `Lorsqu'il reste 70 secondes ou moins, augmente la défense de tous les alliés de 3 niveaux et augmente l'ATK du personnage de 3 niveaux.`,
+        `Lorsqu'il reste 70 secondes ou moins, augmente la défense de tous les alliés de 4 niveaux et augmente l'ATK du personnage de 3 niveaux.`,
+        `Lorsqu'il reste 70 secondes ou moins, augmente la défense de tous les alliés de 5 niveaux et augmente l'ATK du personnage de 3 niveaux.`,
+      ],
+      capacityAttributes: [
+        {
+          DEF: {
+            value: 5,
+            targets: ['ALL'],
+            fromTime: 70,
+            toTime: 0,
+          },
+          ATK: {
+            value: 3,
+            targets: ['SELF'],
+            fromTime: 70,
+            toTime: 0,
+          },
+        },
+      ],
+    },
     sockets: 5,
     cost: 55,
     hasLimitBreak: true,
