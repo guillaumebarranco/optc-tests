@@ -21,7 +21,7 @@ export const singleLegendsPsy: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Amiral de la Marine. Il a mangé le Fruit de l'Humain, version Bouddha. Il est capable de se transformer en un Bouddha géant et d'envoyer des ondes de chocs depuis la paume de ses mains. Il croit en la justice moral. Il est "Sengoku le Bouddha".`,
-      type: 'PSY',
+      type: CharacterTypeClass.PSY,
       classes: [CharacterClass.Cogneur, CharacterClass.Intellectuel],
       combo: 4,
       hp: {
@@ -144,7 +144,7 @@ export const singleLegendsPsy: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Capitaine de l'équipage du Roux. Membre des Quatre Empereurs et parmi les trois plus grandes puissances au monde. Il évite les conflits inutiles et jouit de l'estime de la Marine. Il est "Shanks le Roux".`,
-      type: 'PSY',
+      type: CharacterTypeClass.PSY,
       classes: [CharacterClass.Sabreur, CharacterClass.Intellectuel],
       combo: 5,
       hp: {
@@ -265,7 +265,7 @@ export const singleLegendsPsy: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Chef de l'équipage de Shanks le Roux. Après son intervention visant à mettre fin à la guerre au sommet, il récupère le chapeau de Luffy et le lance à Baggy, mais préfère ne pas se rendre au chevet de son ami afin de respecter la promesse qu'ils se sont faite, même si cela fait 10 ans qu'il ne l'a pas vu.`,
-      type: 'PSY',
+      type: CharacterTypeClass.PSY,
       classes: [CharacterClass.Sabreur, CharacterClass.Intellectuel],
       combo: 5,
       hp: {
@@ -387,7 +387,7 @@ export const singleLegendsPsy: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Commandant de l'Armée révolutionnaire. Fils noble du royaume de Goa, il prit la mer loin des tracas et autres soucis du royaume, mais un dragon céleste a rapidement détruit son navire. Dragon le révolutionnaire lui a sauvé la vie, et il a fini par rejoindre ses rangs.`,
-      type: 'PSY',
+      type: CharacterTypeClass.PSY,
       classes: [CharacterClass.Libre, CharacterClass.Ravageur],
       combo: 4,
       hp: {
@@ -510,7 +510,7 @@ export const singleLegendsPsy: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Chef d'état-major de l'Armée révolutionnaire. Grâce aux pouvoirs du pyro-fruit, réapparu suite au décès de son grand frère Ace, il carbonise tous ceux qui se mettent en travers de sa route. Son objectif : venger Ace, protéger Luffy et devenir un véritable homme libre.`,
-      type: 'PSY',
+      type: CharacterTypeClass.PSY,
       classes: [CharacterClass.Libre, CharacterClass.Ravageur],
       combo: 4,
       hp: {
@@ -646,7 +646,7 @@ export const singleLegendsPsy: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Capitaine de l'équipage du "Heart" et membre de l'ordre des sept grands corsaires. Attaché à sa liberté et hostile à toute forme d'autorité, il propose à l'équipage de Chapeau de paille de nouer une alliance de pirates.`,
-      type: 'PSY',
+      type: CharacterTypeClass.PSY,
       classes: [CharacterClass.Sabreur, CharacterClass.Libre],
       combo: 6,
       hp: {
@@ -781,7 +781,7 @@ export const singleLegendsPsy: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Capitaine de l'équipage du "Heart". Depuis que Corazon lui a sauvé la vie il y a 13 ans, il s'est juré de vaincre Doflamingo afin de se venger, au point d'en faire son seul objectif dans la vie.`,
-      type: 'PSY',
+      type: CharacterTypeClass.PSY,
       classes: [CharacterClass.Sabreur, CharacterClass.Libre],
       combo: 4,
       hp: {
@@ -903,7 +903,7 @@ export const singleLegendsPsy: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Amiral au quartier général de la Marine. D'un caractère insouciant mais capable de capturer 500 pirates par simples représailles, il se situe quelque part entre l'indépendance d'esprit d'Aokiji et le zèle forcené d'Akainu.`,
-      type: 'PSY',
+      type: CharacterTypeClass.PSY,
       classes: [CharacterClass.Sabreur, CharacterClass.Tireur],
       combo: 4,
       hp: {
@@ -1049,7 +1049,7 @@ export const singleLegendsPsy: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Amiral au quartier général de la Marine. Arrivé "le cœur léger" sur l'archipel des Sabaody, dont il sait qu'il abrite un grand nombre de pirates dont la prime dépasse les 100 millions, il inflige une telle correction aux supernovæ que Luffy n'a pas d'autre choix que de reconnaître sa supériorité et de préférer la fuite à la confrontation.`,
-      type: 'PSY',
+      type: CharacterTypeClass.PSY,
       classes: [CharacterClass.Sabreur, CharacterClass.Tireur],
       combo: 7,
       hp: {
@@ -1225,7 +1225,7 @@ export const singleLegendsPsy: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Capitaine de l'équipage du "Heart". Il prouve encore une fois au pays des Wa que ses capacités sont suffisantes pour faire de lui un membre des sept grands corsaires. Lors de son affrontement contre Hawkins, il comprend immédiatement les pouvoirs de son adversaire et assène des coups de sabre aux hommes d'Hawkins afin de sceller sa substitution.`,
-      type: 'PSY',
+      type: CharacterTypeClass.PSY,
       classes: [CharacterClass.Libre, CharacterClass.Sabreur],
       combo: 5,
       hp: {

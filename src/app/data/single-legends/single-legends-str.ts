@@ -1,5 +1,8 @@
 import { Legend } from '../../models/legend.interface';
-import { CharacterClass } from '../../models/character-class.interface';
+import {
+  CharacterClass,
+  CharacterTypeClass,
+} from '../../models/character-class.interface';
 import { PotentialAbility } from '../../models/potential-ability';
 import { PvpStyle } from 'src/app/models/pvp.interface';
 
@@ -18,7 +21,7 @@ export const singleLegendsStr: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Le capitaine de l'équipage de Barbe Blanche et l'un des Quatre Empereurs. Edward Newgate de son véritable nom. Il a mangé le Fruit du Tremblement qui permet de déclencher des séismes et des tsunamis. Utilise le Haki du Conquérant.`,
-      type: 'STR',
+      type: CharacterTypeClass.STR,
       classes: [CharacterClass.Ravageur, CharacterClass.Tenace],
       combo: 4,
       hp: {
@@ -141,7 +144,7 @@ export const singleLegendsStr: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Capitaine de l'équipage de Barbe Blanche. Bien qu'ayant subi de multiples attaques lors de la guerre au sommet, ce "père" exemplaire est mort sans même poser genou à terre, le dos exempt de toute blessure infamante.`,
-      type: 'STR',
+      type: CharacterTypeClass.STR,
       classes: [CharacterClass.Ravageur, CharacterClass.Tenace],
       combo: 4,
       hp: {
@@ -262,7 +265,7 @@ export const singleLegendsStr: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Capitaine de l'équipage de Chapeau de paille. Grâce à cette nouvelle forme du "Gear Fourth", à la fois plus fine et plus rapide que "Tank Man" et "Bound Man", il parvient à faire jeu égal avec Dent-de-chien lors de son duel contre celui-ci.`,
-      type: 'STR',
+      type: CharacterTypeClass.STR,
       classes: [CharacterClass.Cogneur, CharacterClass.Tenace],
       combo: 4,
       hp: {
@@ -398,7 +401,7 @@ export const singleLegendsStr: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Chef de l'équipage de Chapeau de paille. Il est devenu l'ennemi du Gouvernement mondial lorsqu'il a secouru Robin. Lors de son combat contre le CP9, il a créé une nouvelle technique de combat, le "Gear", qui lui permet de donner des coups plus puissants que jamais.`,
-      type: 'STR',
+      type: CharacterTypeClass.STR,
       classes: [CharacterClass.Cogneur, CharacterClass.Libre],
       combo: 4,
       hp: {
@@ -529,7 +532,7 @@ export const singleLegendsStr: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Ancien membre de l'ordre des sept grands corsaires. Après avoir vu son rêve de créer Utopia réduit à néant par Luffy, il se retrouve emprisonné à Impel Down. Bien que ses activités dépassent le cadre de la simple piraterie, il caresse pourtant le désir de devenir le roi des pirates. À la fin de la guerre au sommet, il reprend la mer pour le Nouveau Monde.`,
-      type: 'STR',
+      type: CharacterTypeClass.STR,
       classes: [CharacterClass.Intellectuel, CharacterClass.Ambitieux],
       combo: 4,
       hp: {
@@ -651,7 +654,7 @@ export const singleLegendsStr: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Membre du Cipher Pol N°9, un groupe d'espionnage affilié au Gouvernement mondial. Le membre le plus adroit du CP9, presque deux fois plus que Kaku, pourtant numéro 2 de l'équipe. Il pense que la faiblesse est fondamentalement néfaste.`,
-      type: 'STR',
+      type: CharacterTypeClass.STR,
       classes: [CharacterClass.Tenace, CharacterClass.Cogneur],
       combo: 6,
       hp: {
@@ -775,7 +778,7 @@ export const singleLegendsStr: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Membre d'une organisation gouvernementale chargée de l'espionnage et du renseignement. Tandis qu'Enies Lobby s'effrondre sous les tirs de canon du buster call, il profite de son pouvoir de "résurrection" pour alléger son corps en forme semi-humaine, ce qui lui confère une rapidité égale à celle de Luffy en mode "gear 2" et lui permet d'exercer la Justice.`,
-      type: 'STR',
+      type: CharacterTypeClass.STR,
       classes: [CharacterClass.Tenace, CharacterClass.Cogneur],
       combo: 4,
       hp: {
@@ -897,7 +900,7 @@ export const singleLegendsStr: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Capitaine de l'équipage du Barto Club. Il utilise le fruit de la barrière pour générér des barrières à volonté. Cela lui permet d'en former une autour de son poing pour infuser ce dernier de puissance, une technique qu'il a copiée du Gum Gum Bullet de Luffy.`,
-      type: 'STR',
+      type: CharacterTypeClass.STR,
       classes: [CharacterClass.Ravageur, CharacterClass.Ambitieux],
       combo: 4,
       hp: {
@@ -1020,7 +1023,7 @@ export const singleLegendsStr: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Amiral au quartier général de la Marine. Ce partisan d'une conception intransigeante de la justice considère qu'il faut éradiquer jusqu'à la possibilité du Mal, non seulement chez les pirates mais aussi chez tous ceux qu'il judge comme potentiellement malfaisants, y compris au sein de la Marine.`,
-      type: 'STR',
+      type: CharacterTypeClass.STR,
       classes: [CharacterClass.Ambitieux, CharacterClass.Tenace],
       combo: 4,
       hp: {
@@ -1139,7 +1142,7 @@ export const singleLegendsStr: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Nouvel amiral en chef de la Marine. Soucieux de préserver l'autorité et la crédibilité de la Marine face à un Âge d'or de la piraterie de plus en plus tumultueux, il se montre sans pitié envers ceux qu'il appelle le "Mal" et fait construire à l'entrée du Nouveau Monde une nouvelle forteresse baptisée "New Marine Ford".`,
-      type: 'STR',
+      type: CharacterTypeClass.STR,
       classes: [CharacterClass.Ambitieux, CharacterClass.Tenace],
       combo: 4,
       hp: {
@@ -1256,7 +1259,7 @@ export const singleLegendsStr: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Seigneur diurne de la principauté de Mokomo. Bien qu'ayant autrefois servi le même maître que Chavipère le seigneur nocturne, il entretenait avec ce dernier des relations si exécrables qu'un combat à mort pouvait éclater à tout moment entre eux. Il lui proposa toutefois de faire une trêve afin de ne pas faire de peine au fils de leur ancien suzerain.`,
-      type: 'STR',
+      type: CharacterTypeClass.STR,
       classes: [CharacterClass.Intellectuel, CharacterClass.Sabreur],
       combo: 4,
       hp: {
@@ -1306,46 +1309,46 @@ export const singleLegendsStr: Legend[] = [
         sixPlusStarsPicture: null,
       },
     },
-    pvpData: {
-      cost: 55,
-      style: PvpStyle.ATK,
-      ct: 28,
-      specialDescription: [
-        `Réduit les HP du personnage de 20% et inflige 1,05 fois son ATK aux ennemis à longue portée (horizontal).`,
-        `Réduit les HP du personnage de 20% et inflige 1,12 fois son ATK aux ennemis à longue portée (horizontal).`,
-        `Réduit les HP du personnage de 20% et inflige 1,18 fois son ATK aux ennemis à longue portée (horizontal).`,
-        `Réduit les HP du personnage de 20% et inflige 1,25 fois son ATK aux ennemis à longue portée (horizontal).`,
-        `Réduit les HP du personnage de 20% et inflige 1,32 fois son ATK aux ennemis à longue portée (horizontal).`,
-        `Réduit les HP du personnage de 20% et inflige 1,39 fois son ATK aux ennemis à longue portée (horizontal).`,
-        `Réduit les HP du personnage de 20% et inflige 1,45 fois son ATK aux ennemis à longue portée (horizontal).`,
-        `Réduit les HP du personnage de 20% et inflige 1,52 fois son ATK aux ennemis à longue portée (horizontal).`,
-        `Réduit les HP du personnage de 20% et inflige 1,59 fois son ATK aux ennemis à longue portée (horizontal).`,
-        `Réduit les HP du personnage de 20% et inflige 1,7 fois son ATK aux ennemis à longue portée (horizontal).`,
-      ],
-      capacityDescription: [
-        `Augmente la vitesse des alliés de classe Intellectuel de 1 niveau et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 5 niveaux.`,
-        `Augmente la vitesse des alliés de classe Intellectuel de 2 niveaux et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 5 niveaux.`,
-        `Augmente la vitesse des alliés de classe Intellectuel de 3 niveaux et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 5 niveaux.`,
-        `Augmente la vitesse des alliés de classe Intellectuel de 4 niveaux et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 5 niveaux.`,
-        `Augmente la vitesse des alliés de classe Intellectuel de 5 niveaux et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 5 niveaux.`,
-      ],
-      capacityAttributes: [
-        {
-          SPEED: {
-            value: 6,
-            targets: [CharacterClass.Intellectuel],
-            fromTime: 100,
-            toTime: 0,
-          },
-          ATK: {
-            value: 5,
-            targets: ['SELF'],
-            fromHPPercent: 60,
-            toHPPercent: 0,
-          },
-        },
-      ],
-    },
+    // pvpData: {
+    //   cost: 55,
+    //   style: PvpStyle.ATK,
+    //   ct: 28,
+    //   specialDescription: [
+    //     `Réduit les HP du personnage de 20% et inflige 1,05 fois son ATK aux ennemis à longue portée (horizontal).`,
+    //     `Réduit les HP du personnage de 20% et inflige 1,12 fois son ATK aux ennemis à longue portée (horizontal).`,
+    //     `Réduit les HP du personnage de 20% et inflige 1,18 fois son ATK aux ennemis à longue portée (horizontal).`,
+    //     `Réduit les HP du personnage de 20% et inflige 1,25 fois son ATK aux ennemis à longue portée (horizontal).`,
+    //     `Réduit les HP du personnage de 20% et inflige 1,32 fois son ATK aux ennemis à longue portée (horizontal).`,
+    //     `Réduit les HP du personnage de 20% et inflige 1,39 fois son ATK aux ennemis à longue portée (horizontal).`,
+    //     `Réduit les HP du personnage de 20% et inflige 1,45 fois son ATK aux ennemis à longue portée (horizontal).`,
+    //     `Réduit les HP du personnage de 20% et inflige 1,52 fois son ATK aux ennemis à longue portée (horizontal).`,
+    //     `Réduit les HP du personnage de 20% et inflige 1,59 fois son ATK aux ennemis à longue portée (horizontal).`,
+    //     `Réduit les HP du personnage de 20% et inflige 1,7 fois son ATK aux ennemis à longue portée (horizontal).`,
+    //   ],
+    //   capacityDescription: [
+    //     `Augmente la vitesse des alliés de classe Intellectuel de 1 niveau et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 5 niveaux.`,
+    //     `Augmente la vitesse des alliés de classe Intellectuel de 2 niveaux et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 5 niveaux.`,
+    //     `Augmente la vitesse des alliés de classe Intellectuel de 3 niveaux et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 5 niveaux.`,
+    //     `Augmente la vitesse des alliés de classe Intellectuel de 4 niveaux et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 5 niveaux.`,
+    //     `Augmente la vitesse des alliés de classe Intellectuel de 5 niveaux et si les HP sont en-dessous de 60%, augmente l'ATK du personnage de 5 niveaux.`,
+    //   ],
+    //   capacityAttributes: [
+    //     {
+    //       SPEED: {
+    //         value: 6,
+    //         targets: [CharacterClass.Intellectuel],
+    //         fromTime: 100,
+    //         toTime: 0,
+    //       },
+    //       ATK: {
+    //         value: 5,
+    //         targets: ['SELF'],
+    //         fromHPPercent: 60,
+    //         toHPPercent: 0,
+    //       },
+    //     },
+    //   ],
+    // },
     sockets: 5,
     cost: 55,
     hasLimitBreak: true,
@@ -1419,7 +1422,7 @@ export const singleLegendsStr: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Seigneur diurne de la principauté de Mokomo. Pour son Seigneur, il déclara à Chavipère une "Trêve" dans leur longue et interminable querelle, puis prit alors son ancien ami par l'épaule en repensant à leurs aventures passées.`,
-      type: 'STR',
+      type: CharacterTypeClass.STR,
       classes: [CharacterClass.Intellectuel, CharacterClass.Sabreur],
       combo: 4,
       hp: {

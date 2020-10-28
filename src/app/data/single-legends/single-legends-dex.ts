@@ -1,5 +1,8 @@
 import { Legend } from '../../models/legend.interface';
-import { CharacterClass } from '../../models/character-class.interface';
+import {
+  CharacterClass,
+  CharacterTypeClass,
+} from '../../models/character-class.interface';
 import { PotentialAbility } from '../../models/potential-ability';
 
 export const singleLegendsDex: Legend[] = [
@@ -17,7 +20,7 @@ export const singleLegendsDex: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Commandant de la 2e flotte de l'équipage de Barbe Blanche. Un esprit libre et tolérant, également capable de courtoisie et de bon sens quand le besoin s'en fait sentir. Rentre dans une colère noire quand on ose insulter le Capitaine Barbe Blanche, son sauveur et bienfaiteur.`,
-      type: 'DEX',
+      type: CharacterTypeClass.DEX,
       classes: [CharacterClass.Tireur, CharacterClass.Libre],
       combo: 4,
       hp: {
@@ -140,7 +143,7 @@ export const singleLegendsDex: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Commandant de la 2e flotte de l'équipage de Barbe Blanche. Bien décidé à faire payer Barbe Noire pour avoir enfraint la règle d'or de l'équipage, il retrouve ce dernier sur l'île de Banaro et s'engage avec lui dans un duel qui sera plus tard considéré comme l'évènement déclencheur de la guerre au sommet.`,
-      type: 'DEX',
+      type: CharacterTypeClass.DEX,
       classes: [CharacterClass.Tireur, CharacterClass.Libre],
       combo: 4,
       hp: {
@@ -262,7 +265,7 @@ export const singleLegendsDex: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Ancien membre de l'ordre des sept grands corsaires et chef de l'organisation criminelle Baroque Works. Le crochet qui lui sert de main gauche est empoisonné et recouvert de venin de scorpion.`,
-      type: 'DEX',
+      type: CharacterTypeClass.DEX,
       classes: [CharacterClass.Intellectuel, CharacterClass.Ravageur],
       combo: 4,
       hp: {
@@ -385,7 +388,7 @@ export const singleLegendsDex: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Ancien officier d'élite de l'équipage de Don Quijote. "Corazon" est juste un nom de code. Son véritable nom est Don Quijote Rosinante, et c'est le frère cadet de Doflamingo.`,
-      type: 'DEX',
+      type: CharacterTypeClass.DEX,
       classes: [CharacterClass.Libre, CharacterClass.Intellectuel],
       combo: 4,
       hp: {
@@ -508,7 +511,7 @@ export const singleLegendsDex: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Ancien lieutenant-chef de l'équipage de Don Quijote. Avant de mourir sous les balles de son frère Doflamingo, dont il avait pressenti la vengeance, il parvient à sauver Law en lui faisant manger le fruit du bistouri et en le comblant d'affection.`,
-      type: 'DEX',
+      type: CharacterTypeClass.DEX,
       classes: [CharacterClass.Libre, CharacterClass.Intellectuel],
       combo: 4,
       hp: {
@@ -630,7 +633,7 @@ export const singleLegendsDex: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Capitaine de l'équipage de Barbe Noire. Lors de son apparition surprise à la fin de la guerre au sommet, il annonce sa démission de l'ordre des sept grands corsaires et s'empare du fruit du tremblement du défunt Barbe Blanche, montrant ainsi qu'il peut posséder les pouvoirs de deux fruits du démon là où une personne normalement constituée ne peut en assimiler qu'un.`,
-      type: 'DEX',
+      type: CharacterTypeClass.DEX,
       classes: [CharacterClass.Ambitieux, CharacterClass.Tenace],
       combo: 4,
       hp: {
@@ -753,7 +756,7 @@ export const singleLegendsDex: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Sabreur à trois lames de l'équipage de Chapeau de paille. Grâce à son entraînement de deux ans auprès de son rival Mihawk, il remporte une victoire écrasante face au meilleur sabreur de l'île des hommes-poissons.`,
-      type: 'DEX',
+      type: CharacterTypeClass.DEX,
       classes: [CharacterClass.Ambitieux, CharacterClass.Sabreur],
       combo: 4,
       hp: {
@@ -876,7 +879,7 @@ export const singleLegendsDex: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Sabreur à trois lames de l'équipage de Chapeau de paille. Il est désormais capable d'utiliser une lame noire suite à son apprentissage auprès de Mihawk, ce qui lui permet de détruire d'un seul coup d'épée le géant de pierre Pica, comme l'eut fait autrefois son maître avec un galion. Cette lame noire ne peut être brisée.`,
-      type: 'DEX',
+      type: CharacterTypeClass.DEX,
       classes: [CharacterClass.Ambitieux, CharacterClass.Sabreur],
       combo: 4,
       hp: {

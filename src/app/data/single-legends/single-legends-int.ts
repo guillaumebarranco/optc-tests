@@ -1,5 +1,8 @@
 import { Legend } from '../../models/legend.interface';
-import { CharacterClass } from '../../models/character-class.interface';
+import {
+  CharacterClass,
+  CharacterTypeClass,
+} from '../../models/character-class.interface';
 import { PotentialAbility } from '../../models/potential-ability';
 import { PvpStyle } from 'src/app/models/pvp.interface';
 
@@ -18,7 +21,7 @@ export const singleLegendsInt: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Ancien second de l'équipage de Roger. Également connu sous les noms de "Bras Droit du Roi des Pirates" et de "Seigneur des Ténèbres". C'est une légende vivante pour tous, ses exploits sont plus que célèbres. C'est un pirate à la retraite qui utilise le Fluide du Conquérant.`,
-      type: 'INT',
+      type: CharacterTypeClass.INT,
       classes: [CharacterClass.Cogneur, CharacterClass.Intellectuel],
       combo: 4,
       hp: {
@@ -141,7 +144,7 @@ export const singleLegendsInt: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Ancien vice-capitaine de l'équipage de Roger. Bien qu'il ait conquis Grand Line et découvert la véritable Histoire aux côtés de Roger, dont on raconte qu'il pouvait entendre la voix de "toutes les choses", il n'en dit que très peu sur ses différents exploits et préfère encourager les jeunes aventuriers à explorer le monde par eux-mêmes.`,
-      type: 'INT',
+      type: CharacterTypeClass.INT,
       classes: [CharacterClass.Cogneur, CharacterClass.Intellectuel],
       combo: 4,
       hp: {
@@ -263,7 +266,7 @@ export const singleLegendsInt: Legend[] = [
     singleCharacterData: {
       story: `35e fille de la famille Charlotte. Soucieuse de ne pas porter préjudice à Sanji, elle quitte ce dernier après l'avoir remercié et serré dans ses bras, autant de souvenirs qu'elle lui ôte aussitôt à l'aide de ses pouvoirs.
       `,
-      type: 'INT',
+      type: CharacterTypeClass.INT,
       classes: [CharacterClass.Intellectuel, CharacterClass.Tireur],
       combo: 5,
       hp: {
@@ -384,7 +387,7 @@ export const singleLegendsInt: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Amiral commandant en chef de la Marine. Soucieux d'éradiquer le Mal mais aussi de faire triompher la Justice, il accède à la demande de Shanks de mettre fin à la guerre au sommet, voyant bien que l'objectif de la Marine a déjà été atteint et que ses soldats n'ont plus aucune raison de continuer à se battre.`,
-      type: 'INT',
+      type: CharacterTypeClass.INT,
       classes: [CharacterClass.Cogneur, CharacterClass.Intellectuel],
       combo: 4,
       hp: {
@@ -506,7 +509,7 @@ export const singleLegendsInt: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Ancien second de l'équipage de Roger. Également connu sous les noms de "Bras Droit du Roi des Pirates" et de "Seigneur des Ténèbres". C'est une légende vivante pour tous, ses exploits sont plus que célèbres. C'est un pirate à la retraite qui utilise le Fluide du Conquérant.`,
-      type: 'INT',
+      type: CharacterTypeClass.INT,
       classes: [CharacterClass.Sabreur],
       combo: 5,
       hp: {
@@ -629,7 +632,7 @@ export const singleLegendsInt: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Un des sept grands corsaires. Connu comme étant le plus puissant sabreur du monde, il se dresse face à Luffy durant la guerre au sommet. Bien que Luffy fût impressionné par sa puissance, Mihawk a de son côté ressenti l'effroyable capacité qu'a Luffy de se faire des alliés.`,
-      type: 'INT',
+      type: CharacterTypeClass.INT,
       classes: [CharacterClass.Sabreur],
       combo: 6,
       hp: {
@@ -765,7 +768,7 @@ export const singleLegendsInt: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Membre de l'ordre des sept grands corsaires et actuel roi de Dressrosa. D'une cruauté inhumaine, il attise la colère et la haine chez ses ennemis de façon à profiter de leur imprudence. Grâce à sa technique "Black Knight", il crée un double de lui et mène un combat acharné contre Luffy au dernier étage du palais royal.`,
-      type: 'INT',
+      type: CharacterTypeClass.INT,
       classes: [CharacterClass.Ambitieux, CharacterClass.Sabreur],
       combo: 5,
       hp: {
@@ -932,7 +935,7 @@ export const singleLegendsInt: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Capitaine de l'équipage des hommes-poissons et ancien membre de l'ordre des sept grands corsaires. Alors qu'il était l'un des sept grands corsaires, il a refusé un ordre du gouvernement l'incitant à combattre Barbe Blanche. Il s'est battu à ses côtés pour sauver Ace le condamné.`,
-      type: 'INT',
+      type: CharacterTypeClass.INT,
       classes: [CharacterClass.Cogneur, CharacterClass.Tenace],
       combo: 4,
       hp: {
@@ -1053,7 +1056,7 @@ export const singleLegendsInt: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Capitaine de l'équipage des hommes-poissons et ancien membre de l'ordre des sept grands corsaires. Convaincu que la paix dans l'océan repose sur la survie d'Ace et de Barbe Blanche, il participe à la guerre au sommet et aide Luffy à secourir son frère Ace, notamment en faisant recracher à Moria les ombres que ce dernier venait d'absorber.`,
-      type: 'INT',
+      type: CharacterTypeClass.INT,
       classes: [CharacterClass.Cogneur, CharacterClass.Tenace],
       combo: 4,
       hp: {
@@ -1175,7 +1178,7 @@ export const singleLegendsInt: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Un amiral de la Marine et l'une des personnes les plus puissantes de cette force. Il peut contrôler librement la gravité pour clouer ses ennemis au sol ou invoquer des météores. Il peut également chavaucher des objets flottants pour se déplacer dans les airs.`,
-      type: 'INT',
+      type: CharacterTypeClass.INT,
       classes: [CharacterClass.Ambitieux, CharacterClass.Tenace],
       combo: 4,
       hp: {
@@ -1298,7 +1301,7 @@ export const singleLegendsInt: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Amiral au quartier général de la Marine. Il a affronté Sabo à Dressrosa. Avec l'idée que la Marine ne peut pas être celle qui sauvera Dressrosa, il a parié sur la victoire de Luffy contre Doflamingo, agissant ainsi contre la volonté de la Marine.`,
-      type: 'INT',
+      type: CharacterTypeClass.INT,
       classes: [CharacterClass.Ambitieux, CharacterClass.Tenace],
       combo: 4,
       hp: {
@@ -1420,7 +1423,7 @@ export const singleLegendsInt: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Capitaine de l'équipage de Baggy le clown. Après avoir survécu à Impel Down et à la guerre au sommet, il rejoint son équipage et agrandit ce dernier en recrutant les détenus avec lesquels il s'est évédé de prison, ce qui lui vaut d'acquérir une grande renommée et de recevoir une lettre du gouvernement.`,
-      type: 'INT',
+      type: CharacterTypeClass.INT,
       classes: [CharacterClass.Ambitieux, CharacterClass.Tireur],
       combo: 5,
       hp: {
@@ -1543,7 +1546,7 @@ export const singleLegendsInt: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Capitaine de l'équipage de Baggy. Profitant du titre de grand corsaire qu'il a obtenu suite à la guerre au sommet, il a monté une véritable armée de malfrats en tant que président de Baggy's Delivery, une société dont les employés sont légalement habilités à commettre des actes de piraterie.`,
-      type: 'INT',
+      type: CharacterTypeClass.INT,
       classes: [CharacterClass.Ambitieux, CharacterClass.Tireur],
       combo: 4,
       hp: {

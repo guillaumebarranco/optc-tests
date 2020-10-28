@@ -1,0 +1,25 @@
+<ul class="legends-list">
+  <li *ngFor="let character of pvpCharacters">
+    <!-- <img
+      *ngIf="character.isDual"
+      [src]="character.dualCharacterData.finalForm.picture.sixStarsPicture"
+      width="70"
+    />
+    <img
+      *ngIf="!character.isDual"
+      [src]="
+        character.singleCharacterData.picture.sixStarsPicture ||
+        character.singleCharacterData.picture.sixPlusStarsPicture
+      "
+      width="70"
+    /> -->
+
+    {{ character.name }}
+
+    <ul>
+      <li>ATK : {{ _getTotalAtk(character.id) }}</li>
+      <li>DEF : {{ _getTotalDef(character.id) }}</li>
+      <li>SPEED : {{ _getTotalSpeed(character.id) }}</li>
+    </ul>
+  </li>
+</ul>

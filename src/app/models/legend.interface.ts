@@ -1,3 +1,7 @@
+import {
+  CharacterClass,
+  CharacterTypeClass,
+} from './character-class.interface';
 import { PvpData } from './pvp.interface';
 
 interface LegendArtwork {
@@ -44,8 +48,8 @@ interface Picture {
 
 interface LegendData {
   story: string;
-  type: string;
-  classes: string[];
+  type: CharacterTypeClass;
+  classes: CharacterClass[];
   combo: number;
   hp: CharacterStat;
   atk: CharacterStat;
@@ -71,8 +75,8 @@ interface CrewmateAbility {
 interface DualLegendForm {
   name: string;
   story: string;
-  type: string;
-  classes: string[];
+  type: any;
+  classes: CharacterClass[];
   combo: number;
   hp: CharacterStat;
   atk: CharacterStat;

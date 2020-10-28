@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { TierListComponent } from './components/tier-list/tier-list.component';
-import { LegendsComponent } from './components/legends/legends.component';
+import {
+  PvpComponent,
+  LegendsComponent,
+  TierListComponent,
+} from './components';
 
 const routes: Routes = [
   {
@@ -12,6 +15,10 @@ const routes: Routes = [
   {
     path: 'legends',
     component: LegendsComponent,
+  },
+  {
+    path: 'pvp',
+    component: PvpComponent,
   },
 ];
 

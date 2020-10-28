@@ -1,3 +1,7 @@
+import {
+  CharacterClass,
+  CharacterTypeClass,
+} from '../models/character-class.interface';
 import { Legend } from '../models/legend.interface';
 import { PvpStyle } from '../models/pvp.interface';
 
@@ -28,8 +32,8 @@ export const dualLegends: Legend[] = [
       firstForm: {
         name: 'Shanks le Roux',
         story: `Capitaine de l'équipage de Shanks le Roux. Le dernier jour de son long séjour au village de Fuchsia, il confie à Luffy son précieux chapeau de paille et lui demande de le lui rendre lorsqu'il sera devenu un vrai pirate.`,
-        type: 'PSY',
-        classes: ['Sabreur', 'Intellectuel'],
+        type: CharacterTypeClass.PSY,
+        classes: [CharacterClass.Sabreur, CharacterClass.Intellectuel],
         combo: 5,
         hp: {
           initial: 3756,
@@ -60,8 +64,8 @@ export const dualLegends: Legend[] = [
       secondForm: {
         name: 'Ben Beckmann, Lucky Roo et Yasopp',
         story: `Lieutenants de l'équipage de Shanks le Roux. Lorsque les brigands les menacent avec leurs sabres et leurs armes à feu, ils n'hésitent pas à employer la force et à faire la démonstration de leur supériorité, quitte à rompre avec l'image joyeuse qu'ils ont l'habitude de donner.`,
-        type: 'QCK',
-        classes: ['Tireur', 'Intellectuel'],
+        type: CharacterTypeClass.QCK,
+        classes: [CharacterClass.Tireur, CharacterClass.Intellectuel],
         combo: 4,
         hp: {
           initial: 3756,
@@ -93,7 +97,7 @@ export const dualLegends: Legend[] = [
         name: 'Équipage de Shanks le Roux',
         story: `Capitaine et lieutenants de l'équipage de Shanks le Roux. Malgré leur bonté d'âme, ils se montrent sans pitié avec ceux qui s'en prennent à leurs amis, comme lorsqu'ils sortent leurs armes pour sauver Luffy de ses agresseurs.`,
         type: 'PSY/QCK',
-        classes: ['Sabreur', 'Intellectuel'],
+        classes: [CharacterClass.Sabreur, CharacterClass.Intellectuel],
         combo: 6,
         hp: {
           initial: 4040,
@@ -252,8 +256,8 @@ export const dualLegends: Legend[] = [
       firstForm: {
         name: 'Monkey D. Luffy',
         story: `Capitaine de l'équipage de Chapeau de paille. Membre de la "génération terrible" dont fait aussi partie Law, il provoque Doflamingo en duel pour lui faire payer les larmes et la colère qu'il a suscitées chez ses camarades.`,
-        type: 'DEX',
-        classes: ['Cogneur', 'Libre'],
+        type: CharacterTypeClass.DEX,
+        classes: [CharacterClass.Cogneur, CharacterClass.Libre],
         combo: 6,
         hp: {
           initial: 3418,
@@ -290,8 +294,8 @@ export const dualLegends: Legend[] = [
       secondForm: {
         name: 'Trafalgar Law',
         story: `Capitaine de l'équipage du "Heart". Membre de la "génération terrible" dont fait aussi partie Luffy, il s'allie à ce dernier pour combattre Doflamingo et lui faire payer ce qu'il a commis il y a 13 ans.`,
-        type: 'QCK',
-        classes: ['Sabreur', 'Intellectuel'],
+        type: CharacterTypeClass.QCK,
+        classes: [CharacterClass.Sabreur, CharacterClass.Intellectuel],
         combo: 4,
         hp: {
           initial: 3288,
@@ -329,7 +333,7 @@ export const dualLegends: Legend[] = [
         name: 'Luffy et Law',
         story: `Capitaines de l'équipage de Chapeau de paille et de l'équipage du "Heart". Au terme d'une série de périls auxquels ils ont miraculeusement survécu, ces deux membres de la "génération terrible" engagent le combat contre Doflamingo, lequel est considéré comme un descendant direct des "dieux".`,
         type: 'DEX/QCK',
-        classes: ['Cogneur', 'Sabreur'],
+        classes: [CharacterClass.Cogneur, CharacterClass.Sabreur],
         combo: 4,
         hp: {
           initial: 3677,

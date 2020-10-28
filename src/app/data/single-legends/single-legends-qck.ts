@@ -1,5 +1,8 @@
 import { Legend } from '../../models/legend.interface';
-import { CharacterClass } from '../../models/character-class.interface';
+import {
+  CharacterClass,
+  CharacterTypeClass,
+} from '../../models/character-class.interface';
 import { PotentialAbility } from '../../models/potential-ability';
 import { PvpStyle } from 'src/app/models/pvp.interface';
 
@@ -18,7 +21,7 @@ export const singleLegendsQck: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Cuisinier de l'équipage de Chapeau de paille. Grâce à sa Raid Suit, un bijou de technologie Germa permettant de devenir invisible en projetant sur son corps tout son environnement, il remporte sur Page One une victoire écrasante.`,
-      type: 'QCK',
+      type: CharacterTypeClass.QCK,
       classes: [CharacterClass.Tenace, CharacterClass.Libre],
       combo: 5,
       hp: {
@@ -140,7 +143,7 @@ export const singleLegendsQck: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Capitaine de l'équipage des pirates Kuja, elle est l'une des sept grands corsaires. Elle dispose des pouvoirs du Fruit de la Passion et peut transformer celui qui l'admire en pierre. L'aînée des gorgones. Enfant, elle fut l'esclave d'un noble.`,
-      type: 'QCK',
+      type: CharacterTypeClass.QCK,
       classes: [CharacterClass.Cogneur, CharacterClass.Libre],
       combo: 4,
       hp: {
@@ -267,7 +270,7 @@ export const singleLegendsQck: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Capitaine de l'équipage des Kuja et membre de l'ordre des sept grands corsaires. Sur la demande de Luffy, qu'elle a rencontré peu après l'incident des dragons célestes et dont elle est tombée amoureuse, elle décide de participer à la guerre au sommet afin de berner le Gouvernement mondial.`,
-      type: 'QCK',
+      type: CharacterTypeClass.QCK,
       classes: [CharacterClass.Libre, CharacterClass.Tireur],
       combo: 4,
       hp: {
@@ -392,7 +395,7 @@ export const singleLegendsQck: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Commandant de la 1re flotte de l'équipage de Barbe Blanche. Il aide son capitaine tout en veillant sur le reste de l'équipage. L'un des vieux de la vieille de la bande de Barbe Blanche (avec Joz et Vista), il a aussi combattu l'Amiral de la Marine Kizaru lors de la Bataille de Marine Ford.`,
-      type: 'QCK',
+      type: CharacterTypeClass.QCK,
       classes: [CharacterClass.Cogneur, CharacterClass.Tenace],
       combo: 4,
       hp: {
@@ -515,7 +518,7 @@ export const singleLegendsQck: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Commandant de la 1re flotte de Barbe Blanche. Grâce aux pouvoirs d'un fruit du démon de type "zoan mythique" dont la rareté est réputée supérieure à celle d'un logia, il peut combattre sous la forme d'un phénix entouré de flammes bleues et guérir de ses blessures.`,
-      type: 'QCK',
+      type: CharacterTypeClass.QCK,
       classes: [CharacterClass.Cogneur, CharacterClass.Tenace],
       combo: 4,
       hp: {
@@ -636,7 +639,7 @@ export const singleLegendsQck: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Capitaine de l'équipage de Don Quijote et l'un des sept grands corsaires. Les pouvoirs de son fruit du fil lui permettent de se déplacer comme s'il volait et de prendre le contrôle d'autres personnes.`,
-      type: 'QCK',
+      type: CharacterTypeClass.QCK,
       classes: [CharacterClass.Ambitieux, CharacterClass.Intellectuel],
       combo: 4,
       hp: {
@@ -759,7 +762,7 @@ export const singleLegendsQck: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Capitaine de l'équipage du Barto Club. Il voue une admiration sans limites à l'équipage de Chapeau de paille. Il fait un discours émouvant après avoir appris pourquoi Luffy désire devenir le roi des pirates, puis échange avec ses camarades d'armes la "Coupe du serment d'allégeance", concrétisant ainsi son rêve de devenir un serviteur de Luffy.`,
-      type: 'QCK',
+      type: CharacterTypeClass.QCK,
       classes: [CharacterClass.Ambitieux, CharacterClass.Ravageur],
       combo: 4,
       hp: {
@@ -881,7 +884,7 @@ export const singleLegendsQck: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Capitaine de l'équipage des jolis pirates. Alors que les journaux ne parlaient que de lui autrefois, ce pirate dont la prime dépasse les 100 millions de berrys a perdu de sa popularité lorsque Luffy et les autres supernovæ ont fait leur apparition. Outre le fait qu'il voue à ces derniers une haine tenace, il change totalement de personnalité lorsqu'il est endormi.`,
-      type: 'QCK',
+      type: CharacterTypeClass.QCK,
       classes: [CharacterClass.Sabreur, CharacterClass.Ambitieux],
       combo: 4,
       hp: {
@@ -1004,7 +1007,7 @@ export const singleLegendsQck: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Capitaine de l'équipage des jolis pirates et autre personnalité de Cavendish. Surnommé "la rafale de Rommel", cet alter ego a la particularité d'attaquer indistinctement tous ceux qui l'entourent, comme lorsqu'il tente de trancher Robin avant d'en être empêché par le véritable Cavendish.`,
-      type: 'QCK',
+      type: CharacterTypeClass.QCK,
       classes: [CharacterClass.Sabreur, CharacterClass.Ambitieux],
       combo: 6,
       hp: {
@@ -1125,7 +1128,7 @@ export const singleLegendsQck: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Amiral au quartier général de la Marine. D'une nature à la fois calme et désinvolte, il n'agit que selon ses propres convictions, auxquelles il accorde parfois plus d'importance qu'à son rôle d'amiral.`,
-      type: 'QCK',
+      type: CharacterTypeClass.QCK,
       classes: [CharacterClass.Ravageur, CharacterClass.Tireur],
       combo: 4,
       hp: {
@@ -1246,7 +1249,7 @@ export const singleLegendsQck: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `Ancien amiral au quartier général de la Marine. Bien que Smoker le soupçonne d'être en lien avec le "monde de l'ombre", on ignore tout de ses appartenances et de ses activités depuis son départ de la Marine, qu'il a quittée suite à sa défaite contre Akainu au lendemain de la guerre au sommet.`,
-      type: 'QCK',
+      type: CharacterTypeClass.QCK,
       classes: [CharacterClass.Ravageur, CharacterClass.Tireur],
       combo: 4,
       hp: {
@@ -1368,7 +1371,7 @@ export const singleLegendsQck: Legend[] = [
     dualCharacterData: null,
     singleCharacterData: {
       story: `"Oiseau royal" de la principauté de Mokomo. Pour permettre à l'équipage de Chapeau de paille de semer l'ennemi, elle se transforme en sulong et détruit plusieurs gouvernails de la flotte commandée par Daifuku.`,
-      type: 'QCK',
+      type: CharacterTypeClass.QCK,
       classes: [CharacterClass.Cogneur, CharacterClass.Sabreur],
       combo: 4,
       hp: {
