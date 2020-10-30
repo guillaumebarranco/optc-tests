@@ -122,6 +122,8 @@ export const japLegends = [
   '3100',
   '3102',
   '3118',
+  '3135_1',
+  '3135_2',
 ];
 
 export const legends = [
