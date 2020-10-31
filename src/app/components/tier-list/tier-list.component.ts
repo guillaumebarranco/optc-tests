@@ -16,12 +16,13 @@ import {
 import { TierList, TierListId } from '../../models/tier-list';
 import { Tier } from '../../models/tier';
 import { SavedTier, SavedTierList } from '../../models/saved-tier-list';
-import { tierLists } from './tier-lists';
+import { allLegends, tierLists } from './tier-lists';
 import { TierListCharacter } from '../../models/tier-list-character';
 import {
   filtersCharactersList,
   getCharacterImgPath,
   getDefaultFilters,
+  getFrenchLegendUrl,
 } from './tier-list.utils';
 import { TierListFilters } from '../../models/tier-list-filters';
 import { TierListCharacterType } from '../../models/tier-list-character-type';
@@ -438,9 +439,15 @@ export class TierListComponent implements OnInit {
   }
 
   public _seeCharacterInformation(characterId: string): void {
-    window.open(
-      `https://optc-db.github.io/characters/#/view/${characterId}`,
-      '_blank'
-    );
+    let url = `https://optc-db.github.io/characters/#/view/${characterId}`;
+
+    if (
+      this.language === 'FR' &&
+      allLegends.map(l => l.id).includes(characterId)
+    ) {
+      url = getFrenchLegendUrl(characterId);
+    }
+
+    window.open(url, '_blank');
   }
 }

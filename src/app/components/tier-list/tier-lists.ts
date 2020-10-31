@@ -38,7 +38,7 @@ const formatedJapSixPlusLegends = japLegendsSixPLus.map(id => ({
   type: TierListCharacterType.JAP_SIX_PLUS_LEGEND,
 }));
 
-const allLegends = [
+export const allLegends = [
   ...formatedLegends,
   ...formatedSixPlusLegends,
   ...formatedJapLegends,
