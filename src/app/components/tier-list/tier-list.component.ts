@@ -139,6 +139,8 @@ export class TierListComponent implements OnInit {
       });
 
       this.tierListTitle = params.name;
+    } else if (params.tierListId) {
+      this._initTiers(params.tierListId);
     } else {
       this._initTiers(TierListId.LEGEND);
     }
@@ -168,6 +170,7 @@ export class TierListComponent implements OnInit {
   }
 
   public switchTierList(tierListId: TierListId): void {
+    window.history.replaceState(null, null, `?tierListId=${tierListId}`);
     this._initTiers(tierListId);
   }
 
