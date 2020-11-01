@@ -44,7 +44,7 @@ export class TierListActionsComponent {
   }
 
   public share() {
-    const baseUrl = 'http://optc.webarranco.fr';
+    const baseUrl = 'http://optc-tierlist.com';
     // const baseUrl = 'http://localhost:4200';
     const params = `?name=${encodeURI(
       this.tierListTitle
