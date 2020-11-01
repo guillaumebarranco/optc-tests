@@ -4,11 +4,11 @@ import {
   japLegendsSixPLus,
 } from '../../data/tier-lists/legends_sixplus';
 import { lrrs } from '../../data/tier-lists/lrr';
-import { pvps } from '../../data/tier-lists/pvp';
+import { japPvps, pvps } from '../../data/tier-lists/pvp';
 import { soutiens } from '../../data/tier-lists/soutiens';
-import { colisees } from '../../data/tier-lists/colisees';
+import { colisees, japColisees } from '../../data/tier-lists/colisees';
 import { raids } from '../../data/tier-lists/raids';
-import { tms } from '../../data/tier-lists/tm';
+import { japTms, tms } from '../../data/tier-lists/tm';
 import { kizunas } from '../../data/tier-lists/kizuna';
 import { ambushs } from '../../data/tier-lists/ambush';
 import { TierList, TierListId } from '../../models/tier-list';
@@ -70,6 +70,11 @@ const formatedColosseums = colisees.map(id => ({
   type: TierListCharacterType.COLOSSEUM,
 }));
 
+const formatedJapColosseums = japColisees.map(id => ({
+  id,
+  type: TierListCharacterType.COLOSSEUM,
+}));
+
 const formatedRaids = raids.map(id => ({
   id,
   type: TierListCharacterType.RAID,
@@ -80,7 +85,17 @@ const formatedTms = tms.map(id => ({
   type: TierListCharacterType.TM,
 }));
 
+const formatedJapTms = japTms.map(id => ({
+  id,
+  type: TierListCharacterType.TM,
+}));
+
 const formatedPvps = pvps.map(id => ({
+  id,
+  type: TierListCharacterType.PVP,
+}));
+
+const formatedJapPvps = japPvps.map(id => ({
   id,
   type: TierListCharacterType.PVP,
 }));
@@ -213,6 +228,18 @@ export const tierLists: TierList[] = [
       ...allLegends,
     ],
     id: TierListId.P2P,
+  },
+  {
+    frenchName: 'Personnages uniquement sur JPN',
+    englishName: 'JPN Characters only',
+    characters: [
+      ...formatedJapLegends,
+      ...formatedJapSixPlusLegends,
+      ...formatedJapTms,
+      ...formatedJapColosseums,
+      ...formatedJapPvps,
+    ],
+    id: TierListId.JPN,
   },
   {
     frenchName: 'Personnages au complet',

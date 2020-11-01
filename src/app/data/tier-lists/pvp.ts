@@ -1,8 +1,6 @@
-export const pvps = [
-  '2931',
-  '2932',
-  '2933',
-  '2978',
+export const gloPvps = ['2931', '2932', '2933', '2978'];
+
+export const japPvps = [
   '3000',
   '3025',
   '3061',
@@ -12,3 +10,5 @@ export const pvps = [
   '3096',
   '3125',
 ];
+
+export const pvps = [...gloPvps, ...japPvps];

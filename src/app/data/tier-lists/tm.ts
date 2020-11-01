@@ -1,4 +1,4 @@
-export const tms = [
+export const glbTms = [
   '1808',
   '1853',
   '1889',
@@ -36,9 +36,8 @@ export const tms = [
   '2880',
   '2913',
   '2977',
-  '2995',
-  '3022',
-  '3060',
-  '3094',
-  '3315',
 ];
+
+export const japTms = ['2995', '3022', '3060', '3094', '3315'];
+
+export const tms = [...glbTms, ...japTms];

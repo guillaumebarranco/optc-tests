@@ -15,6 +15,7 @@ export enum TierListId {
   AMBUSH = 'AMBUSH',
   F2P = 'F2P',
   P2P = 'P2P',
+  JPN = 'JPN',
   ALL = 'ALL',
 }
 
