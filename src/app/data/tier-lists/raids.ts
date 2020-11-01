@@ -1,4 +1,4 @@
-export const raids = [
+export const gloRaids = [
   '0227',
   '0249',
   '0306',
@@ -84,7 +84,6 @@ export const raids = [
   '2922',
   '2956',
   '2987',
-  '3078',
   '3340',
   '3352',
   '3357',
@@ -93,3 +92,7 @@ export const raids = [
   '3376',
   '5052',
 ];
+
+export const japRaids = ['3078'];
+
+export const raids = [...gloRaids, ...japRaids];
