@@ -1,4 +1,4 @@
-export const lrrs = [
+export const gloLrrs = [
   '1621',
   '1632',
   '1665',
@@ -33,3 +33,7 @@ export const lrrs = [
   '2914',
   '2919',
 ];
+
+export const japLrrs = ['3097'];
+
+export const lrrs = [...gloLrrs, ...japLrrs];

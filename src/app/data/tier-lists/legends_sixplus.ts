@@ -57,11 +57,11 @@ export const legendsSixPlus2020 = [
   '2991',
 ];
 
+export const japLegendsSixPLus = ['3018', '3048', '3079'];
+
 export const legendsSixPlus = [
   ...legendsSixPlus2017,
   ...legendsSixPlus2018,
   ...legendsSixPlus2019,
   ...legendsSixPlus2020,
 ];
-
-export const japLegendsSixPLus = ['3018', '3048', '3079'];

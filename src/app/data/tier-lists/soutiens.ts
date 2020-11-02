@@ -1,4 +1,4 @@
-export const soutiens = [
+export const gloSoutiens = [
   '2388',
   '2389',
   '2390',
@@ -15,3 +15,7 @@ export const soutiens = [
   '2851',
   '5053',
 ];
+
+export const japSoutiens = [];
+
+export const soutiens = [...gloSoutiens, ...japSoutiens];

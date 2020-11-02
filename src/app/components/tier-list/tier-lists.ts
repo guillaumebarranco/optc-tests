@@ -3,20 +3,23 @@ import {
   legendsSixPlus,
   japLegendsSixPLus,
 } from '../../data/tier-lists/legends_sixplus';
-import { lrrs } from '../../data/tier-lists/lrr';
+import { japLrrs, lrrs } from '../../data/tier-lists/lrr';
 import { japPvps, pvps } from '../../data/tier-lists/pvp';
-import { soutiens } from '../../data/tier-lists/soutiens';
+import { japSoutiens, soutiens } from '../../data/tier-lists/soutiens';
 import { colisees, japColisees } from '../../data/tier-lists/colisees';
 import { japRaids, raids } from '../../data/tier-lists/raids';
 import { japTms, tms } from '../../data/tier-lists/tm';
 import { japKizunas, kizunas } from '../../data/tier-lists/kizuna';
-import { ambushs } from '../../data/tier-lists/ambush';
+import { ambushs, japAmbushs } from '../../data/tier-lists/ambush';
 import { TierList, TierListId } from '../../models/tier-list';
-import { rrs } from '../../data/tier-lists/rr';
+import { japRrs, rrs } from '../../data/tier-lists/rr';
 import { TierListCharacter } from 'src/app/models/tier-list-character';
 import { TierListCharacterType } from 'src/app/models/tier-list-character-type';
-import { periodsLrrs } from 'src/app/data/tier-lists/periods_lrrs';
-import { kizunaLrrs } from 'src/app/data/tier-lists/kizuna_lrrs';
+import {
+  japPeriodsLrrs,
+  periodsLrrs,
+} from 'src/app/data/tier-lists/periods_lrrs';
+import { japKizunaLrrs, kizunaLrrs } from 'src/app/data/tier-lists/kizuna_lrrs';
 
 const formatedLegends: TierListCharacter[] = legends.map(id => ({
   id,
@@ -50,7 +53,17 @@ const formatedRrs = rrs.map(id => ({
   type: TierListCharacterType.RR,
 }));
 
+const formatedJapRrs = japRrs.map(id => ({
+  id,
+  type: TierListCharacterType.RR,
+}));
+
 const formatedLrrs = lrrs.map(id => ({
+  id,
+  type: TierListCharacterType.LRR,
+}));
+
+const formatedJapLrrs = japLrrs.map(id => ({
   id,
   type: TierListCharacterType.LRR,
 }));
@@ -60,7 +73,17 @@ const formatedPeriodsLrrs = periodsLrrs.map(id => ({
   type: TierListCharacterType.PERIOD_LRR,
 }));
 
+const formatedJapPeriodsLrrs = japPeriodsLrrs.map(id => ({
+  id,
+  type: TierListCharacterType.PERIOD_LRR,
+}));
+
 const formatedKizunaLrrs = kizunaLrrs.map(id => ({
+  id,
+  type: TierListCharacterType.KIZUNA_LRR,
+}));
+
+const formatedJapKizunaLrrs = japKizunaLrrs.map(id => ({
   id,
   type: TierListCharacterType.KIZUNA_LRR,
 }));
@@ -110,6 +133,11 @@ const formatedSupports = soutiens.map(id => ({
   type: TierListCharacterType.SUPPORT,
 }));
 
+const formatedJapSupports = japSoutiens.map(id => ({
+  id,
+  type: TierListCharacterType.SUPPORT,
+}));
+
 const formatedKizunas = kizunas.map(id => ({
   id,
   type: TierListCharacterType.KIZUNA,
@@ -121,6 +149,11 @@ const formatedJapKizunas = japKizunas.map(id => ({
 }));
 
 const formatedAmbushes = ambushs.map(id => ({
+  id,
+  type: TierListCharacterType.AMBUSH,
+}));
+
+const formatedJapAmbushes = japAmbushs.map(id => ({
   id,
   type: TierListCharacterType.AMBUSH,
 }));
@@ -245,11 +278,17 @@ export const tierLists: TierList[] = [
     characters: [
       ...formatedJapLegends,
       ...formatedJapSixPlusLegends,
+      ...formatedJapRrs,
       ...formatedJapTms,
       ...formatedJapColosseums,
       ...formatedJapPvps,
       ...formatedJapKizunas,
       ...formatedJapRaids,
+      ...formatedJapLrrs,
+      ...formatedJapPeriodsLrrs,
+      ...formatedJapKizunaLrrs,
+      ...formatedJapSupports,
+      ...formatedJapAmbushes,
     ],
     id: TierListId.JPN,
   },

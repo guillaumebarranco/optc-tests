@@ -1,4 +1,4 @@
-export const ambushs = [
+export const gloAmbushs = [
   '1258',
   '1530',
   '1846',
@@ -9,3 +9,7 @@ export const ambushs = [
   '2923',
   '3354',
 ];
+
+export const japAmbushs = [];
+
+export const ambushs = [...gloAmbushs, ...japAmbushs];

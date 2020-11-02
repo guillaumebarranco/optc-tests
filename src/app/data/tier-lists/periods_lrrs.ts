@@ -1,4 +1,4 @@
-export const periodsLrrs = [
+export const gloPeriodsLrrs = [
   '0438',
   '0440',
   '0498',
@@ -97,12 +97,19 @@ export const periodsLrrs = [
   '2874',
   '2973',
   '2974',
+  '3361',
+];
+
+export const japPeriodsLrrs = [
   '3023',
   '3024',
   '3075',
   '3077',
   '3085',
-  '3361',
   '3122',
   '3123',
+  '3127',
+  '3129',
 ];
+
+export const periodsLrrs = [...gloPeriodsLrrs, ...japPeriodsLrrs];

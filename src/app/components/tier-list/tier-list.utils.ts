@@ -82,7 +82,8 @@ export function filtersCharactersList(
   if (
     currentTierList.id === TierListId.LEGEND ||
     currentTierList.id === TierListId.P2P ||
-    currentTierList.id === TierListId.ALL
+    currentTierList.id === TierListId.ALL ||
+    currentTierList.id === TierListId.JPN
   ) {
     filteredCharacters = filterLegends([...filteredCharacters], filters);
   }
@@ -90,7 +91,8 @@ export function filtersCharactersList(
   if (
     currentTierList.id === TierListId.F2P ||
     currentTierList.id === TierListId.P2P ||
-    currentTierList.id === TierListId.ALL
+    currentTierList.id === TierListId.ALL ||
+    currentTierList.id === TierListId.JPN
   ) {
     filteredCharacters = filterCategories([...filteredCharacters], filters);
   }
