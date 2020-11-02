@@ -58,21 +58,35 @@ export class TierListActionsComponent {
 
     const url = baseUrl + params;
 
-    this._tinyUrlService.tinyUrl(url).subscribe((tinyUrl: string) => {
-      this.copyToClipboard(tinyUrl);
+    if (url.length < 7000) {
+      this._tinyUrlService.tinyUrl(url).subscribe((tinyUrl: string) => {
+        this.copyToClipboard(tinyUrl);
 
+        let message;
+
+        if (this.language === 'FR') {
+          message = `L'URL de partage de votre tier list a été copiée dans votre presse-papiers !`;
+        } else if (this.language === 'EN') {
+          message = `URL for sharing your tier list has been copy-pasted in your clipboard !`;
+        }
+
+        this.snackBar.open(message, null, {
+          duration: 5000,
+        });
+      });
+    } else {
       let message;
 
       if (this.language === 'FR') {
-        message = `L'URL de partage de votre tier list a été copiée dans votre presse-papiers !`;
+        message = `Votre Tier List contient trop de personnages pour être partagée. Une limite de 600 personnages est nécessaire. Essayez de supprimer des personnages (référez-vous au bouton d'informations)`;
       } else if (this.language === 'EN') {
-        message = `URL for sharing your tier list has been copy-pasted in your clipboard !`;
+        message = `Your Tier List contains too much characters to be shared. A limit of 600 characters is necessary. Try removing some characters (go see the details on the informations button).`;
       }
 
       this.snackBar.open(message, null, {
-        duration: 5000,
+        duration: 10000,
       });
-    });
+    }
   }
 
   public onLoadTierList() {
