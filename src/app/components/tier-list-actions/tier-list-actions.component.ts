@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
-import shortenUrl from '@kulkul/tinyurl-client';
 
 import { SavedTierList } from '../../models/saved-tier-list';
 import { Tier } from '../../models/tier';
@@ -10,6 +9,7 @@ import { TierListCharacter } from '../../models/tier-list-character';
 import { StorageService } from '../../services';
 import { RemoveTierListFrenchComponent } from '../dialogs';
 import { copyToClipboard } from '../../utils/utils';
+import { TinyUrlService } from 'src/app/services/tinyurl.service';
 
 @Component({
   selector: 'app-tier-list-actions',
@@ -36,7 +36,8 @@ export class TierListActionsComponent {
   constructor(
     private snackBar: MatSnackBar,
     public dialog: MatDialog,
-    private _storageService: StorageService
+    private _storageService: StorageService,
+    private _tinyUrlService: TinyUrlService
   ) {}
 
   public copyToClipboard(val: string) {
@@ -57,9 +58,8 @@ export class TierListActionsComponent {
 
     const url = baseUrl + params;
 
-    shortenUrl(url).then(result => {
-      console.log('result', result);
-      this.copyToClipboard(url);
+    this._tinyUrlService.tinyUrl(url).subscribe((tinyUrl: string) => {
+      this.copyToClipboard(tinyUrl);
 
       let message;
 

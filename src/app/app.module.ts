@@ -19,10 +19,12 @@ import { AppComponent } from './app.component';
 import { components } from './components';
 import { services } from './services';
 import { dialogs } from './components/dialogs';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, ...components, ...dialogs],
   imports: [
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
