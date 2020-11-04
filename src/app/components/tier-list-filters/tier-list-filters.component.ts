@@ -14,6 +14,10 @@ export class TierListFiltersComponent {
     TierListCharacterType
   >();
   @Output() public toggleShowRemovedCharacters = new EventEmitter<void>();
+  @Output()
+  public toggleHideSixStarsLegendsHavingSixPlusVersion = new EventEmitter<
+    void
+  >();
 
   @Input() public tierListId: TierListId;
   @Input() public language: string;
@@ -32,5 +36,9 @@ export class TierListFiltersComponent {
 
   public onToggleShowRemovedCharacters() {
     this.toggleShowRemovedCharacters.emit();
+  }
+
+  public _onToggleHideSixStarsLegendsHavingSixPlusVersion() {
+    this.toggleHideSixStarsLegendsHavingSixPlusVersion.emit();
   }
 }

@@ -50,8 +50,16 @@
         <mat-option value="2020">2020</mat-option>
       </mat-select>
     </mat-form-field>
+    <br />
+    <mat-checkbox
+      [checked]="filters.hideSixStarsLegendsHavingSixPlusVersion"
+      (change)="_onToggleHideSixStarsLegendsHavingSixPlusVersion()"
+      >Ne pas afficher la version 6 étoiles des personnages possédant une
+      6+</mat-checkbox
+    >
   </ng-container>
 
+  <!-- F2P -->
   <ng-container *ngIf="language === 'FR'">
     <mat-checkbox
       *ngIf="
@@ -162,6 +170,7 @@
     >
   </ng-container>
 
+  <!-- P2P -->
   <ng-container *ngIf="language === 'FR'">
     <mat-checkbox
       *ngIf="

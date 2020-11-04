@@ -16,18 +16,18 @@ import {
 import { TierList, TierListId } from '../../models/tier-list';
 import { Tier } from '../../models/tier';
 import { SavedTier, SavedTierList } from '../../models/saved-tier-list';
-import { allLegends, tierLists } from './tier-lists';
+import { tierLists } from './tier-lists';
 import { TierListCharacter } from '../../models/tier-list-character';
 import {
   filtersCharactersList,
   getCharacterImgPath,
   getDefaultFilters,
-  getFrenchLegendUrl,
 } from './tier-list.utils';
 import { TierListFilters } from '../../models/tier-list-filters';
 import { TierListCharacterType } from '../../models/tier-list-character-type';
 import { StorageService } from '../../services';
 import { downloadFile } from 'src/app/utils/utils';
+import { getFrenchUrl } from 'src/app/utils/url-mapping';
 
 @Component({
   selector: 'app-tier-list',
@@ -293,6 +293,13 @@ export class TierListComponent implements OnInit {
     this._filters.showRemovedCharacters = !this._filters.showRemovedCharacters;
   }
 
+  public _onToggleHideSixStarsLegendsHavingSixPlusVersion(): void {
+    this._filters.hideSixStarsLegendsHavingSixPlusVersion = !this._filters
+      .hideSixStarsLegendsHavingSixPlusVersion;
+
+    this._filtersCharactersList();
+  }
+
   public removeCharacterFromTier(
     tier: Tier,
     characterToRemove: TierListCharacter
@@ -444,11 +451,8 @@ export class TierListComponent implements OnInit {
   public _seeCharacterInformation(characterId: string): void {
     let url = `https://optc-db.github.io/characters/#/view/${characterId}`;
 
-    if (
-      this.language === 'FR' &&
-      allLegends.map(l => l.id).includes(characterId)
-    ) {
-      url = getFrenchLegendUrl(characterId);
+    if (this.language === 'FR') {
+      url = getFrenchUrl(characterId);
     }
 
     window.open(url, '_blank');

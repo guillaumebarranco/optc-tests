@@ -10,4 +10,5 @@ export interface TierListFilters {
   selectedYearLegend: string;
   showRemovedCharacters: boolean;
   characterTypesDisplay: TierListCharacterTypeFilter;
+  hideSixStarsLegendsHavingSixPlusVersion: boolean;
 }

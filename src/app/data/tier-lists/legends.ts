@@ -134,3 +134,20 @@ export const legends = [
   ...legends2019,
   ...legends2020,
 ];
+
+export const sixStarsLegendsWithSixPlusVersion = [
+  ...legends2015,
+  ...legends2016.filter(l => l !== '1121'), // Log Luffy doesn't have 6+ yet
+  ...legends2017.filter(l => l !== '1268'), // BBv1 doesn't have 6+ yet
+  '1794',
+  '1832',
+  '1869',
+  '1935',
+  '1951',
+  '2074',
+  '2076',
+  '2113',
+  '2251',
+  '2234',
+  '2651',
+];
