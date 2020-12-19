@@ -4,7 +4,7 @@ import {
   japLegendsSixPLus,
 } from '../../data/tier-lists/legends_sixplus';
 import { japLrrs, lrrs } from '../../data/tier-lists/lrr';
-import { japPvps, pvps } from '../../data/tier-lists/pvp';
+import { japPvpLrrs, pvpLrrs } from '../../data/tier-lists/pvp_lrrs';
 import { japSoutiens, soutiens } from '../../data/tier-lists/soutiens';
 import { colisees, japColisees } from '../../data/tier-lists/colisees';
 import { japRaids, raids } from '../../data/tier-lists/raids';
@@ -20,6 +20,7 @@ import {
   periodsLrrs,
 } from 'src/app/data/tier-lists/periods_lrrs';
 import { japKizunaLrrs, kizunaLrrs } from 'src/app/data/tier-lists/kizuna_lrrs';
+import { pvps } from 'src/app/data/tier-lists/pvp';
 
 const formatedLegends: TierListCharacter[] = legends.map(id => ({
   id,
@@ -120,10 +121,15 @@ const formatedJapTms = japTms.map(id => ({
 
 const formatedPvps = pvps.map(id => ({
   id,
+  type: TierListCharacterType.PVP_F2P,
+}));
+
+const formatedPvpLrrs = pvpLrrs.map(id => ({
+  id,
   type: TierListCharacterType.PVP,
 }));
 
-const formatedJapPvps = japPvps.map(id => ({
+const formatedJapPvps = japPvpLrrs.map(id => ({
   id,
   type: TierListCharacterType.PVP,
 }));
@@ -168,7 +174,7 @@ export const combinedAllCategoriesCharacters = [
   ...formatedLrrs,
   ...formatedPeriodsLrrs,
   ...formatedKizunaLrrs,
-  ...formatedPvps,
+  ...formatedPvpLrrs,
   ...formatedSupports,
   ...allLegends,
 ];
@@ -208,7 +214,19 @@ export const tierLists: TierList[] = [
     frenchName: 'Personnages PVP',
     englishName: 'PVP Characters',
     characters: formatedPvps,
+    id: TierListId.PVP_F2P,
+  },
+  {
+    frenchName: 'Personnages PVP LRR',
+    englishName: 'PVP LRR Characters',
+    characters: formatedPvpLrrs,
     id: TierListId.PVP,
+  },
+  {
+    frenchName: 'Personnages Kizuna',
+    englishName: 'Kizuna Characters',
+    characters: formatedKizunas,
+    id: TierListId.KIZUNA,
   },
   {
     frenchName: 'Personnages LRR',
@@ -235,12 +253,6 @@ export const tierLists: TierList[] = [
     id: TierListId.SUPPORT,
   },
   {
-    frenchName: 'Personnages Kizuna',
-    englishName: 'Kizuna Characters',
-    characters: formatedKizunas,
-    id: TierListId.KIZUNA,
-  },
-  {
     frenchName: 'Personnages Ambush',
     englishName: 'Ambush Characters',
     characters: formatedAmbushes,
@@ -254,6 +266,7 @@ export const tierLists: TierList[] = [
       ...formatedColosseums,
       ...formatedRaids,
       ...formatedKizunas,
+      ...formatedPvps,
       ...formatedAmbushes,
     ],
     id: TierListId.F2P,
@@ -266,7 +279,7 @@ export const tierLists: TierList[] = [
       ...formatedLrrs,
       ...formatedPeriodsLrrs,
       ...formatedKizunaLrrs,
-      ...formatedPvps,
+      ...formatedPvpLrrs,
       ...formatedSupports,
       ...allLegends,
     ],

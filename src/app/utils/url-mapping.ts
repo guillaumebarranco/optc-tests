@@ -1,5 +1,6 @@
 import { allLegends } from '../components/tier-list/tier-lists';
 import { colisees } from '../data/tier-lists/colisees';
+import { kizunas } from '../data/tier-lists/kizuna';
 import { lrrs } from '../data/tier-lists/lrr';
 import { raids } from '../data/tier-lists/raids';
 import { rrs } from '../data/tier-lists/rr';
@@ -22,6 +23,8 @@ export function getFrenchUrl(characterId: string): string {
     return getFrenchColosseumUrl(characterId);
   } else if (tms.map(l => l).includes(characterId)) {
     return getFrenchTreasureMapUrl(characterId);
+  } else if (kizunas.map(l => l).includes(characterId)) {
+    return getFrenchKizunaUrl(characterId);
   }
 
   return getOptcDbDefaultUrl(characterId);
@@ -262,6 +265,13 @@ function getFrenchLegendUrl(characterId: string): string {
     case '3135_2':
       return 'https://onepiecetreasurecruise.fr/Kaido%20VS%20Big%20Mom.html';
 
+    case '3164':
+      return 'https://onepiecetreasurecruise.fr/Vivi%20et%20Rebecca%202.html';
+    case '3166':
+      return 'https://onepiecetreasurecruise.fr/Shirahoshi%20et%20Manshelly%202.html';
+    case '3203':
+      return 'https://onepiecetreasurecruise.fr/Sanji%20et%20Pudding.html';
+
     // SIX PLUS LEGENDS
 
     case '1413':
@@ -368,6 +378,11 @@ function getFrenchLegendUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Jinbe%202.html';
     case '3079':
       return 'https://onepiecetreasurecruise.fr/Capone%20Bege.html';
+
+    case '3155':
+      return 'https://onepiecetreasurecruise.fr/Barbe%20Noire%201.html';
+    case '3202':
+      return 'https://onepiecetreasurecruise.fr/Roronoa%20Zoro%202.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -479,8 +494,63 @@ function getFrenchTreasureMapUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Nami%20et%20Sanji.html';
     case '3094':
       return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Jinbe.html';
-    case '3315':
+    case '3115':
       return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Charlotte%20Pudding.html';
+    case '3150':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Eustass%20Kidd.html';
+
+    default:
+      return getOptcDbDefaultUrl(characterId);
+  }
+}
+
+function getFrenchKizunaUrl(characterId: string): string {
+  switch (characterId) {
+    case '2531':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Zoro%20et%20Sanji.html';
+    case '2682':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Boa%20Hancock.html';
+    case '2758':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Sabo.html';
+    case '2794':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Shirahoshi.html';
+    case '2812':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/O-Kiku.html';
+    case '2831':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Marco%20et%20Ace.html';
+    case '2854':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Koala.html';
+    case '2890':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Gecko%20Moria.html';
+    case '2920':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Big%20Mom.html';
+    case '2955':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Carrot.html';
+    case '2999':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Luffy%20et%20Hancock.html';
+    case '3036':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Kaido.html';
+    case '3052':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Baggy.html';
+    case '3098':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Sakazuki%20et%20Borsalino.html';
+    case '3124':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Eustass%20Kidd.html';
+    case '3154':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Basil%20Hawkins.html';
+
+    case '2518':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Bartolomeo.html';
+    case '2615':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Charlotte%20Slurp.html';
+    case '2630':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Margaret.html';
+    case '2733':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Magellan.html';
+    case '2891':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Jigoro%20et%20Chien-manchot.html';
+    case '3381':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Law%20et%20Chopper.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);

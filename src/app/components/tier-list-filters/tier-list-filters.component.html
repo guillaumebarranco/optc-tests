@@ -109,6 +109,16 @@
         tierListId === _tierListIdEnum.ALL ||
         tierListId === _tierListIdEnum.JPN
       "
+      [checked]="filters.characterTypesDisplay[_tierListCharacterType.PVP_F2P]"
+      (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.PVP_F2P)"
+      >Afficher les personnages de PVP</mat-checkbox
+    >
+    <mat-checkbox
+      *ngIf="
+        tierListId === _tierListIdEnum.F2P ||
+        tierListId === _tierListIdEnum.ALL ||
+        tierListId === _tierListIdEnum.JPN
+      "
       [checked]="filters.characterTypesDisplay[_tierListCharacterType.AMBUSH]"
       (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.AMBUSH)"
       >Afficher les personnages d'attaques ennemies</mat-checkbox
@@ -157,6 +167,16 @@
       [checked]="filters.characterTypesDisplay[_tierListCharacterType.KIZUNA]"
       (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.KIZUNA)"
       >Display Kizuna characters</mat-checkbox
+    >
+    <mat-checkbox
+      *ngIf="
+        tierListId === _tierListIdEnum.F2P ||
+        tierListId === _tierListIdEnum.ALL ||
+        tierListId === _tierListIdEnum.JPN
+      "
+      [checked]="filters.characterTypesDisplay[_tierListCharacterType.PVP_F2P]"
+      (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.PVP_F2P)"
+      >Display PVP characters</mat-checkbox
     >
     <mat-checkbox
       *ngIf="

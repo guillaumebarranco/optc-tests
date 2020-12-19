@@ -10,6 +10,7 @@ export enum TierListCharacterType {
   COLOSSEUM = 'COLOSSEUM',
   RAID = 'RAID',
   TM = 'TM',
+  PVP_F2P = 'PVP_F2P',
   PVP = 'PVP',
   SUPPORT = 'SUPPORT',
   KIZUNA = 'KIZUNA',

@@ -29,9 +29,10 @@ import { ambushs } from 'src/app/data/tier-lists/ambush';
 import { rrs } from 'src/app/data/tier-lists/rr';
 import { lrrs } from 'src/app/data/tier-lists/lrr';
 import { soutiens } from 'src/app/data/tier-lists/soutiens';
-import { pvps } from 'src/app/data/tier-lists/pvp';
+import { pvpLrrs } from 'src/app/data/tier-lists/pvp_lrrs';
 import { kizunaLrrs } from 'src/app/data/tier-lists/kizuna_lrrs';
 import { periodsLrrs } from 'src/app/data/tier-lists/periods_lrrs';
+import { pvps } from 'src/app/data/tier-lists/pvp';
 
 export function getCharacterImgPath(character: TierListCharacter): string {
   const basePath = 'assets/characters';
@@ -61,6 +62,8 @@ export function getCharacterImgPath(character: TierListCharacter): string {
       return `${basePath}/tm/f${character.id}.png`;
     case TierListCharacterType.PVP:
       return `${basePath}/pvp/f${character.id}.png`;
+    case TierListCharacterType.PVP_F2P:
+      return `${basePath}/pvp_f2p/f${character.id}.png`;
     case TierListCharacterType.SUPPORT:
       return `${basePath}/support/f${character.id}.png`;
     case TierListCharacterType.KIZUNA:
@@ -124,6 +127,7 @@ export function getDefaultFilters(): TierListFilters {
       [TierListCharacterType.COLOSSEUM]: true,
       [TierListCharacterType.RAID]: true,
       [TierListCharacterType.TM]: true,
+      [TierListCharacterType.PVP_F2P]: true,
       [TierListCharacterType.PVP]: true,
       [TierListCharacterType.SUPPORT]: true,
       [TierListCharacterType.KIZUNA]: true,
@@ -162,6 +166,11 @@ function filterCategories(
       case TierListCharacterType.KIZUNA:
         filteredCharacters = filteredCharacters = filteredCharacters.filter(
           c => !kizunas.includes(c)
+        );
+        break;
+      case TierListCharacterType.PVP_F2P:
+        filteredCharacters = filteredCharacters = filteredCharacters.filter(
+          c => !pvps.includes(c)
         );
         break;
       case TierListCharacterType.AMBUSH:
@@ -207,7 +216,7 @@ function filterCategories(
         break;
       case TierListCharacterType.PVP:
         filteredCharacters = filteredCharacters = filteredCharacters.filter(
-          c => !pvps.includes(c)
+          c => !pvpLrrs.includes(c)
         );
         break;
       default:
