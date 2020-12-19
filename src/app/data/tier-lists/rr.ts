@@ -315,15 +315,15 @@ export const gloRrs = [
   '2986',
   '3029',
   '3031',
-];
-
-export const japRrs = [
   '3011',
   '3013',
   '3015',
   '3040',
   '3042',
   '3044',
+];
+
+export const japRrs = [
   '3067',
   '3069',
   '3104',
@@ -331,6 +331,8 @@ export const japRrs = [
   '3133',
   '3135',
   '3137',
+  '3168',
+  '3170',
 ];
 
 export const rrs = [...gloRrs, ...japRrs];

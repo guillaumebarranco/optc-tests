@@ -93,6 +93,6 @@ export const gloRaids = [
   '5052',
 ];
 
-export const japRaids = ['3078'];
+export const japRaids = ['3078', '3143'];
 
 export const raids = [...gloRaids, ...japRaids];

@@ -110,12 +110,12 @@ export const legends2020 = [
   '2982',
   '3027',
   '3385',
-];
-
-export const japLegends = [
   '3007',
   '3009',
   '3038',
+];
+
+export const japLegends = [
   '3065',
   '3071',
   '3073',
@@ -124,6 +124,9 @@ export const japLegends = [
   '3118',
   '3135_1',
   '3135_2',
+  '3164',
+  '3166',
+  '3203',
 ];
 
 export const legends = [
@@ -138,7 +141,7 @@ export const legends = [
 export const sixStarsLegendsWithSixPlusVersion = [
   ...legends2015,
   ...legends2016.filter(l => l !== '1121'), // Log Luffy doesn't have 6+ yet
-  ...legends2017.filter(l => l !== '1268'), // BBv1 doesn't have 6+ yet
+  ...legends2017,
   '1794',
   '1832',
   '1869',

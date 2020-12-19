@@ -1,14 +1,33 @@
 import { allLegends } from '../components/tier-list/tier-lists';
+import { colisees } from '../data/tier-lists/colisees';
+import { lrrs } from '../data/tier-lists/lrr';
+import { raids } from '../data/tier-lists/raids';
+import { rrs } from '../data/tier-lists/rr';
+import { tms } from '../data/tier-lists/tm';
 
-export function getFrenchUrl(characterId: string) {
-  if (allLegends.map(l => l.id).includes(characterId)) {
-    return getFrenchLegendUrl(characterId);
-  }
-
+export function getOptcDbDefaultUrl(characterId: string): string {
   return `https://optc-db.github.io/characters/#/view/${characterId}`;
 }
 
-function getFrenchLegendUrl(characterId: string) {
+export function getFrenchUrl(characterId: string): string {
+  if (allLegends.map(l => l.id).includes(characterId)) {
+    return getFrenchLegendUrl(characterId);
+  } else if (rrs.map(l => l).includes(characterId)) {
+    return getFrenchRareRecruitUrl(characterId);
+  } else if (lrrs.map(l => l).includes(characterId)) {
+    return getFrenchLimitedRareRecruitUrl(characterId);
+  } else if (raids.map(l => l).includes(characterId)) {
+    return getFrenchRaidUrl(characterId);
+  } else if (colisees.map(l => l).includes(characterId)) {
+    return getFrenchColosseumUrl(characterId);
+  } else if (tms.map(l => l).includes(characterId)) {
+    return getFrenchTreasureMapUrl(characterId);
+  }
+
+  return getOptcDbDefaultUrl(characterId);
+}
+
+function getFrenchLegendUrl(characterId: string): string {
   switch (characterId) {
     case '0261':
       return 'https://onepiecetreasurecruise.fr/Barbe%20Blanche%201.html';
@@ -351,6 +370,119 @@ function getFrenchLegendUrl(characterId: string) {
       return 'https://onepiecetreasurecruise.fr/Capone%20Bege.html';
 
     default:
-      return '#';
+      return getOptcDbDefaultUrl(characterId);
+  }
+}
+
+function getFrenchRareRecruitUrl(characterId: string): string {
+  switch (characterId) {
+    default:
+      return getOptcDbDefaultUrl(characterId);
+  }
+}
+
+function getFrenchLimitedRareRecruitUrl(characterId: string): string {
+  switch (characterId) {
+    default:
+      return getOptcDbDefaultUrl(characterId);
+  }
+}
+
+function getFrenchRaidUrl(characterId: string): string {
+  switch (characterId) {
+    default:
+      return getOptcDbDefaultUrl(characterId);
+  }
+}
+
+function getFrenchColosseumUrl(characterId: string): string {
+  switch (characterId) {
+    default:
+      return getOptcDbDefaultUrl(characterId);
+  }
+}
+
+function getFrenchTreasureMapUrl(characterId: string): string {
+  switch (characterId) {
+    case '1808':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Dracule%20Mihawk.html';
+    case '1853':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Barbe%20Blanche.html';
+    case '1889':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Cavendish.html';
+    case '1916':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Monkey%20D.%20Luffy%201.html';
+    case '1941':
+      return 'https://onepiece-treasurecruise.com/en/wp-content/uploads/sites/2/f1941.png';
+    case '1972':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Sabo.html';
+    case '2000':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Sanji%20et%20Zoro.html';
+    case '2064':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Kizaru.html';
+    case '2109':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Charlotte%20Linlin.html';
+    case '2137':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Crocodile.html';
+    case '2175':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Jack.html';
+    case '2211':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Ener.html';
+    case '2261':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Shanks.html';
+    case '2299':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Boa%20Hancock.html';
+    case '2336':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Trafalgar%20Law.html';
+    case '2362':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Nami%201.html';
+    case '2387':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Kaido.html';
+    case '2443':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Don%20Quijote%20Doflamingo.html';
+    case '2469':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Smoothie%20et%20Oven.html';
+    case '2510':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Edward%20Weeble.html';
+    case '2557':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Shanks%20et%20Beckmann.html';
+    case '2583':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Rob%20Lucci.html';
+    case '2618':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Sakazuki%20et%20Issho.html';
+    case '2659':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Smoker.html';
+    case '2690':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Barbe%20Noire.html';
+    case '2729':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Basil%20Hawkins.html';
+    case '2763':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Nami%202.html';
+    case '2792':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/O-Robi.html';
+    case '2823':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/X-Drake.html';
+    case '2850':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Rebecca%20et%20Viola.html';
+    case '2879':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Nefertari%20Vivi.html';
+    case '2913':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Shirahoshi.html';
+    case '2977':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Monkey%20D.%20Luffy%202.html';
+
+    case '2995':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Zorojuro.html';
+    case '3022':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Reiju%20Vinsmoke.html';
+    case '3060':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Nami%20et%20Sanji.html';
+    case '3094':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Jinbe.html';
+    case '3315':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Charlotte%20Pudding.html';
+
+    default:
+      return getOptcDbDefaultUrl(characterId);
   }
 }

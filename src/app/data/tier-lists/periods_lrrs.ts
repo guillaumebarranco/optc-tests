@@ -110,6 +110,8 @@ export const japPeriodsLrrs = [
   '3123',
   '3127',
   '3129',
+  '3198',
+  '3199',
 ];
 
 export const periodsLrrs = [...gloPeriodsLrrs, ...japPeriodsLrrs];

@@ -6,8 +6,19 @@ export const gloKizunaLrrs = [
   '2887',
   '2888',
   '2889',
+  '2996',
+  '2997',
+  '2998',
 ];
 
-export const japKizunaLrrs = ['2996', '2997', '2998', '3051', '3120', '3121'];
+export const japKizunaLrrs = [
+  '3051',
+  '3120',
+  '3121',
+  '3151',
+  '3152',
+  '3153',
+  '3205',
+];
 
 export const kizunaLrrs = [...gloKizunaLrrs, ...japKizunaLrrs];
