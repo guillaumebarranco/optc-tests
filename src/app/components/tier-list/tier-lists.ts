@@ -20,7 +20,7 @@ import {
   periodsLrrs,
 } from 'src/app/data/tier-lists/periods_lrrs';
 import { japKizunaLrrs, kizunaLrrs } from 'src/app/data/tier-lists/kizuna_lrrs';
-import { pvps } from 'src/app/data/tier-lists/pvp';
+import { japPvps, pvps } from 'src/app/data/tier-lists/pvp';
 
 const formatedLegends: TierListCharacter[] = legends.map(id => ({
   id,
@@ -129,7 +129,12 @@ const formatedPvpLrrs = pvpLrrs.map(id => ({
   type: TierListCharacterType.PVP,
 }));
 
-const formatedJapPvps = japPvpLrrs.map(id => ({
+const formatedJapPvps = japPvps.map(id => ({
+  id,
+  type: TierListCharacterType.PVP_F2P,
+}));
+
+const formatedJapPvpLrrs = japPvpLrrs.map(id => ({
   id,
   type: TierListCharacterType.PVP,
 }));
@@ -300,6 +305,7 @@ export const tierLists: TierList[] = [
       ...formatedJapLrrs,
       ...formatedJapPeriodsLrrs,
       ...formatedJapKizunaLrrs,
+      ...formatedJapPvpLrrs,
       ...formatedJapSupports,
       ...formatedJapAmbushes,
     ],

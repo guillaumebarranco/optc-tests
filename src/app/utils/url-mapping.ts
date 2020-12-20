@@ -2,6 +2,8 @@ import { allLegends } from '../components/tier-list/tier-lists';
 import { colisees } from '../data/tier-lists/colisees';
 import { kizunas } from '../data/tier-lists/kizuna';
 import { lrrs } from '../data/tier-lists/lrr';
+import { pvps } from '../data/tier-lists/pvp';
+import { pvpLrrs } from '../data/tier-lists/pvp_lrrs';
 import { raids } from '../data/tier-lists/raids';
 import { rrs } from '../data/tier-lists/rr';
 import { tms } from '../data/tier-lists/tm';
@@ -25,6 +27,10 @@ export function getFrenchUrl(characterId: string): string {
     return getFrenchTreasureMapUrl(characterId);
   } else if (kizunas.map(l => l).includes(characterId)) {
     return getFrenchKizunaUrl(characterId);
+  } else if (pvps.map(l => l).includes(characterId)) {
+    return getFrenchPvpUrl(characterId);
+  } else if (pvpLrrs.map(l => l).includes(characterId)) {
+    return getFrenchPvpRareRecruitUrl(characterId);
   }
 
   return getOptcDbDefaultUrl(characterId);
@@ -398,6 +404,75 @@ function getFrenchRareRecruitUrl(characterId: string): string {
 
 function getFrenchLimitedRareRecruitUrl(characterId: string): string {
   switch (characterId) {
+    case '1621':
+      return 'https://onepiecetreasurecruise.fr/LRR/Eustass%20Kidd.html';
+    case '1632':
+      return 'https://onepiecetreasurecruise.fr/LRR/Fisher%20Tiger.html';
+    case '1665':
+      return 'https://onepiecetreasurecruise.fr/LRR/Aokiji.html';
+    case '1678':
+      return 'https://onepiecetreasurecruise.fr/LRR/Trafalgar%20Law.html';
+    case '1713':
+      return 'https://onepiecetreasurecruise.fr/LRR/Akainu.html';
+    case '1721':
+      return 'https://onepiecetreasurecruise.fr/LRR/Jinbe.html';
+    case '1770':
+      return 'https://onepiecetreasurecruise.fr/LRR/Ben%20Beckmann.html';
+    case '1778':
+      return 'https://onepiecetreasurecruise.fr/LRR/Kizaru.html';
+    case '1824':
+      return 'https://onepiecetreasurecruise.fr/LRR/Byrnndi%20World.html';
+    case '1859':
+      return 'https://onepiecetreasurecruise.fr/LRR/Leo.html';
+    case '1895':
+      return 'https://onepiecetreasurecruise.fr/LRR/Urouge%201.html';
+    case '1926':
+      return 'https://onepiecetreasurecruise.fr/LRR/Kobby.html';
+    case '1974':
+      return 'https://onepiecetreasurecruise.fr/LRR/Basil%20Hawkins.html';
+    case '2013':
+      return 'https://onepiecetreasurecruise.fr/LRR/Jewelry%20Bonney.html';
+    case '2048':
+      return 'https://onepiecetreasurecruise.fr/LRR/Koala.html';
+    case '2050':
+      return 'https://onepiecetreasurecruise.fr/LRR/Gecko%20Moria.html';
+    case '2068':
+      return 'https://onepiecetreasurecruise.fr/LRR/Tashigi.html';
+    case '2161':
+      return 'https://onepiecetreasurecruise.fr/LRR/Don%20Quijote%20Doflamingo.html';
+    case '2199':
+      return 'https://onepiecetreasurecruise.fr/LRR/Killer.html';
+    case '2247':
+      return 'https://onepiecetreasurecruise.fr/LRR/Nefertari%20Vivi.html';
+    case '2285':
+      return 'https://onepiecetreasurecruise.fr/LRR/Hody%20Jones.html';
+    case '2325':
+      return 'https://onepiecetreasurecruise.fr/LRR/Usoland.html';
+    case '2349':
+      return 'https://onepiecetreasurecruise.fr/LRR/Pedro.html';
+    case '2431':
+      return 'https://onepiecetreasurecruise.fr/LRR/Charlotte%20Pudding.html';
+    case '2463':
+      return 'https://onepiecetreasurecruise.fr/LRR/Franky.html';
+    case '2487':
+      return 'https://onepiecetreasurecruise.fr/LRR/Kinemon.html';
+    case '2515':
+      return 'https://onepiecetreasurecruise.fr/LRR/Urouge%202.html';
+    case '2575':
+      return 'https://onepiecetreasurecruise.fr/LRR/Carrot.html';
+    case '2696':
+      return 'https://onepiecetreasurecruise.fr/LRR/Marco.html';
+    case '2731':
+      return 'https://onepiecetreasurecruise.fr/LRR/Cesar%20Clown.html';
+    case '2892':
+      return 'https://onepiecetreasurecruise.fr/LRR/Sniperking.html';
+    case '2914':
+      return 'https://onepiecetreasurecruise.fr/LRR/Lucy.html';
+    case '2919':
+      return 'https://onepiecetreasurecruise.fr/LRR/Sanji%20et%20Pudding.html';
+    case '3097':
+      return 'https://onepiecetreasurecruise.fr/LRR/Sengoku.html';
+
     default:
       return getOptcDbDefaultUrl(characterId);
   }
@@ -405,6 +480,201 @@ function getFrenchLimitedRareRecruitUrl(characterId: string): string {
 
 function getFrenchRaidUrl(characterId: string): string {
   switch (characterId) {
+    case '0227':
+      return 'https://onepiecetreasurecruise.fr/Raids/Dracule%20Mihawk.html';
+    case '0249':
+      return 'https://onepiecetreasurecruise.fr/Raids/Chopper%20enrage.html';
+    case '0306':
+      return 'https://onepiecetreasurecruise.fr/Raids/Monkey%20D.%20Garp.html';
+    case '0353':
+      return 'https://onepiecetreasurecruise.fr/Raids/Zephyr.html';
+    case '0390':
+      return 'https://onepiecetreasurecruise.fr/Raids/Emporio%20Ivankov.html';
+    case '0418':
+      return 'https://onepiecetreasurecruise.fr/Raids/Don%20Quijote%20Doflamingo%201.html';
+    case '0447':
+      return 'https://onepiecetreasurecruise.fr/Raids/Barbe%20Noire%201.html';
+    case '0516':
+      return 'https://onepiecetreasurecruise.fr/Raids/Heracles.html';
+    case '0518':
+      return 'https://onepiecetreasurecruise.fr/Raids/Usopp.html';
+    case '0575':
+      return 'https://onepiecetreasurecruise.fr/Raids/Aokiji.html';
+    case '0603':
+      return 'https://onepiecetreasurecruise.fr/Raids/Ener.html';
+    case '0654':
+      return 'https://onepiecetreasurecruise.fr/Raids/Duval.html';
+    case '0770':
+      return 'https://onepiecetreasurecruise.fr/Raids/Buster%20Call.html';
+    case '0771':
+      return 'https://onepiecetreasurecruise.fr/Raids/Nightmare%20Luffy.html';
+    case '0772':
+      return 'https://onepiecetreasurecruise.fr/Raids/Bartholomew%20Kuma.html';
+    case '0773':
+      return 'https://onepiecetreasurecruise.fr/Raids/Boa%20Hancock.html';
+    case '0774':
+      return 'https://onepiecetreasurecruise.fr/Raids/Pica.html';
+    case '0775':
+      return 'https://onepiecetreasurecruise.fr/Raids/Kizaru.html';
+
+    case '0795':
+      return 'https://onepiecetreasurecruise.fr/Raids/Nightmare%20Luffy.html';
+    case '0836':
+      return 'https://onepiecetreasurecruise.fr/Raids/Bartholomew%20Kuma.html';
+    case '0865':
+      return 'https://onepiecetreasurecruise.fr/Raids/Boa%20Hancock.html';
+    case '0933':
+      return 'https://onepiecetreasurecruise.fr/Raids/Pica.html';
+    case '0978':
+      return 'https://onepiecetreasurecruise.fr/Raids/Kizaru.html';
+    case '0989':
+      return 'https://onepiecetreasurecruise.fr/Raids/Faux%20Equipage%20de%20Chapeau%20de%20paille.html';
+    case '1047':
+      return 'https://onepiecetreasurecruise.fr/Raids/Sabo%201.html';
+    case '1108':
+      return 'https://onepiecetreasurecruise.fr/Raids/Shiki.html';
+    case '1163':
+      return 'https://onepiecetreasurecruise.fr/Raids/Gild%20Tesoro.html';
+    case '1298':
+      return 'https://onepiecetreasurecruise.fr/Raids/Akainu.html';
+    case '1374':
+      return 'https://onepiecetreasurecruise.fr/Raids/Magellan.html';
+    case '1432':
+      return 'https://onepiecetreasurecruise.fr/Raids/Franky.html';
+    case '1518':
+      return 'https://onepiecetreasurecruise.fr/Raids/Bellamy.html';
+    case '1595':
+      return 'https://onepiecetreasurecruise.fr/Raids/Fujitora.html';
+
+    case '1623':
+      return 'https://onepiecetreasurecruise.fr/Raids/Neo%20Don%20Quijote%20Doflamingo.html';
+    case '1647':
+      return 'https://onepiecetreasurecruise.fr/Raids/Neo%20Pica.html';
+    case '1669':
+      return 'https://onepiecetreasurecruise.fr/Raids/Neo%20Aokiji.html';
+    case '1680':
+      return 'https://onepiecetreasurecruise.fr/Raids/Neo%20Dracule%20Mihawk.html';
+    case '1696':
+      return 'https://onepiecetreasurecruise.fr/Raids/Vergo.html';
+    case '1727':
+      return 'https://onepiecetreasurecruise.fr/Raids/Neo%20Sabo.html';
+    case '1739':
+      return 'https://onepiecetreasurecruise.fr/Raids/Neo%20Bellamy.html';
+    case '1772':
+      return 'https://onepiecetreasurecruise.fr/Raids/Neo%20Bartholomew%20Kuma.html';
+    case '1780':
+      return 'https://onepiecetreasurecruise.fr/Raids/Neo%20Kizaru.html';
+    case '1815':
+      return 'https://onepiecetreasurecruise.fr/Raids/Sanji%20Vinsmoke.html';
+    case '1826':
+      return 'https://onepiecetreasurecruise.fr/Raids/Neo%20Akainu.html';
+    case '1830':
+      return 'https://onepiecetreasurecruise.fr/Raids/Cesar%20Clown.html';
+    case '1879':
+      return 'https://onepiecetreasurecruise.fr/Raids/Bartolomeo.html';
+    case '1924':
+      return 'https://onepiecetreasurecruise.fr/Raids/Silvers%20Rayleigh.html';
+    case '1930':
+      return 'https://onepiecetreasurecruise.fr/Raids/Neo%20Ener.html';
+    case '1943':
+      return 'https://onepiecetreasurecruise.fr/Raids/Senor%20Pink.html';
+    case '2015':
+      return 'https://onepiecetreasurecruise.fr/Raids/Rob%20Lucci%201.html';
+    case '2033':
+      return 'https://onepiecetreasurecruise.fr/Raids/Monkey%20D.%20Luffy%201.html';
+    case '2070':
+      return 'https://onepiecetreasurecruise.fr/Raids/Neo%20Boa%20Hancock.html';
+
+    case '2097':
+      return 'https://onepiecetreasurecruise.fr/Raids/Roronoa%20Zoro.html';
+    case '2158':
+      return 'https://onepiecetreasurecruise.fr/Raids/Charlotte%20Cracker.html';
+    case '2197':
+      return 'https://onepiecetreasurecruise.fr/Raids/Barbe%20Noire%202.html';
+    case '2263':
+      return 'https://onepiecetreasurecruise.fr/Raids/Don%20Quijote%20Doflamingo%202.html';
+    case '2281':
+      return 'https://onepiecetreasurecruise.fr/Raids/Judge%20Vinsmoke.html';
+    case '2356':
+      return 'https://onepiecetreasurecruise.fr/Raids/Arlong.html';
+    case '2394':
+      return 'https://onepiecetreasurecruise.fr/Raids/Portgas%20D.%20Ace.html';
+    case '2398':
+      return 'https://onepiecetreasurecruise.fr/Raids/Big%20Emperor.html';
+    case '2473':
+      return 'https://onepiecetreasurecruise.fr/Raids/Big%20Mom.html';
+    case '2504':
+      return 'https://onepiecetreasurecruise.fr/Raids/Capone%20Bege.html';
+    case '2517':
+      return 'https://onepiecetreasurecruise.fr/Raids/Magellan%20et%20Hannyabal.html';
+    case '2552':
+      return 'https://onepiecetreasurecruise.fr/Raids/Sengoku%20et%20Garp.html';
+    case '2559':
+      return 'https://onepiecetreasurecruise.fr/Raids/Leo.html';
+    case '2642':
+      return 'https://onepiecetreasurecruise.fr/Raids/Stampede.html';
+    case '2643':
+      return 'https://onepiecetreasurecruise.fr/Raids/Stampede.html';
+    case '2644':
+      return 'https://onepiecetreasurecruise.fr/Raids/Stampede.html';
+    case '2645':
+      return 'https://onepiecetreasurecruise.fr/Raids/Stampede.html';
+    case '2646':
+      return 'https://onepiecetreasurecruise.fr/Raids/Stampede.html';
+    case '2647':
+      return 'https://onepiecetreasurecruise.fr/Raids/Stampede.html';
+    case '2670':
+      return 'https://onepiecetreasurecruise.fr/Raids/Rob%20Lucci%202.html';
+    case '2684':
+      return 'https://onepiecetreasurecruise.fr/Raids/Sabo%202.html';
+    case '2698':
+      return 'https://onepiecetreasurecruise.fr/Raids/Crocodile%201.html';
+    case '2707':
+      return 'https://onepiecetreasurecruise.fr/Raids/Zorojuro.html';
+    case '2711':
+      return 'https://onepiecetreasurecruise.fr/Raids/Preparation%20Bartolomeo.html';
+    case '2712':
+      return 'https://onepiecetreasurecruise.fr/Raids/Preparation%20Roronoa%20Zoro.html';
+    case '2714':
+      return 'https://onepiecetreasurecruise.fr/Raids/Preparation%20Rob%20Lucci%201.html';
+    case '2781':
+      return 'https://onepiecetreasurecruise.fr/Raids/Carrot.html';
+    case '2795':
+      return 'https://onepiecetreasurecruise.fr/Raids/Kobby%20et%20Hermep.html';
+    case '2819':
+      return 'https://onepiecetreasurecruise.fr/Raids/Shanks%20et%20Mihawk.html';
+    case '2846':
+      return 'https://onepiecetreasurecruise.fr/Raids/Jewelry%20Bonney.html';
+    case '2885':
+      return 'https://onepiecetreasurecruise.fr/Raids/CP9.html';
+    case '2893':
+      return 'https://onepiecetreasurecruise.fr/Raids/Jinbe.html';
+    case '2922':
+      return 'https://onepiecetreasurecruise.fr/Raids/Kaido.html';
+    case '2956':
+      return 'https://onepiecetreasurecruise.fr/Raids/Crocodile%202.html';
+    case '2987':
+      return 'https://onepiecetreasurecruise.fr/Raids/O-Soba%20Mask.html';
+    case '3340':
+      return 'https://onepiecetreasurecruise.fr/Raids/Neo%20Monkey%20D.%20Garp.html';
+    case '3352':
+      return 'https://onepiecetreasurecruise.fr/Raids/Neo%20Emporio%20Ivankov.html';
+    case '3357':
+      return 'https://onepiecetreasurecruise.fr/Raids/Neo%20Nightmare%20Luffy.html';
+    case '3359':
+      return 'https://onepiecetreasurecruise.fr/Raids/Neo%20Vergo.html';
+    case '3368':
+      return 'https://onepiecetreasurecruise.fr/Raids/Neo%20Duval.html';
+    case '3376':
+      return 'https://onepiecetreasurecruise.fr/Raids/Neo%20Heracles.html';
+    case '5052':
+      return 'https://onepiecetreasurecruise.fr/Raids/Usopp%20et%20Chopper.html';
+
+    case '3078':
+      return 'https://onepiecetreasurecruise.fr/Raids/Brook.html';
+    case '3143':
+      return 'https://onepiecetreasurecruise.fr/Raids/O-Nami%20et%20Shinobu.html';
+
     default:
       return getOptcDbDefaultUrl(characterId);
   }
@@ -551,6 +821,66 @@ function getFrenchKizunaUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Jigoro%20et%20Chien-manchot.html';
     case '3381':
       return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Law%20et%20Chopper.html';
+
+    default:
+      return getOptcDbDefaultUrl(characterId);
+  }
+}
+
+function getFrenchPvpUrl(characterId: string): string {
+  switch (characterId) {
+    case '2934':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Portgas%20D.%20Ace.html';
+    case '2989':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Rob%20Lucci.html';
+    case '3016':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Barbe%20Noire.html';
+    case '3047':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Ener.html';
+    case '3082':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Usoland.html';
+    case '3107':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Moria%20et%20Perona.html';
+    case '3142':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/X-Drake.html';
+    case '3173':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Bartolomeo.html';
+
+    default:
+      return getOptcDbDefaultUrl(characterId);
+  }
+}
+
+function getFrenchPvpRareRecruitUrl(characterId: string): string {
+  switch (characterId) {
+    case '2931':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/O-Tama.html';
+    case '2932':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Joz.html';
+    case '2933':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Chavipere.html';
+    case '2978':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Sanji%20Vinsmoke.html';
+    case '3000':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Stussy.html';
+    case '3025':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Barbe%20Blanche.html';
+    case '3061':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Calgara%20et%20Norland.html';
+    case '3062':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Conis.html';
+    case '3063':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Kaku.html';
+    case '3095':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Franky.html';
+    case '3096':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Leo.html';
+    case '3125':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Oz.html';
+    case '3163':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/O-Soba%20Mask.html';
+    case '3206':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Cavendish.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
