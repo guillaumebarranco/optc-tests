@@ -113,6 +113,8 @@ export const legends2020 = [
   '3007',
   '3009',
   '3038',
+  '3175',
+  '3177',
 ];
 
 export const japLegends = [

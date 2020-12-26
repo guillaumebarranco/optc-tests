@@ -275,6 +275,10 @@ function getFrenchLegendUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Vivi%20et%20Rebecca%202.html';
     case '3166':
       return 'https://onepiecetreasurecruise.fr/Shirahoshi%20et%20Manshelly%202.html';
+    case '3175':
+      return 'https://onepiecetreasurecruise.fr/Oden%20Kozuki.html';
+    case '3177':
+      return 'https://onepiecetreasurecruise.fr/Gol%20D.%20Roger.html';
     case '3203':
       return 'https://onepiecetreasurecruise.fr/Sanji%20et%20Pudding.html';
 
