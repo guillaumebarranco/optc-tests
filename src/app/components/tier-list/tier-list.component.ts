@@ -12,6 +12,7 @@ import {
   TierListInformationsFrenchComponent,
   SaveTierListFrenchComponent,
   SaveTierListEnglishComponent,
+  TierSettingsComponent,
 } from '../dialogs';
 import { TierList, TierListId } from '../../models/tier-list';
 import { Tier } from '../../models/tier';
@@ -68,6 +69,8 @@ export class TierListComponent implements OnInit {
 
   public _filters: TierListFilters = null;
 
+  public _isStreamerMode = false;
+
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _snackBar: MatSnackBar,
@@ -120,8 +123,9 @@ export class TierListComponent implements OnInit {
 
       const sharedTiers: SavedTier[] = JSON.parse(params.tiers);
 
-      this.tiers = sharedTiers.map(tier => ({
+      this.tiers = sharedTiers.map((tier, index) => ({
         ...tier,
+        color: tier.color || this.colors[index],
         characters: this.currentTierList.characters.reduce(
           (acc: TierListCharacter[], character: TierListCharacter) =>
             tier.characters.includes(character.id)
@@ -153,9 +157,10 @@ export class TierListComponent implements OnInit {
 
     this.removedCharacters = [];
 
-    this.tiers = this.basicTiers.map(x => {
+    this.tiers = this.basicTiers.map((x, index) => {
       return {
         name: x,
+        color: this.colors[index],
         characters: x === 'F' ? [...this.currentTierList.characters] : [],
       };
     });
@@ -243,6 +248,7 @@ export class TierListComponent implements OnInit {
       return {
         characters: tierCharacters,
         name: tier.name,
+        color: tier.color || this.colors[index],
       };
     });
 
@@ -456,5 +462,72 @@ export class TierListComponent implements OnInit {
     }
 
     window.open(url, '_blank');
+  }
+
+  public _toggleStreamerMode(): void {
+    this._isStreamerMode = !this._isStreamerMode;
+  }
+
+  public _onOpenTierSettings(tier: Tier): void {
+    this._dialog
+      .open(TierSettingsComponent, {
+        data: {
+          tier,
+          colors: this.colors,
+          language: this.language,
+        },
+        width: '800px',
+      })
+      .afterClosed()
+      .subscribe((action: string) => {
+        if (action) {
+          if (action === 'add-tier-before') {
+            this.tiers = this.tiers.reduce((accTiers, t) => {
+              if (t.name === tier.name) {
+                const newTierIndex = this.tiers.length + 1;
+                const newTierName = `Tier ${newTierIndex}`;
+
+                accTiers = accTiers.concat({
+                  name: newTierName,
+                  characters: [],
+                  color: '#00bfff',
+                });
+              }
+
+              return accTiers.concat(t);
+            }, []);
+          } else if (action === 'add-tier-after') {
+            this.tiers = this.tiers.reduce((accTiers, t) => {
+              accTiers = accTiers.concat(t);
+
+              if (t.name === tier.name) {
+                const newTierIndex = this.tiers.length + 1;
+                const newTierName = `Tier ${newTierIndex}`;
+
+                accTiers = accTiers.concat({
+                  name: newTierName,
+                  characters: [],
+                  color: '#00bfff',
+                });
+              }
+
+              return accTiers;
+            }, []);
+          } else if (action.includes('color:')) {
+            console.log('action color', action);
+
+            this.tiers = this.tiers.map(t => {
+              if (t.name === tier.name) {
+                return {
+                  ...t,
+                  color: action.split(':')[1],
+                };
+              }
+
+              return t;
+            });
+          }
+        }
+      });
   }
 }

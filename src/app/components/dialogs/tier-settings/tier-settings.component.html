@@ -1,0 +1,35 @@
+<p>Tier : {{ _tier.name }}</p>
+
+<div class="buttons">
+  <div>
+    <button mat-button [mat-dialog-close]="'add-tier-before'">
+      Ajouter un tier au-dessus
+    </button>
+  </div>
+
+  <div>
+    <button mat-button [mat-dialog-close]="'add-tier-after'">
+      Ajouter un tier en-dessous
+    </button>
+  </div>
+
+  <div>
+    <p>Changer de couleur</p>
+
+    <div class="colors">
+      <span
+        *ngFor="let color of _colors"
+        class="color-selector"
+        [ngStyle]="{ 'background-color': color }"
+        [mat-dialog-close]="'color:' + color"
+      ></span>
+    </div>
+  </div>
+
+  <div>
+    <button class="warn" mat-button mat-dialog-close>
+      <mat-icon>cancel</mat-icon>
+      Annuler
+    </button>
+  </div>
+</div>

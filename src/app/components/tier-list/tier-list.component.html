@@ -4,7 +4,17 @@
     <input [(ngModel)]="tierListTitle" />
   </div>
 
-  <div class="languages">
+  <div class="streamer-mode">
+    <button
+      mat-button
+      [ngClass]="{ active: _isStreamerMode }"
+      (click)="_toggleStreamerMode()"
+    >
+      Mode Streamer
+    </button>
+  </div>
+
+  <div class="languages" [ngClass]="{ 'languages-hidden': _isStreamerMode }">
     <button
       mat-button
       [ngClass]="{ active: language === 'FR' }"
@@ -22,7 +32,7 @@
   </div>
 </div>
 
-<ul *ngIf="currentTierList" class="nav">
+<ul *ngIf="currentTierList && !_isStreamerMode" class="nav">
   <ng-container *ngFor="let tierList of tierLists; let tierIndex = index">
     <li
       *ngIf="tierIndex < 5"
@@ -100,7 +110,7 @@
           <tr *ngIf="i !== 6 || !hideLastTier">
             <td class="labelHolder" contenteditable="false">
               <input
-                [ngStyle]="{ 'background-color': colors[i] }"
+                [ngStyle]="{ 'background-color': tier.color }"
                 [(ngModel)]="tier.name"
               />
             </td>
@@ -145,8 +155,14 @@
                   />
                 </ng-container>
               </div>
-            </td></tr
-        ></ng-container>
+            </td>
+            <td class="tier-actions">
+              <div class="tier-settings" (click)="_onOpenTierSettings(tier)">
+                <mat-icon>settings</mat-icon>
+              </div>
+            </td>
+          </tr>
+        </ng-container>
       </tbody>
     </table>
   </div>
@@ -158,6 +174,7 @@
   </button>
 
   <button
+    *ngIf="!_isStreamerMode"
     mat-icon-button
     [ngClass]="{ active: showActions }"
     (click)="_toggleActionsButton()"
@@ -173,7 +190,11 @@
     <mat-icon>filter_list</mat-icon>
   </button>
 
-  <button mat-icon-button (click)="showInformationsDialog()">
+  <button
+    *ngIf="!_isStreamerMode"
+    mat-icon-button
+    (click)="showInformationsDialog()"
+  >
     <mat-icon>info</mat-icon>
   </button>
 </div>
