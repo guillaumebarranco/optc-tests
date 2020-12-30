@@ -232,7 +232,7 @@ export class TierListComponent implements OnInit {
           }
 
           if (
-            index === 6 &&
+            this._isLastTier(tier) &&
             !tier.characters.includes(character.id) &&
             !savedTierList.removedCharacters.includes(character.id) &&
             !alreadyAddedCharacters.includes(character.id)
@@ -513,9 +513,9 @@ export class TierListComponent implements OnInit {
 
               return accTiers;
             }, []);
+          } else if (action === 'remove-tier') {
+            this.tiers = this.tiers.filter(t => t.name !== tier.name);
           } else if (action.includes('color:')) {
-            console.log('action color', action);
-
             this.tiers = this.tiers.map(t => {
               if (t.name === tier.name) {
                 return {
@@ -529,5 +529,9 @@ export class TierListComponent implements OnInit {
           }
         }
       });
+  }
+
+  public _isLastTier(tier) {
+    return this.tiers[this.tiers.length - 1].name === tier.name;
   }
 }
