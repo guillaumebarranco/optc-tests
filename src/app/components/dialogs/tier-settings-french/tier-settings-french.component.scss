@@ -1,0 +1,35 @@
+.buttons {
+  & > div {
+    margin-top: 10px;
+  }
+}
+
+button {
+  &.warn {
+    background-color: #f44336;
+    color: white;
+  }
+
+  &.active {
+    background-color: lightskyblue;
+  }
+
+  &:first-of-type {
+    margin-right: 10px;
+  }
+
+  border: solid 1px grey;
+}
+
+.colors {
+  display: flex;
+}
+
+.color-selector {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: 20px;
+  cursor: pointer;
+}

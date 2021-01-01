@@ -12,7 +12,8 @@ import {
   TierListInformationsFrenchComponent,
   SaveTierListFrenchComponent,
   SaveTierListEnglishComponent,
-  TierSettingsComponent,
+  TierSettingsFrenchComponent,
+  TierSettingsEnglishComponent,
 } from '../dialogs';
 import { TierList, TierListId } from '../../models/tier-list';
 import { Tier } from '../../models/tier';
@@ -469,8 +470,13 @@ export class TierListComponent implements OnInit {
   }
 
   public _onOpenTierSettings(tier: Tier): void {
+    const component =
+      this.language === 'FR'
+        ? TierSettingsFrenchComponent
+        : TierSettingsEnglishComponent;
+
     this._dialog
-      .open(TierSettingsComponent, {
+      .open(component, {
         data: {
           tier,
           colors: this.colors,

@@ -10,7 +10,8 @@
       [ngClass]="{ active: _isStreamerMode }"
       (click)="_toggleStreamerMode()"
     >
-      Mode Streamer
+      <span *ngIf="language === 'EN'">Streamer Mode</span>
+      <span *ngIf="language === 'FR'">Mode Streamer</span>
     </button>
   </div>
 
@@ -176,7 +177,6 @@
   </button>
 
   <button
-    *ngIf="!_isStreamerMode"
     mat-icon-button
     [ngClass]="{ active: showActions }"
     (click)="_toggleActionsButton()"
