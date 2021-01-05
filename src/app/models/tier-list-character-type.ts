@@ -8,6 +8,7 @@ export enum TierListCharacterType {
   PERIOD_LRR = 'PERIOD_LRR',
   KIZUNA_LRR = 'KIZUNA_LRR',
   COLOSSEUM = 'COLOSSEUM',
+  ARENA = 'ARENA',
   RAID = 'RAID',
   TM = 'TM',
   PVP_F2P = 'PVP_F2P',
@@ -15,4 +16,5 @@ export enum TierListCharacterType {
   SUPPORT = 'SUPPORT',
   KIZUNA = 'KIZUNA',
   AMBUSH = 'AMBUSH',
+  SPECIAL = 'SPECIAL',
 }

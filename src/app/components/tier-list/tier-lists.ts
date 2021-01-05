@@ -21,6 +21,8 @@ import {
 } from 'src/app/data/tier-lists/periods_lrrs';
 import { japKizunaLrrs, kizunaLrrs } from 'src/app/data/tier-lists/kizuna_lrrs';
 import { japPvps, pvps } from 'src/app/data/tier-lists/pvp';
+import { arenas, japArenas } from 'src/app/data/tier-lists/arenes';
+import { japSpecials, specials } from 'src/app/data/tier-lists/special';
 
 const formatedLegends: TierListCharacter[] = legends.map(id => ({
   id,
@@ -99,6 +101,16 @@ const formatedJapColosseums = japColisees.map(id => ({
   type: TierListCharacterType.COLOSSEUM,
 }));
 
+const formatedArenas = arenas.map(id => ({
+  id,
+  type: TierListCharacterType.ARENA,
+}));
+
+const formatedJapArenas = japArenas.map(id => ({
+  id,
+  type: TierListCharacterType.ARENA,
+}));
+
 const formatedRaids = raids.map(id => ({
   id,
   type: TierListCharacterType.RAID,
@@ -169,12 +181,24 @@ const formatedJapAmbushes = japAmbushs.map(id => ({
   type: TierListCharacterType.AMBUSH,
 }));
 
+const formatedSpecials = specials.map(id => ({
+  id,
+  type: TierListCharacterType.SPECIAL,
+}));
+
+const formatedJapSpecials = japSpecials.map(id => ({
+  id,
+  type: TierListCharacterType.SPECIAL,
+}));
+
 export const combinedAllCategoriesCharacters = [
   ...formatedTms,
   ...formatedColosseums,
+  ...formatedArenas,
   ...formatedRaids,
   ...formatedKizunas,
   ...formatedAmbushes,
+  ...formatedSpecials,
   ...formatedRrs,
   ...formatedLrrs,
   ...formatedPeriodsLrrs,
@@ -234,6 +258,18 @@ export const tierLists: TierList[] = [
     id: TierListId.KIZUNA,
   },
   {
+    frenchName: 'Personnages Arène',
+    englishName: 'Arena Characters',
+    characters: formatedArenas,
+    id: TierListId.ARENA,
+  },
+  {
+    frenchName: 'Personnages Spéciaux',
+    englishName: 'Special Characters',
+    characters: formatedSpecials,
+    id: TierListId.SPECIAL,
+  },
+  {
     frenchName: 'Personnages LRR',
     englishName: 'LRR Characters',
     characters: formatedLrrs,
@@ -269,10 +305,12 @@ export const tierLists: TierList[] = [
     characters: [
       ...formatedTms,
       ...formatedColosseums,
+      ...formatedArenas,
       ...formatedRaids,
       ...formatedKizunas,
       ...formatedPvps,
       ...formatedAmbushes,
+      ...formatedSpecials,
     ],
     id: TierListId.F2P,
   },
@@ -299,6 +337,7 @@ export const tierLists: TierList[] = [
       ...formatedJapRrs,
       ...formatedJapTms,
       ...formatedJapColosseums,
+      ...formatedJapArenas,
       ...formatedJapPvps,
       ...formatedJapKizunas,
       ...formatedJapRaids,
@@ -308,6 +347,7 @@ export const tierLists: TierList[] = [
       ...formatedJapPvpLrrs,
       ...formatedJapSupports,
       ...formatedJapAmbushes,
+      ...formatedJapSpecials,
     ],
     id: TierListId.JPN,
   },

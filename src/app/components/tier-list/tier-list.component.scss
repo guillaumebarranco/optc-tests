@@ -275,10 +275,15 @@ button {
   filter: grayscale(1);
 }
 
+// .tier-characters {
+//   width: calc(100% - 200px);
+// }
+
 .tier-actions {
   display: flex;
   justify-content: center;
   align-items: center;
+  // width: 50px !important;
   padding: 0 5px !important;
 }
 
