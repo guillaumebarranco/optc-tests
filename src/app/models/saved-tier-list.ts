@@ -3,6 +3,7 @@ import { TierListId } from './tier-list';
 export interface SavedTier {
   name: string;
   characters: string[];
+  color?: string;
 }
 
 export interface SavedTierList {

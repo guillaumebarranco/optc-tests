@@ -4,6 +4,8 @@ import { SaveTierListFrenchComponent } from './save-tier-list-french/save-tier-l
 import { SaveTierListEnglishComponent } from './save-tier-list-english/save-tier-list-english.component';
 import { RemoveTierListFrenchComponent } from './remove-tier-list-french/remove-tier-list-french.component';
 import { RemoveTierListEnglishComponent } from './remove-tier-list-english/remove-tier-list-english.component';
+import { TierSettingsFrenchComponent } from './tier-settings-french/tier-settings-french.component';
+import { TierSettingsEnglishComponent } from './tier-settings-english/tier-settings-english.component';
 
 export const dialogs = [
   TierListInformationsFrenchComponent,
@@ -12,6 +14,8 @@ export const dialogs = [
   SaveTierListEnglishComponent,
   RemoveTierListFrenchComponent,
   RemoveTierListEnglishComponent,
+  TierSettingsFrenchComponent,
+  TierSettingsEnglishComponent,
 ];
 
 export { TierListInformationsFrenchComponent } from './tier-list-informations-french/tier-list-informations-french.component';
@@ -20,3 +24,5 @@ export { SaveTierListFrenchComponent } from './save-tier-list-french/save-tier-l
 export { SaveTierListEnglishComponent } from './save-tier-list-english/save-tier-list-english.component';
 export { RemoveTierListFrenchComponent } from './remove-tier-list-french/remove-tier-list-french.component';
 export { RemoveTierListEnglishComponent } from './remove-tier-list-english/remove-tier-list-english.component';
+export { TierSettingsFrenchComponent } from './tier-settings-french/tier-settings-french.component';
+export { TierSettingsEnglishComponent } from './tier-settings-english/tier-settings-english.component';

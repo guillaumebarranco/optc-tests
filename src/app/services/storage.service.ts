@@ -33,6 +33,7 @@ export class StorageService {
             return {
               characters: tier.characters.map(c => c.id),
               name: tier.name,
+              color: tier.color,
             };
           }),
           removedCharacters: removedCharacters.map(c => c.id),
@@ -58,7 +59,7 @@ export class StorageService {
         localStorage.setItem(TIER_LISTS_KEY, JSON.stringify(tierListsUpdated));
       }
 
-      resolve();
+      resolve(null);
     });
   }
 

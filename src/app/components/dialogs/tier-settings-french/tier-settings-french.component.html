@@ -1,0 +1,44 @@
+<p>Tier : {{ _tier.name }}</p>
+
+<div class="buttons">
+  <div>
+    <button mat-button [mat-dialog-close]="'add-tier-before'">
+      Ajouter un tier au-dessus
+    </button>
+  </div>
+
+  <div>
+    <button mat-button [mat-dialog-close]="'add-tier-after'">
+      Ajouter un tier en-dessous
+    </button>
+  </div>
+
+  <div>
+    <p>Changer de couleur</p>
+
+    <div class="colors">
+      <span
+        *ngFor="let color of _colors"
+        class="color-selector"
+        [ngStyle]="{ 'background-color': color }"
+        [mat-dialog-close]="'color:' + color"
+      ></span>
+    </div>
+  </div>
+
+  <div>
+    <div *ngIf="_tier.characters.length !== 0" style="color: red">
+      Vous ne pouvez pas supprimer ce Tier car des personnages s'y trouvent
+    </div>
+    <br />
+    <button
+      [disabled]="_tier.characters.length !== 0"
+      class="warn"
+      mat-button
+      mat-dialog-close="remove-tier"
+    >
+      <mat-icon>cancel</mat-icon>
+      Supprimer le tier
+    </button>
+  </div>
+</div>
