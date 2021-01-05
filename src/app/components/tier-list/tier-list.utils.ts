@@ -33,6 +33,8 @@ import { pvpLrrs } from 'src/app/data/tier-lists/pvp_lrrs';
 import { kizunaLrrs } from 'src/app/data/tier-lists/kizuna_lrrs';
 import { periodsLrrs } from 'src/app/data/tier-lists/periods_lrrs';
 import { pvps } from 'src/app/data/tier-lists/pvp';
+import { arenas } from 'src/app/data/tier-lists/arenes';
+import { specials } from 'src/app/data/tier-lists/special';
 
 export function getCharacterImgPath(character: TierListCharacter): string {
   const basePath = 'assets/characters';
@@ -56,6 +58,8 @@ export function getCharacterImgPath(character: TierListCharacter): string {
       return `${basePath}/periods_lrr/f${character.id}.png`;
     case TierListCharacterType.COLOSSEUM:
       return `${basePath}/colosseum/f${character.id}.png`;
+    case TierListCharacterType.ARENA:
+      return `${basePath}/arena/f${character.id}.png`;
     case TierListCharacterType.RAID:
       return `${basePath}/raid/f${character.id}.png`;
     case TierListCharacterType.TM:
@@ -70,6 +74,8 @@ export function getCharacterImgPath(character: TierListCharacter): string {
       return `${basePath}/kizuna/f${character.id}.png`;
     case TierListCharacterType.AMBUSH:
       return `${basePath}/ambush/f${character.id}.png`;
+    case TierListCharacterType.SPECIAL:
+      return `${basePath}/special/f${character.id}.png`;
     default:
       return '';
   }
@@ -125,6 +131,7 @@ export function getDefaultFilters(): TierListFilters {
       [TierListCharacterType.RR]: true,
       [TierListCharacterType.LRR]: true,
       [TierListCharacterType.COLOSSEUM]: true,
+      [TierListCharacterType.ARENA]: true,
       [TierListCharacterType.RAID]: true,
       [TierListCharacterType.TM]: true,
       [TierListCharacterType.PVP_F2P]: true,
@@ -134,6 +141,7 @@ export function getDefaultFilters(): TierListFilters {
       [TierListCharacterType.AMBUSH]: true,
       [TierListCharacterType.KIZUNA_LRR]: true,
       [TierListCharacterType.PERIOD_LRR]: true,
+      [TierListCharacterType.SPECIAL]: true,
     },
   };
 }
@@ -158,6 +166,11 @@ function filterCategories(
           c => !colisees.includes(c)
         );
         break;
+      case TierListCharacterType.ARENA:
+        filteredCharacters = filteredCharacters = filteredCharacters.filter(
+          c => !arenas.includes(c)
+        );
+        break;
       case TierListCharacterType.RAID:
         filteredCharacters = filteredCharacters = filteredCharacters.filter(
           c => !raids.includes(c)
@@ -176,6 +189,11 @@ function filterCategories(
       case TierListCharacterType.AMBUSH:
         filteredCharacters = filteredCharacters = filteredCharacters.filter(
           c => !ambushs.includes(c)
+        );
+        break;
+      case TierListCharacterType.SPECIAL:
+        filteredCharacters = filteredCharacters = filteredCharacters.filter(
+          c => !specials.includes(c)
         );
         break;
       case TierListCharacterType.LEGEND:
