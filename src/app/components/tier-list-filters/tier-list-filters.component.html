@@ -62,6 +62,13 @@
   <!-- F2P -->
   <ng-container *ngIf="language === 'FR'">
     <mat-checkbox
+      *ngIf="tierListId !== _tierListIdEnum.JPN"
+      [checked]="filters.showGlobalOnly"
+      (change)="onToggleShowGlobalOnlyCharacters()"
+      >Voir les personnages sortis uniquement sur la version Globale
+    </mat-checkbox>
+
+    <mat-checkbox
       *ngIf="
         tierListId === _tierListIdEnum.F2P ||
         tierListId === _tierListIdEnum.ALL ||
@@ -126,6 +133,13 @@
   </ng-container>
 
   <ng-container *ngIf="language === 'EN'">
+    <mat-checkbox
+      *ngIf="tierListId !== _tierListIdEnum.JPN"
+      [checked]="filters.showGlobalOnly"
+      (change)="onToggleShowGlobalOnlyCharacters()"
+      >Show Only Global Characters
+    </mat-checkbox>
+
     <mat-checkbox
       *ngIf="
         tierListId === _tierListIdEnum.F2P ||

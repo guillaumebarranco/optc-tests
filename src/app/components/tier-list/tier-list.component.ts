@@ -71,6 +71,7 @@ export class TierListComponent implements OnInit {
   public _filters: TierListFilters = null;
 
   public _isStreamerMode = false;
+  public isExporting = false;
 
   constructor(
     private _activatedRoute: ActivatedRoute,
@@ -178,6 +179,7 @@ export class TierListComponent implements OnInit {
   public switchTierList(tierListId: TierListId): void {
     window.history.replaceState(null, null, `?tierListId=${tierListId}`);
     this._initTiers(tierListId);
+    this._filtersCharactersList();
   }
 
   public drop(event: any): void {
@@ -269,6 +271,8 @@ export class TierListComponent implements OnInit {
   public onExportTierList(removeLastTier: boolean): void {
     window.scrollTo(0, 0);
 
+    this.isExporting = true;
+
     if (removeLastTier) {
       this.hideLastTier = true;
     }
@@ -285,6 +289,7 @@ export class TierListComponent implements OnInit {
 
           setTimeout(() => {
             this.hideLastTier = false;
+            this.isExporting = false;
           }, 100);
         }
       );
@@ -303,6 +308,12 @@ export class TierListComponent implements OnInit {
   public _onToggleHideSixStarsLegendsHavingSixPlusVersion(): void {
     this._filters.hideSixStarsLegendsHavingSixPlusVersion = !this._filters
       .hideSixStarsLegendsHavingSixPlusVersion;
+
+    this._filtersCharactersList();
+  }
+
+  public _onToggleShowGlobalOnlyCharacters(): void {
+    this._filters.showGlobalOnly = !this._filters.showGlobalOnly;
 
     this._filtersCharactersList();
   }

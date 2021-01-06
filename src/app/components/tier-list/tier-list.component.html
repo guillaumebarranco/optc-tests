@@ -94,6 +94,7 @@
       (toggleHideSixStarsLegendsHavingSixPlusVersion)="
         _onToggleHideSixStarsLegendsHavingSixPlusVersion()
       "
+      (toggleShowGlobalOnlyCharacters)="_onToggleShowGlobalOnlyCharacters()"
     ></app-tier-list-filters>
   </div>
 
@@ -160,7 +161,7 @@
                 </ng-container>
               </div>
             </td>
-            <td class="tier-actions">
+            <td *ngIf="!isExporting" class="tier-actions">
               <div class="tier-settings" (click)="_onOpenTierSettings(tier)">
                 <mat-icon>settings</mat-icon>
               </div>
