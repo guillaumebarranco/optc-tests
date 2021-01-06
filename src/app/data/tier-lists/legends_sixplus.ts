@@ -56,9 +56,10 @@ export const legendsSixPlus2020 = [
   '2954',
   '2991',
   '3018',
+  '3048',
 ];
 
-export const japLegendsSixPLus = ['3048', '3079', '3155', '3202'];
+export const japLegendsSixPLus = ['3079', '3155', '3202', '3211'];
 
 export const legendsSixPlus = [
   ...legendsSixPlus2017,

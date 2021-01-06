@@ -19,6 +19,7 @@ export const japKizunaLrrs = [
   '3152',
   '3153',
   '3205',
+  '3212',
 ];
 
 export const kizunaLrrs = [...gloKizunaLrrs, ...japKizunaLrrs];

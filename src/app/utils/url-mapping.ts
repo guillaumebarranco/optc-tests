@@ -1,4 +1,5 @@
 import { allLegends } from '../components/tier-list/tier-lists';
+import { arenas } from '../data/tier-lists/arenes';
 import { colisees } from '../data/tier-lists/colisees';
 import { kizunas } from '../data/tier-lists/kizuna';
 import { lrrs } from '../data/tier-lists/lrr';
@@ -23,6 +24,8 @@ export function getFrenchUrl(characterId: string): string {
     return getFrenchRaidUrl(characterId);
   } else if (colisees.map(l => l).includes(characterId)) {
     return getFrenchColosseumUrl(characterId);
+  } else if (arenas.map(l => l).includes(characterId)) {
+    return getFrenchArenaUrl(characterId);
   } else if (tms.map(l => l).includes(characterId)) {
     return getFrenchTreasureMapUrl(characterId);
   } else if (kizunas.map(l => l).includes(characterId)) {
@@ -393,6 +396,8 @@ function getFrenchLegendUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Barbe%20Noire%201.html';
     case '3202':
       return 'https://onepiecetreasurecruise.fr/Roronoa%20Zoro%202.html';
+    case '3211':
+      return 'https://onepiecetreasurecruise.fr/Sanji%20Vinsmoke%202.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -678,6 +683,8 @@ function getFrenchRaidUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Raids/Brook.html';
     case '3143':
       return 'https://onepiecetreasurecruise.fr/Raids/O-Nami%20et%20Shinobu.html';
+    case '3209':
+      return 'https://onepiecetreasurecruise.fr/Raids/Luffytaro.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -686,6 +693,20 @@ function getFrenchRaidUrl(characterId: string): string {
 
 function getFrenchColosseumUrl(characterId: string): string {
   switch (characterId) {
+    default:
+      return getOptcDbDefaultUrl(characterId);
+  }
+}
+
+function getFrenchArenaUrl(characterId: string): string {
+  switch (characterId) {
+    case '3145':
+      return 'https://onepiecetreasurecruise.fr/Arene/Kamazo.html';
+    case '3189':
+      return 'https://onepiecetreasurecruise.fr/Arene/Fransuke.html';
+    case '3210':
+      return 'https://onepiecetreasurecruise.fr/Arene/X-Drake.html';
+
     default:
       return getOptcDbDefaultUrl(characterId);
   }
@@ -772,6 +793,8 @@ function getFrenchTreasureMapUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Charlotte%20Pudding.html';
     case '3150':
       return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Eustass%20Kidd.html';
+    case '3197':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Monkey%20D.%20Garp.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -812,6 +835,10 @@ function getFrenchKizunaUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Eustass%20Kidd.html';
     case '3154':
       return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Basil%20Hawkins.html';
+    case '3207':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Bege%20et%20Pets.html';
+    case '3213':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/O-Nami%20et%20O-Robi.html';
 
     case '2518':
       return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Bartolomeo.html';
