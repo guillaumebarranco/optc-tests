@@ -10,6 +10,6 @@ export const gloAmbushs = [
   '3354',
 ];
 
-export const japAmbushs = [];
+export const japAmbushs = ['3172'];
 
 export const ambushs = [...gloAmbushs, ...japAmbushs];
