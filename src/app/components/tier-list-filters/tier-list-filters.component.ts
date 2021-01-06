@@ -10,14 +10,12 @@ import { TierListFilters } from 'src/app/models/tier-list-filters';
 })
 export class TierListFiltersComponent {
   @Output() public updateYearSelection = new EventEmitter<string>();
-  @Output() public toggleCharacterTypeDisplay = new EventEmitter<
-    TierListCharacterType
-  >();
+  @Output()
+  public toggleCharacterTypeDisplay = new EventEmitter<TierListCharacterType>();
   @Output() public toggleShowRemovedCharacters = new EventEmitter<void>();
   @Output()
-  public toggleHideSixStarsLegendsHavingSixPlusVersion = new EventEmitter<
-    void
-  >();
+  public toggleHideSixStarsLegendsHavingSixPlusVersion = new EventEmitter<void>();
+  @Output() public toggleShowGlobalOnlyCharacters = new EventEmitter<void>();
 
   @Input() public tierListId: TierListId;
   @Input() public language: string;
@@ -40,5 +38,9 @@ export class TierListFiltersComponent {
 
   public _onToggleHideSixStarsLegendsHavingSixPlusVersion() {
     this.toggleHideSixStarsLegendsHavingSixPlusVersion.emit();
+  }
+
+  public onToggleShowGlobalOnlyCharacters() {
+    this.toggleShowGlobalOnlyCharacters.emit();
   }
 }

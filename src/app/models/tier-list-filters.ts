@@ -11,4 +11,5 @@ export interface TierListFilters {
   showRemovedCharacters: boolean;
   characterTypesDisplay: TierListCharacterTypeFilter;
   hideSixStarsLegendsHavingSixPlusVersion: boolean;
+  showGlobalOnly: boolean;
 }

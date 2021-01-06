@@ -35,6 +35,7 @@ import { periodsLrrs } from 'src/app/data/tier-lists/periods_lrrs';
 import { pvps } from 'src/app/data/tier-lists/pvp';
 import { arenas } from 'src/app/data/tier-lists/arenes';
 import { specials } from 'src/app/data/tier-lists/special';
+import { japOnlyAllCategoriesCharacters } from './tier-lists';
 
 export function getCharacterImgPath(character: TierListCharacter): string {
   const basePath = 'assets/characters';
@@ -113,6 +114,12 @@ export function filtersCharactersList(
     );
   }
 
+  if (filters.showGlobalOnly) {
+    filteredCharacters = filteredCharacters.filter(
+      c => !japOnlyAllCategoriesCharacters.map(j => j.id).includes(c)
+    );
+  }
+
   return filteredCharacters;
 }
 
@@ -123,6 +130,7 @@ export function getDefaultFilters(): TierListFilters {
     selectedYearLegend: 'none',
     showRemovedCharacters: false,
     hideSixStarsLegendsHavingSixPlusVersion: false,
+    showGlobalOnly: false,
     characterTypesDisplay: {
       [TierListCharacterType.LEGEND]: true,
       [TierListCharacterType.SIX_PLUS_LEGEND]: true,

@@ -208,6 +208,25 @@ export const combinedAllCategoriesCharacters = [
   ...allLegends,
 ];
 
+export const japOnlyAllCategoriesCharacters = [
+  ...formatedJapLegends,
+  ...formatedJapSixPlusLegends,
+  ...formatedJapRrs,
+  ...formatedJapTms,
+  ...formatedJapColosseums,
+  ...formatedJapArenas,
+  ...formatedJapPvps,
+  ...formatedJapKizunas,
+  ...formatedJapRaids,
+  ...formatedJapLrrs,
+  ...formatedJapPeriodsLrrs,
+  ...formatedJapKizunaLrrs,
+  ...formatedJapPvpLrrs,
+  ...formatedJapSupports,
+  ...formatedJapAmbushes,
+  ...formatedJapSpecials,
+];
+
 export const tierLists: TierList[] = [
   {
     frenchName: 'Légendes',
@@ -331,24 +350,7 @@ export const tierLists: TierList[] = [
   {
     frenchName: 'Personnages uniquement sur JPN',
     englishName: 'JPN Characters only',
-    characters: [
-      ...formatedJapLegends,
-      ...formatedJapSixPlusLegends,
-      ...formatedJapRrs,
-      ...formatedJapTms,
-      ...formatedJapColosseums,
-      ...formatedJapArenas,
-      ...formatedJapPvps,
-      ...formatedJapKizunas,
-      ...formatedJapRaids,
-      ...formatedJapLrrs,
-      ...formatedJapPeriodsLrrs,
-      ...formatedJapKizunaLrrs,
-      ...formatedJapPvpLrrs,
-      ...formatedJapSupports,
-      ...formatedJapAmbushes,
-      ...formatedJapSpecials,
-    ],
+    characters: [...japOnlyAllCategoriesCharacters],
     id: TierListId.JPN,
   },
   {
