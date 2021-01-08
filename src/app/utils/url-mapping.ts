@@ -1,4 +1,5 @@
 import { allLegends } from '../components/tier-list/tier-lists';
+import { ambushs } from '../data/tier-lists/ambush';
 import { arenas } from '../data/tier-lists/arenes';
 import { colisees } from '../data/tier-lists/colisees';
 import { kizunas } from '../data/tier-lists/kizuna';
@@ -7,6 +8,7 @@ import { pvps } from '../data/tier-lists/pvp';
 import { pvpLrrs } from '../data/tier-lists/pvp_lrrs';
 import { raids } from '../data/tier-lists/raids';
 import { rrs } from '../data/tier-lists/rr';
+import { specials } from '../data/tier-lists/special';
 import { tms } from '../data/tier-lists/tm';
 
 export function getOptcDbDefaultUrl(characterId: string): string {
@@ -24,6 +26,8 @@ export function getFrenchUrl(characterId: string): string {
     return getFrenchRaidUrl(characterId);
   } else if (colisees.map(l => l).includes(characterId)) {
     return getFrenchColosseumUrl(characterId);
+  } else if (ambushs.map(l => l).includes(characterId)) {
+    return getFrenchAmbushUrl(characterId);
   } else if (arenas.map(l => l).includes(characterId)) {
     return getFrenchArenaUrl(characterId);
   } else if (tms.map(l => l).includes(characterId)) {
@@ -34,6 +38,8 @@ export function getFrenchUrl(characterId: string): string {
     return getFrenchPvpUrl(characterId);
   } else if (pvpLrrs.map(l => l).includes(characterId)) {
     return getFrenchPvpRareRecruitUrl(characterId);
+  } else if (specials.map(l => l).includes(characterId)) {
+    return getFrenchSpecialCharactersUrl(characterId);
   }
 
   return getOptcDbDefaultUrl(characterId);
@@ -691,8 +697,280 @@ function getFrenchRaidUrl(characterId: string): string {
   }
 }
 
+function getFrenchAmbushUrl(characterId: string): string {
+  switch (characterId) {
+    case '1258':
+      return 'https://onepiecetreasurecruise.fr/Attaque%20ennemie/Edward%20Newgate.html';
+    case '1530':
+      return 'https://onepiecetreasurecruise.fr/Attaque%20ennemie/Cavendish.html';
+    case '1846':
+      return 'https://onepiecetreasurecruise.fr/Attaque%20ennemie/Monkey%20D.%20Garp.html';
+    case '2006':
+      return 'https://onepiecetreasurecruise.fr/Attaque%20ennemie/Shanks.html';
+    case '2283':
+      return 'https://onepiecetreasurecruise.fr/Attaque%20ennemie/Sengoku.html';
+    case '2381':
+      return 'https://onepiecetreasurecruise.fr/Attaque%20ennemie/Charlotte%20Linlin.html';
+    case '2886':
+      return 'https://onepiecetreasurecruise.fr/Attaque%20ennemie/Neo%20CP9.html';
+    case '2923':
+      return 'https://onepiecetreasurecruise.fr/Attaque%20ennemie/Neo%20Kaido.html';
+    case '3354':
+      return 'https://onepiecetreasurecruise.fr/Attaque%20ennemie/Neo%20Edward%20Newgate.html';
+    case '3172':
+      return 'https://onepiecetreasurecruise.fr/Attaque%20ennemie/Hina.html';
+
+    default:
+      return getOptcDbDefaultUrl(characterId);
+  }
+}
+
 function getFrenchColosseumUrl(characterId: string): string {
   switch (characterId) {
+    case '0777':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Lucky%20Roo.html';
+    case '0779':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Rebecca.html';
+    case '0781':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Urouge.html';
+    case '0804':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Hina.html';
+    case '0806':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Smoker.html';
+    case '0831':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Basil%20Hawkins.html';
+    case '0833':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Wiper.html';
+    case '0834':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Mr%207%20et%20Miss%20Fathersday.html';
+    case '0860':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Kobby.html';
+    case '0862':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Alvida.html';
+    case '0882':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Scratchmen%20Apoo.html';
+    case '0884':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Dorry.html';
+    case '0901':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Franky.html';
+    case '0903':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Broggy.html';
+    case '0904':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Yokozuna.html';
+    case '0924':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Eustass%20Kidd%201.html';
+    case '0926':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Sadi.html';
+    case '0927':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Doberman.html';
+    case '0951':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Portgas%20D.%20Ace.html';
+    case '0953':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Ben%20Beckmann.html';
+    case '0983':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Vista.html';
+    case '0984':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Pauly.html';
+
+    case '1016':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Capone%20Bege.html';
+    case '1018':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Barbe%20Brune.html';
+    case '1019':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Peeply%20Lulu.html';
+    case '1041':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Joz.html';
+    case '1043':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Killer.html';
+    case '1087':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Musshul.html';
+    case '1089':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Saga.html';
+    case '1091':
+      return 'https://onepiecetreasurecruise.fr/Colisee/X-Drake.html';
+    case '1102':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Zephyr.html';
+    case '1104':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Ain.html';
+    case '1106':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Bins.html';
+    case '1141':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Gecko%20Moria.html';
+    case '1143':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Foxy.html';
+    case '1145':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Porche.html';
+    case '1196':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Gan%20Forr.html';
+    case '1197':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Om.html';
+    case '1220':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Byrnndi%20World.html';
+    case '1222':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Little%20Oz%20Junior.html';
+    case '1251':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Marco.html';
+    case '1252':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Doma.html';
+    case '1253':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Shura.html';
+    case '1292':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Lao%20G.html';
+    case '1294':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Boa%20Sandersonia.html';
+    case '1310':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Kinemon.html';
+    case '1312':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Boa%20Marigold.html';
+    case '1338':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Kanjuro.html';
+    case '1339':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Tony-Tony%20Chopper.html';
+    case '1341':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Gedatsu.html';
+    case '1376':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Dellinger.html';
+    case '1378':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Margaret.html';
+    case '1401':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Gladius.html';
+    case '1402':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Dolton.html';
+    case '1422':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Diamante.html';
+    case '1423':
+      return 'https://onepiecetreasurecruise.fr/Colisee/T.%20Bone.html';
+    case '1424':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Gyn.html';
+    case '1456':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Chinjao.html';
+    case '1458':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Kuro.html';
+    case '1460':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Miss%20Valentine.html';
+    case '1487':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Ideo.html';
+    case '1489':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Krieg.html';
+    case '1491':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Mr%205.html';
+    case '1525':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Suleiman.html';
+    case '1527':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Arlong.html';
+    case '1528':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Blenheim.html';
+    case '1553':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Hajrudin.html';
+    case '1555':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Ryuma.html';
+    case '1584':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Orlumbus.html';
+    case '1586':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Hermep.html';
+    case '1602':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Shiliew.html';
+    case '1603':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Mc%20Guy.html';
+    case '1628':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Machvise.html';
+    case '1630':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Ikaros%20Much.html';
+    case '1667':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Kyros.html';
+    case '1694':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Caborage%201.html';
+    case '1733':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Chavipere.html';
+    case '1792':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Lucy.html';
+    case '1828':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Sicilion.html';
+    case '1861':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Raizo.html';
+    case '1863':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Neo%20Kinemon.html';
+    case '1897':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Ener.html ';
+    case '1899':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Neo%20Killer.html';
+    case '1945':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Pedro.html';
+    case '1976':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Neo%20X-Drake.html';
+    case '1978':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Silvers%20Rayleigh.html';
+
+    case '2017':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Neo%20Diamante.html';
+    case '2037':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Jesus%20Burgess.html';
+    case '2111':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Eustass%20Kidd%202.html';
+    case '2123':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Neptune.html';
+    case '2163':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Charlotte%20Opera.html';
+    case '2193':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Bartholomew%20Kuma.html';
+    case '2249':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Charlotte%20Daifuku.html';
+    case '2290':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Comte%20Ducoq.html';
+    case '2323':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Charlotte%20Oven.html';
+    case '2354':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Magellan.html';
+    case '2375':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Charlotte%20Smoothie.html';
+    case '2416':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Pica.html';
+    case '2471':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Charlotte%20Dent-de-chien.html';
+    case '2489':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Brook.html';
+    case '2512':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Gecko%20Moria%20EX.html';
+    case '2529':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Neptune%20EX.html';
+    case '2550':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Doflamingo%20et%20Trebol.html';
+    case '2569':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Morley.html';
+    case '2611':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Jinbe.html';
+    case '2649':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Trafalgar%20Law.html';
+    case '2721':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Hody%20Jones.html';
+    case '2755':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Oz.html';
+    case '2785':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Kyoshiro.html';
+    case '2813':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Shutenmaru.html';
+    case '2845':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Sangoro.html';
+    case '2869':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Komurasaki.html';
+    case '2908':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Caborage%202.html';
+    case '2953':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Borsalino.html';
+    case '2990':
+      return 'https://onepiecetreasurecruise.fr/Colisee/King.html';
+    case '3372':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Kobby%20EX.html';
+
+    case '3017':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Gyukimaru.html';
+    case '3049':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Orochi%20Kurozumi.html';
+    case '3083':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Kikunojo.html';
+    case '3110':
+      return 'https://onepiecetreasurecruise.fr/Colisee/Page%20One.html';
+
     default:
       return getOptcDbDefaultUrl(characterId);
   }
@@ -912,6 +1190,85 @@ function getFrenchPvpRareRecruitUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/O-Soba%20Mask.html';
     case '3206':
       return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Cavendish.html';
+
+    default:
+      return getOptcDbDefaultUrl(characterId);
+  }
+}
+
+function getFrenchSpecialCharactersUrl(characterId: string): string {
+  switch (characterId) {
+    case '2499':
+      return 'https://onepiecetreasurecruise.fr/Special/Lame%20noire.html';
+    case '2628':
+      return 'https://onepiecetreasurecruise.fr/Special/Summer.html';
+    case '2668':
+      return 'https://onepiecetreasurecruise.fr/Special/Fujitora.html';
+    case '2709':
+      return 'https://onepiecetreasurecruise.fr/Special/Trafalgar%20Law.html';
+    case '2738':
+      return 'https://onepiecetreasurecruise.fr/Special/Yonko.html';
+    case '2749':
+      return 'https://onepiecetreasurecruise.fr/Special/Monkey%20D.%20Luffy%20Halloween.html';
+    case '2767':
+      return 'https://onepiecetreasurecruise.fr/Special/Doflamingo.html';
+    case '2799':
+      return 'https://onepiecetreasurecruise.fr/Special/Wapol.html';
+    case '2815':
+      return 'https://onepiecetreasurecruise.fr/Special/O-Tama.html';
+    case '2843':
+      return 'https://onepiecetreasurecruise.fr/Special/Perona.html';
+    case '2867':
+      return 'https://onepiecetreasurecruise.fr/Special/Equipage%20de%20Baggy.html';
+    case '2883':
+      return 'https://onepiecetreasurecruise.fr/Special/Stampede1.html';
+    case '2884':
+      return 'https://onepiecetreasurecruise.fr/Special/Stampede2.html';
+    case '2915':
+      return 'https://onepiecetreasurecruise.fr/Special/Pyro-fruit.html';
+    case '2975':
+      return 'https://onepiecetreasurecruise.fr/Special/Chasse%20au%20tresor.html';
+    case '2976':
+      return 'https://onepiecetreasurecruise.fr/Special/Chasse%20au%20tresor.html';
+    case '2988':
+      return 'https://onepiecetreasurecruise.fr/Special/O-Toko.html';
+    case '3004':
+      return 'https://onepiecetreasurecruise.fr/Special/Kuma%20et%20Moria.html';
+    case '3045':
+      return 'https://onepiecetreasurecruise.fr/Fortnight/Charlotte%20Linlin%20Estival.html';
+    case '3046':
+      return 'https://onepiecetreasurecruise.fr/Fortnight/Charlotte%20Pudding%20Estival.html';
+    case '3050':
+      return 'https://onepiecetreasurecruise.fr/Special/Summer2.html';
+    case '3186':
+      return 'https://onepiecetreasurecruise.fr/Special/World%20Cruise.html';
+    case '3187':
+      return 'https://onepiecetreasurecruise.fr/Special/World%20Cruise.html';
+    case '3188':
+      return 'https://onepiecetreasurecruise.fr/Special/Guerre%20maritime.html';
+    case '5065':
+      return 'https://onepiecetreasurecruise.fr/Special/Seigneur%20de%20la%20cote.html';
+
+    case '2855':
+      return 'https://onepiecetreasurecruise.fr/Special/Sweetie%20Party.html';
+    case '3032':
+      return 'https://onepiecetreasurecruise.fr/Special/Rassemblement.html';
+    case '3033':
+      return 'https://onepiecetreasurecruise.fr/Special/Rassemblement.html';
+    case '3034':
+      return 'https://onepiecetreasurecruise.fr/Special/Rassemblement.html';
+    case '3035':
+      return 'https://onepiecetreasurecruise.fr/Special/Rassemblement.html';
+    case '3086':
+      return 'https://onepiecetreasurecruise.fr/Special/Partie%20de%20the.html';
+    case '3108':
+      return 'https://onepiecetreasurecruise.fr/Special/Crocodile%20et%20Robin.html';
+    case '3109':
+      return 'https://onepiecetreasurecruise.fr/Special/Crocodile%20et%20Robin.html';
+    case '3144':
+      return 'https://onepiecetreasurecruise.fr/Special/Big%20Mom%20VS%20Kaido.html';
+    case '3171':
+      return 'https://onepiecetreasurecruise.fr/Special/Kobby.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);

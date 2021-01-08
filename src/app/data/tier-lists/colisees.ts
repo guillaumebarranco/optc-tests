@@ -115,8 +115,10 @@ export const glbColisees = [
   '2953',
   '2990',
   '3372',
+  '3017',
+  '3049',
 ];
 
-export const japColisees = ['3017', '3049', '3083', '3110'];
+export const japColisees = ['3083', '3110'];
 
 export const colisees = [...glbColisees, ...japColisees];
