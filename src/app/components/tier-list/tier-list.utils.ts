@@ -37,49 +37,64 @@ import { arenas } from 'src/app/data/tier-lists/arenes';
 import { specials } from 'src/app/data/tier-lists/special';
 import { japOnlyAllCategoriesCharacters } from './tier-lists';
 
+const tierCharacterTypeImgPath: { [key in TierListCharacterType]: string } = {
+  [TierListCharacterType.LEGEND]: `/legend/sixstars/`,
+  [TierListCharacterType.SIX_PLUS_LEGEND]: `/legend/sixplus/`,
+  [TierListCharacterType.JAP_LEGEND]: `/legend/sixstars/`,
+  [TierListCharacterType.JAP_SIX_PLUS_LEGEND]: `/legend/sixplus/`,
+  [TierListCharacterType.RR]: `/rr/`,
+  [TierListCharacterType.LRR]: `/lrr/`,
+  [TierListCharacterType.KIZUNA_LRR]: `/kizuna_lrr/`,
+  [TierListCharacterType.PERIOD_LRR]: `/periods_lrr/`,
+  [TierListCharacterType.COLOSSEUM]: `/colosseum/`,
+  [TierListCharacterType.ARENA]: `/arena/`,
+  [TierListCharacterType.RAID]: `/raid/`,
+  [TierListCharacterType.TM]: `/tm/`,
+  [TierListCharacterType.PVP]: `/pvp/`,
+  [TierListCharacterType.PVP_F2P]: `/pvp_f2p/`,
+  [TierListCharacterType.SUPPORT]: `/support/`,
+  [TierListCharacterType.KIZUNA]: `/kizuna/`,
+  [TierListCharacterType.AMBUSH]: `/ambush/`,
+  [TierListCharacterType.SPECIAL]: `/special/`,
+};
+
+const tierCharacterTypeCharactersList: {
+  [key in TierListCharacterType]: string[];
+} = {
+  [TierListCharacterType.LEGEND]: [
+    ...legends,
+    ...legendsSixPlus,
+    ...japLegends,
+    ...japLegendsSixPLus,
+  ],
+  [TierListCharacterType.SIX_PLUS_LEGEND]: [
+    ...legendsSixPlus,
+    ...japLegendsSixPLus,
+  ],
+  [TierListCharacterType.JAP_LEGEND]: [...japLegends, ...japLegendsSixPLus],
+  [TierListCharacterType.JAP_SIX_PLUS_LEGEND]: [...japLegendsSixPLus],
+  [TierListCharacterType.RR]: rrs,
+  [TierListCharacterType.LRR]: lrrs,
+  [TierListCharacterType.KIZUNA_LRR]: kizunaLrrs,
+  [TierListCharacterType.PERIOD_LRR]: periodsLrrs,
+  [TierListCharacterType.COLOSSEUM]: colisees,
+  [TierListCharacterType.ARENA]: arenas,
+  [TierListCharacterType.RAID]: raids,
+  [TierListCharacterType.TM]: tms,
+  [TierListCharacterType.PVP]: pvpLrrs,
+  [TierListCharacterType.PVP_F2P]: pvps,
+  [TierListCharacterType.SUPPORT]: soutiens,
+  [TierListCharacterType.KIZUNA]: kizunas,
+  [TierListCharacterType.AMBUSH]: ambushs,
+  [TierListCharacterType.SPECIAL]: specials,
+};
+
 export function getCharacterImgPath(character: TierListCharacter): string {
   const basePath = 'assets/characters';
 
-  switch (character.type) {
-    case TierListCharacterType.LEGEND:
-      return `${basePath}/legend/sixstars/f${character.id}.png`;
-    case TierListCharacterType.SIX_PLUS_LEGEND:
-      return `${basePath}/legend/sixplus/f${character.id}.png`;
-    case TierListCharacterType.JAP_LEGEND:
-      return `${basePath}/legend/sixstars/f${character.id}.png`;
-    case TierListCharacterType.JAP_SIX_PLUS_LEGEND:
-      return `${basePath}/legend/sixplus/f${character.id}.png`;
-    case TierListCharacterType.RR:
-      return `${basePath}/rr/f${character.id}.png`;
-    case TierListCharacterType.LRR:
-      return `${basePath}/lrr/f${character.id}.png`;
-    case TierListCharacterType.KIZUNA_LRR:
-      return `${basePath}/kizuna_lrr/f${character.id}.png`;
-    case TierListCharacterType.PERIOD_LRR:
-      return `${basePath}/periods_lrr/f${character.id}.png`;
-    case TierListCharacterType.COLOSSEUM:
-      return `${basePath}/colosseum/f${character.id}.png`;
-    case TierListCharacterType.ARENA:
-      return `${basePath}/arena/f${character.id}.png`;
-    case TierListCharacterType.RAID:
-      return `${basePath}/raid/f${character.id}.png`;
-    case TierListCharacterType.TM:
-      return `${basePath}/tm/f${character.id}.png`;
-    case TierListCharacterType.PVP:
-      return `${basePath}/pvp/f${character.id}.png`;
-    case TierListCharacterType.PVP_F2P:
-      return `${basePath}/pvp_f2p/f${character.id}.png`;
-    case TierListCharacterType.SUPPORT:
-      return `${basePath}/support/f${character.id}.png`;
-    case TierListCharacterType.KIZUNA:
-      return `${basePath}/kizuna/f${character.id}.png`;
-    case TierListCharacterType.AMBUSH:
-      return `${basePath}/ambush/f${character.id}.png`;
-    case TierListCharacterType.SPECIAL:
-      return `${basePath}/special/f${character.id}.png`;
-    default:
-      return '';
-  }
+  return `${basePath}${tierCharacterTypeImgPath[character.type]}/f${
+    character.id
+  }.png`;
 }
 
 export function filtersCharactersList(
@@ -163,92 +178,9 @@ function filterCategories(
   );
 
   categoriesToHide.forEach((categoryToHide: TierListCharacterType) => {
-    switch (categoryToHide) {
-      case TierListCharacterType.TM:
-        filteredCharacters = filteredCharacters = filteredCharacters.filter(
-          c => !tms.includes(c)
-        );
-        break;
-      case TierListCharacterType.COLOSSEUM:
-        filteredCharacters = filteredCharacters = filteredCharacters.filter(
-          c => !colisees.includes(c)
-        );
-        break;
-      case TierListCharacterType.ARENA:
-        filteredCharacters = filteredCharacters = filteredCharacters.filter(
-          c => !arenas.includes(c)
-        );
-        break;
-      case TierListCharacterType.RAID:
-        filteredCharacters = filteredCharacters = filteredCharacters.filter(
-          c => !raids.includes(c)
-        );
-        break;
-      case TierListCharacterType.KIZUNA:
-        filteredCharacters = filteredCharacters = filteredCharacters.filter(
-          c => !kizunas.includes(c)
-        );
-        break;
-      case TierListCharacterType.PVP_F2P:
-        filteredCharacters = filteredCharacters = filteredCharacters.filter(
-          c => !pvps.includes(c)
-        );
-        break;
-      case TierListCharacterType.AMBUSH:
-        filteredCharacters = filteredCharacters = filteredCharacters.filter(
-          c => !ambushs.includes(c)
-        );
-        break;
-      case TierListCharacterType.SPECIAL:
-        filteredCharacters = filteredCharacters = filteredCharacters.filter(
-          c => !specials.includes(c)
-        );
-        break;
-      case TierListCharacterType.LEGEND:
-        filteredCharacters = filteredCharacters = filteredCharacters.filter(
-          c =>
-            ![
-              ...legends,
-              ...legendsSixPlus,
-              ...japLegends,
-              ...japLegendsSixPLus,
-            ].includes(c)
-        );
-        break;
-      case TierListCharacterType.RR:
-        filteredCharacters = filteredCharacters = filteredCharacters.filter(
-          c => !rrs.includes(c)
-        );
-        break;
-      case TierListCharacterType.LRR:
-        filteredCharacters = filteredCharacters = filteredCharacters.filter(
-          c => !lrrs.includes(c)
-        );
-        break;
-      case TierListCharacterType.KIZUNA_LRR:
-        filteredCharacters = filteredCharacters = filteredCharacters.filter(
-          c => !kizunaLrrs.includes(c)
-        );
-        break;
-      case TierListCharacterType.PERIOD_LRR:
-        filteredCharacters = filteredCharacters = filteredCharacters.filter(
-          c => !periodsLrrs.includes(c)
-        );
-        break;
-      case TierListCharacterType.SUPPORT:
-        filteredCharacters = filteredCharacters = filteredCharacters.filter(
-          c => !soutiens.includes(c)
-        );
-        break;
-      case TierListCharacterType.PVP:
-        filteredCharacters = filteredCharacters = filteredCharacters.filter(
-          c => !pvpLrrs.includes(c)
-        );
-        break;
-      default:
-        filteredCharacters = filteredCharacters;
-        break;
-    }
+    return (filteredCharacters = filteredCharacters = filteredCharacters.filter(
+      c => !tierCharacterTypeCharactersList[categoryToHide].includes(c)
+    ));
   });
 
   return filteredCharacters;

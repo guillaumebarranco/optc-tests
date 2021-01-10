@@ -96,6 +96,16 @@
         tierListId === _tierListIdEnum.ALL ||
         tierListId === _tierListIdEnum.JPN
       "
+      [checked]="filters.characterTypesDisplay[_tierListCharacterType.ARENA]"
+      (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.ARENA)"
+      >Afficher les personnages d'Arènes</mat-checkbox
+    >
+    <mat-checkbox
+      *ngIf="
+        tierListId === _tierListIdEnum.F2P ||
+        tierListId === _tierListIdEnum.ALL ||
+        tierListId === _tierListIdEnum.JPN
+      "
       [checked]="filters.characterTypesDisplay[_tierListCharacterType.RAID]"
       (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.RAID)"
       >Afficher les personnages de Raids</mat-checkbox
@@ -130,6 +140,16 @@
       (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.AMBUSH)"
       >Afficher les personnages d'attaques ennemies</mat-checkbox
     >
+    <mat-checkbox
+      *ngIf="
+        tierListId === _tierListIdEnum.F2P ||
+        tierListId === _tierListIdEnum.ALL ||
+        tierListId === _tierListIdEnum.JPN
+      "
+      [checked]="filters.characterTypesDisplay[_tierListCharacterType.SPECIAL]"
+      (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.SPECIAL)"
+      >Afficher les personnages spéciaux</mat-checkbox
+    >
   </ng-container>
 
   <ng-container *ngIf="language === 'EN'">
@@ -161,6 +181,16 @@
       "
       (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.COLOSSEUM)"
       >Display Colosseums characters</mat-checkbox
+    >
+    <mat-checkbox
+      *ngIf="
+        tierListId === _tierListIdEnum.F2P ||
+        tierListId === _tierListIdEnum.ALL ||
+        tierListId === _tierListIdEnum.JPN
+      "
+      [checked]="filters.characterTypesDisplay[_tierListCharacterType.ARENA]"
+      (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.ARENA)"
+      >Display Arena characters</mat-checkbox
     >
     <mat-checkbox
       *ngIf="
@@ -201,6 +231,16 @@
       [checked]="filters.characterTypesDisplay[_tierListCharacterType.AMBUSH]"
       (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.AMBUSH)"
       >Display Ambush characters</mat-checkbox
+    >
+    <mat-checkbox
+      *ngIf="
+        tierListId === _tierListIdEnum.F2P ||
+        tierListId === _tierListIdEnum.ALL ||
+        tierListId === _tierListIdEnum.JPN
+      "
+      [checked]="filters.characterTypesDisplay[_tierListCharacterType.SPECIAL]"
+      (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.SPECIAL)"
+      >Display Special characters</mat-checkbox
     >
   </ng-container>
 

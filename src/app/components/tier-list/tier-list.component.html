@@ -38,7 +38,7 @@
     <li
       *ngIf="tierIndex < 5"
       [ngClass]="{ active: currentTierList.id === tierList.id }"
-      (click)="switchTierList(tierList.id)"
+      (click)="_switchTierList(tierList.id)"
     >
       <span *ngIf="language === 'FR'"> {{ tierList.frenchName }}</span>
       <span *ngIf="language === 'EN'"> {{ tierList.englishName }}</span>
@@ -54,7 +54,7 @@
         <li
           *ngIf="tierIndex > 4"
           [ngClass]="{ active: currentTierList.id === tierList.id }"
-          (click)="switchTierList(tierList.id)"
+          (click)="_switchTierList(tierList.id)"
         >
           <span *ngIf="language === 'FR'"> {{ tierList.frenchName }}</span>
           <span *ngIf="language === 'EN'"> {{ tierList.englishName }}</span>
@@ -73,8 +73,8 @@
     [currentTierListId]="currentTierList.id"
     [removedCharacters]="removedCharacters"
     [language]="language"
-    (loadTierList)="onLoadTierList($event)"
-    (exportTierList)="onExportTierList($event)"
+    (loadTierList)="_onLoadTierList($event)"
+    (exportTierList)="_onExportTierList($event)"
     (exportAllTierLists)="_onExportAllTierLists()"
   ></app-tier-list-actions>
 
@@ -90,7 +90,7 @@
       [filters]="_filters"
       (updateYearSelection)="_onUpdateYearSelection($event)"
       (toggleCharacterTypeDisplay)="_onToggleCharacterTypeDisplay($event)"
-      (toggleShowRemovedCharacters)="onToggleShowRemovedCharacters()"
+      (toggleShowRemovedCharacters)="_onToggleShowRemovedCharacters()"
       (toggleHideSixStarsLegendsHavingSixPlusVersion)="
         _onToggleHideSixStarsLegendsHavingSixPlusVersion()
       "
@@ -161,7 +161,7 @@
                 </ng-container>
               </div>
             </td>
-            <td *ngIf="!isExporting" class="tier-actions">
+            <td *ngIf="!_isExporting" class="tier-actions">
               <div class="tier-settings" (click)="_onOpenTierSettings(tier)">
                 <mat-icon>settings</mat-icon>
               </div>

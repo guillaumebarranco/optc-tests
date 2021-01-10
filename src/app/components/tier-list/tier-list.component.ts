@@ -59,7 +59,7 @@ export class TierListComponent implements OnInit {
     'rgb(127, 255, 127)',
     'rgb(127, 255, 255)',
   ];
-  public basicTiers: string[] = ['S', 'A', 'B', 'C', 'D', 'E', 'F'];
+  public _basicTiers: string[] = ['S', 'A', 'B', 'C', 'D', 'E', 'F'];
 
   public hideLastTier = false;
   public showActions = false;
@@ -71,7 +71,7 @@ export class TierListComponent implements OnInit {
   public _filters: TierListFilters = null;
 
   public _isStreamerMode = false;
-  public isExporting = false;
+  public _isExporting = false;
 
   constructor(
     private _activatedRoute: ActivatedRoute,
@@ -79,6 +79,8 @@ export class TierListComponent implements OnInit {
     public _dialog: MatDialog,
     private _storageService: StorageService
   ) {}
+
+  // Init
 
   public ngOnInit(): void {
     this._filters = getDefaultFilters();
@@ -125,17 +127,8 @@ export class TierListComponent implements OnInit {
 
       const sharedTiers: SavedTier[] = JSON.parse(params.tiers);
 
-      this.tiers = sharedTiers.map((tier, index) => ({
-        ...tier,
-        color: tier.color || this.colors[index],
-        characters: this.currentTierList.characters.reduce(
-          (acc: TierListCharacter[], character: TierListCharacter) =>
-            tier.characters.includes(character.id)
-              ? acc.concat(character)
-              : acc,
-          []
-        ),
-      }));
+      this.tiers = this._getTiersFromSharedTiers(sharedTiers);
+      this.tierListTitle = params.name;
 
       this.removedCharacters = this.currentTierList.characters.filter(c => {
         const tiersCharactersIds = this.tiers.map(t =>
@@ -143,13 +136,23 @@ export class TierListComponent implements OnInit {
         );
         return !flatten(tiersCharactersIds).includes(c.id);
       });
-
-      this.tierListTitle = params.name;
     } else if (params.tierListId) {
       this._initTiers(params.tierListId);
     } else {
       this._initTiers(TierListId.LEGEND);
     }
+  }
+
+  private _getTiersFromSharedTiers(sharedTiers: SavedTier[]): Tier[] {
+    return sharedTiers.map((tier, index) => ({
+      ...tier,
+      color: tier.color || this.colors[index],
+      characters: this.currentTierList.characters.reduce(
+        (acc: TierListCharacter[], character: TierListCharacter) =>
+          tier.characters.includes(character.id) ? acc.concat(character) : acc,
+        []
+      ),
+    }));
   }
 
   private _initTiers(tierListId: TierListId): void {
@@ -159,7 +162,7 @@ export class TierListComponent implements OnInit {
 
     this.removedCharacters = [];
 
-    this.tiers = this.basicTiers.map((x, index) => {
+    this.tiers = this._basicTiers.map((x, index) => {
       return {
         name: x,
         color: this.colors[index],
@@ -167,6 +170,8 @@ export class TierListComponent implements OnInit {
       };
     });
   }
+
+  // Tier List Updates
 
   private _changeTierListName(): void {
     if (this.language === 'FR') {
@@ -176,7 +181,7 @@ export class TierListComponent implements OnInit {
     }
   }
 
-  public switchTierList(tierListId: TierListId): void {
+  public _switchTierList(tierListId: TierListId): void {
     window.history.replaceState(null, null, `?tierListId=${tierListId}`);
     this._initTiers(tierListId);
     this._filtersCharactersList();
@@ -199,25 +204,9 @@ export class TierListComponent implements OnInit {
     }
   }
 
-  public showInformationsDialog(): void {
-    let component;
+  // Tier List Actions
 
-    if (this.language === 'FR') {
-      component = TierListInformationsFrenchComponent;
-    } else if (this.language === 'EN') {
-      component = TierListInformationsEnglishComponent;
-    }
-
-    this._dialog
-      .open(component, {
-        width: '1000px',
-        height: '500px',
-      })
-      .afterClosed()
-      .subscribe();
-  }
-
-  public onLoadTierList(savedTierList: SavedTierList): void {
+  public _onLoadTierList(savedTierList: SavedTierList): void {
     this.tierListTitle = savedTierList.name;
 
     this.currentTierList = tierLists.find(
@@ -268,10 +257,10 @@ export class TierListComponent implements OnInit {
     });
   }
 
-  public onExportTierList(removeLastTier: boolean): void {
+  public _onExportTierList(removeLastTier: boolean): void {
     window.scrollTo(0, 0);
 
-    this.isExporting = true;
+    this._isExporting = true;
 
     if (removeLastTier) {
       this.hideLastTier = true;
@@ -289,7 +278,7 @@ export class TierListComponent implements OnInit {
 
           setTimeout(() => {
             this.hideLastTier = false;
-            this.isExporting = false;
+            this._isExporting = false;
           }, 100);
         }
       );
@@ -301,22 +290,15 @@ export class TierListComponent implements OnInit {
     downloadFile('tierslists.json', JSON.stringify(allSavedTierLists));
   }
 
-  public onToggleShowRemovedCharacters(): void {
-    this._filters.showRemovedCharacters = !this._filters.showRemovedCharacters;
+  private _filtersCharactersList(): void {
+    const filteredCharacters = filtersCharactersList(
+      this.currentTierList,
+      this._filters
+    );
+    this._filteredCharacters = [...filteredCharacters];
   }
 
-  public _onToggleHideSixStarsLegendsHavingSixPlusVersion(): void {
-    this._filters.hideSixStarsLegendsHavingSixPlusVersion = !this._filters
-      .hideSixStarsLegendsHavingSixPlusVersion;
-
-    this._filtersCharactersList();
-  }
-
-  public _onToggleShowGlobalOnlyCharacters(): void {
-    this._filters.showGlobalOnly = !this._filters.showGlobalOnly;
-
-    this._filtersCharactersList();
-  }
+  // Tiers Actions
 
   public removeCharacterFromTier(
     tier: Tier,
@@ -368,60 +350,6 @@ export class TierListComponent implements OnInit {
     };
   }
 
-  private _filtersCharactersList(): void {
-    const filteredCharacters = filtersCharactersList(
-      this.currentTierList,
-      this._filters
-    );
-    this._filteredCharacters = [...filteredCharacters];
-  }
-
-  public _onUpdateYearSelection(value: string): void {
-    this._filters.selectedYearLegend = value;
-    this._filtersCharactersList();
-  }
-
-  public _onToggleCharacterTypeDisplay(value: TierListCharacterType): void {
-    this._filters.characterTypesDisplay[value] = !this._filters
-      .characterTypesDisplay[value];
-
-    this._filtersCharactersList();
-  }
-
-  public changeLanguage(language: string): void {
-    this.language = language;
-    localStorage.setItem('language', language);
-    this._changeTierListName();
-  }
-
-  public _getCharacterImgPath(character: TierListCharacter): string {
-    return getCharacterImgPath(character);
-  }
-
-  public _getImgStyleFormFiltering(characterId: string): any {
-    const shouldBeHidden =
-      !this._filteredCharacters.includes(characterId) &&
-      this._filteredCharacters.length > 0;
-
-    if (shouldBeHidden) {
-      return {
-        display: 'none',
-      };
-    } else {
-      return {};
-    }
-  }
-
-  public _toggleActionsButton(): void {
-    this.showFilters = false;
-    this.showActions = !this.showActions;
-  }
-
-  public _toggleFiltersButton(): void {
-    this.showActions = false;
-    this.showFilters = !this.showFilters;
-  }
-
   public _onSaveTierList(): void {
     let component;
 
@@ -464,20 +392,6 @@ export class TierListComponent implements OnInit {
           verticalPosition: 'top',
         });
       });
-  }
-
-  public _seeCharacterInformation(characterId: string): void {
-    let url = `https://optc-db.github.io/characters/#/view/${characterId}`;
-
-    if (this.language === 'FR') {
-      url = getFrenchUrl(characterId);
-    }
-
-    window.open(url, '_blank');
-  }
-
-  public _toggleStreamerMode(): void {
-    this._isStreamerMode = !this._isStreamerMode;
   }
 
   public _onOpenTierSettings(tier: Tier): void {
@@ -550,5 +464,106 @@ export class TierListComponent implements OnInit {
 
   public _isLastTier(tier) {
     return this.tiers[this.tiers.length - 1].name === tier.name;
+  }
+
+  // Characters Settings
+
+  public _getCharacterImgPath(character: TierListCharacter): string {
+    return getCharacterImgPath(character);
+  }
+
+  public _getImgStyleFormFiltering(characterId: string): any {
+    const shouldBeHidden =
+      !this._filteredCharacters.includes(characterId) &&
+      this._filteredCharacters.length > 0;
+
+    if (shouldBeHidden) {
+      return {
+        display: 'none',
+      };
+    } else {
+      return {};
+    }
+  }
+
+  public _seeCharacterInformation(characterId: string): void {
+    let url = `https://optc-db.github.io/characters/#/view/${characterId}`;
+
+    if (this.language === 'FR') {
+      url = getFrenchUrl(characterId);
+    }
+
+    window.open(url, '_blank');
+  }
+
+  // Tier List Filters
+
+  public _onToggleShowRemovedCharacters(): void {
+    this._filters.showRemovedCharacters = !this._filters.showRemovedCharacters;
+  }
+
+  public _onToggleHideSixStarsLegendsHavingSixPlusVersion(): void {
+    this._filters.hideSixStarsLegendsHavingSixPlusVersion = !this._filters
+      .hideSixStarsLegendsHavingSixPlusVersion;
+
+    this._filtersCharactersList();
+  }
+
+  public _onToggleShowGlobalOnlyCharacters(): void {
+    this._filters.showGlobalOnly = !this._filters.showGlobalOnly;
+
+    this._filtersCharactersList();
+  }
+
+  public _onUpdateYearSelection(value: string): void {
+    this._filters.selectedYearLegend = value;
+    this._filtersCharactersList();
+  }
+
+  public _onToggleCharacterTypeDisplay(value: TierListCharacterType): void {
+    this._filters.characterTypesDisplay[value] = !this._filters
+      .characterTypesDisplay[value];
+
+    this._filtersCharactersList();
+  }
+
+  // Global actions
+
+  public changeLanguage(language: string): void {
+    this.language = language;
+    localStorage.setItem('language', language);
+    this._changeTierListName();
+  }
+
+  public _toggleActionsButton(): void {
+    this.showFilters = false;
+    this.showActions = !this.showActions;
+  }
+
+  public _toggleFiltersButton(): void {
+    this.showActions = false;
+    this.showFilters = !this.showFilters;
+  }
+
+  public _toggleStreamerMode(): void {
+    this._isStreamerMode = !this._isStreamerMode;
+  }
+
+  public showInformationsDialog(): void {
+    let component;
+
+    if (this.language === 'FR') {
+      component = TierListInformationsFrenchComponent;
+    } else if (this.language === 'EN') {
+      component = TierListInformationsEnglishComponent;
+    }
+
+    this._dialog
+      .open(component, {
+        width: '1000px',
+        height: '500px',
+      })
+      .afterClosed()
+      .subscribe();
   }
 }
