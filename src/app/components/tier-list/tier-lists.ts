@@ -23,6 +23,7 @@ import { japKizunaLrrs, kizunaLrrs } from 'src/app/data/tier-lists/kizuna_lrrs';
 import { japPvps, pvps } from 'src/app/data/tier-lists/pvp';
 import { arenas, japArenas } from 'src/app/data/tier-lists/arenes';
 import { japSpecials, specials } from 'src/app/data/tier-lists/special';
+import { japTmLrrs, tmLrrs } from 'src/app/data/tier-lists/tm_lrr';
 
 const formatedLegends: TierListCharacter[] = legends.map(id => ({
   id,
@@ -131,6 +132,16 @@ const formatedJapTms = japTms.map(id => ({
   type: TierListCharacterType.TM,
 }));
 
+const formatedTmLrrs = tmLrrs.map(id => ({
+  id,
+  type: TierListCharacterType.TM_LRR,
+}));
+
+const formatedJapTmLrrs = japTmLrrs.map(id => ({
+  id,
+  type: TierListCharacterType.TM_LRR,
+}));
+
 const formatedPvps = pvps.map(id => ({
   id,
   type: TierListCharacterType.PVP_F2P,
@@ -193,6 +204,7 @@ const formatedJapSpecials = japSpecials.map(id => ({
 
 export const combinedAllCategoriesCharacters = [
   ...formatedTms,
+  ...formatedTmLrrs,
   ...formatedColosseums,
   ...formatedArenas,
   ...formatedRaids,
@@ -213,6 +225,7 @@ export const japOnlyAllCategoriesCharacters = [
   ...formatedJapSixPlusLegends,
   ...formatedJapRrs,
   ...formatedJapTms,
+  ...formatedJapTmLrrs,
   ...formatedJapColosseums,
   ...formatedJapArenas,
   ...formatedJapPvps,
@@ -307,6 +320,12 @@ export const tierLists: TierList[] = [
     id: TierListId.PERIOD_LRR,
   },
   {
+    frenchName: 'Personnages TM LRR',
+    englishName: 'TM LRR Characters',
+    characters: formatedTmLrrs,
+    id: TierListId.TM_LRR,
+  },
+  {
     frenchName: 'Personnages Spéciaux (soutiens)',
     englishName: 'Special Characters (support)',
     characters: formatedSupports,
@@ -342,6 +361,7 @@ export const tierLists: TierList[] = [
       ...formatedPeriodsLrrs,
       ...formatedKizunaLrrs,
       ...formatedPvpLrrs,
+      ...formatedTmLrrs,
       ...formatedSupports,
       ...allLegends,
     ],

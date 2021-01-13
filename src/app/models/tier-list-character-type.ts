@@ -11,6 +11,7 @@ export enum TierListCharacterType {
   ARENA = 'ARENA',
   RAID = 'RAID',
   TM = 'TM',
+  TM_LRR = 'TM_LRR',
   PVP_F2P = 'PVP_F2P',
   PVP = 'PVP',
   SUPPORT = 'SUPPORT',

@@ -10,6 +10,7 @@ export enum TierListId {
   ARENA = 'ARENA',
   RAID = 'RAID',
   TM = 'TM',
+  TM_LRR = 'TM_LRR',
   PVP = 'PVP',
   PVP_F2P = 'PVP_F2P', // Called with _F2P because PVP already existed, so to not break saved Tier Lists...
   SUPPORT = 'SUPPORT',

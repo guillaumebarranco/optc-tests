@@ -36,6 +36,7 @@ import { pvps } from 'src/app/data/tier-lists/pvp';
 import { arenas } from 'src/app/data/tier-lists/arenes';
 import { specials } from 'src/app/data/tier-lists/special';
 import { japOnlyAllCategoriesCharacters } from './tier-lists';
+import { tmLrrs } from 'src/app/data/tier-lists/tm_lrr';
 
 const tierCharacterTypeImgPath: { [key in TierListCharacterType]: string } = {
   [TierListCharacterType.LEGEND]: `/legend/sixstars/`,
@@ -50,6 +51,7 @@ const tierCharacterTypeImgPath: { [key in TierListCharacterType]: string } = {
   [TierListCharacterType.ARENA]: `/arena/`,
   [TierListCharacterType.RAID]: `/raid/`,
   [TierListCharacterType.TM]: `/tm/`,
+  [TierListCharacterType.TM_LRR]: `/tm_lrr/`,
   [TierListCharacterType.PVP]: `/pvp/`,
   [TierListCharacterType.PVP_F2P]: `/pvp_f2p/`,
   [TierListCharacterType.SUPPORT]: `/support/`,
@@ -81,6 +83,7 @@ const tierCharacterTypeCharactersList: {
   [TierListCharacterType.ARENA]: arenas,
   [TierListCharacterType.RAID]: raids,
   [TierListCharacterType.TM]: tms,
+  [TierListCharacterType.TM_LRR]: tmLrrs,
   [TierListCharacterType.PVP]: pvpLrrs,
   [TierListCharacterType.PVP_F2P]: pvps,
   [TierListCharacterType.SUPPORT]: soutiens,
@@ -157,6 +160,7 @@ export function getDefaultFilters(): TierListFilters {
       [TierListCharacterType.ARENA]: true,
       [TierListCharacterType.RAID]: true,
       [TierListCharacterType.TM]: true,
+      [TierListCharacterType.TM_LRR]: true,
       [TierListCharacterType.PVP_F2P]: true,
       [TierListCharacterType.PVP]: true,
       [TierListCharacterType.SUPPORT]: true,
