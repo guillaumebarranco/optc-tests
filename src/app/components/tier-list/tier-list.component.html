@@ -110,12 +110,16 @@
       <tbody>
         <ng-container *ngFor="let tier of tiers; let i = index">
           <tr *ngIf="!_isLastTier(tier) || !hideLastTier">
-            <td class="labelHolder" contenteditable="false">
-              <input
+            <td class="labelHolder">
+              <div
+                class="label-holder"
                 [ngStyle]="{ 'background-color': tier.color }"
-                [(ngModel)]="tier.name"
-              />
+                (blur)="updateTierName($event.target.innerText, i)"
+              >
+                <span contenteditable="true" [textContent]="tier.name"></span>
+              </div>
             </td>
+
             <td
               class="tier-characters"
               cdkDropList
