@@ -97,19 +97,7 @@ export class TierListComponent implements OnInit {
   }
 
   public updateTierName(text: string, index: number) {
-    this.tiers = this.tiers.map((tier, i) => {
-      const updatedTier =
-        i === index
-          ? {
-              ...tier,
-              name: text,
-            }
-          : tier;
-
-      return {
-        ...updatedTier,
-      };
-    });
+    this.tiers[index].name = text;
   }
 
   private _displayNews(): void {
