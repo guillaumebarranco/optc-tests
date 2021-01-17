@@ -95,7 +95,7 @@ table {
     }
   }
 
-  input {
+  textarea {
     background-color: #00bfff;
     border: none;
     display: block;
@@ -103,6 +103,30 @@ table {
     width: 100%;
     color: black;
     text-align: center;
+  }
+
+  .label-holder {
+    min-height: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    font-family: arial;
+    font-size: 14px;
+    line-height: 16px;
+    color: black;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+
+    span {
+      color: black;
+      overflow: hidden;
+      text-align: center;
+      margin: 5px;
+    }
   }
 }
 
@@ -114,7 +138,9 @@ table {
 h1,
 h2,
 div,
-input {
+input,
+textarea,
+p {
   color: white;
   font-family: 'Roboto', sans-serif;
 }
