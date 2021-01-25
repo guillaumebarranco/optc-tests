@@ -230,7 +230,12 @@ function filterLegends(filteredCharacters: string[], filters: TierListFilters) {
         break;
       case '2020':
         filteredCharacters = filteredCharacters.filter(c =>
-          [...legends2020, ...legendsSixPlus2020].includes(c)
+          [
+            ...legends2020,
+            ...legendsSixPlus2020,
+            ...japLegends,
+            ...japLegendsSixPLus,
+          ].includes(c)
         );
         break;
 

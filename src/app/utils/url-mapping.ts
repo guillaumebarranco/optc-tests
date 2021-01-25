@@ -290,6 +290,10 @@ function getFrenchLegendUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Gol%20D.%20Roger.html';
     case '3203':
       return 'https://onepiecetreasurecruise.fr/Sanji%20et%20Pudding.html';
+    case '3225':
+      return 'https://onepiecetreasurecruise.fr/Zorojuro.html';
+    case '3227':
+      return 'https://onepiecetreasurecruise.fr/Kaido%202.html';
 
     // SIX PLUS LEGENDS
 
@@ -1088,6 +1092,11 @@ function getFrenchRareRecruitUrl(characterId: string): string {
     case '3185':
       return 'https://onepiecetreasurecruise.fr/Gol%20D.%20Roger.html';
 
+    case '3229':
+      return 'https://onepiecetreasurecruise.fr/Kaido%202.html';
+    case '3231':
+      return 'https://onepiecetreasurecruise.fr/Kaido%202.html';
+
     default:
       return getOptcDbDefaultUrl(characterId);
   }
@@ -1866,6 +1875,8 @@ function getFrenchPvpRareRecruitUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/O-Soba%20Mask.html';
     case '3206':
       return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Cavendish.html';
+    case '3233':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Lucy.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -1945,6 +1956,10 @@ function getFrenchSpecialCharactersUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Special/Big%20Mom%20VS%20Kaido.html';
     case '3171':
       return 'https://onepiecetreasurecruise.fr/Special/Kobby.html';
+    case '3222':
+      return 'https://onepiecetreasurecruise.fr/Special/Hiyori%20et%20Toko.html';
+    case '3223':
+      return 'https://onepiecetreasurecruise.fr/Special/Hiyori%20et%20Toko.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
