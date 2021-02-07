@@ -32,6 +32,7 @@ export const gloLrrs = [
   '2892',
   '2914',
   '2919',
+  '3051',
 ];
 
 export const japLrrs = ['3097'];

@@ -7,6 +7,7 @@ import {
   legends2018,
   legends2019,
   legends2020,
+  legends2021,
   sixStarsLegendsWithSixPlusVersion,
 } from '../../data/tier-lists/legends';
 import {
@@ -16,6 +17,7 @@ import {
   legendsSixPlus2018,
   legendsSixPlus2019,
   legendsSixPlus2020,
+  legendsSixPlus2021,
 } from '../../data/tier-lists/legends_sixplus';
 import { TierList, TierListId } from '../../models/tier-list';
 import { TierListFilters } from '../../models/tier-list-filters';
@@ -230,9 +232,14 @@ function filterLegends(filteredCharacters: string[], filters: TierListFilters) {
         break;
       case '2020':
         filteredCharacters = filteredCharacters.filter(c =>
+          [...legends2020, ...legendsSixPlus2020].includes(c)
+        );
+        break;
+      case '2021':
+        filteredCharacters = filteredCharacters.filter(c =>
           [
-            ...legends2020,
-            ...legendsSixPlus2020,
+            ...legends2021,
+            ...legendsSixPlus2021,
             ...japLegends,
             ...japLegendsSixPLus,
           ].includes(c)

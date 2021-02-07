@@ -3,6 +3,7 @@ import { ambushs } from '../data/tier-lists/ambush';
 import { arenas } from '../data/tier-lists/arenes';
 import { colisees } from '../data/tier-lists/colisees';
 import { kizunas } from '../data/tier-lists/kizuna';
+import { kizunaLrrs } from '../data/tier-lists/kizuna_lrrs';
 import { lrrs } from '../data/tier-lists/lrr';
 import { pvps } from '../data/tier-lists/pvp';
 import { pvpLrrs } from '../data/tier-lists/pvp_lrrs';
@@ -34,6 +35,8 @@ export function getFrenchUrl(characterId: string): string {
     return getFrenchTreasureMapUrl(characterId);
   } else if (kizunas.map(l => l).includes(characterId)) {
     return getFrenchKizunaUrl(characterId);
+  } else if (kizunaLrrs.map(l => l).includes(characterId)) {
+    return getFrenchKizunaLimitedRareRecruitUrl(characterId);
   } else if (pvps.map(l => l).includes(characterId)) {
     return getFrenchPvpUrl(characterId);
   } else if (pvpLrrs.map(l => l).includes(characterId)) {
@@ -1170,6 +1173,8 @@ function getFrenchLimitedRareRecruitUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/LRR/Lucy.html';
     case '2919':
       return 'https://onepiecetreasurecruise.fr/LRR/Sanji%20et%20Pudding.html';
+    case '3051':
+      return 'https://onepiecetreasurecruise.fr/LRR/Alvida.html';
     case '3097':
       return 'https://onepiecetreasurecruise.fr/LRR/Sengoku.html';
 
@@ -1669,6 +1674,8 @@ function getFrenchArenaUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Arene/Fransuke.html';
     case '3210':
       return 'https://onepiecetreasurecruise.fr/Arene/X-Drake.html';
+    case '3235':
+      return 'https://onepiecetreasurecruise.fr/Arene/Brookichi.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -1758,6 +1765,8 @@ function getFrenchTreasureMapUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Eustass%20Kidd.html';
     case '3197':
       return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Monkey%20D.%20Garp.html';
+    case '3239':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Queen.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -1815,6 +1824,48 @@ function getFrenchKizunaUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Jigoro%20et%20Chien-manchot.html';
     case '3381':
       return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Law%20et%20Chopper.html';
+
+    default:
+      return getOptcDbDefaultUrl(characterId);
+  }
+}
+
+function getFrenchKizunaLimitedRareRecruitUrl(characterId: string): string {
+  switch (characterId) {
+    case '2756':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Tony-Tony%20Chopper.html';
+    case '2793':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Monet.html';
+    case '2832':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Akainu.html';
+    case '2853':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Belo%20Betty.html';
+    case '2887':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Nightmare%20Luffy.html';
+    case '2888':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Nami.html';
+    case '2889':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Brook.html';
+    case '2996':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Sandersonia%20et%20Marigold.html';
+    case '2997':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Margaret.html';
+    case '2998':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Nyon.html';
+    case '3120':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Ben%20Beckmann.html';
+    case '3121':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Yasopp.html';
+    case '3151':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Heart.html';
+    case '3152':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Trafalgar%20Law.html';
+    case '3153':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Zorojuro.html';
+    case '3205':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Charlotte%20Chiffon.html';
+    case '3212':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Carrot.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);

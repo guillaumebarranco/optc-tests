@@ -117,13 +117,12 @@ export const legends2020 = [
   '3177',
 ];
 
+export const legends2021 = ['3100', '3102', '3118'];
+
 export const japLegends = [
   '3065',
   '3071',
   '3073',
-  '3100',
-  '3102',
-  '3118',
   '3135_1',
   '3135_2',
   '3164',
@@ -140,6 +139,7 @@ export const legends = [
   ...legends2018,
   ...legends2019,
   ...legends2020,
+  ...legends2021,
 ];
 
 export const sixStarsLegendsWithSixPlusVersion = [
