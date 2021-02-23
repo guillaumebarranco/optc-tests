@@ -339,6 +339,10 @@ export const japRrs = [
   '3170',
   '3229',
   '3231',
+  '3255',
+  '3257',
+  '3259',
+  '3261',
 ];
 
 export const rrs = [...gloRrs, ...japRrs];

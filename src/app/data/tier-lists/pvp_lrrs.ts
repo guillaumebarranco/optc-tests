@@ -10,6 +10,7 @@ export const japPvpLrrs = [
   '3163',
   '3206',
   '3233',
+  '3243',
 ];
 
 export const pvpLrrs = [...gloPvpLrrs, ...japPvpLrrs];
