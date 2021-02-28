@@ -158,6 +158,7 @@
                   <img
                     *ngFor="let character of removedCharacters"
                     class="removed-character"
+                    [ngStyle]="_getImgStyleFormFiltering(character.id)"
                     [src]="_getCharacterImgPath(character)"
                     width="64"
                     (contextmenu)="putCharacterBackInTier(tier, character)"
