@@ -312,6 +312,17 @@
         tierListId === _tierListIdEnum.ALL ||
         tierListId === _tierListIdEnum.JPN
       "
+      [checked]="filters.characterTypesDisplay[_tierListCharacterType.TM_LRR]"
+      (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.TM_LRR)"
+      >Afficher les personnages limités au recrutement rare pour le
+      TM</mat-checkbox
+    >
+    <mat-checkbox
+      *ngIf="
+        tierListId === _tierListIdEnum.P2P ||
+        tierListId === _tierListIdEnum.ALL ||
+        tierListId === _tierListIdEnum.JPN
+      "
       [checked]="filters.characterTypesDisplay[_tierListCharacterType.SUPPORT]"
       (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.SUPPORT)"
       >Afficher les personnages spéciaux (soutiens)</mat-checkbox
@@ -358,6 +369,44 @@
       [checked]="filters.characterTypesDisplay[_tierListCharacterType.LRR]"
       (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.LRR)"
       >Display limited rare recruits</mat-checkbox
+    >
+    <mat-checkbox
+      *ngIf="
+        tierListId === _tierListIdEnum.P2P ||
+        tierListId === _tierListIdEnum.ALL ||
+        tierListId === _tierListIdEnum.JPN
+      "
+      [checked]="filters.characterTypesDisplay[_tierListCharacterType.TM_LRR]"
+      (change)="_onToggleCharacterTypeDisplay(_tierListCharacterType.TM_LRR)"
+      >Display limited rare recruits for Treasure Map</mat-checkbox
+    >
+    <mat-checkbox
+      *ngIf="
+        tierListId === _tierListIdEnum.P2P ||
+        tierListId === _tierListIdEnum.ALL ||
+        tierListId === _tierListIdEnum.JPN
+      "
+      [checked]="
+        filters.characterTypesDisplay[_tierListCharacterType.KIZUNA_LRR]
+      "
+      (change)="
+        _onToggleCharacterTypeDisplay(_tierListCharacterType.KIZUNA_LRR)
+      "
+      >Display limited rare recruits for Kizuna</mat-checkbox
+    >
+    <mat-checkbox
+      *ngIf="
+        tierListId === _tierListIdEnum.P2P ||
+        tierListId === _tierListIdEnum.ALL ||
+        tierListId === _tierListIdEnum.JPN
+      "
+      [checked]="
+        filters.characterTypesDisplay[_tierListCharacterType.PERIOD_LRR]
+      "
+      (change)="
+        _onToggleCharacterTypeDisplay(_tierListCharacterType.PERIOD_LRR)
+      "
+      >Display limited rare recruits for certain periods</mat-checkbox
     >
     <mat-checkbox
       *ngIf="
