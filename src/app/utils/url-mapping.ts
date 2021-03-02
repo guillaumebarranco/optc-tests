@@ -1981,12 +1981,19 @@ function getFrenchSpecialCharactersUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Special/Perona.html';
     case '2867':
       return 'https://onepiecetreasurecruise.fr/Special/Equipage%20de%20Baggy.html';
+    case '2875':
+      return 'https://onepiecetreasurecruise.fr/Special/Logue%20Town.html#Straw';
     case '2883':
       return 'https://onepiecetreasurecruise.fr/Special/Stampede1.html';
     case '2884':
       return 'https://onepiecetreasurecruise.fr/Special/Stampede2.html';
     case '2915':
       return 'https://onepiecetreasurecruise.fr/Special/Pyro-fruit.html';
+    case '2916':
+      return 'https://onepiecetreasurecruise.fr/Special/Pyro-fruit.html#Bartolomeo';
+    case '2918':
+      return 'https://onepiecetreasurecruise.fr/Special/Pyro-fruit.html#Diamante';
+
     case '2975':
       return 'https://onepiecetreasurecruise.fr/Special/Chasse%20au%20tresor.html';
     case '2976':
