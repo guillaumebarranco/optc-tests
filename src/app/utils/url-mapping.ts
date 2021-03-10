@@ -9,6 +9,7 @@ import { pvps } from '../data/tier-lists/pvp';
 import { pvpLrrs } from '../data/tier-lists/pvp_lrrs';
 import { raids } from '../data/tier-lists/raids';
 import { rrs } from '../data/tier-lists/rr';
+import { soutiens } from '../data/tier-lists/soutiens';
 import { specials } from '../data/tier-lists/special';
 import { tms } from '../data/tier-lists/tm';
 
@@ -43,6 +44,8 @@ export function getFrenchUrl(characterId: string): string {
     return getFrenchPvpRareRecruitUrl(characterId);
   } else if (specials.map(l => l).includes(characterId)) {
     return getFrenchSpecialCharactersUrl(characterId);
+  } else if (soutiens.map(l => l).includes(characterId)) {
+    return getFrenchSupportsSpecialCharactersUrl(characterId);
   }
 
   return getOptcDbDefaultUrl(characterId);
@@ -299,7 +302,9 @@ function getFrenchLegendUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Kaido%202.html';
     case '3245':
       return 'https://onepiecetreasurecruise.fr/Ener%202.html';
-    case '3253':
+    case '3253_1':
+      return 'https://onepiecetreasurecruise.fr/Ace%20VS%20Akainu.html';
+    case '3253_2':
       return 'https://onepiecetreasurecruise.fr/Ace%20VS%20Akainu.html';
 
     // SIX PLUS LEGENDS
@@ -1691,6 +1696,8 @@ function getFrenchArenaUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Arene/X-Drake.html';
     case '3235':
       return 'https://onepiecetreasurecruise.fr/Arene/Brookichi.html';
+    case '3269':
+      return 'https://onepiecetreasurecruise.fr/Arene/Kawamatsu.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -1782,6 +1789,8 @@ function getFrenchTreasureMapUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Monkey%20D.%20Garp.html';
     case '3239':
       return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Queen.html';
+    case '3273':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Luffy%20et%20Ace.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -1909,6 +1918,10 @@ function getFrenchPvpUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/X-Drake.html';
     case '3173':
       return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Bartolomeo.html';
+    case '3208':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Basil%20Hawkins.html';
+    case '3233':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Lucy.html';
     case '3251':
       return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Hannyabal.html';
 
@@ -1943,12 +1956,12 @@ function getFrenchPvpRareRecruitUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Leo.html';
     case '3125':
       return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Oz.html';
+    case '3130':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Trafalgar%20Law.html';
     case '3163':
       return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/O-Soba%20Mask.html';
     case '3206':
       return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Cavendish.html';
-    case '3233':
-      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Lucy.html';
     case '3243':
       return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Soldat%20et%20Rebecca.html';
 
@@ -2045,6 +2058,65 @@ function getFrenchSpecialCharactersUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Special/Grand%20corsaire.html#Weeble';
     case '3262':
       return 'https://onepiecetreasurecruise.fr/Special/Barbe%20Blanche.html';
+
+    default:
+      return getOptcDbDefaultUrl(characterId);
+  }
+}
+
+function getFrenchSupportsSpecialCharactersUrl(characterId: string): string {
+  switch (characterId) {
+    case '2388':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Makino.html';
+    case '2389':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Tsuru.html';
+    case '2390':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Conis.html';
+    case '2391':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Sabo.html';
+    case '2392':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Icebarg.html';
+    case '2435':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Dagama.html';
+    case '2436':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Orlumbus.html';
+    case '2460':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Charlotte%20Oven.html';
+    case '2461':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Mysterioms.html';
+    case '2501':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Koshiro.html';
+    case '2502':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Streusen.html';
+    case '2772':
+      return 'https://onepiecetreasurecruise.fr/Special/Classement%20Daifuku.html#Wanda';
+    case '2800':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Charlotte%20Brulee.html';
+    case '2851':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Carrot.html';
+    case '5053':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Sengoku.html';
+
+    case '3159':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Charlotte%20Daifuku.html';
+    case '3160':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Cesar%20Clown.html';
+    case '3161':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Shutenmaru.html';
+    case '3162':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Gecko%20Moria.html';
+    case '3200':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Nico%20Robin.html';
+    case '3201':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Tony-Tony%20Chopper.html';
+    case '3265':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Mr%201%20et%20Miss%20Doublefinger.html';
+    case '3266':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Mr%203%20et%20Miss%20Goldenweek.html';
+    case '3267':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Mr%204%20et%20Miss%20Merrychristmas.html';
+    case '3268':
+      return 'https://onepiecetreasurecruise.fr/Soutien/Mr%205%20et%20Miss%20Valentine.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
