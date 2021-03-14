@@ -382,11 +382,18 @@ export class TierListComponent implements OnInit {
   }
 
   private _saveTierList(): void {
+    const tiers = this.tiers.map((tier, index) => {
+      return {
+        ...tier,
+        color: tier.color || this.colors[index],
+      };
+    });
+
     this._storageService
       .saveTierList(
         this.currentTierList.id,
         this.tierListTitle,
-        this.tiers,
+        tiers,
         this.removedCharacters
       )
       .then(() => {

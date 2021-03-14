@@ -49,6 +49,7 @@ export class StorageService {
                   return {
                     characters: tier.characters.map(c => c.id),
                     name: tier.name,
+                    color: tier.color,
                   };
                 }),
                 removedCharacters: removedCharacters.map(c => c.id),
