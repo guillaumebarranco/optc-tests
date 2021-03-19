@@ -192,7 +192,7 @@ export class TierListComponent implements OnInit {
   }
 
   public drop(event: any): void {
-    if (event.previousContainer === event.container) {
+    if (event.previousContainer.id === event.container.id) {
       moveItemInArray(
         event.container.data,
         event.previousContainer.data.indexOf(event.item.data),
@@ -241,8 +241,25 @@ export class TierListComponent implements OnInit {
         []
       );
 
+      const sortedTierCharacters = tierCharacters.sort((a, b) => {
+        const aIndexInSavedTier = tier.characters.indexOf(a.id);
+        const bIndexInSavedTier = tier.characters.indexOf(b.id);
+
+        if (aIndexInSavedTier === -1 && bIndexInSavedTier === -1) {
+          return 0;
+        }
+
+        if (aIndexInSavedTier < bIndexInSavedTier) {
+          return -1;
+        } else if (aIndexInSavedTier > bIndexInSavedTier) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+
       return {
-        characters: tierCharacters,
+        characters: sortedTierCharacters,
         name: tier.name,
         color: tier.color || this.colors[index],
       };
