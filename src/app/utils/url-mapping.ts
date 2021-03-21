@@ -1092,11 +1092,11 @@ function getFrenchRareRecruitUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Dracule%20Mihawk%203.html#3';
     case '3106':
       return 'https://onepiecetreasurecruise.fr/Dracule%20Mihawk%203.html#4';
-    case '3133':
-      return 'https://onepiecetreasurecruise.fr/Kaido%20VS%20Big%20Mom.html#1';
-    case '3135':
-      return 'https://onepiecetreasurecruise.fr/Kaido%20VS%20Big%20Mom.html#2';
     case '3137':
+      return 'https://onepiecetreasurecruise.fr/Kaido%20VS%20Big%20Mom.html#1';
+    case '3139':
+      return 'https://onepiecetreasurecruise.fr/Kaido%20VS%20Big%20Mom.html#2';
+    case '3141':
       return 'https://onepiecetreasurecruise.fr/Kaido%20VS%20Big%20Mom.html#3';
     case '3168':
       return 'https://onepiecetreasurecruise.fr/Vivi%20et%20Rebecca%202.html#1';
