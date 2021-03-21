@@ -27,6 +27,7 @@ export const japKizunas = [
   '3207',
   '3213',
   '3241',
+  '3276',
 ];
 
 export const kizunas = [...glbKizunas, ...japKizunas];

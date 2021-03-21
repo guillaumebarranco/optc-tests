@@ -425,6 +425,8 @@ function getFrenchLegendUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Sanji%20Vinsmoke%202.html';
     case '3240':
       return 'https://onepiecetreasurecruise.fr/Dracule%20Mihawk%202.html';
+    case '3275':
+      return 'https://onepiecetreasurecruise.fr/O-Nami.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -1404,6 +1406,8 @@ function getFrenchRaidUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Raids/O-Nami%20et%20Shinobu.html';
     case '3209':
       return 'https://onepiecetreasurecruise.fr/Raids/Luffytaro.html';
+    case '3263':
+      return 'https://onepiecetreasurecruise.fr/Raids/Marco.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -1853,6 +1857,8 @@ function getFrenchKizunaUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Law%20et%20Chopper.html';
     case '3241':
       return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/King.html';
+    case '3276':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Don%20Quijote%20Doflamingo.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -1897,6 +1903,8 @@ function getFrenchKizunaLimitedRareRecruitUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Carrot.html';
     case '3242':
       return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Charlotte%20Slurp.html';
+    case '3274':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Crocodile.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
