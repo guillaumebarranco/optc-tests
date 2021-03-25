@@ -310,6 +310,13 @@ function getFrenchLegendUrl(characterId: string): string {
     case '3253_2':
       return 'https://onepiecetreasurecruise.fr/Ace%20VS%20Akainu.html';
 
+    case '3278':
+      return 'https://onepiecetreasurecruise.fr/Magellan%202.html';
+    case '3280':
+      return 'https://onepiecetreasurecruise.fr/Barbe%20Noire%203.html';
+    case '3282':
+      return 'https://onepiecetreasurecruise.fr/Gecko%20Moria.html';
+
     // SIX PLUS LEGENDS
 
     case '1413':
@@ -1124,6 +1131,11 @@ function getFrenchRareRecruitUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Ace%20VS%20Akainu.html#3';
     case '3261':
       return 'https://onepiecetreasurecruise.fr/Ace%20VS%20Akainu.html#4';
+
+    case '3283':
+      return 'https://onepiecetreasurecruise.fr/Barbe%20Noire%203.html#1';
+    case '3284':
+      return 'https://onepiecetreasurecruise.fr/Barbe%20Noire%203.html#2';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -2069,6 +2081,11 @@ function getFrenchSpecialCharactersUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Special/Grand%20corsaire.html#Weeble';
     case '3262':
       return 'https://onepiecetreasurecruise.fr/Special/Barbe%20Blanche.html';
+
+    case '3286':
+      return 'https://onepiecetreasurecruise.fr/Special/Equipage%20de%20Barbe%20Noire.html#Burgess';
+    case '3287':
+      return 'https://onepiecetreasurecruise.fr/Special/Equipage%20de%20Barbe%20Noire.html#Shot';
 
     default:
       return getOptcDbDefaultUrl(characterId);

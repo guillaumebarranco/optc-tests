@@ -44,6 +44,8 @@ export const japSpecials = [
   '3223',
   '3247',
   '3262',
+  '3286',
+  '3287',
 ];
 
 export const specials = [...glbSpecials, ...japSpecials];
