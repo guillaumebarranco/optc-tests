@@ -132,6 +132,7 @@ export class TierListComponent implements OnInit {
       const sharedTiers: SavedTier[] = JSON.parse(params.tiers);
 
       this.tiers = this._getTiersFromSharedTiers(sharedTiers);
+      console.log('this.tiers', this.tiers);
       this.tierListTitle = params.name;
 
       this.removedCharacters = this.currentTierList.characters.filter(c => {
@@ -148,14 +149,20 @@ export class TierListComponent implements OnInit {
   }
 
   private _getTiersFromSharedTiers(sharedTiers: SavedTier[]): Tier[] {
+    console.log('sharedTiers', sharedTiers);
+    console.log('this.currentTierList', this.currentTierList);
+
     return sharedTiers.map((tier, index) => ({
       ...tier,
       color: tier.color || this.colors[index],
-      characters: this.currentTierList.characters.reduce(
-        (acc: TierListCharacter[], character: TierListCharacter) =>
-          tier.characters.includes(character.id) ? acc.concat(character) : acc,
-        []
-      ),
+      // characters: this.currentTierList.characters.reduce(
+      //   (acc: TierListCharacter[], character: TierListCharacter) =>
+      //     tier.characters.includes(character.id) ? acc.concat(character) : acc,
+      //   []
+      // ),
+      characters: tier.characters.map(character => {
+        return this.currentTierList.characters.find(c => c.id === character);
+      }),
     }));
   }
 
