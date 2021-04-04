@@ -48,8 +48,6 @@ export class TierListActionsComponent {
     const baseUrl = 'http://optc-tierlist.com';
     // const baseUrl = 'http://localhost:4200';
 
-    console.log('this.tiers', this.tiers);
-
     const params = `?name=${encodeURI(
       this.tierListTitle
     )}&tiers=${JSON.stringify(
@@ -59,8 +57,6 @@ export class TierListActionsComponent {
         color: tier.color,
       }))
     )}&tierListId=${this.currentTierListId}`;
-
-    console.log('params', params);
 
     const url = baseUrl + params;
 

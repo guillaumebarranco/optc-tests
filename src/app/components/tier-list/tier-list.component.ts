@@ -54,7 +54,7 @@ export class TierListComponent implements OnInit {
     'rgb(255, 127, 127)',
     'rgb(255, 191, 127)',
     'rgb(255, 223, 127)',
-    '#FFFF7F',
+    'rgb(255, 255, 127)',
     'rgb(191, 255, 127)',
     'rgb(127, 255, 127)',
     'rgb(127, 255, 255)',
@@ -129,12 +129,9 @@ export class TierListComponent implements OnInit {
     if (params.name && params.tiers) {
       this.currentTierList = tierLists.find(t => t.id === params.tierListId);
 
-      console.log('params.tiers', params.tiers);
-
       const sharedTiers: SavedTier[] = JSON.parse(params.tiers);
 
       this.tiers = this._getTiersFromSharedTiers(sharedTiers);
-      console.log('this.tiers', this.tiers);
       this.tierListTitle = params.name;
 
       this.removedCharacters = this.currentTierList.characters.filter(c => {
@@ -151,9 +148,6 @@ export class TierListComponent implements OnInit {
   }
 
   private _getTiersFromSharedTiers(sharedTiers: SavedTier[]): Tier[] {
-    console.log('sharedTiers', JSON.stringify(sharedTiers));
-    console.log('this.currentTierList', this.currentTierList);
-
     return sharedTiers.map((tier, index) => ({
       ...tier,
       color: tier.color || this.colors[index],
