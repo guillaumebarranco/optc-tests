@@ -30,6 +30,8 @@ export class StorageService {
         const tierListsUpdated: SavedTierList[] = savedTierLists.concat({
           name: title,
           tiers: tiers.map(tier => {
+            console.log('tier', tier);
+
             return {
               characters: tier.characters.map(c => c.id),
               name: tier.name,

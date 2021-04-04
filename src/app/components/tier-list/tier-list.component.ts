@@ -129,6 +129,8 @@ export class TierListComponent implements OnInit {
     if (params.name && params.tiers) {
       this.currentTierList = tierLists.find(t => t.id === params.tierListId);
 
+      console.log('params.tiers', params.tiers);
+
       const sharedTiers: SavedTier[] = JSON.parse(params.tiers);
 
       this.tiers = this._getTiersFromSharedTiers(sharedTiers);
@@ -149,7 +151,7 @@ export class TierListComponent implements OnInit {
   }
 
   private _getTiersFromSharedTiers(sharedTiers: SavedTier[]): Tier[] {
-    console.log('sharedTiers', sharedTiers);
+    console.log('sharedTiers', JSON.stringify(sharedTiers));
     console.log('this.currentTierList', this.currentTierList);
 
     return sharedTiers.map((tier, index) => ({
