@@ -60,6 +60,8 @@ export class TierListActionsComponent {
       }))
     )}&tierListId=${this.currentTierListId}`;
 
+    console.log('params', params);
+
     const url = baseUrl + params;
 
     if (url.length < 7000) {
