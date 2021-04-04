@@ -47,6 +47,9 @@ export class TierListActionsComponent {
   public share() {
     const baseUrl = 'http://optc-tierlist.com';
     // const baseUrl = 'http://localhost:4200';
+
+    console.log('this.tiers', this.tiers);
+
     const params = `?name=${encodeURI(
       this.tierListTitle
     )}&tiers=${JSON.stringify(
