@@ -54,7 +54,7 @@ export class TierListActionsComponent {
       this.tiers.map(tier => ({
         name: tier.name,
         characters: tier.characters.map(c => c.id),
-        color: tier.color,
+        color: tier.color.includes('#') ? 'rgb(255, 255, 127)' : tier.color,
       }))
     )}&tierListId=${this.currentTierListId}`;
 
