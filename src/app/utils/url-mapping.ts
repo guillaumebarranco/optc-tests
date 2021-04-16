@@ -316,6 +316,8 @@ function getFrenchLegendUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Barbe%20Noire%203.html';
     case '3282':
       return 'https://onepiecetreasurecruise.fr/Gecko%20Moria.html';
+    case '3300':
+      return 'https://onepiecetreasurecruise.fr/Equipage%20de%20Capone%20Bege.html';
 
     // SIX PLUS LEGENDS
 
@@ -434,6 +436,8 @@ function getFrenchLegendUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Dracule%20Mihawk%202.html';
     case '3275':
       return 'https://onepiecetreasurecruise.fr/O-Nami.html';
+    case '3298':
+      return 'https://onepiecetreasurecruise.fr/Charlotte%20Cracker.html#sixplus';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -1810,6 +1814,8 @@ function getFrenchTreasureMapUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Queen.html';
     case '3273':
       return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Luffy%20et%20Ace.html';
+    case '3297':
+      return 'https://onepiecetreasurecruise.fr/Carte%20aux%20tresors/Shiliew.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -1947,6 +1953,8 @@ function getFrenchPvpUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Lucy.html';
     case '3251':
       return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Hannyabal.html';
+    case '3285':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Vergo.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -1987,6 +1995,8 @@ function getFrenchPvpRareRecruitUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Cavendish.html';
     case '3243':
       return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Soldat%20et%20Rebecca.html';
+    case '3292':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Shiliew.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
