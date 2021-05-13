@@ -318,6 +318,14 @@ function getFrenchLegendUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Gecko%20Moria.html';
     case '3300':
       return 'https://onepiecetreasurecruise.fr/Equipage%20de%20Capone%20Bege.html';
+    case '3307':
+      return 'https://onepiecetreasurecruise.fr/Jewelry%20Bonney.html';
+    case '3334':
+      return 'https://onepiecetreasurecruise.fr/Luffy%207th%20anni.html';
+    case '3336':
+      return 'https://onepiecetreasurecruise.fr/Law%207th%20anni.html';
+    case '3338':
+      return 'https://onepiecetreasurecruise.fr/Kidd%207th%20anni.html';
 
     // SIX PLUS LEGENDS
 
@@ -1141,6 +1149,20 @@ function getFrenchRareRecruitUrl(characterId: string): string {
     case '3284':
       return 'https://onepiecetreasurecruise.fr/Barbe%20Noire%203.html#2';
 
+    case '3308':
+      return 'https://onepiecetreasurecruise.fr/Jewelry%20Bonney.html';
+    case '3309':
+      return 'https://onepiecetreasurecruise.fr/Jewelry%20Bonney.html';
+    case '3310':
+      return 'https://onepiecetreasurecruise.fr/Jewelry%20Bonney.html';
+
+    case '3343':
+      return 'https://onepiecetreasurecruise.fr/Luffy%207th%20anni.html#1';
+    case '3344':
+      return 'https://onepiecetreasurecruise.fr/Luffy%207th%20anni.html#2';
+    case '3345':
+      return 'https://onepiecetreasurecruise.fr/Luffy%207th%20anni.html#3';
+
     default:
       return getOptcDbDefaultUrl(characterId);
   }
@@ -1401,7 +1423,7 @@ function getFrenchRaidUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Raids/Crocodile%202.html';
     case '2987':
       return 'https://onepiecetreasurecruise.fr/Raids/O-Soba%20Mask.html';
-    case '3340':
+    case '3350':
       return 'https://onepiecetreasurecruise.fr/Raids/Neo%20Monkey%20D.%20Garp.html';
     case '3352':
       return 'https://onepiecetreasurecruise.fr/Raids/Neo%20Emporio%20Ivankov.html';
@@ -1721,6 +1743,10 @@ function getFrenchArenaUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Arene/Brookichi.html';
     case '3269':
       return 'https://onepiecetreasurecruise.fr/Arene/Kawamatsu.html';
+    case '3293':
+      return 'https://onepiecetreasurecruise.fr/Arene/Sanjuan%20Wolf.html';
+    case '3329':
+      return 'https://onepiecetreasurecruise.fr/Arene/Shinobu.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -1877,6 +1903,8 @@ function getFrenchKizunaUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/King.html';
     case '3276':
       return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Don%20Quijote%20Doflamingo.html';
+    case '3303':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Charlotte%20Katakuri.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -1923,6 +1951,10 @@ function getFrenchKizunaLimitedRareRecruitUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Charlotte%20Slurp.html';
     case '3274':
       return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Crocodile.html';
+    case '3301':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Vinsmoke%20Judge.html';
+    case '3302':
+      return 'https://onepiecetreasurecruise.fr/Bataille%20cooperative/Limites/Brook%202.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -1997,6 +2029,8 @@ function getFrenchPvpRareRecruitUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Soldat%20et%20Rebecca.html';
     case '3292':
       return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Shiliew.html';
+    case '3328':
+      return 'https://onepiecetreasurecruise.fr/Festival%20des%20pirates/Limites/Smoker.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -2096,6 +2130,12 @@ function getFrenchSpecialCharactersUrl(characterId: string): string {
       return 'https://onepiecetreasurecruise.fr/Special/Equipage%20de%20Barbe%20Noire.html#Burgess';
     case '3287':
       return 'https://onepiecetreasurecruise.fr/Special/Equipage%20de%20Barbe%20Noire.html#Shot';
+    case '3304':
+      return 'https://onepiecetreasurecruise.fr/Special/Chasse%20au%20tresor%202.html';
+    case '3305':
+      return 'https://onepiecetreasurecruise.fr/Special/Chasse%20au%20tresor%202.html';
+    case '3346':
+      return 'https://onepiecetreasurecruise.fr/Special/Kaido%20et%20Big%20Mom.html';
 
     default:
       return getOptcDbDefaultUrl(characterId);

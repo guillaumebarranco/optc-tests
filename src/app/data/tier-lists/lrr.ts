@@ -33,8 +33,9 @@ export const gloLrrs = [
   '2914',
   '2919',
   '3051',
+  '3097',
 ];
 
-export const japLrrs = ['3097'];
+export const japLrrs = [];
 
 export const lrrs = [...gloLrrs, ...japLrrs];

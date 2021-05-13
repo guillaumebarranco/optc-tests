@@ -117,14 +117,21 @@ export const legends2020 = [
   '3177',
 ];
 
-export const legends2021 = ['3100', '3102', '3118', '3065', '3071', '3073'];
-
-export const japLegends = [
+export const legends2021 = [
+  '3100',
+  '3102',
+  '3118',
+  '3065',
+  '3071',
+  '3073',
   '3135_1',
   '3135_2',
   '3164',
   '3166',
   '3203',
+];
+
+export const japLegends = [
   '3225',
   '3227',
   '3245',
@@ -134,6 +141,10 @@ export const japLegends = [
   '3280',
   '3282',
   '3300',
+  '3307',
+  '3334',
+  '3336',
+  '3338',
 ];
 
 export const legends = [
@@ -150,19 +161,25 @@ export const sixStarsLegendsWithSixPlusVersion = [
   ...legends2015,
   ...legends2016.filter(l => l !== '1121'), // Log Luffy doesn't have 6+ yet
   ...legends2017,
-  '1794',
-  '1832',
-  '1869',
-  '1883',
-  '1935',
-  '1951',
-  '2074',
-  '2076',
-  '2113',
-  '2251',
+  ...legends2018.filter(
+    l =>
+      l !== '1910' &&
+      l !== '1985' &&
+      l !== '2007' &&
+      l !== '2023' &&
+      l !== '2025' &&
+      l !== '2099' &&
+      l !== '2181' &&
+      l !== '2201' &&
+      l !== '2236' &&
+      l !== '5014'
+  ), // Dofla V2, Luffy/Ace, Shanks V2, Akainu V2, Aokiji V2, Tesoro, Warco, Shiki, Brook and Kung-fu Luffy don't have 6+ yet
   '2265',
-  '2234',
   '2302',
   '2651',
   '2686',
+  '2465',
+  '2475',
+  '2477',
+  '2774',
 ];
