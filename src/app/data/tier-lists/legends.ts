@@ -146,9 +146,19 @@ export const japLegends = [
   '3336',
   '3338',
   '3349',
-  '3355',
+  '3355_1',
+  '3355_2',
   '3357',
   '3364',
+  '3376',
+  '3378',
+  '3391',
+  '3398',
+  '3403',
+  '3405',
+  '3411',
+  '3422',
+  '3427',
 ];
 
 export const legends = [
@@ -185,5 +195,8 @@ export const sixStarsLegendsWithSixPlusVersion = [
   '2465',
   '2475',
   '2477',
-  '2774',
+  '2774', // O-Nami
+  '2776', // Komurasaki
+  '3071', // Germa
+  '2338', // Carrot
 ];
