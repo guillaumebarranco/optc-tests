@@ -20,8 +20,12 @@ export const gloSoutiens = [
   '3162',
   '3200',
   '3201',
+  '3265',
+  '3266',
+  '3267',
+  '3268',
 ];
 
-export const japSoutiens = ['3265', '3266', '3267', '3268'];
+export const japSoutiens = [];
 
 export const soutiens = [...gloSoutiens, ...japSoutiens];

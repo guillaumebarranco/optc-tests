@@ -89,9 +89,6 @@ export const gloTmLrrs = [
   '3190',
   '3191',
   '3192',
-];
-
-export const japTmLrrs = [
   '3214',
   '3215',
   '3216',
@@ -105,5 +102,7 @@ export const japTmLrrs = [
   '3295',
   '3296',
 ];
+
+export const japTmLrrs = ['3386', '3387', '3388', '3412', '3413', '3414'];
 
 export const tmLrrs = [...gloTmLrrs, ...japTmLrrs];

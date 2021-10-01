@@ -15,8 +15,22 @@ export const gloKizunaLrrs = [
   '3152',
   '3153',
   '3205',
+  '3212',
+  '3242',
+  '3274',
+  '3301',
+  '3302',
 ];
 
-export const japKizunaLrrs = ['3212', '3242', '3274', '3301', '3302'];
+export const japKizunaLrrs = [
+  '3370',
+  '3371',
+  '3372',
+  '3392',
+  '3418',
+  '3445',
+  '3446',
+  '3447',
+];
 
 export const kizunaLrrs = [...gloKizunaLrrs, ...japKizunaLrrs];
