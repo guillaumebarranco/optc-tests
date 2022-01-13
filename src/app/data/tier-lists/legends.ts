@@ -146,9 +146,6 @@ export const legends2021 = [
   '3355_1',
   '3355_2',
   '3357',
-];
-
-export const japLegends = [
   '3364',
   '3376',
   '3378',
@@ -163,7 +160,15 @@ export const japLegends = [
   '3433',
   '3452',
   '3454',
+  '3472',
+  '3473',
+  '3493',
+  '3495',
+  '3513',
+  '3515',
 ];
+
+export const japLegends = [];
 
 export const legends = [
   ...legends2015,
