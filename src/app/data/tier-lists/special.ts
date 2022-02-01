@@ -47,8 +47,19 @@ export const glbSpecials = [
   '3305',
   '3346',
   '3353',
+  '3382',
+  '3400',
+  '3401',
+  '3425',
+  '3436',
+  '3457',
+  '3477',
+  '3481',
+  '3498',
+  '3518',
+  '3520',
 ];
 
-export const japSpecials = ['3382', '3425'];
+export const japSpecials = [];
 
 export const specials = [...glbSpecials, ...japSpecials];

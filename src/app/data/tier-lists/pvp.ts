@@ -12,8 +12,16 @@ export const gloPvps = [
   '3251',
   '3285',
   '3332',
+  '3374',
+  '3396',
+  '3415',
+  '3436',
+  '3466',
+  '3486',
+  '3505',
+  '3526',
 ];
 
-export const japPvps = ['3374', '3396', '3415', '3436'];
+export const japPvps = [];
 
 export const pvps = [...gloPvps, ...japPvps];

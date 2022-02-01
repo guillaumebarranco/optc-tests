@@ -7,8 +7,12 @@ export const glbArenas = [
   '3293',
   '3329',
   '3361',
+  '3385',
+  '3408',
+  '3460',
+  '3499',
 ];
 
-export const japArenas = ['3385', '3408'];
+export const japArenas = [];
 
 export const arenas = [...glbArenas, ...japArenas];

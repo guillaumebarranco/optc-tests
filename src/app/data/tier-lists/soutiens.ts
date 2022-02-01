@@ -24,6 +24,9 @@ export const gloSoutiens = [
   '3266',
   '3267',
   '3268',
+  '3465',
+  '3500',
+  '3530',
 ];
 
 export const japSoutiens = [];
