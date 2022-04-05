@@ -149,7 +149,7 @@ export function getDefaultFilters(): TierListFilters {
     showSixPlusLegends: true,
     selectedYearLegend: 'none',
     showRemovedCharacters: false,
-    hideSixStarsLegendsHavingSixPlusVersion: false,
+    hideSixStarsLegendsHavingSixPlusVersion: true,
     showGlobalOnly: false,
     characterTypesDisplay: {
       [TierListCharacterType.LEGEND]: true,
@@ -184,9 +184,10 @@ function filterCategories(
   );
 
   categoriesToHide.forEach((categoryToHide: TierListCharacterType) => {
-    return (filteredCharacters = filteredCharacters = filteredCharacters.filter(
-      c => !tierCharacterTypeCharactersList[categoryToHide].includes(c)
-    ));
+    return (filteredCharacters = filteredCharacters =
+      filteredCharacters.filter(
+        c => !tierCharacterTypeCharactersList[categoryToHide].includes(c)
+      ));
   });
 
   return filteredCharacters;
