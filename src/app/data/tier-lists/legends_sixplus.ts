@@ -75,6 +75,8 @@ export const legendsSixPlus2021 = [
   '3448',
   '3469',
   '3510',
+  '3718',
+  '3721',
 ];
 
 export const legendsSixPlus2022 = ['3519', '3550', '3592', '3625', '3666'];
