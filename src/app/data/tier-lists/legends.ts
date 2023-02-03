@@ -204,7 +204,22 @@ export const legends2022 = [
   '3697',
   '3706',
   '3708',
+  '3723',
+  '3730',
+  '3735',
+  '3741',
+  '3745',
+  '3752',
+  '3755',
+  '3766',
+  '3772',
+  '3775',
+  '3780',
+  '3790',
+  '3792',
 ];
+
+export const legends2023 = ['3809', '3811'];
 
 export const japLegends = [];
 
@@ -217,6 +232,7 @@ export const legends = [
   ...legends2020,
   ...legends2021,
   ...legends2022,
+  ...legends2023,
 ];
 
 export const sixStarsLegendsWithSixPlusVersion = [
@@ -225,17 +241,13 @@ export const sixStarsLegendsWithSixPlusVersion = [
   ...legends2017,
   ...legends2018.filter(
     l =>
-      l !== '1910' &&
       l !== '1985' &&
       l !== '2007' &&
-      l !== '2023' &&
-      l !== '2025' &&
       l !== '2099' &&
       l !== '2181' &&
-      l !== '2201' &&
       l !== '2236' &&
       l !== '5014'
-  ), // Dofla V2, Luffy/Ace, Shanks V2, Akainu V2, Aokiji V2, Tesoro, Warco, Shiki, Brook and Kung-fu Luffy don't have 6+ yet
+  ), //Luffy/Ace, Shanks V2, Tesoro, Warco, Brook and Kung-fu Luffy don't have 6+ yet
   '2265',
   '2302',
   '2651',
@@ -243,8 +255,5 @@ export const sixStarsLegendsWithSixPlusVersion = [
   '2465',
   '2475',
   '2477',
-  '2774', // O-Nami
-  '2776', // Komurasaki
-  '3071', // Germa
   '2338', // Carrot
 ];
