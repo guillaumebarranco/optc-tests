@@ -52,10 +52,24 @@ export const glbTms = [
   '3491',
   '3506',
   '3527',
+  '3547',
+  '3567',
+  '3588',
+  '3621',
+  '3645',
+  '3663',
+  '3689',
+  '3712',
+  '3736',
+  '3758',
+  '3778',
+  '3801',
+  '3822',
+  '3842',
 ];
 
 export const specialTms = ['2439', '2632', '2661', '2880'];
 
 export const japTms = [];
 
-export const tms = [...glbTms, ...japTms, ...specialTms];
+export const tms = [...specialTms, ...glbTms, ...japTms];

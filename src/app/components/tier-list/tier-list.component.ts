@@ -68,7 +68,7 @@ export class TierListComponent implements OnInit {
   public removedCharacters: TierListCharacter[] = [];
   public _filteredCharacters: string[] = [];
 
-  public _filters: TierListFilters = null;
+  public _filters: TierListFilters = getDefaultFilters();
 
   public _isStreamerMode = false;
   public _isExporting = false;
@@ -83,8 +83,6 @@ export class TierListComponent implements OnInit {
   // Init
 
   public ngOnInit(): void {
-    this._filters = getDefaultFilters();
-
     this._displayNews();
 
     this._activatedRoute.queryParams.subscribe(params => {
@@ -92,6 +90,9 @@ export class TierListComponent implements OnInit {
         this._initTierFromUrlShare(params);
       } else {
         this._initTiers(TierListId.LEGEND);
+        setTimeout(() => {
+          this._filtersCharactersList();
+        }, 100);
       }
     });
   }
@@ -223,8 +224,8 @@ export class TierListComponent implements OnInit {
     const alreadyAddedCharacters = [];
 
     this.tiers = savedTierList.tiers.map((tier, index) => {
-      const tierCharacters: TierListCharacter[] = this.currentTierList.characters.reduce(
-        (acc, character) => {
+      const tierCharacters: TierListCharacter[] =
+        this.currentTierList.characters.reduce((acc, character) => {
           if (tier.characters.includes(character.id)) {
             alreadyAddedCharacters.push(character.id);
             return acc.concat(character);
@@ -240,9 +241,7 @@ export class TierListComponent implements OnInit {
           }
 
           return acc;
-        },
-        []
-      );
+        }, []);
 
       const sortedTierCharacters = tierCharacters.sort((a, b) => {
         const aIndexInSavedTier = tier.characters.indexOf(a.id);
@@ -534,8 +533,8 @@ export class TierListComponent implements OnInit {
   }
 
   public _onToggleHideSixStarsLegendsHavingSixPlusVersion(): void {
-    this._filters.hideSixStarsLegendsHavingSixPlusVersion = !this._filters
-      .hideSixStarsLegendsHavingSixPlusVersion;
+    this._filters.hideSixStarsLegendsHavingSixPlusVersion =
+      !this._filters.hideSixStarsLegendsHavingSixPlusVersion;
 
     this._filtersCharactersList();
   }
@@ -552,8 +551,8 @@ export class TierListComponent implements OnInit {
   }
 
   public _onToggleCharacterTypeDisplay(value: TierListCharacterType): void {
-    this._filters.characterTypesDisplay[value] = !this._filters
-      .characterTypesDisplay[value];
+    this._filters.characterTypesDisplay[value] =
+      !this._filters.characterTypesDisplay[value];
 
     this._filtersCharactersList();
   }

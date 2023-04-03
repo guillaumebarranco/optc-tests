@@ -129,6 +129,13 @@ export function filtersCharactersList(
   }
 
   if (filters.hideSixStarsLegendsHavingSixPlusVersion) {
+    console.log(
+      'sixStarsLegendsWithSixPlusVersion',
+      sixStarsLegendsWithSixPlusVersion
+    );
+
+    console.log('legends2018', legends2018);
+
     filteredCharacters = filteredCharacters.filter(
       c => !sixStarsLegendsWithSixPlusVersion.includes(c)
     );

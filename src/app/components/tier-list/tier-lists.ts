@@ -254,16 +254,28 @@ export const tierLists: TierList[] = [
     id: TierListId.RR,
   },
   {
-    frenchName: 'Personnages Colisées',
-    englishName: 'Colosseums Characters',
-    characters: formatedColosseums,
-    id: TierListId.COLOSSEUM,
+    frenchName: 'Personnages PVP LRR',
+    englishName: 'PVP LRR Characters',
+    characters: formatedPvpLrrs,
+    id: TierListId.PVP,
   },
   {
-    frenchName: 'Personnages Raids',
-    englishName: 'Raids Characters',
-    characters: formatedRaids,
-    id: TierListId.RAID,
+    frenchName: 'Personnages TM LRR / RR',
+    englishName: 'TM LRR / RR Characters',
+    characters: formatedTmLrrs,
+    id: TierListId.TM_LRR,
+  },
+  {
+    frenchName: 'Personnages soutiens',
+    englishName: 'Special Characters (support)',
+    characters: formatedSupports,
+    id: TierListId.SUPPORT,
+  },
+  {
+    frenchName: 'Personnages Kizuna LRR',
+    englishName: 'Kizuna LRR Characters',
+    characters: formatedKizunaLrrs,
+    id: TierListId.KIZUNA_LRR,
   },
   {
     frenchName: 'Personnages TM',
@@ -272,17 +284,18 @@ export const tierLists: TierList[] = [
     id: TierListId.TM,
   },
   {
+    frenchName: 'Personnages Raids',
+    englishName: 'Raids Characters',
+    characters: formatedRaids,
+    id: TierListId.RAID,
+  },
+  {
     frenchName: 'Personnages PVP',
     englishName: 'PVP Characters',
     characters: formatedPvps,
     id: TierListId.PVP_F2P,
   },
-  {
-    frenchName: 'Personnages PVP LRR',
-    englishName: 'PVP LRR Characters',
-    characters: formatedPvpLrrs,
-    id: TierListId.PVP,
-  },
+
   {
     frenchName: 'Personnages Kizuna',
     englishName: 'Kizuna Characters',
@@ -302,35 +315,25 @@ export const tierLists: TierList[] = [
     id: TierListId.SPECIAL,
   },
   {
+    frenchName: 'Personnages Colisées',
+    englishName: 'Colosseums Characters',
+    characters: formatedColosseums,
+    id: TierListId.COLOSSEUM,
+  },
+  {
     frenchName: 'Personnages LRR',
     englishName: 'LRR Characters',
     characters: formatedLrrs,
     id: TierListId.LRR,
   },
-  {
-    frenchName: 'Personnages Kizuna LRR',
-    englishName: 'Kizuna LRR Characters',
-    characters: formatedKizunaLrrs,
-    id: TierListId.KIZUNA_LRR,
-  },
+
   {
     frenchName: 'Personnages LRR (périodes)',
     englishName: 'Periods LRR Characters',
     characters: formatedPeriodsLrrs,
     id: TierListId.PERIOD_LRR,
   },
-  {
-    frenchName: 'Personnages TM LRR',
-    englishName: 'TM LRR Characters',
-    characters: formatedTmLrrs,
-    id: TierListId.TM_LRR,
-  },
-  {
-    frenchName: 'Personnages Spéciaux (soutiens)',
-    englishName: 'Special Characters (support)',
-    characters: formatedSupports,
-    id: TierListId.SUPPORT,
-  },
+
   {
     frenchName: 'Personnages Ambush',
     englishName: 'Ambush Characters',
@@ -366,12 +369,6 @@ export const tierLists: TierList[] = [
       ...allLegends,
     ],
     id: TierListId.P2P,
-  },
-  {
-    frenchName: 'Personnages uniquement sur JPN',
-    englishName: 'JPN Characters only',
-    characters: [...japOnlyAllCategoriesCharacters],
-    id: TierListId.JPN,
   },
   {
     frenchName: 'Personnages au complet',
