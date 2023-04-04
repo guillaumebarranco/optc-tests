@@ -57,282 +57,282 @@ export function getFrenchUrl(characterId: string): string {
 function getFrenchLegendUrl(characterId: string): string {
   switch (characterId) {
     case '0261':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Blanche%201.html#0';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe_Blanche_V1.html';
     case '0367':
-      return 'https://onepiecetreasurecruise.fr/Silvers%20Rayleigh%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Rayleigh_V1.html';
     case '0416':
-      return 'https://onepiecetreasurecruise.fr/Boa%20Hancock%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Hancock_V1.html';
     case '0459':
-      return 'https://onepiecetreasurecruise.fr/Sengoku.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sengoku.html';
     case '0530':
-      return 'https://onepiecetreasurecruise.fr/Shanks%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Shanks_V1.html';
 
     case '0562':
-      return 'https://onepiecetreasurecruise.fr/Portgas%20D.%20Ace%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Ace_V1.html';
     case '0649':
-      return 'https://onepiecetreasurecruise.fr/Marco.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Marco_V1.html';
     case '0669':
-      return 'https://onepiecetreasurecruise.fr/Sabo%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sabo_V1.html';
     case '0718':
-      return 'https://onepiecetreasurecruise.fr/Dracule%20Mihawk%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Mihawk_V1.html';
     case '0720':
-      return 'https://onepiecetreasurecruise.fr/Crocodile.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Crocodile.html';
     case '0748':
-      return 'https://onepiecetreasurecruise.fr/Rob%20Lucci%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Lucci_V1.html';
     case '0870':
-      return 'https://onepiecetreasurecruise.fr/Don%20Quijote%20Doflamingo%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Doflamingo_V1.html';
     case '0935':
-      return 'https://onepiecetreasurecruise.fr/Jinbe%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Jinbe_V1.html';
     case '1001':
-      return 'https://onepiecetreasurecruise.fr/Don%20Quijote%20Rosinante.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Corazon.html';
     case '1035':
-      return 'https://onepiecetreasurecruise.fr/Bartolomeo.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Bartolomeo.html';
     case '1045':
-      return 'https://onepiecetreasurecruise.fr/Trafalgar%20Law%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Law_V1.html';
     case '1085':
-      return 'https://onepiecetreasurecruise.fr/Issho%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Fujitora_V1.html';
     case '1121':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy_Log.html';
     case '1123':
-      return 'https://onepiecetreasurecruise.fr/Cavendish.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Cavendish.html';
     case '1240':
-      return 'https://onepiecetreasurecruise.fr/Borsalino.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Borsalino.html';
 
     case '1192':
-      return 'https://onepiecetreasurecruise.fr/Kuzan%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Aokiji_V1.html';
     case '1268':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Noire%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe_Noire_V1.html';
     case '1314':
-      return 'https://onepiecetreasurecruise.fr/Sakazuki%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Akainu_V1.html';
     case '1362':
-      return 'https://onepiecetreasurecruise.fr/Roronoa%20Zoro%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Zoro_V1.html';
     case '1391':
-      return 'https://onepiecetreasurecruise.fr/Baggy.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Baggy.html';
     case '1404':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy_TS.html';
     case '1434':
-      return 'https://onepiecetreasurecruise.fr/Hody%20Jones.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Hody.html';
     case '1473':
-      return 'https://onepiecetreasurecruise.fr/Shirahoshi.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Shirahoshi.html';
     case '1532':
-      return 'https://onepiecetreasurecruise.fr/Usopp.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Usopp.html';
     case '1571':
-      return 'https://onepiecetreasurecruise.fr/Caborage.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Inuarashi.html';
     case '1588':
-      return 'https://onepiecetreasurecruise.fr/Sanji%20Vinsmoke%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sanji_V1.html';
     case '1610':
-      return 'https://onepiecetreasurecruise.fr/Ener.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Ener_V1.html';
     case '1652':
-      return 'https://onepiecetreasurecruise.fr/Chavipere.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Nekomamushi.html';
     case '1698':
-      return 'https://onepiecetreasurecruise.fr/Magellan.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Magellan_V1.html';
     case '1747':
-      return 'https://onepiecetreasurecruise.fr/Boa%20Hancock%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Hancock_V2.html';
     case '1751':
-      return 'https://onepiecetreasurecruise.fr/Trafalgar%20Law%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Law_V2.html';
     case '1763':
-      return 'https://onepiecetreasurecruise.fr/Rob%20Lucci%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Lucci_V2.html';
 
     case '1794':
-      return 'https://onepiecetreasurecruise.fr/Lucy.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Lucy.html';
     case '1832':
-      return 'https://onepiecetreasurecruise.fr/Judge%20Vinsmoke.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Judge.html';
     case '1869':
-      return 'https://onepiecetreasurecruise.fr/Issho%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Fujitora_V2.html';
     case '1883':
-      return 'https://onepiecetreasurecruise.fr/Silvers%20Rayleigh%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Rayleigh_V2.html';
     case '1910':
-      return 'https://onepiecetreasurecruise.fr/Don%20Quijote%20Doflamingo%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Doflamingo_V2.html';
     case '1935':
-      return 'https://onepiecetreasurecruise.fr/Franky.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Franky.html';
     case '1951':
-      return 'https://onepiecetreasurecruise.fr/Nico%20Robin.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Robin.html';
     case '1985':
-      return 'https://onepiecetreasurecruise.fr/Luffy%20et%20Ace.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy_Ace.html';
     case '2007':
-      return 'https://onepiecetreasurecruise.fr/Shanks%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Shanks_V2.html';
     case '2023':
-      return 'https://onepiecetreasurecruise.fr/Sakazuki%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Akainu_V2.html';
     case '2025':
-      return 'https://onepiecetreasurecruise.fr/Kuzan%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Aokiji_V2.html';
     case '2074':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%203.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy_G4.html';
     case '2076':
-      return 'https://onepiecetreasurecruise.fr/Nami.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Nami_V1.html';
     case '2099':
-      return 'https://onepiecetreasurecruise.fr/Gild%20Tesoro.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Tesoro.html';
     case '2113':
-      return 'https://onepiecetreasurecruise.fr/Charlotte%20Dent-de-chien%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Katakuri_V1.html';
     case '2148':
-      return 'https://onepiecetreasurecruise.fr/Sanji%20Vinsmoke%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sanji_V2.html';
     case '2251':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Garp.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Garp.html';
     case '5014':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%204.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy_Kung_Fu.html';
 
     case '2181':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Blanche%20et%20Marco.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe_Blanche_Marco.html';
     case '2201':
-      return 'https://onepiecetreasurecruise.fr/Shiki.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Shiki.html';
     case '2234':
-      return 'https://onepiecetreasurecruise.fr/Big%20Mom.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Big_Mom_V1.html';
     case '2236':
-      return 'https://onepiecetreasurecruise.fr/Brook.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Brook.html';
     case '2265':
-      return 'https://onepiecetreasurecruise.fr/Jinbe%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Jinbe_V2.html';
     case '2302':
-      return 'https://onepiecetreasurecruise.fr/Capone%20Bege.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Capone.html';
     case '2330':
-      return 'https://onepiecetreasurecruise.fr/Zephyr.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Zephyr.html';
     case '2338':
-      return 'https://onepiecetreasurecruise.fr/Carrot.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Carrot.html';
     case '2365':
-      return 'https://onepiecetreasurecruise.fr/Charlotte%20Dent-de-chien%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Katakuri_V2.html';
     case '2418':
-      return 'https://onepiecetreasurecruise.fr/Bartolomeo%20et%20Cavendish.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Bartolomeo_Cavendish.html';
     case '2433':
-      return 'https://onepiecetreasurecruise.fr/Jack.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Jack.html';
     case '2441':
-      return 'https://onepiecetreasurecruise.fr/Sabo%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sabo_V3.html';
     case '2446':
-      return 'https://onepiecetreasurecruise.fr/Sanji%20et%20Judge.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sanji_Judge.html';
     case '2465':
-      return 'https://onepiecetreasurecruise.fr/Charlotte%20Cracker.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Cracker.html';
     case '2475':
-      return 'https://onepiecetreasurecruise.fr/Dracule%20Mihawk%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Mihawk_V2.html';
     case '2477':
-      return 'https://onepiecetreasurecruise.fr/Roronoa%20Zoro%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Zoro_V2.html';
     case '2534':
-      return 'https://onepiecetreasurecruise.fr/Luffy%20et%20Law.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy_Law.html';
     case '2536':
-      return 'https://onepiecetreasurecruise.fr/Zeus%20et%20Promethee%20et%20Big%20Mom.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Big_Mom_V2.html';
     case '2561':
-      return 'https://onepiecetreasurecruise.fr/Sabo%20et%20Koala.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sabo_Koala.html';
     case '2577':
-      return 'https://onepiecetreasurecruise.fr/Caborage%20et%20Chavipere.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Inuarashi_Nekomamushi.html';
     case '2601':
-      return 'https://onepiecetreasurecruise.fr/Vivi%20et%20Rebecca.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Vivi_Rebecca_V1.html';
     case '2603':
-      return 'https://onepiecetreasurecruise.fr/Shirahoshi%20et%20Manshelly.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Shirahoshi_Manshelly_V1.html';
 
     case '2651':
-      return 'https://onepiecetreasurecruise.fr/Douglas%20Bullet.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Bullet.html';
     case '2672':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%205.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy_Stampede.html';
     case '2686':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Blanche%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe_Blanche_V2.html';
     case '2700':
-      return 'https://onepiecetreasurecruise.fr/Kaido.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Kaido_V1.html';
     case '2741':
-      return 'https://onepiecetreasurecruise.fr/Portgas%20D.%20Ace%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Ace_Halloween.html';
     case '2774':
-      return 'https://onepiecetreasurecruise.fr/O-Nami.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/O_Nami.html';
     case '2776':
-      return 'https://onepiecetreasurecruise.fr/Komurasaki.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Komurasaki.html';
     case '2797':
-      return 'https://onepiecetreasurecruise.fr/Tony-Tony%20Chopper.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Chopper.html';
     case '2802':
-      return 'https://onepiecetreasurecruise.fr/Luffytaro%20et%20Zorojuro.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffytaro_Zorojuro.html';
     case '2804':
-      return 'https://onepiecetreasurecruise.fr/O-Soba%20Mask.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/O_Soba_Mask.html';
     case '2835':
-      return 'https://onepiecetreasurecruise.fr/Nami%20et%20Robin.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Nami_Robin.html';
     case '2837':
-      return 'https://onepiecetreasurecruise.fr/Charlotte%20Pudding.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Pudding.html';
     case '2860':
-      return 'https://onepiecetreasurecruise.fr/Equipage%20Arlong.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Arlong_Crew.html';
     case '2862':
-      return 'https://onepiecetreasurecruise.fr/Equipage%20de%20Shanks%20le%20Roux.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Shanks_Crew.html';
     case '2895':
-      return 'https://onepiecetreasurecruise.fr/Mihawk%20et%20Perona.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Mihawk_Perona.html';
     case '2897':
-      return 'https://onepiecetreasurecruise.fr/Silvers%20Rayleigh%203.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Rayleigh_V3.html';
     case '2930':
-      return 'https://onepiecetreasurecruise.fr/Kuzan%203.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Aokiji_V3.html';
     case '2958':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%206.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy_Snakeman.html';
     case '2960':
-      return 'https://onepiecetreasurecruise.fr/Sabo%203.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sabo_V4.html';
     case '2962':
-      return 'https://onepiecetreasurecruise.fr/Charlotte%20Dent-de-chien%203.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Katakuri_V3.html';
     case '2964':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Noire%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe_Noire_V2.html';
     case '2980':
-      return 'https://onepiecetreasurecruise.fr/Eustass%20Kidd.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Kidd_V1.html';
     case '2982':
-      return 'https://onepiecetreasurecruise.fr/Basil%20Hawkins.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Hawkins.html';
     case '3027':
-      return 'https://onepiecetreasurecruise.fr/Trafalgar%20Law%203.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Law_Wano.html';
     case '3385':
-      return 'https://onepiecetreasurecruise.fr/Sakazuki%203.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Akainu_V3.html';
 
     case '3007':
-      return 'https://onepiecetreasurecruise.fr/Smoker.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Smoker.html';
     case '3009':
-      return 'https://onepiecetreasurecruise.fr/Sugar.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sugar.html';
     case '3038':
-      return 'https://onepiecetreasurecruise.fr/Boa%20Hancock%203.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Hancock_V3.html';
     case '3065':
-      return 'https://onepiecetreasurecruise.fr/Luffy%20et%20Sanji.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy_Sanji.html';
     case '3071':
-      return 'https://onepiecetreasurecruise.fr/Germa%2066.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Germa_66.html';
     case '3073':
-      return 'https://onepiecetreasurecruise.fr/Generaux%20sucres.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sweet_Commanders.html';
     case '3100':
-      return 'https://onepiecetreasurecruise.fr/Dracule%20Mihawk%203.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Mihawk_Halloween.html';
     case '3102':
-      return 'https://onepiecetreasurecruise.fr/Trafalgar%20Law%204.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Law_Halloween.html';
     case '3118':
-      return 'https://onepiecetreasurecruise.fr/Shanks%203.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Shanks_Halloween.html';
     case '3135_1':
-      return 'https://onepiecetreasurecruise.fr/Kaido%20VS%20Big%20Mom.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Kaido_VS_Big_Mom.html';
     case '3135_2':
-      return 'https://onepiecetreasurecruise.fr/Kaido%20VS%20Big%20Mom.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Kaido_VS_Big_Mom.html';
 
     case '3164':
-      return 'https://onepiecetreasurecruise.fr/Vivi%20et%20Rebecca%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Vivi_Rebecca_V2.html';
     case '3166':
-      return 'https://onepiecetreasurecruise.fr/Shirahoshi%20et%20Manshelly%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Shirahoshi_Manshelly_V2.html';
     case '3175':
-      return 'https://onepiecetreasurecruise.fr/Oden%20Kozuki.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Oden.html';
     case '3177':
-      return 'https://onepiecetreasurecruise.fr/Gol%20D.%20Roger.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Roger.html';
     case '3203':
-      return 'https://onepiecetreasurecruise.fr/Sanji%20et%20Pudding.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sanji_Pudding.html';
     case '3225':
-      return 'https://onepiecetreasurecruise.fr/Zorojuro.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Zorojuro.html';
     case '3227':
-      return 'https://onepiecetreasurecruise.fr/Kaido%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Kaido_V2.html';
     case '3245':
-      return 'https://onepiecetreasurecruise.fr/Ener%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Ener_V2.html';
     case '3253_1':
-      return 'https://onepiecetreasurecruise.fr/Ace%20VS%20Akainu.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Ace_VS_Akainu.html';
     case '3253_2':
-      return 'https://onepiecetreasurecruise.fr/Ace%20VS%20Akainu.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Ace_VS_Akainu.html';
 
     case '3278':
-      return 'https://onepiecetreasurecruise.fr/Magellan%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Magellan_V2.html';
     case '3280':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Noire%203.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe_Noire_V3.html';
     case '3282':
-      return 'https://onepiecetreasurecruise.fr/Gecko%20Moria.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Moria.html';
     case '3300':
-      return 'https://onepiecetreasurecruise.fr/Equipage%20de%20Capone%20Bege.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Capone_crew.html';
     case '3307':
-      return 'https://onepiecetreasurecruise.fr/Jewelry%20Bonney.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Bonney.html';
     case '3334':
-      return 'https://onepiecetreasurecruise.fr/Luffy%207th%20anni.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy_Onigashima.html';
     case '3336':
-      return 'https://onepiecetreasurecruise.fr/Law%207th%20anni.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Law_Onigashima.html';
     case '3338':
-      return 'https://onepiecetreasurecruise.fr/Kidd%207th%20anni.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Kidd_Onigashima.html';
 
     case '3349':
-      return 'https://onepiecetreasurecruise.fr/Sabo%20Et%20Ace.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sabo_Ace.html';
     case '3355':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Blanche%20VS%20Shanks.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe_Blanche_VS_Shanks.html';
     case '3357':
-      return 'https://onepiecetreasurecruise.fr/Marco%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Marco_V2.html';
     case '3364':
       return 'https://onepiecetreasurecruise.fr/Legende/Sanji_Germa.html';
 
@@ -392,125 +392,125 @@ function getFrenchLegendUrl(characterId: string): string {
     // SIX PLUS LEGENDS
 
     case '1413':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Blanche%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe_Blanche_V1.html';
     case '1445':
-      return 'https://onepiecetreasurecruise.fr/Boa%20Hancock%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Hancock_V1.html';
     case '1492':
-      return 'https://onepiecetreasurecruise.fr/Sabo%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sabo_V1.html';
     case '1543':
-      return 'https://onepiecetreasurecruise.fr/Usopp.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Usopp.html';
     case '1593':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%202+.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy_TS.html';
     case '1619':
-      return 'https://onepiecetreasurecruise.fr/Silvers%20Rayleigh%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Rayleigh_V1.html';
     case '1663':
-      return 'https://onepiecetreasurecruise.fr/Rob%20Lucci%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Lucci_V1.html';
     case '1707':
-      return 'https://onepiecetreasurecruise.fr/Shanks%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Shanks_V1.html';
     case '1764':
-      return 'https://onepiecetreasurecruise.fr/Kuzan%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Aokiji_V1.html';
     case '1816':
-      return 'https://onepiecetreasurecruise.fr/Portgas%20D.%20Ace%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Ace_V1.html';
     case '1847':
-      return 'https://onepiecetreasurecruise.fr/Sengoku.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sengoku.html';
     case '1880':
-      return 'https://onepiecetreasurecruise.fr/Hody%20Jones.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Hody.html';
     case '1881':
-      return 'https://onepiecetreasurecruise.fr/Dracule%20Mihawk%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Mihawk_V1.html';
     case '1921':
-      return 'https://onepiecetreasurecruise.fr/Roronoa%20Zoro%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Zoro_V1.html';
 
     case '1922':
-      return 'https://onepiecetreasurecruise.fr/Trafalgar%20Law%202+.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Law_V2.html';
     case '1927':
-      return 'https://onepiecetreasurecruise.fr/Crocodile.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Crocodile.html';
     case '1928':
-      return 'https://onepiecetreasurecruise.fr/Bartolomeo.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Bartolomeo.html';
     case '2001':
-      return 'https://onepiecetreasurecruise.fr/Trafalgar%20Law%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Law_V1.html';
     case '2034':
-      return 'https://onepiecetreasurecruise.fr/Borsalino.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Kizaru_V1.html';
     case '2035':
-      return 'https://onepiecetreasurecruise.fr/Baggy.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Baggy.html';
     case '2066':
-      return 'https://onepiecetreasurecruise.fr/Jinbe%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Jinbe_V1.html';
     case '2138':
-      return 'https://onepiecetreasurecruise.fr/Judge%20Vinsmoke%20+.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Judge.html';
     case '2159':
-      return 'https://onepiecetreasurecruise.fr/Magellan.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Magellan_V1.html';
     case '2195':
-      return 'https://onepiecetreasurecruise.fr/Don%20Quijote%20Rosinante.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Corazon.html';
     case '2232':
-      return 'https://onepiecetreasurecruise.fr/Ener.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Ener_V1.html';
     case '2245':
-      return 'https://onepiecetreasurecruise.fr/Sanji%20Vinsmoke%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sanji_V1.html';
     case '2300':
-      return 'https://onepiecetreasurecruise.fr/Franky.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Franky.html';
     case '2357':
-      return 'https://onepiecetreasurecruise.fr/Cavendish.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Cavendish.html';
     case '2372':
-      return 'https://onepiecetreasurecruise.fr/Caborage.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Inuarashi.html';
     case '2373':
-      return 'https://onepiecetreasurecruise.fr/Chavipere.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Nekomamushi.html';
     case '2784':
-      return 'https://onepiecetreasurecruise.fr/Rob%20Lucci%202+.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Lucci_V2.html';
 
     case '2363':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%203+.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy_G4.html';
     case '2434':
-      return 'https://onepiecetreasurecruise.fr/Boa%20Hancock%202+.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Hancock_V2.html';
     case '2444':
-      return 'https://onepiecetreasurecruise.fr/Don%20Quijote%20Doflamingo%201+.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Doflamingo_V1.html';
     case '2500':
-      return 'https://onepiecetreasurecruise.fr/Big%20Mom.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Big_Mom_V1.html';
     case '2505':
-      return 'https://onepiecetreasurecruise.fr/Issho%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Fujitora_V2.html';
     case '2578':
-      return 'https://onepiecetreasurecruise.fr/Sakazuki%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Akainu_V1.html';
     case '2588':
-      return 'https://onepiecetreasurecruise.fr/Nami.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Nami_V1.html';
     case '2631':
-      return 'https://onepiecetreasurecruise.fr/Shirahoshi.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Shirahoshi.html';
 
     case '2681':
-      return 'https://onepiecetreasurecruise.fr/Douglas%20Bullet.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Bullet.html';
     case '2739':
-      return 'https://onepiecetreasurecruise.fr/Charlotte%20Dent-de-chien%201+.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Katakuri_V1.html';
     case '2814':
-      return 'https://onepiecetreasurecruise.fr/Lucy.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Lucy.html';
     case '2830':
-      return 'https://onepiecetreasurecruise.fr/Nico%20Robin.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Robin.html';
     case '2868':
-      return 'https://onepiecetreasurecruise.fr/Marco.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Marco_V1.html';
     case '2909':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Blanche%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe_Blanche_V2.html';
     case '2954':
-      return 'https://onepiecetreasurecruise.fr/Issho%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Fujitora_V1.html';
     case '2991':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Garp.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Garp.html';
 
     case '3018':
-      return 'https://onepiecetreasurecruise.fr/Silvers%20Rayleigh%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Rayleigh_V2.html';
     case '3048':
-      return 'https://onepiecetreasurecruise.fr/Jinbe%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Jinbe_V1.html';
     case '3079':
-      return 'https://onepiecetreasurecruise.fr/Capone%20Bege.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Capone.html';
 
     case '3155':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Noire%201.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe_Noire_V1.html';
     case '3202':
-      return 'https://onepiecetreasurecruise.fr/Roronoa%20Zoro%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Zoro_V2.html';
     case '3211':
-      return 'https://onepiecetreasurecruise.fr/Sanji%20Vinsmoke%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sanji_V2.html';
     case '3240':
-      return 'https://onepiecetreasurecruise.fr/Dracule%20Mihawk%202.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/Mihawk_V2.html';
     case '3275':
-      return 'https://onepiecetreasurecruise.fr/O-Nami.html';
+      return 'https://onepiecetreasurecruise.fr/Legende/O-Nami.html';
     case '3298':
-      return 'https://onepiecetreasurecruise.fr/Charlotte%20Cracker.html#sixplus';
+      return 'https://onepiecetreasurecruise.fr/Legende/Cracker.html#sixplus';
 
     case '3350':
-      return 'https://onepiecetreasurecruise.fr/Komurasaki.html#sixplus';
+      return 'https://onepiecetreasurecruise.fr/Legende/Komurasaki.html#sixplus';
 
     default:
       return getOptcDbDefaultUrl(characterId);
@@ -536,15 +536,15 @@ function getFrenchRareRecruitUrl(characterId: string): string {
     // case '0225':
     //   return 'aaaaaaaaaaaa';
     case '0251':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Blanche%201.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe%20Blanche%201.html#1';
     case '0253':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Blanche%201.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe%20Blanche%201.html#2';
     case '0255':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Blanche%201.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe%20Blanche%201.html#3';
     case '0257':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Blanche%201.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe%20Blanche%201.html#4';
     case '0259':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Blanche%201.html#5';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe%20Blanche%201.html#5';
     // case '0308':
     //   return 'aaaaaaaaaaaa';
     // case '0310':
@@ -556,31 +556,31 @@ function getFrenchRareRecruitUrl(characterId: string): string {
     // case '0316':
     //   return 'aaaaaaaaaaaa';
     case '0357':
-      return 'https://onepiecetreasurecruise.fr/Silvers%20Rayleigh%201.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Silvers%20Rayleigh%201.html#1';
     case '0359':
-      return 'https://onepiecetreasurecruise.fr/Silvers%20Rayleigh%201.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Silvers%20Rayleigh%201.html#2';
     case '0361':
-      return 'https://onepiecetreasurecruise.fr/Silvers%20Rayleigh%201.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Silvers%20Rayleigh%201.html#3';
     case '0363':
-      return 'https://onepiecetreasurecruise.fr/Silvers%20Rayleigh%201.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Silvers%20Rayleigh%201.html#4';
     case '0365':
-      return 'https://onepiecetreasurecruise.fr/Silvers%20Rayleigh%201.html#5';
+      return 'https://onepiecetreasurecruise.fr/Legende/Silvers%20Rayleigh%201.html#5';
     case '0410':
-      return 'https://onepiecetreasurecruise.fr/Boa%20Hancock%201.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Boa%20Hancock%201.html#1';
     case '0412':
-      return 'https://onepiecetreasurecruise.fr/Boa%20Hancock%201.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Boa%20Hancock%201.html#2';
     case '0414':
-      return 'https://onepiecetreasurecruise.fr/Boa%20Hancock%201.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Boa%20Hancock%201.html#3';
     case '0449':
-      return 'https://onepiecetreasurecruise.fr/Sengoku.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sengoku.html#1';
     case '0451':
-      return 'https://onepiecetreasurecruise.fr/Sengoku.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sengoku.html#2';
     case '0453':
-      return 'https://onepiecetreasurecruise.fr/Sengoku.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sengoku.html#3';
     case '0455':
-      return 'https://onepiecetreasurecruise.fr/Sengoku.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sengoku.html#4';
     case '0457':
-      return 'https://onepiecetreasurecruise.fr/Sengoku.html#5';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sengoku.html#5';
     // case '0500':
     //   return 'aaaaaaaaaaaa';
     // case '0502':
@@ -598,35 +598,35 @@ function getFrenchRareRecruitUrl(characterId: string): string {
     // case '0590':
     //   return 'aaaaaaaaaaaa';
     case '0639':
-      return 'https://onepiecetreasurecruise.fr/Marco.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Marco.html#1';
     case '0641':
-      return 'https://onepiecetreasurecruise.fr/Marco.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Marco.html#2';
     case '0643':
-      return 'https://onepiecetreasurecruise.fr/Marco.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Marco.html#3';
     case '0645':
-      return 'https://onepiecetreasurecruise.fr/Marco.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Marco.html#4';
     case '0647':
-      return 'https://onepiecetreasurecruise.fr/Marco.html#5';
+      return 'https://onepiecetreasurecruise.fr/Legende/Marco.html#5';
     case '0671':
-      return 'https://onepiecetreasurecruise.fr/Sabo%201.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sabo%201.html#1';
     case '0673':
-      return 'https://onepiecetreasurecruise.fr/Sabo%201.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sabo%201.html#2';
     case '0675':
-      return 'https://onepiecetreasurecruise.fr/Sabo%201.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sabo%201.html#3';
     case '0677':
-      return 'https://onepiecetreasurecruise.fr/Sabo%201.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sabo%201.html#4';
     case '0750':
-      return 'https://onepiecetreasurecruise.fr/Rob%20Lucci%201.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Rob%20Lucci%201.html#1';
     case '0752':
-      return 'https://onepiecetreasurecruise.fr/Rob%20Lucci%201.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Rob%20Lucci%201.html#2';
     case '0754':
-      return 'https://onepiecetreasurecruise.fr/Rob%20Lucci%201.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Rob%20Lucci%201.html#3';
     case '0756':
-      return 'https://onepiecetreasurecruise.fr/Rob%20Lucci%201.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Rob%20Lucci%201.html#4';
     case '0758':
-      return 'https://onepiecetreasurecruise.fr/Rob%20Lucci%201.html#5';
+      return 'https://onepiecetreasurecruise.fr/Legende/Rob%20Lucci%201.html#5';
     case '0760':
-      return 'https://onepiecetreasurecruise.fr/Rob%20Lucci%201.html#6';
+      return 'https://onepiecetreasurecruise.fr/Legende/Rob%20Lucci%201.html#6';
     // case '0785':
     //   return 'aaaaaaaaaaaa';
     // case '0787':
@@ -648,15 +648,15 @@ function getFrenchRareRecruitUrl(characterId: string): string {
     // case '0846':
     //   return 'aaaaaaaaaaaa';
     case '0872':
-      return 'https://onepiecetreasurecruise.fr/Don%20Quijote%20Doflamingo%201.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Don%20Quijote%20Doflamingo%201.html#1';
     case '0874':
-      return 'https://onepiecetreasurecruise.fr/Don%20Quijote%20Doflamingo%201.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Don%20Quijote%20Doflamingo%201.html#2';
     case '0876':
-      return 'https://onepiecetreasurecruise.fr/Don%20Quijote%20Doflamingo%201.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Don%20Quijote%20Doflamingo%201.html#3';
     case '0878':
-      return 'https://onepiecetreasurecruise.fr/Don%20Quijote%20Doflamingo%201.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Don%20Quijote%20Doflamingo%201.html#4';
     case '0880':
-      return 'https://onepiecetreasurecruise.fr/Don%20Quijote%20Doflamingo%201.html#5';
+      return 'https://onepiecetreasurecruise.fr/Legende/Don%20Quijote%20Doflamingo%201.html#5';
     // case '0906':
     //   return 'aaaaaaaaaaaa';
     // case '0908':
@@ -668,44 +668,44 @@ function getFrenchRareRecruitUrl(characterId: string): string {
     // case '0914':
     //   return 'aaaaaaaaaaaa';
     case '0937':
-      return 'https://onepiecetreasurecruise.fr/Jinbe%201.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Jinbe%201.html#1';
     case '0939':
-      return 'https://onepiecetreasurecruise.fr/Jinbe%201.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Jinbe%201.html#2';
     case '0941':
-      return 'https://onepiecetreasurecruise.fr/Jinbe%201.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Jinbe%201.html#3';
     case '0943':
-      return 'https://onepiecetreasurecruise.fr/Jinbe%201.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Jinbe%201.html#4';
     case '0991':
-      return 'https://onepiecetreasurecruise.fr/Don%20Quijote%20Rosinante.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Don%20Quijote%20Rosinante.html#1';
     case '0993':
-      return 'https://onepiecetreasurecruise.fr/Don%20Quijote%20Rosinante.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Don%20Quijote%20Rosinante.html#2';
     case '0995':
-      return 'https://onepiecetreasurecruise.fr/Don%20Quijote%20Rosinante.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Don%20Quijote%20Rosinante.html#3';
     case '0997':
-      return 'https://onepiecetreasurecruise.fr/Don%20Quijote%20Rosinante.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Don%20Quijote%20Rosinante.html#4';
     case '0999':
-      return 'https://onepiecetreasurecruise.fr/Don%20Quijote%20Rosinante.html#5';
+      return 'https://onepiecetreasurecruise.fr/Legende/Don%20Quijote%20Rosinante.html#5';
 
     case '1025':
-      return 'https://onepiecetreasurecruise.fr/Bartolomeo.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Bartolomeo.html#1';
     case '1027':
-      return 'https://onepiecetreasurecruise.fr/Bartolomeo.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Bartolomeo.html#2';
     case '1029':
-      return 'https://onepiecetreasurecruise.fr/Bartolomeo.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Bartolomeo.html#3';
     case '1031':
-      return 'https://onepiecetreasurecruise.fr/Bartolomeo.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Bartolomeo.html#4';
     case '1033':
-      return 'https://onepiecetreasurecruise.fr/Bartolomeo.html#5';
+      return 'https://onepiecetreasurecruise.fr/Legende/Bartolomeo.html#5';
     case '1075':
-      return 'https://onepiecetreasurecruise.fr/Issho%201.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Issho%201.html#1';
     case '1077':
-      return 'https://onepiecetreasurecruise.fr/Issho%201.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Issho%201.html#2';
     case '1079':
-      return 'https://onepiecetreasurecruise.fr/Issho%201.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Issho%201.html#3';
     case '1081':
-      return 'https://onepiecetreasurecruise.fr/Issho%201.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Issho%201.html#4';
     case '1083':
-      return 'https://onepiecetreasurecruise.fr/Issho%201.html#5';
+      return 'https://onepiecetreasurecruise.fr/Legende/Issho%201.html#5';
     // case '1115':
     //   return 'aaaaaaaaa';
     // case '1117':
@@ -713,15 +713,15 @@ function getFrenchRareRecruitUrl(characterId: string): string {
     // case '1119':
     //   return 'aaaaaaaaa';
     case '1125':
-      return 'https://onepiecetreasurecruise.fr/Cavendish.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Cavendish.html#1';
     case '1127':
-      return 'https://onepiecetreasurecruise.fr/Cavendish.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Cavendish.html#2';
     case '1129':
-      return 'https://onepiecetreasurecruise.fr/Cavendish.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Cavendish.html#3';
     case '1131':
-      return 'https://onepiecetreasurecruise.fr/Cavendish.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Cavendish.html#4';
     case '1133':
-      return 'https://onepiecetreasurecruise.fr/Cavendish.html#5';
+      return 'https://onepiecetreasurecruise.fr/Legende/Cavendish.html#5';
     // case '1173':
     //   return 'aaaaaaaaa';
     // case '1175':
@@ -729,15 +729,15 @@ function getFrenchRareRecruitUrl(characterId: string): string {
     // case '1177':
     //   return 'aaaaaaaaa';
     case '1182':
-      return 'https://onepiecetreasurecruise.fr/Kuzan%201.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Kuzan%201.html#1';
     case '1184':
-      return 'https://onepiecetreasurecruise.fr/Kuzan%201.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Kuzan%201.html#2';
     case '1186':
-      return 'https://onepiecetreasurecruise.fr/Kuzan%201.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Kuzan%201.html#3';
     case '1188':
-      return 'https://onepiecetreasurecruise.fr/Kuzan%201.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Kuzan%201.html#4';
     case '1190':
-      return 'https://onepiecetreasurecruise.fr/Kuzan%201.html#5';
+      return 'https://onepiecetreasurecruise.fr/Legende/Kuzan%201.html#5';
     // case '1208':
     //   return 'aaaaaaaaa';
     // case '1210':
@@ -745,106 +745,106 @@ function getFrenchRareRecruitUrl(characterId: string): string {
     // case '1212':
     //   return 'aaaaaaaaa';
     case '1230':
-      return 'https://onepiecetreasurecruise.fr/Borsalino.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Borsalino.html#1';
     case '1232':
-      return 'https://onepiecetreasurecruise.fr/Borsalino.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Borsalino.html#2';
     case '1234':
-      return 'https://onepiecetreasurecruise.fr/Borsalino.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Borsalino.html#3';
     case '1236':
-      return 'https://onepiecetreasurecruise.fr/Borsalino.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Borsalino.html#4';
     case '1238':
-      return 'https://onepiecetreasurecruise.fr/Borsalino.html#5';
+      return 'https://onepiecetreasurecruise.fr/Legende/Borsalino.html#5';
     case '1270':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Noire%201.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe%20Noire%201.html#1';
     case '1272':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Noire%201.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe%20Noire%201.html#2';
     case '1274':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Noire%201.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe%20Noire%201.html#3';
     case '1276':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Noire%201.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe%20Noire%201.html#4';
     case '1278':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Noire%201.html#5';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe%20Noire%201.html#5';
     case '1316':
-      return 'https://onepiecetreasurecruise.fr/Sakazuki%201.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sakazuki%201.html#1';
     case '1318':
-      return 'https://onepiecetreasurecruise.fr/Sakazuki%201.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sakazuki%201.html#2';
     case '1320':
-      return 'https://onepiecetreasurecruise.fr/Sakazuki%201.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sakazuki%201.html#3';
     case '1322':
-      return 'https://onepiecetreasurecruise.fr/Sakazuki%201.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sakazuki%201.html#4';
     case '1324':
-      return 'https://onepiecetreasurecruise.fr/Sakazuki%201.html#5';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sakazuki%201.html#5';
     case '1364':
-      return 'https://onepiecetreasurecruise.fr/Roronoa%20Zoro%201.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Roronoa%20Zoro%201.html#1';
     case '1366':
-      return 'https://onepiecetreasurecruise.fr/Roronoa%20Zoro%201.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Roronoa%20Zoro%201.html#2';
     case '1368':
-      return 'https://onepiecetreasurecruise.fr/Roronoa%20Zoro%201.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Roronoa%20Zoro%201.html#3';
     case '1370':
-      return 'https://onepiecetreasurecruise.fr/Roronoa%20Zoro%201.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Roronoa%20Zoro%201.html#4';
     case '1406':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%202.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Monkey%20D.%20Luffy%202.html#1';
     case '1408':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%202.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Monkey%20D.%20Luffy%202.html#2';
     case '1410':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%202.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Monkey%20D.%20Luffy%202.html#3';
     case '1412':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%202.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Monkey%20D.%20Luffy%202.html#4';
     case '1436':
-      return 'https://onepiecetreasurecruise.fr/Hody%20Jones.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Hody%20Jones.html#1';
     case '1438':
-      return 'https://onepiecetreasurecruise.fr/Hody%20Jones.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Hody%20Jones.html#2';
     case '1440':
-      return 'https://onepiecetreasurecruise.fr/Hody%20Jones.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Hody%20Jones.html#3';
     case '1442':
-      return 'https://onepiecetreasurecruise.fr/Hody%20Jones.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Hody%20Jones.html#4';
     case '1444':
-      return 'https://onepiecetreasurecruise.fr/Hody%20Jones.html#5';
+      return 'https://onepiecetreasurecruise.fr/Legende/Hody%20Jones.html#5';
     case '1475':
-      return 'https://onepiecetreasurecruise.fr/Shirahoshi.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Shirahoshi.html#1';
     case '1477':
-      return 'https://onepiecetreasurecruise.fr/Shirahoshi.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Shirahoshi.html#2';
     case '1479':
-      return 'https://onepiecetreasurecruise.fr/Shirahoshi.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Shirahoshi.html#3';
     case '1481':
-      return 'https://onepiecetreasurecruise.fr/Shirahoshi.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Shirahoshi.html#4';
     case '1483':
-      return 'https://onepiecetreasurecruise.fr/Shirahoshi.html#5';
+      return 'https://onepiecetreasurecruise.fr/Legende/Shirahoshi.html#5';
 
     case '1534':
-      return 'https://onepiecetreasurecruise.fr/Usopp.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Usopp.html#1';
     case '1536':
-      return 'https://onepiecetreasurecruise.fr/Usopp.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Usopp.html#2';
     case '1538':
-      return 'https://onepiecetreasurecruise.fr/Usopp.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Usopp.html#3';
     case '1540':
-      return 'https://onepiecetreasurecruise.fr/Usopp.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Usopp.html#4';
     case '1542':
-      return 'https://onepiecetreasurecruise.fr/Usopp.html#5';
+      return 'https://onepiecetreasurecruise.fr/Legende/Usopp.html#5';
     case '1573':
-      return 'https://onepiecetreasurecruise.fr/Chavipere.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Chavipere.html#1';
     case '1575':
-      return 'https://onepiecetreasurecruise.fr/Chavipere.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Chavipere.html#2';
     case '1577':
-      return 'https://onepiecetreasurecruise.fr/Chavipere.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Chavipere.html#3';
     case '1579':
-      return 'https://onepiecetreasurecruise.fr/Chavipere.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Chavipere.html#4';
     case '1612':
-      return 'https://onepiecetreasurecruise.fr/Ener.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Ener.html#1';
     case '1614':
-      return 'https://onepiecetreasurecruise.fr/Ener.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Ener.html#2';
     case '1616':
-      return 'https://onepiecetreasurecruise.fr/Ener.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Ener.html#3';
     case '1618':
-      return 'https://onepiecetreasurecruise.fr/Ener.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Ener.html#4';
     case '1654':
-      return 'https://onepiecetreasurecruise.fr/Chavipere.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Chavipere.html#1';
     case '1656':
-      return 'https://onepiecetreasurecruise.fr/Chavipere.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Chavipere.html#2';
     case '1658':
-      return 'https://onepiecetreasurecruise.fr/Chavipere.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Chavipere.html#3';
     case '1660':
-      return 'https://onepiecetreasurecruise.fr/Chavipere.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Chavipere.html#4';
     // case '1682':
     //   return 'aaaaaaaa';
     // case '1684':
@@ -854,21 +854,21 @@ function getFrenchRareRecruitUrl(characterId: string): string {
     // case '1688':
     //   return 'aaaaaaaa';
     case '1700':
-      return 'https://onepiecetreasurecruise.fr/Magellan.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Magellan.html#1';
     case '1702':
-      return 'https://onepiecetreasurecruise.fr/Magellan.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Magellan.html#2';
     case '1704':
-      return 'https://onepiecetreasurecruise.fr/Magellan.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Magellan.html#3';
     case '1706':
-      return 'https://onepiecetreasurecruise.fr/Magellan.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Magellan.html#4';
     case '1741':
-      return 'https://onepiecetreasurecruise.fr/Boa%20Hancock%202.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Boa%20Hancock%202.html#1';
     case '1743':
-      return 'https://onepiecetreasurecruise.fr/Boa%20Hancock%202.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Boa%20Hancock%202.html#2';
     case '1745':
-      return 'https://onepiecetreasurecruise.fr/Boa%20Hancock%202.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Boa%20Hancock%202.html#3';
     case '1749':
-      return 'https://onepiecetreasurecruise.fr/Boa%20Hancock%202.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Boa%20Hancock%202.html#4';
     // case '1753':
     //   return 'aaaaaaaa';
     // case '1755':
@@ -880,302 +880,302 @@ function getFrenchRareRecruitUrl(characterId: string): string {
     // case '1761':
     //   return 'aaaaaaaa';
     case '1796':
-      return 'https://onepiecetreasurecruise.fr/Lucy.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Lucy.html#1';
     case '1798':
-      return 'https://onepiecetreasurecruise.fr/Lucy.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Lucy.html#2';
     case '1800':
-      return 'https://onepiecetreasurecruise.fr/Lucy.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Lucy.html#3';
     case '1802':
-      return 'https://onepiecetreasurecruise.fr/Lucy.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Lucy.html#4';
     case '1834':
-      return 'https://onepiecetreasurecruise.fr/Judge%20Vinsmoke.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Judge%20Vinsmoke.html#1';
     case '1836':
-      return 'https://onepiecetreasurecruise.fr/Judge%20Vinsmoke.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Judge%20Vinsmoke.html#2';
     case '1838':
-      return 'https://onepiecetreasurecruise.fr/Judge%20Vinsmoke.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Judge%20Vinsmoke.html#3';
     case '1840':
-      return 'https://onepiecetreasurecruise.fr/Judge%20Vinsmoke.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Judge%20Vinsmoke.html#4';
     case '1871':
-      return 'https://onepiecetreasurecruise.fr/Issho%202.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Issho%202.html#1';
     case '1873':
-      return 'https://onepiecetreasurecruise.fr/Issho%202.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Issho%202.html#2';
     case '1875':
-      return 'https://onepiecetreasurecruise.fr/Issho%202.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Issho%202.html#3';
     case '1877':
-      return 'https://onepiecetreasurecruise.fr/Issho%202.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Issho%202.html#4';
     case '1902':
-      return 'https://onepiecetreasurecruise.fr/Don%20Quijote%20Doflamingo%202.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Don%20Quijote%20Doflamingo%202.html#1';
     case '1904':
-      return 'https://onepiecetreasurecruise.fr/Don%20Quijote%20Doflamingo%202.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Don%20Quijote%20Doflamingo%202.html#2';
     case '1906':
-      return 'https://onepiecetreasurecruise.fr/Don%20Quijote%20Doflamingo%202.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Don%20Quijote%20Doflamingo%202.html#3';
     case '1908':
-      return 'https://onepiecetreasurecruise.fr/Don%20Quijote%20Doflamingo%202.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Don%20Quijote%20Doflamingo%202.html#4';
     case '1953':
-      return 'https://onepiecetreasurecruise.fr/Nico%20Robin.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Nico%20Robin.html#1';
     case '1955':
-      return 'https://onepiecetreasurecruise.fr/Nico%20Robin.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Nico%20Robin.html#2';
     case '1957':
-      return 'https://onepiecetreasurecruise.fr/Nico%20Robin.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Nico%20Robin.html#3';
     case '1959':
-      return 'https://onepiecetreasurecruise.fr/Nico%20Robin.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Nico%20Robin.html#4';
     case '1987':
-      return 'https://onepiecetreasurecruise.fr/Luffy%20et%20Ace.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy%20et%20Ace.html#1';
     case '1989':
-      return 'https://onepiecetreasurecruise.fr/Luffy%20et%20Ace.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy%20et%20Ace.html#2';
     case '1991':
-      return 'https://onepiecetreasurecruise.fr/Luffy%20et%20Ace.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy%20et%20Ace.html#3';
     case '1993':
-      return 'https://onepiecetreasurecruise.fr/Luffy%20et%20Ace.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy%20et%20Ace.html#4';
 
     case '2027':
-      return 'https://onepiecetreasurecruise.fr/Kuzan%202.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Kuzan%202.html#1';
     case '2029':
-      return 'https://onepiecetreasurecruise.fr/Kuzan%202.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Kuzan%202.html#2';
     case '2031':
-      return 'https://onepiecetreasurecruise.fr/Kuzan%202.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Kuzan%202.html#3';
     case '2072':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%203.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Monkey%20D.%20Luffy%203.html#1';
     case '2078':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%203.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Monkey%20D.%20Luffy%203.html#2';
     case '2080':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%203.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Monkey%20D.%20Luffy%203.html#3';
     case '2082':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%203.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Monkey%20D.%20Luffy%203.html#4';
     case '2101':
-      return 'https://onepiecetreasurecruise.fr/Gild%20Tesoro.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Gild%20Tesoro.html#1';
     case '2103':
-      return 'https://onepiecetreasurecruise.fr/Gild%20Tesoro.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Gild%20Tesoro.html#2';
     case '2105':
-      return 'https://onepiecetreasurecruise.fr/Gild%20Tesoro.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Gild%20Tesoro.html#3';
     case '2107':
-      return 'https://onepiecetreasurecruise.fr/Gild%20Tesoro.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Gild%20Tesoro.html#4';
     case '2115':
-      return 'https://onepiecetreasurecruise.fr/Charlotte%20Dent-de-chien%201.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Charlotte%20Dent-de-chien%201.html#1';
     case '2117':
-      return 'https://onepiecetreasurecruise.fr/Charlotte%20Dent-de-chien%201.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Charlotte%20Dent-de-chien%201.html#2';
     case '2119':
-      return 'https://onepiecetreasurecruise.fr/Charlotte%20Dent-de-chien%201.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Charlotte%20Dent-de-chien%201.html#3';
     case '2121':
-      return 'https://onepiecetreasurecruise.fr/Charlotte%20Dent-de-chien%201.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Charlotte%20Dent-de-chien%201.html#4';
     case '2139':
-      return 'https://onepiecetreasurecruise.fr/Judge%20Vinsmoke.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Judge%20Vinsmoke.html#1';
     case '2140':
-      return 'https://onepiecetreasurecruise.fr/Judge%20Vinsmoke.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Judge%20Vinsmoke.html#2';
     case '2141':
-      return 'https://onepiecetreasurecruise.fr/Judge%20Vinsmoke.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Judge%20Vinsmoke.html#3';
     case '2142':
-      return 'https://onepiecetreasurecruise.fr/Judge%20Vinsmoke.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Judge%20Vinsmoke.html#4';
     case '2150':
-      return 'https://onepiecetreasurecruise.fr/Sanji%20Vinsmoke%202.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sanji%20Vinsmoke%202.html#1';
     case '2152':
-      return 'https://onepiecetreasurecruise.fr/Sanji%20Vinsmoke%202.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sanji%20Vinsmoke%202.html#2';
     case '2154':
-      return 'https://onepiecetreasurecruise.fr/Sanji%20Vinsmoke%202.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sanji%20Vinsmoke%202.html#3';
     case '2156':
-      return 'https://onepiecetreasurecruise.fr/Sanji%20Vinsmoke%202.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sanji%20Vinsmoke%202.html#4';
     case '2183':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Blanche%20et%20Marco.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe%20Blanche%20et%20Marco.html#1';
     case '2185':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Blanche%20et%20Marco.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe%20Blanche%20et%20Marco.html#2';
     case '2187':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Blanche%20et%20Marco.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe%20Blanche%20et%20Marco.html#3';
     case '2189':
-      return 'https://onepiecetreasurecruise.fr/Barbe%20Blanche%20et%20Marco.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Barbe%20Blanche%20et%20Marco.html#4';
     case '2203':
-      return 'https://onepiecetreasurecruise.fr/Shiki.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Shiki.html#1';
     case '2205':
-      return 'https://onepiecetreasurecruise.fr/Shiki.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Shiki.html#2';
     case '2238':
-      return 'https://onepiecetreasurecruise.fr/Big%20Mom.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Big%20Mom.html#1';
     case '2240':
-      return 'https://onepiecetreasurecruise.fr/Big%20Mom.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Big%20Mom.html#2';
     case '2242':
-      return 'https://onepiecetreasurecruise.fr/Big%20Mom.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Big%20Mom.html#3';
     case '2244':
-      return 'https://onepiecetreasurecruise.fr/Big%20Mom.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Big%20Mom.html#4';
     case '2267':
-      return 'https://onepiecetreasurecruise.fr/Jinbe%202.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Jinbe%202.html#1';
     case '2269':
-      return 'https://onepiecetreasurecruise.fr/Jinbe%202.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Jinbe%202.html#2';
     case '2271':
-      return 'https://onepiecetreasurecruise.fr/Jinbe%202.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Jinbe%202.html#3';
     case '2273':
-      return 'https://onepiecetreasurecruise.fr/Jinbe%202.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Jinbe%202.html#4';
     case '2275':
-      return 'https://onepiecetreasurecruise.fr/Jinbe%202.html#5';
+      return 'https://onepiecetreasurecruise.fr/Legende/Jinbe%202.html#5';
     case '2304':
-      return 'https://onepiecetreasurecruise.fr/Capone%20Bege.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Capone%20Bege.html#1';
     case '2306':
-      return 'https://onepiecetreasurecruise.fr/Capone%20Bege.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Capone%20Bege.html#2';
     case '2308':
-      return 'https://onepiecetreasurecruise.fr/Capone%20Bege.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Capone%20Bege.html#3';
     case '2310':
-      return 'https://onepiecetreasurecruise.fr/Capone%20Bege.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Capone%20Bege.html#4';
     case '2332':
-      return 'https://onepiecetreasurecruise.fr/Zephyr.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Zephyr.html#1';
     case '2334':
-      return 'https://onepiecetreasurecruise.fr/Zephyr.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Zephyr.html#2';
     case '2340':
-      return 'https://onepiecetreasurecruise.fr/Carrot.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Carrot.html#1';
     case '2342':
-      return 'https://onepiecetreasurecruise.fr/Carrot.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Carrot.html#2';
     case '2344':
-      return 'https://onepiecetreasurecruise.fr/Carrot.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Carrot.html#3';
     case '2346':
-      return 'https://onepiecetreasurecruise.fr/Carrot.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Carrot.html#4';
     case '2367':
-      return 'https://onepiecetreasurecruise.fr/Charlotte%20Dent-de-chien%202.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Charlotte%20Dent-de-chien%202.html#1';
     case '2369':
-      return 'https://onepiecetreasurecruise.fr/Charlotte%20Dent-de-chien%202.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Charlotte%20Dent-de-chien%202.html#2';
     case '2371':
-      return 'https://onepiecetreasurecruise.fr/Charlotte%20Dent-de-chien%202.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Charlotte%20Dent-de-chien%202.html#3';
     case '2420':
-      return 'https://onepiecetreasurecruise.fr/Bartolomeo%20et%20Cavendish.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Bartolomeo%20et%20Cavendish.html#1';
     case '2422':
-      return 'https://onepiecetreasurecruise.fr/Bartolomeo%20et%20Cavendish.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Bartolomeo%20et%20Cavendish.html#2';
     case '2424':
-      return 'https://onepiecetreasurecruise.fr/Bartolomeo%20et%20Cavendish.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Bartolomeo%20et%20Cavendish.html#3';
     case '2426':
-      return 'https://onepiecetreasurecruise.fr/Bartolomeo%20et%20Cavendish.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Bartolomeo%20et%20Cavendish.html#4';
     case '2447':
-      return 'https://onepiecetreasurecruise.fr/Sanji%20et%20Judge.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sanji%20et%20Judge.html#1';
     case '2448':
-      return 'https://onepiecetreasurecruise.fr/Sanji%20et%20Judge.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sanji%20et%20Judge.html#2';
     case '2449':
-      return 'https://onepiecetreasurecruise.fr/Sanji%20et%20Judge.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sanji%20et%20Judge.html#3';
     case '2450':
-      return 'https://onepiecetreasurecruise.fr/Sanji%20et%20Judge.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sanji%20et%20Judge.html#4';
     case '2451':
-      return 'https://onepiecetreasurecruise.fr/Sanji%20et%20Judge.html#5';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sanji%20et%20Judge.html#5';
     case '2452':
-      return 'https://onepiecetreasurecruise.fr/Sanji%20et%20Judge.html#6';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sanji%20et%20Judge.html#6';
     case '2453':
-      return 'https://onepiecetreasurecruise.fr/Sanji%20et%20Judge.html#7';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sanji%20et%20Judge.html#7';
     case '2454':
-      return 'https://onepiecetreasurecruise.fr/Sanji%20et%20Judge.html#8';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sanji%20et%20Judge.html#8';
     case '2479':
-      return 'https://onepiecetreasurecruise.fr/Roronoa%20Zoro%202.html#9';
+      return 'https://onepiecetreasurecruise.fr/Legende/Roronoa%20Zoro%202.html#9';
     case '2481':
-      return 'https://onepiecetreasurecruise.fr/Roronoa%20Zoro%202.html#10';
+      return 'https://onepiecetreasurecruise.fr/Legende/Roronoa%20Zoro%202.html#10';
     case '2483':
-      return 'https://onepiecetreasurecruise.fr/Roronoa%20Zoro%202.html#11';
+      return 'https://onepiecetreasurecruise.fr/Legende/Roronoa%20Zoro%202.html#11';
     case '2485':
-      return 'https://onepiecetreasurecruise.fr/Roronoa%20Zoro%202.html#12';
+      return 'https://onepiecetreasurecruise.fr/Legende/Roronoa%20Zoro%202.html#12';
 
     case '2538':
-      return 'https://onepiecetreasurecruise.fr/Luffy%20et%20Law.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy%20et%20Law.html#1';
     case '2540':
-      return 'https://onepiecetreasurecruise.fr/Luffy%20et%20Law.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy%20et%20Law.html#2';
     case '2542':
-      return 'https://onepiecetreasurecruise.fr/Luffy%20et%20Law.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy%20et%20Law.html#3';
     case '2544':
-      return 'https://onepiecetreasurecruise.fr/Luffy%20et%20Law.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy%20et%20Law.html#4';
     case '2563':
-      return 'https://onepiecetreasurecruise.fr/Sabo%20et%20Koala.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sabo%20et%20Koala.html#1';
     case '2565':
-      return 'https://onepiecetreasurecruise.fr/Sabo%20et%20Koala.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sabo%20et%20Koala.html#2';
     case '2567':
-      return 'https://onepiecetreasurecruise.fr/Sabo%20et%20Koala.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Sabo%20et%20Koala.html#3';
     case '2605':
-      return 'https://onepiecetreasurecruise.fr/Vivi%20et%20Rebecca%201.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Vivi%20et%20Rebecca%201.html#1';
     case '2607':
-      return 'https://onepiecetreasurecruise.fr/Vivi%20et%20Rebecca%201.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Vivi%20et%20Rebecca%201.html#2';
     case '2609':
-      return 'https://onepiecetreasurecruise.fr/Vivi%20et%20Rebecca%201.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Vivi%20et%20Rebecca%201.html#3';
     case '2653':
-      return 'https://onepiecetreasurecruise.fr/Douglas%20Bullet.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Douglas%20Bullet.html#1';
     case '2655':
-      return 'https://onepiecetreasurecruise.fr/Douglas%20Bullet.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Douglas%20Bullet.html#2';
     case '2657':
-      return 'https://onepiecetreasurecruise.fr/Douglas%20Bullet.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Douglas%20Bullet.html#3';
     case '2674':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%205.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Monkey%20D.%20Luffy%205.html#1';
     case '2676':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%205.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Monkey%20D.%20Luffy%205.html#2';
     case '2678':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%205.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Monkey%20D.%20Luffy%205.html#3';
     case '2702':
-      return 'https://onepiecetreasurecruise.fr/Kaido.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Kaido.html#1';
     case '2704':
-      return 'https://onepiecetreasurecruise.fr/Kaido.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Kaido.html#2';
     case '2706':
-      return 'https://onepiecetreasurecruise.fr/Kaido.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Kaido.html#3';
     case '2743':
-      return 'https://onepiecetreasurecruise.fr/Portgas%20D.%20Ace%202.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Portgas%20D.%20Ace%202.html#1';
     case '2745':
-      return 'https://onepiecetreasurecruise.fr/Portgas%20D.%20Ace%202.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Portgas%20D.%20Ace%202.html#2';
     case '2747':
-      return 'https://onepiecetreasurecruise.fr/Portgas%20D.%20Ace%202.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Portgas%20D.%20Ace%202.html#3';
     case '2778':
-      return 'https://onepiecetreasurecruise.fr/O-Nami.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/O-Nami.html#1';
     case '2780':
-      return 'https://onepiecetreasurecruise.fr/O-Nami.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/O-Nami.html#2';
     // case '2787':
     //   return 'aaaaaaaaa';
     // case '2789':
     //   return 'aaaaaaaaa';
     case '2806':
-      return 'https://onepiecetreasurecruise.fr/Luffytaro%20et%20Zorojuro.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffytaro%20et%20Zorojuro.html#1';
     case '2808':
-      return 'https://onepiecetreasurecruise.fr/Luffytaro%20et%20Zorojuro.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffytaro%20et%20Zorojuro.html#2';
     case '2810':
-      return 'https://onepiecetreasurecruise.fr/Luffytaro%20et%20Zorojuro.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffytaro%20et%20Zorojuro.html#3';
     case '2839':
-      return 'https://onepiecetreasurecruise.fr/Nami%20et%20Robin.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Nami%20et%20Robin.html#1';
     case '2841':
-      return 'https://onepiecetreasurecruise.fr/Nami%20et%20Robin.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Nami%20et%20Robin.html#2';
     case '2864':
-      return 'https://onepiecetreasurecruise.fr/Equipage%20Arlong.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Equipage%20Arlong.html#3';
     case '2866':
-      return 'https://onepiecetreasurecruise.fr/Equipage%20Arlong.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Equipage%20Arlong.html#4';
     // case '2881':
     //   return 'aaaaaaaaa';
     // case '2882':
     //   return 'aaaaaaaaa';
     case '2899':
-      return 'https://onepiecetreasurecruise.fr/Mihawk%20et%20Perona.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Mihawk%20et%20Perona.html#1';
     case '2901':
-      return 'https://onepiecetreasurecruise.fr/Mihawk%20et%20Perona.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Mihawk%20et%20Perona.html#2';
     case '2903':
-      return 'https://onepiecetreasurecruise.fr/Mihawk%20et%20Perona.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Mihawk%20et%20Perona.html#3';
     case '2966':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%206.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Monkey%20D.%20Luffy%206.html#1';
     case '2968':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%206.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Monkey%20D.%20Luffy%206.html#2';
     case '2970':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%206.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Monkey%20D.%20Luffy%206.html#3';
     case '2972':
-      return 'https://onepiecetreasurecruise.fr/Monkey%20D.%20Luffy%206.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Monkey%20D.%20Luffy%206.html#4';
     case '2984':
-      return 'https://onepiecetreasurecruise.fr/Eustass%20Kidd.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Eustass%20Kidd.html#1';
     case '2986':
-      return 'https://onepiecetreasurecruise.fr/Eustass%20Kidd.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Eustass%20Kidd.html#2';
     case '3029':
-      return 'https://onepiecetreasurecruise.fr/Trafalgar%20Law%203.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Trafalgar%20Law%203.html#1';
     case '3031':
-      return 'https://onepiecetreasurecruise.fr/Trafalgar%20Law%203.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Trafalgar%20Law%203.html#2';
     case '3011':
-      return 'https://onepiecetreasurecruise.fr/Smoker.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Smoker.html#1';
     case '3013':
-      return 'https://onepiecetreasurecruise.fr/Smoker.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Smoker.html#2';
     case '3015':
-      return 'https://onepiecetreasurecruise.fr/Smoker.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Smoker.html#3';
     case '3040':
-      return 'https://onepiecetreasurecruise.fr/Boa%20Hancock%203.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Boa%20Hancock%203.html#1';
     case '3042':
-      return 'https://onepiecetreasurecruise.fr/Boa%20Hancock%203.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Boa%20Hancock%203.html#2';
     case '3044':
-      return 'https://onepiecetreasurecruise.fr/Boa%20Hancock%203.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Boa%20Hancock%203.html#3';
 
     case '3067':
-      return 'https://onepiecetreasurecruise.fr/Luffy%20et%20Sanji.html#1';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy%20et%20Sanji.html#1';
     case '3069':
-      return 'https://onepiecetreasurecruise.fr/Luffy%20et%20Sanji.html#2';
+      return 'https://onepiecetreasurecruise.fr/Legende/Luffy%20et%20Sanji.html#2';
     case '3104':
-      return 'https://onepiecetreasurecruise.fr/Dracule%20Mihawk%203.html#3';
+      return 'https://onepiecetreasurecruise.fr/Legende/Dracule%20Mihawk%203.html#3';
     case '3106':
-      return 'https://onepiecetreasurecruise.fr/Dracule%20Mihawk%203.html#4';
+      return 'https://onepiecetreasurecruise.fr/Legende/Dracule%20Mihawk%203.html#4';
     case '3137':
       return 'https://onepiecetreasurecruise.fr/Page_RR/King_1.html';
     case '3139':
