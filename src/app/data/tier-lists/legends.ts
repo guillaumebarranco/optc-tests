@@ -231,6 +231,9 @@ export const legends2023 = [
   '3850',
   '3852',
   '3859',
+  '3870',
+  '3878',
+  '3880',
 ];
 
 export const japLegends = [];
