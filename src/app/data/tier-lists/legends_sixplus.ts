@@ -93,7 +93,22 @@ export const legendsSixPlus2022 = [
   '3805',
 ];
 
-export const legendsSixPlus2023 = ['3814', '3816', '3828', '3845'];
+export const legendsSixPlus2023 = [
+  '3814',
+  '3816',
+  '3828',
+  '3845',
+  '3868',
+  '3902',
+  '3920',
+  '3940',
+  '3969',
+  '3989',
+  '4000',
+  '4010',
+  '4037',
+  '4056',
+];
 
 export const japLegendsSixPLus = [];
 
